@@ -20,7 +20,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Nodes.JsonNode got = Aas.Tests.CommonJson.ToJson(
                 value);
-    
+
             if (Aas.Tests.Common.RecordMode)
             {
                 string? parent = Path.GetDirectoryName(expectedPath);
@@ -66,14 +66,14 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Extension instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalExtension());
-    
+
             string value = Aas.Stringification.ToString(
                 instance.ValueTypeOrDefault())
                     ?? throw new System.InvalidOperationException(
                         "Failed to stringify the enum");
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -93,7 +93,7 @@ namespace AasCore.Aas3_0.Tests
                         "Failed to stringify the enum");
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -106,14 +106,14 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Qualifier instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalQualifier());
-    
+
             string value = Aas.Stringification.ToString(
                 instance.KindOrDefault())
                     ?? throw new System.InvalidOperationException(
                         "Failed to stringify the enum");
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -133,7 +133,7 @@ namespace AasCore.Aas3_0.Tests
                         "Failed to stringify the enum");
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -146,14 +146,14 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Submodel instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalSubmodel());
-    
+
             string value = Aas.Stringification.ToString(
                 instance.KindOrDefault())
                     ?? throw new System.InvalidOperationException(
                         "Failed to stringify the enum");
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -173,7 +173,7 @@ namespace AasCore.Aas3_0.Tests
                         "Failed to stringify the enum");
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -186,11 +186,11 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.SubmodelElementList instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalSubmodelElementList());
-    
+
             var value = instance.OrderRelevantOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -207,7 +207,7 @@ namespace AasCore.Aas3_0.Tests
             var value = instance.OrderRelevantOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -220,11 +220,11 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Property instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalProperty());
-    
+
             var value = instance.CategoryOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -241,7 +241,7 @@ namespace AasCore.Aas3_0.Tests
             var value = instance.CategoryOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -254,11 +254,11 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.MultiLanguageProperty instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalMultiLanguageProperty());
-    
+
             var value = instance.CategoryOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -275,7 +275,7 @@ namespace AasCore.Aas3_0.Tests
             var value = instance.CategoryOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -288,11 +288,11 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Range instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalRange());
-    
+
             var value = instance.CategoryOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -309,7 +309,7 @@ namespace AasCore.Aas3_0.Tests
             var value = instance.CategoryOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -322,11 +322,11 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.ReferenceElement instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalReferenceElement());
-    
+
             var value = instance.CategoryOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -343,7 +343,7 @@ namespace AasCore.Aas3_0.Tests
             var value = instance.CategoryOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -356,11 +356,11 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Blob instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalBlob());
-    
+
             var value = instance.CategoryOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -377,7 +377,7 @@ namespace AasCore.Aas3_0.Tests
             var value = instance.CategoryOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -390,11 +390,11 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.File instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalFile());
-    
+
             var value = instance.CategoryOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
@@ -411,7 +411,7 @@ namespace AasCore.Aas3_0.Tests
             var value = instance.CategoryOrDefault();
 
             CompareOrRerecordValue(
-                value, 
+                value,
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "XOrDefault",
