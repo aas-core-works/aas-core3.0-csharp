@@ -1,0 +1,15 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "qualifiers": [
+        {
+          "type": "something_5964ab43",
+          "value": "W:\ud842\uddb3\u0013\u008f\u00a89\u0083",
+          "valueType": "xs:anyURI"
+        }
+      ]
+    }
+  ]
+}

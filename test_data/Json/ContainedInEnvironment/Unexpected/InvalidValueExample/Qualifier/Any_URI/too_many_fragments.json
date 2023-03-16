@@ -1,0 +1,15 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "qualifiers": [
+        {
+          "type": "something_5964ab43",
+          "value": "http://datypic.com#frag1#frag2",
+          "valueType": "xs:anyURI"
+        }
+      ]
+    }
+  ]
+}

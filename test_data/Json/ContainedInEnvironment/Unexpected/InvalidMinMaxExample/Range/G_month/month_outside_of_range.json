@@ -1,0 +1,17 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "submodelElements": [
+        {
+          "idShort": "something3fdd3eb4",
+          "max": "--13",
+          "min": "--13",
+          "modelType": "Range",
+          "valueType": "xs:gMonth"
+        }
+      ]
+    }
+  ]
+}

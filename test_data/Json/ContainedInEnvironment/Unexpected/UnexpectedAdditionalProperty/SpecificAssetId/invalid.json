@@ -1,0 +1,18 @@
+{
+  "assetAdministrationShells": [
+    {
+      "assetInformation": {
+        "assetKind": "NotApplicable",
+        "specificAssetIds": [
+          {
+            "name": "something_b0b6ce88",
+            "unexpectedAdditionalProperty": "INVALID",
+            "value": "something_a37abe43"
+          }
+        ]
+      },
+      "id": "something_142922d6",
+      "modelType": "AssetAdministrationShell"
+    }
+  ]
+}

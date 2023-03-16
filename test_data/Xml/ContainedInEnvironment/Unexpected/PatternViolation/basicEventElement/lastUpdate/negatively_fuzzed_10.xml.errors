@@ -1,0 +1,4 @@
+submodels[0].submodelElements[0].lastUpdate: Invariant violated:
+The value must match the pattern of xs:dateTime with the time zone fixed to UTC.;
+submodels[0].submodelElements[0].lastUpdate: Invariant violated:
+The value must represent a valid xs:dateTime with the time zone fixed to UTC.

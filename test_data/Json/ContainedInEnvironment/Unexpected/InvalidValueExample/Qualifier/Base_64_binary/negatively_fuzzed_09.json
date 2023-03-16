@@ -1,0 +1,15 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "qualifiers": [
+        {
+          "type": "something_5964ab43",
+          "value": "\ud917\udd62C\u00ad\u0006\u0002\u00daH\u0097\u00d4",
+          "valueType": "xs:base64Binary"
+        }
+      ]
+    }
+  ]
+}

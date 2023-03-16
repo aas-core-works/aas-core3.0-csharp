@@ -1,0 +1,15 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "qualifiers": [
+        {
+          "type": "something_5964ab43",
+          "value": "\ud937\udf63\u0000'\u001f \ud918\udeacxx\u00cf\u00d6\nwf",
+          "valueType": "xs:string"
+        }
+      ]
+    }
+  ]
+}

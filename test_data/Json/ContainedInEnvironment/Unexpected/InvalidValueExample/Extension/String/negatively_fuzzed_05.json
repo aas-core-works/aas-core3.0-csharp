@@ -1,0 +1,19 @@
+{
+  "assetAdministrationShells": [
+    {
+      "assetInformation": {
+        "assetKind": "NotApplicable",
+        "globalAssetId": "something_eea66fa1"
+      },
+      "extensions": [
+        {
+          "name": "something_aae6caf4",
+          "value": "\u0015>\u00d2\udb56\udf00L\u00cb)T\u0000\u00ce\u00e7\udaa9\uddcf\udbe1\udf7d\b\u00c0\u00ba\uda5a\udccf\u00ca\u00a08]\udbb2\ude08\u00181D\fY\ud942\udf23A\\\u00ac\u00ef\ud926\udce3\ud958\ude2cc",
+          "valueType": "xs:string"
+        }
+      ],
+      "id": "something_142922d6",
+      "modelType": "AssetAdministrationShell"
+    }
+  ]
+}

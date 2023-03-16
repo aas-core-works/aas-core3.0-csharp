@@ -1,0 +1,15 @@
+<environment xmlns="https://admin-shell.io/aas/3/0">
+	<assetAdministrationShells>
+		<assetAdministrationShell>
+			<id>something_142922d6</id>
+			<assetInformation>
+				<assetKind>NotApplicable</assetKind>
+				<specificAssetIds>
+					<specificAssetId>
+						<name>something_b0b6ce88</name>
+					</specificAssetId>
+				</specificAssetIds>
+			</assetInformation>
+		</assetAdministrationShell>
+	</assetAdministrationShells>
+</environment>

@@ -1,0 +1,27 @@
+/src/.vs
+*~
+
+# VIM
+*.swp
+
+# Tools for building etc.
+/tools/
+
+# Installation of development dependencies
+/installation-dev-dependencies/
+
+# Build artefacts
+/artefacts/
+/out/
+
+# Development artefacts
+obj/
+bin/
+
+# Python environment
+venv/
+
+# Docfx tool
+/docfx.console.*/
+
+.idea/csv-plugin.xml

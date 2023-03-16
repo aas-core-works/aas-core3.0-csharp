@@ -1,0 +1,17 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "submodelElements": [
+        {
+          "idShort": "something3fdd3eb4",
+          "max": "\uda51\udf88\u00a0\ud99e\ude4e\ud943\udd14\u00fa",
+          "min": "\uda51\udf88\u00a0\ud99e\ude4e\ud943\udd14\u00fa",
+          "modelType": "Range",
+          "valueType": "xs:base64Binary"
+        }
+      ]
+    }
+  ]
+}

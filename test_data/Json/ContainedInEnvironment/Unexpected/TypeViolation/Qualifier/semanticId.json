@@ -1,0 +1,48 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "kind": "Template",
+      "modelType": "Submodel",
+      "qualifiers": [
+        {
+          "kind": "TemplateQualifier",
+          "semanticId": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "unexpected instance"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:an-example17:1456e435"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "type": "something_5964ab43",
+          "value": "001",
+          "valueId": {
+            "keys": [
+              {
+                "type": "Submodel",
+                "value": "urn:yet-another-company17:9dd54b75"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "valueType": "xs:integer"
+        }
+      ]
+    }
+  ]
+}

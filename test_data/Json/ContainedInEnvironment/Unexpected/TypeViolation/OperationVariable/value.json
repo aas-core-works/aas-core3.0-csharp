@@ -1,0 +1,29 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "submodelElements": [
+        {
+          "idShort": "something3fdd3eb4",
+          "inputVariables": [
+            {
+              "value": [
+                {
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "unexpected instance"
+                    }
+                  ],
+                  "type": "ExternalReference"
+                }
+              ]
+            }
+          ],
+          "modelType": "Operation"
+        }
+      ]
+    }
+  ]
+}

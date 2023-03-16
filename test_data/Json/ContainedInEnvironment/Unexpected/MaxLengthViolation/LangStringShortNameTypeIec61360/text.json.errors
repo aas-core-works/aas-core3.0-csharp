@@ -1,0 +1,2 @@
+assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent.shortName[0]: Invariant violated:
+String shall have a maximum length of 1023 characters.

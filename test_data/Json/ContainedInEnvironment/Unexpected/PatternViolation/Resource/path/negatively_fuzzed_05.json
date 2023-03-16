@@ -1,0 +1,16 @@
+{
+  "assetAdministrationShells": [
+    {
+      "assetInformation": {
+        "assetKind": "NotApplicable",
+        "defaultThumbnail": {
+          "contentType": "application/x-abiword",
+          "path": "\udadd\udc94\u001f\u009b\ud8c9\udeda\u00a0\u00b8\udaba\udce1*"
+        },
+        "globalAssetId": "something_eea66fa1"
+      },
+      "id": "something_142922d6",
+      "modelType": "AssetAdministrationShell"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+assetAdministrationShells[0].extensions[0].name: Invariant violated:
+NameType shall have a maximum length of 128 characters.

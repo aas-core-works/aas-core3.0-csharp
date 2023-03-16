@@ -1,0 +1,17 @@
+{
+  "assetAdministrationShells": [
+    {
+      "assetInformation": {
+        "assetKind": "NotApplicable",
+        "globalAssetId": "something_eea66fa1"
+      },
+      "extensions": [
+        {
+          "name": null
+        }
+      ],
+      "id": "something_142922d6",
+      "modelType": "AssetAdministrationShell"
+    }
+  ]
+}

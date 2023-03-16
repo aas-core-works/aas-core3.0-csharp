@@ -1,0 +1,1 @@
+Expected Nodes.JsonObject, but got {node.GetType()} at: submodels[0].submodelElements[0].inputVariables[0].value

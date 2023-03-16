@@ -1,0 +1,2 @@
+The property ValueType of an instance of class Extension could not be de-serialized from an unexpected enumeration literal: 
+						 at: assetAdministrationShells/*[0]/extensions/*[0]/valueType

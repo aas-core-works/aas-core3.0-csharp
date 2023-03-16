@@ -1,0 +1,18 @@
+{
+  "assetAdministrationShells": [
+    {
+      "assetInformation": {
+        "assetKind": "NotApplicable",
+        "globalAssetId": "something_eea66fa1"
+      },
+      "displayName": [
+        {
+          "language": "\ud836\ude00\udb88\udc76\ud86e\udff6\ud934\udd55\u00bc\u00b0\u0007\u00ea\u008b\u0000\u0004\ud817\ude5a",
+          "text": "something_09c304fd"
+        }
+      ],
+      "id": "something_142922d6",
+      "modelType": "AssetAdministrationShell"
+    }
+  ]
+}

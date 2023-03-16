@@ -1,0 +1,25 @@
+{
+  "assetAdministrationShells": [
+    {
+      "assetInformation": {
+        "assetKind": "NotApplicable",
+        "globalAssetId": "something_eea66fa1"
+      },
+      "derivedFrom": {
+        "keys": "Unexpected string value",
+        "referredSemanticId": {
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "urn:some-company18:a5913cc6"
+            }
+          ],
+          "type": "ExternalReference"
+        },
+        "type": "ModelReference"
+      },
+      "id": "something_142922d6",
+      "modelType": "AssetAdministrationShell"
+    }
+  ]
+}

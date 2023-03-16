@@ -1,0 +1,2 @@
+submodels[0].submodelElements[0].messageTopic: Invariant violated:
+LabelType shall have a maximum length of 255 characters.

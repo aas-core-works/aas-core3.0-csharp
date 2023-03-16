@@ -1,0 +1,25 @@
+{
+  "observableReference": {
+    "keys": [
+      {
+        "type": "Submodel",
+        "value": "urn:something13:06d93ead"
+      }
+    ],
+    "type": "ModelReference"
+  },
+  "source": {
+    "keys": [
+      {
+        "type": "Submodel",
+        "value": "urn:some-company15:84fd2b1b"
+      },
+      {
+        "type": "EventElement",
+        "value": "something3a3b97e8"
+      }
+    ],
+    "type": "ModelReference"
+  },
+  "timeStamp": null
+}

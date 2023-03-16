@@ -1,0 +1,1 @@
+Expected an XML end element to conclude a property of class BasicEventElement with the element name qualifiers, but got the node of type Text with the value Unexpected string value at: submodels/*[0]/submodelElements/*[0]

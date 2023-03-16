@@ -1,0 +1,17 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "submodelElements": [
+        {
+          "idShort": "something3fdd3eb4",
+          "max": "http://datypic.com#f% rag",
+          "min": "http://datypic.com#f% rag",
+          "modelType": "Range",
+          "valueType": "xs:anyURI"
+        }
+      ]
+    }
+  ]
+}

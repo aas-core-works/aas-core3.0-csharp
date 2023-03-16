@@ -1,0 +1,4 @@
+submodels[0].submodelElements[0].contentType: Invariant violated:
+Constraint AASd-130: An attribute with data type 'string' shall consist of these characters only: ^[\x09\x0A\x0D\x20-\uD7FF\uE000-\uFFFD\U00010000-\U0010FFFF]*$;
+submodels[0].submodelElements[0].contentType: Invariant violated:
+The value must represent a valid content MIME type according to RFC 2046.

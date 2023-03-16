@@ -1,0 +1,44 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "submodelElements": [
+        {
+          "idShort": "something3fdd3eb4",
+          "modelType": "SubmodelElementList",
+          "typeValueListElement": "Property",
+          "value": [
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:some-company08:6ddd7420"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "valueType": "xs:boolean"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "urn:some-company08:6ddd7420"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "valueType": "xs:boolean"
+            }
+          ],
+          "valueTypeListElement": "xs:boolean"
+        }
+      ]
+    }
+  ]
+}

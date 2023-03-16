@@ -1,0 +1,2 @@
+The property Type of an instance of class Reference could not be de-serialized from an unexpected enumeration literal: 
+					 at: assetAdministrationShells/*[0]/derivedFrom/type

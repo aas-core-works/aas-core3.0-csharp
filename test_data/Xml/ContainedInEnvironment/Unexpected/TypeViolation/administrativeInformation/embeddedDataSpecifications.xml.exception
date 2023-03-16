@@ -1,0 +1,1 @@
+Expected an XML end element to conclude a property of class AdministrativeInformation with the element name embeddedDataSpecifications, but got the node of type Text with the value Unexpected string value at: assetAdministrationShells/*[0]/administration

@@ -1,0 +1,4 @@
+assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent: Invariant violated:
+Constraint AASc-3a-010: If value is not empty then value list shall be empty and vice versa.;
+assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent.valueList: Invariant violated:
+Value reference pair types must contain at least one item.

@@ -1,0 +1,4 @@
+submodels[0].submodelElements[0]: Invariant violated:
+Max must be consistent with the value type.;
+submodels[0].submodelElements[0]: Invariant violated:
+Min must be consistent with the value type.
