@@ -26,10 +26,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalExtension();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.ExtensionFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -55,10 +55,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalAdministrativeInformation();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.AdministrativeInformationFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -84,10 +84,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalQualifier();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.QualifierFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -113,10 +113,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalAssetAdministrationShell();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.AssetAdministrationShellFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -142,10 +142,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalAssetInformation();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.AssetInformationFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -171,10 +171,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalResource();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.ResourceFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -200,10 +200,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalSpecificAssetId();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.SpecificAssetIdFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -229,10 +229,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalSubmodel();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.SubmodelFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -258,10 +258,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalRelationshipElement();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.RelationshipElementFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -287,10 +287,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalSubmodelElementList();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.SubmodelElementListFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -316,10 +316,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalSubmodelElementCollection();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.SubmodelElementCollectionFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -345,10 +345,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalProperty();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.PropertyFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -374,10 +374,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalMultiLanguageProperty();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.MultiLanguagePropertyFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -403,10 +403,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalRange();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.RangeFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -432,10 +432,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalReferenceElement();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.ReferenceElementFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -461,10 +461,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalBlob();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.BlobFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -490,10 +490,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalFile();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.FileFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -519,10 +519,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalAnnotatedRelationshipElement();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.AnnotatedRelationshipElementFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -548,10 +548,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalEntity();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.EntityFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -577,10 +577,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalBasicEventElement();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.BasicEventElementFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -606,10 +606,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalOperation();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.OperationFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -635,10 +635,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalOperationVariable();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.OperationVariableFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -664,10 +664,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalCapability();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.CapabilityFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -693,10 +693,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalConceptDescription();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.ConceptDescriptionFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -722,10 +722,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalReference();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.ReferenceFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -751,10 +751,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalKey();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.KeyFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -780,10 +780,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalLangStringNameType();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.LangStringNameTypeFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -809,10 +809,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalLangStringTextType();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.LangStringTextTypeFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -838,10 +838,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalEmbeddedDataSpecification();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.EmbeddedDataSpecificationFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -867,10 +867,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalLevelType();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.LevelTypeFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -896,10 +896,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalValueReferencePair();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.ValueReferencePairFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -925,10 +925,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalValueList();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.ValueListFrom(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -954,10 +954,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalLangStringPreferredNameTypeIec61360();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.LangStringPreferredNameTypeIec61360From(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -983,10 +983,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalLangStringShortNameTypeIec61360();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.LangStringShortNameTypeIec61360From(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -1012,10 +1012,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalLangStringDefinitionTypeIec61360();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.LangStringDefinitionTypeIec61360From(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
@@ -1041,10 +1041,10 @@ namespace AasCore.Aas3_0.Tests
             var instance = Aas.Tests.CommonJsonization.LoadMaximalDataSpecificationIec61360();
 
             var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
-    
+
             var anotherInstance = Aas.Jsonization.Deserialize.DataSpecificationIec61360From(
                 jsonObject);
-    
+
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
 
