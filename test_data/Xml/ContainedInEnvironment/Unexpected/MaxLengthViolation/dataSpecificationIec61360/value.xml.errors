@@ -1,0 +1,2 @@
+assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent.value: Invariant violated:
+ValueTypeIec61360 shall have a maximum length of 2000 characters.

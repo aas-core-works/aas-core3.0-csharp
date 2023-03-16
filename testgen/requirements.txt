@@ -1,0 +1,3 @@
+aas-core-meta@git+https://github.com/aas-core-works/aas-core-meta@9ccd31e#egg=aas-core-meta
+aas-core-codegen@git+https://github.com/aas-core-works/aas-core-codegen@fcc252c#egg=aas-core-codegen
+aas-core3.0@git+https://github.com/aas-core-works/aas-core3.0-python@e232aa2#egg=aas-core3.0

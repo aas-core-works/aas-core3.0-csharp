@@ -1,0 +1,13 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "qualifiers": [
+        {
+          "type": "something_5964ab43"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+submodels[0].submodelElements[0]: Invariant violated:
+Constraint AASd-090: For data elements category shall be one of the following values: CONSTANT, PARAMETER or VARIABLE;
+submodels[0].submodelElements[0].category: Invariant violated:
+Check if string is not empty.

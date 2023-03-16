@@ -1,0 +1,23 @@
+<environment xmlns="https://admin-shell.io/aas/3/0">
+	<assetAdministrationShells>
+		<assetAdministrationShell>
+			<id>something_142922d6</id>
+			<assetInformation>
+				<assetKind>NotApplicable</assetKind>
+				<globalAssetId>something_c71f0c8f</globalAssetId>
+				<assetType>something_9f4c5692</assetType>
+				<defaultThumbnail>
+					<reference>
+						<type>ExternalReference</type>
+						<keys>
+							<key>
+								<type>GlobalReference</type>
+								<value>unexpected instance</value>
+							</key>
+						</keys>
+					</reference>
+				</defaultThumbnail>
+			</assetInformation>
+		</assetAdministrationShell>
+	</assetAdministrationShells>
+</environment>

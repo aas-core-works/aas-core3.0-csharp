@@ -1,0 +1,2 @@
+submodels[0].submodelElements[0].value: Invariant violated:
+Constraint AASd-126: For model references with more than one key in Reference/keys the value of Key/type of the last key in the reference key chain may be one of Generic fragment keys or no key at all shall have a value out of Generic fragment keys.

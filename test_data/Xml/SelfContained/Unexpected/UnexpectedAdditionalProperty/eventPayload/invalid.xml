@@ -1,0 +1,26 @@
+<eventPayload xmlns="https://admin-shell.io/aas/3/0">
+	<source>
+		<type>ModelReference</type>
+		<keys>
+			<key>
+				<type>Submodel</type>
+				<value>urn:some-company15:84fd2b1b</value>
+			</key>
+			<key>
+				<type>EventElement</type>
+				<value>something3a3b97e8</value>
+			</key>
+		</keys>
+	</source>
+	<observableReference>
+		<type>ModelReference</type>
+		<keys>
+			<key>
+				<type>Submodel</type>
+				<value>urn:something13:06d93ead</value>
+			</key>
+		</keys>
+	</observableReference>
+	<timeStamp>2022-04-01T24:00:00-00:00</timeStamp>
+	<unexpectedAdditionalProperty>INVALID</unexpectedAdditionalProperty>
+</eventPayload>

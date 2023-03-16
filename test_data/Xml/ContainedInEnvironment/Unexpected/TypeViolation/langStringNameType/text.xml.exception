@@ -1,0 +1,1 @@
+Expected an XML end element to conclude a property of class LangStringNameType with the element name text, but got the node of type Element with the value  at: assetAdministrationShells/*[0]/displayName/*[0]

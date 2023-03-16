@@ -1,0 +1,4 @@
+submodels[0].submodelElements[0].value: Invariant violated:
+Constraint AASd-121: For References the value of Key/type of the first key of Reference/keys shall be one of GloballyIdentifiables.;
+submodels[0].submodelElements[0].value: Invariant violated:
+Constraint AASd-123: For model references the value of Key/type of the first key of Reference/keys shall be one of AAS identifiables.

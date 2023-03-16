@@ -1,0 +1,37 @@
+name: Doc
+
+on:
+  push:
+    branches:
+      - main
+      - mristin/Fix-docfx-not-rendering-API
+
+jobs:
+  Generate-doc:
+    # We need to use windows-2019 due to the bug in MSBuild in VS Studio 17.3.3
+    # which is shipped with GitHub's windows-latest image.
+    # See: https://github.com/dotnet/docfx/issues/8097
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Install NET 6
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.201'
+
+      - name: Install Docfx
+        run: nuget install docfx.console -Version 2.59.3
+        working-directory: doc
+
+      - name: Build the solution
+        run: dotnet build src/
+
+      - name: Generate the documentation
+        run: doc/docfx.console.2.59.3/tools/docfx.exe doc/source/docfx.json
+
+      - name: Deploy to gh-pages 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: doc/build

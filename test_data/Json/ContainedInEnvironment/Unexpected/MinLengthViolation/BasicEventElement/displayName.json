@@ -1,0 +1,104 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "submodelElements": [
+        {
+          "category": "something_d7cf2dff",
+          "description": [
+            {
+              "language": "en",
+              "text": "something_be9deae0"
+            }
+          ],
+          "direction": "output",
+          "displayName": [],
+          "embeddedDataSpecifications": [
+            {
+              "dataSpecification": {
+                "keys": [
+                  {
+                    "type": "Submodel",
+                    "value": "urn:another-company15:2bd0986b"
+                  }
+                ],
+                "type": "ModelReference"
+              },
+              "dataSpecificationContent": {
+                "modelType": "DataSpecificationIec61360",
+                "preferredName": [
+                  {
+                    "language": "X-33DQI-g",
+                    "text": "something_7e795ee2"
+                  },
+                  {
+                    "language": "en-UK",
+                    "text": "Something random in English c8512bdf"
+                  }
+                ],
+                "value": "something_4e9c19b7"
+              }
+            }
+          ],
+          "extensions": [
+            {
+              "name": "something_aa1af8b3"
+            }
+          ],
+          "idShort": "PiXO1wyHierj",
+          "lastUpdate": "-3020-08-21T24:00:00.0Z",
+          "maxInterval": "PT130S",
+          "messageBroker": {
+            "keys": [
+              {
+                "type": "Submodel",
+                "value": "urn:another-example03:6701c2eb"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "messageTopic": "something_99f1a7ac",
+          "minInterval": "-P1Y",
+          "modelType": "BasicEventElement",
+          "observed": {
+            "keys": [
+              {
+                "type": "Submodel",
+                "value": "urn:another-example11:3679ef43"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "qualifiers": [
+            {
+              "type": "something_500f973e",
+              "valueType": "xs:long"
+            }
+          ],
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:something00:f4547d0c"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "state": "off",
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "urn:another-example10:42487f5a"
+                }
+              ],
+              "type": "ModelReference"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

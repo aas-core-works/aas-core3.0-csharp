@@ -1,0 +1,64 @@
+{
+  "observableReference": {
+    "keys": [
+      {
+        "type": "Submodel",
+        "value": "urn:something13:06d93ead"
+      }
+    ],
+    "type": "ModelReference"
+  },
+  "observableSemanticId": {
+    "keys": [
+      {
+        "type": "Submodel",
+        "value": "urn:something07:e1da206b"
+      }
+    ],
+    "type": "ModelReference"
+  },
+  "payload": "/TsF2AbyQb1dIa0=",
+  "source": {
+    "keys": [
+      {
+        "type": "Submodel",
+        "value": "urn:some-company15:84fd2b1b"
+      },
+      {
+        "type": "EventElement",
+        "value": "something3a3b97e8"
+      }
+    ],
+    "type": "ModelReference"
+  },
+  "sourceSemanticId": {
+    "keys": [
+      {
+        "type": "Submodel",
+        "value": "urn:example11:21898a8f"
+      }
+    ],
+    "type": "ModelReference"
+  },
+  "subjectId": {
+    "keys": [
+      {
+        "type": "GlobalReference",
+        "value": "urn:an-example13:8b1f0de1"
+      }
+    ],
+    "type": "ExternalReference"
+  },
+  "timeStamp": "2022-04-01T24:00:00-00:00",
+  "topic": [
+    {
+      "keys": [
+        {
+          "type": "GlobalReference",
+          "value": "unexpected instance"
+        }
+      ],
+      "type": "ExternalReference"
+    }
+  ]
+}

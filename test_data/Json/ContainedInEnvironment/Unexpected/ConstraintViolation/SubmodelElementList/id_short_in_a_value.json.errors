@@ -1,0 +1,2 @@
+submodels[0].submodelElements[0]: Invariant violated:
+Constraint AASd-120: idShort of submodel elements being a direct child of a  SubmodelElementList shall not be specified.

@@ -1,0 +1,10 @@
+<!-- Run settings for the unit tests on Marko Ristin's laptop -->
+<RunSettings>
+  <RunConfiguration>
+      <EnvironmentVariables>
+          <!-- List of environment variables we want to set-->
+          <AAS_CORE_AAS3_0_TESTS_RECORD_MODE>true</AAS_CORE_AAS3_0_TESTS_RECORD_MODE>
+          <AAS_CORE_AAS3_0_TESTS_TEST_DATA_DIR>C:\Users\rist\workspace\aas-core-works\aas-core3.0-csharp\test_data</AAS_CORE_AAS3_0_TESTS_TEST_DATA_DIR>
+      </EnvironmentVariables>
+  </RunConfiguration>
+</RunSettings>

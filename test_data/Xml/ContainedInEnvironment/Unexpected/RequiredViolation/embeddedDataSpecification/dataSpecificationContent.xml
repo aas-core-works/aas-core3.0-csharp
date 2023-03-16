@@ -1,0 +1,24 @@
+<environment xmlns="https://admin-shell.io/aas/3/0">
+	<assetAdministrationShells>
+		<assetAdministrationShell>
+			<id>something_142922d6</id>
+			<embeddedDataSpecifications>
+				<embeddedDataSpecification>
+					<dataSpecification>
+						<type>ExternalReference</type>
+						<keys>
+							<key>
+								<type>GlobalReference</type>
+								<value>urn:some-company06:e9f47be2</value>
+							</key>
+						</keys>
+					</dataSpecification>
+				</embeddedDataSpecification>
+			</embeddedDataSpecifications>
+			<assetInformation>
+				<assetKind>NotApplicable</assetKind>
+				<globalAssetId>something_eea66fa1</globalAssetId>
+			</assetInformation>
+		</assetAdministrationShell>
+	</assetAdministrationShells>
+</environment>

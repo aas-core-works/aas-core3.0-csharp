@@ -1,0 +1,1 @@
+Expected a JsonValue, but got System.Text.Json.Nodes.JsonArray at: submodels[0].submodelElements[0].orderRelevant

@@ -1,0 +1,12 @@
+<eventPayload xmlns="https://admin-shell.io/aas/3/0">
+	<observableReference>
+		<type>ModelReference</type>
+		<keys>
+			<key>
+				<type>Submodel</type>
+				<value>urn:something13:06d93ead</value>
+			</key>
+		</keys>
+	</observableReference>
+	<timeStamp>2022-04-01T24:00:00-00:00</timeStamp>
+</eventPayload>

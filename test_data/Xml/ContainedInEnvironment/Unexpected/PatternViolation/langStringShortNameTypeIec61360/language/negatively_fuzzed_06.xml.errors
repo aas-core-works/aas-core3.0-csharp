@@ -1,0 +1,2 @@
+assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent.shortName[0].language: Invariant violated:
+The value must represent a value language tag conformant to BCP 47.

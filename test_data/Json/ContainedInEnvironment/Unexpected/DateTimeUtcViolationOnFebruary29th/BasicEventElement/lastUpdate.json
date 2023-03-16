@@ -1,0 +1,26 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "submodelElements": [
+        {
+          "direction": "output",
+          "idShort": "something3fdd3eb4",
+          "lastUpdate": "2022-02-29T12:13:14Z",
+          "modelType": "BasicEventElement",
+          "observed": {
+            "keys": [
+              {
+                "type": "Submodel",
+                "value": "urn:another-example11:3679ef43"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "state": "off"
+        }
+      ]
+    }
+  ]
+}

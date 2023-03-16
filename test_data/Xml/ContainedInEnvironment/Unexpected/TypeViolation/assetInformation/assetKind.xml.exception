@@ -1,0 +1,2 @@
+The property AssetKind of an instance of class AssetInformation could not be de-serialized from an unexpected enumeration literal: 
+					 at: assetAdministrationShells/*[0]/assetInformation/assetKind

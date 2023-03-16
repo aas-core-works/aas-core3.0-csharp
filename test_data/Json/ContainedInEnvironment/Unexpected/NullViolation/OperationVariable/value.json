@@ -1,0 +1,19 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "submodelElements": [
+        {
+          "idShort": "something3fdd3eb4",
+          "inputVariables": [
+            {
+              "value": null
+            }
+          ],
+          "modelType": "Operation"
+        }
+      ]
+    }
+  ]
+}

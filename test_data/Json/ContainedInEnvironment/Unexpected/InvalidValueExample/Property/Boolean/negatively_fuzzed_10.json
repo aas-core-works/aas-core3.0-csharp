@@ -1,0 +1,16 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "submodelElements": [
+        {
+          "idShort": "something3fdd3eb4",
+          "modelType": "Property",
+          "value": "\uda6b\ude0fza\ud89a\udcbb\u0089",
+          "valueType": "xs:boolean"
+        }
+      ]
+    }
+  ]
+}

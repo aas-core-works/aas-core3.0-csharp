@@ -1,0 +1,17 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "submodelElements": [
+        {
+          "idShort": "something3fdd3eb4",
+          "max": "some free form text",
+          "min": "some free form text",
+          "modelType": "Range",
+          "valueType": "xs:time"
+        }
+      ]
+    }
+  ]
+}

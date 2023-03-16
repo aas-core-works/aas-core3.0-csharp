@@ -1,0 +1,35 @@
+<environment xmlns="https://admin-shell.io/aas/3/0">
+	<submodels>
+		<submodel>
+			<id>something_48c66017</id>
+			<kind>Template</kind>
+			<qualifiers>
+				<qualifier>
+					<semanticId>
+						<type>ModelReference</type>
+						<keys>
+							<key>
+								<type>Submodel</type>
+								<value>urn:example07:14a4e86f</value>
+							</key>
+						</keys>
+					</semanticId>
+					<supplementalSemanticIds>Unexpected string value</supplementalSemanticIds>
+					<kind>TemplateQualifier</kind>
+					<type>something_5964ab43</type>
+					<valueType>xs:integer</valueType>
+					<value>001</value>
+					<valueId>
+						<type>ModelReference</type>
+						<keys>
+							<key>
+								<type>Submodel</type>
+								<value>urn:yet-another-company17:9dd54b75</value>
+							</key>
+						</keys>
+					</valueId>
+				</qualifier>
+			</qualifiers>
+		</submodel>
+	</submodels>
+</environment>

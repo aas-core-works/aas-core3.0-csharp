@@ -1,0 +1,2 @@
+assetAdministrationShells[0].derivedFrom.keys[0].value: Invariant violated:
+Identifier shall have a maximum length of 2000 characters.

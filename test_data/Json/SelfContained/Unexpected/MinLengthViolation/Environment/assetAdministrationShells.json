@@ -1,0 +1,15 @@
+{
+  "assetAdministrationShells": [],
+  "conceptDescriptions": [
+    {
+      "id": "something_ab025d0d",
+      "modelType": "ConceptDescription"
+    }
+  ],
+  "submodels": [
+    {
+      "id": "something_1e53dcdd",
+      "modelType": "Submodel"
+    }
+  ]
+}

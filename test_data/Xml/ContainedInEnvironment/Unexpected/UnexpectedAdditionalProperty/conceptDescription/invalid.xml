@@ -1,0 +1,8 @@
+<environment xmlns="https://admin-shell.io/aas/3/0">
+	<conceptDescriptions>
+		<conceptDescription>
+			<id>something_8ccad77f</id>
+			<unexpectedAdditionalProperty>INVALID</unexpectedAdditionalProperty>
+		</conceptDescription>
+	</conceptDescriptions>
+</environment>

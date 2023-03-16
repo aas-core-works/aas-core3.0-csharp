@@ -1,0 +1,17 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "submodelElements": [
+        {
+          "idShort": "something3fdd3eb4",
+          "max": "\ua72c\u5000\uda92\udff8\u00bd\u00bc\u0000\u00ec\t\u00ba;\u00cf\ud9d1\udfb7w\u0097\uda83\uddd9D\ud855\ude4c\u00ba|",
+          "min": "\ua72c\u5000\uda92\udff8\u00bd\u00bc\u0000\u00ec\t\u00ba;\u00cf\ud9d1\udfb7w\u0097\uda83\uddd9D\ud855\ude4c\u00ba|",
+          "modelType": "Range",
+          "valueType": "xs:anyURI"
+        }
+      ]
+    }
+  ]
+}

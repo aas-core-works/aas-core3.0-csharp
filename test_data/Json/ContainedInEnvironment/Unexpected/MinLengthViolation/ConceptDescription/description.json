@@ -1,0 +1,61 @@
+{
+  "conceptDescriptions": [
+    {
+      "administration": {},
+      "category": "something_07a45fb3",
+      "description": [],
+      "displayName": [
+        {
+          "language": "x-Sw4u3ZDO-nJLabnE",
+          "text": "something_c7c0c4c8"
+        }
+      ],
+      "embeddedDataSpecifications": [
+        {
+          "dataSpecification": {
+            "keys": [
+              {
+                "type": "Submodel",
+                "value": "urn:example14:c4971d26"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "dataSpecificationContent": {
+            "modelType": "DataSpecificationIec61360",
+            "preferredName": [
+              {
+                "language": "de-CH",
+                "text": "something_34113ec1"
+              },
+              {
+                "language": "en-UK",
+                "text": "Something random in English 19945c14"
+              }
+            ],
+            "value": "something_a864dcb4"
+          }
+        }
+      ],
+      "extensions": [
+        {
+          "name": "something_4b532e77"
+        }
+      ],
+      "id": "something_8ccad77f",
+      "idShort": "fiZ",
+      "isCaseOf": [
+        {
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "urn:some-company09:4fffee11"
+            }
+          ],
+          "type": "ExternalReference"
+        }
+      ],
+      "modelType": "ConceptDescription"
+    }
+  ]
+}

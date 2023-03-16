@@ -1,0 +1,98 @@
+{
+  "submodels": [
+    {
+      "id": "something_48c66017",
+      "modelType": "Submodel",
+      "submodelElements": [
+        {
+          "category": "something_d7cf2dff",
+          "description": [
+            {
+              "language": "en",
+              "text": "something_be9deae0"
+            }
+          ],
+          "displayName": [],
+          "embeddedDataSpecifications": [
+            {
+              "dataSpecification": {
+                "keys": [
+                  {
+                    "type": "Submodel",
+                    "value": "urn:another-company15:2bd0986b"
+                  }
+                ],
+                "type": "ModelReference"
+              },
+              "dataSpecificationContent": {
+                "modelType": "DataSpecificationIec61360",
+                "preferredName": [
+                  {
+                    "language": "X-33DQI-g",
+                    "text": "something_7e795ee2"
+                  },
+                  {
+                    "language": "en-UK",
+                    "text": "Something random in English c8512bdf"
+                  }
+                ],
+                "value": "something_4e9c19b7"
+              }
+            }
+          ],
+          "extensions": [
+            {
+              "name": "something_aa1af8b3"
+            }
+          ],
+          "first": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:another-company01:f390f801"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "PiXO1wyHierj",
+          "modelType": "RelationshipElement",
+          "qualifiers": [
+            {
+              "type": "something_500f973e",
+              "valueType": "xs:long"
+            }
+          ],
+          "second": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:an-example05:b7bf2725"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "urn:something00:f4547d0c"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "urn:another-example10:42487f5a"
+                }
+              ],
+              "type": "ModelReference"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
