@@ -1,4 +1,0 @@
-assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent: Invariant violated:
-Preferred name must have at least one item;
-assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent: Invariant violated:
-Constraint AASc-002: preferred name shall be provided at least in English.

@@ -1,0 +1,3546 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Xmlization.Deserialize
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Xmlization.Deserialize
+   ">
+    <meta name="generator" content="docfx 2.59.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/aas-core-csharp-logo-small.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AasCore.Aas3_0.Xmlization.Deserialize">
+  
+  
+  <h1 id="AasCore_Aas3_0_Xmlization_Deserialize" data-uid="AasCore.Aas3_0.Xmlization.Deserialize" class="text-break">Class Xmlization.Deserialize
+  </h1>
+  <div class="markdown level0 summary"><p>Deserialize instances of meta-model classes from XML.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Xmlization.Deserialize</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="AasCore.Aas3_0.html">AasCore.Aas3_0</a></h6>
+  <h6><strong>Assembly</strong>: AasCore.Aas3_0.dll</h6>
+  <h5 id="AasCore_Aas3_0_Xmlization_Deserialize_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class Deserialize</code></pre>
+  </div>
+  <h5 id="AasCore_Aas3_0_Xmlization_Deserialize_examples"><strong>Examples</strong></h5>
+  <p>Here is an example how to parse an instance of class IHasSemantics:</p>
+<pre><code>var reader = new System.Xml.XmlReader(/* some arguments */);
+Aas.IHasSemantics anInstance = Deserialize.IHasSemanticsFrom(
+    reader);</code></pre>
+
+  <p>If the elements live in a namespace, you have to supply it. For example:</p>
+<pre><code>var reader = new System.Xml.XmlReader(/* some arguments */);
+Aas.IHasSemantics anInstance = Deserialize.IHasSemanticsFrom(
+    reader,
+    &quot;http://www.example.com/5/12&quot;);</code></pre>
+
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_AdministrativeInformationFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.AdministrativeInformationFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19725">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_AdministrativeInformationFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.AdministrativeInformationFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_AdministrativeInformationFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.AdministrativeInformationFrom(System.Xml.XmlReader)">AdministrativeInformationFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of AdministrativeInformation from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AdministrativeInformation AdministrativeInformationFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.AdministrativeInformation.html">AdministrativeInformation</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of AdministrativeInformation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_AnnotatedRelationshipElementFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.AnnotatedRelationshipElementFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20249">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_AnnotatedRelationshipElementFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.AnnotatedRelationshipElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_AnnotatedRelationshipElementFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.AnnotatedRelationshipElementFrom(System.Xml.XmlReader)">AnnotatedRelationshipElementFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of AnnotatedRelationshipElement from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AnnotatedRelationshipElement AnnotatedRelationshipElementFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.AnnotatedRelationshipElement.html">AnnotatedRelationshipElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of AnnotatedRelationshipElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_AssetAdministrationShellFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.AssetAdministrationShellFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19804">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_AssetAdministrationShellFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.AssetAdministrationShellFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_AssetAdministrationShellFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.AssetAdministrationShellFrom(System.Xml.XmlReader)">AssetAdministrationShellFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of AssetAdministrationShell from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AssetAdministrationShell AssetAdministrationShellFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.AssetAdministrationShell.html">AssetAdministrationShell</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of AssetAdministrationShell.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_AssetInformationFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.AssetInformationFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19830">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_AssetInformationFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.AssetInformationFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_AssetInformationFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.AssetInformationFrom(System.Xml.XmlReader)">AssetInformationFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of AssetInformation from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AssetInformation AssetInformationFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.AssetInformation.html">AssetInformation</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of AssetInformation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_BasicEventElementFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.BasicEventElementFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20354">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_BasicEventElementFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.BasicEventElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_BasicEventElementFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.BasicEventElementFrom(System.Xml.XmlReader)">BasicEventElementFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of BasicEventElement from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BasicEventElement BasicEventElementFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.BasicEventElement.html">BasicEventElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of BasicEventElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_BlobFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.BlobFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20197">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_BlobFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.BlobFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_BlobFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.BlobFrom(System.Xml.XmlReader)">BlobFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Blob from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Blob BlobFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Blob.html">Blob</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of Blob.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_CapabilityFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.CapabilityFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20432">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_CapabilityFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.CapabilityFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_CapabilityFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.CapabilityFrom(System.Xml.XmlReader)">CapabilityFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Capability from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Capability CapabilityFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Capability.html">Capability</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of Capability.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_ConceptDescriptionFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.ConceptDescriptionFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20458">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_ConceptDescriptionFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ConceptDescriptionFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_ConceptDescriptionFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ConceptDescriptionFrom(System.Xml.XmlReader)">ConceptDescriptionFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of ConceptDescription from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ConceptDescription ConceptDescriptionFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ConceptDescription.html">ConceptDescription</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of ConceptDescription.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_DataSpecificationIec61360From_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.DataSpecificationIec61360From(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20850">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_DataSpecificationIec61360From_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.DataSpecificationIec61360From*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_DataSpecificationIec61360From_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.DataSpecificationIec61360From(System.Xml.XmlReader)">DataSpecificationIec61360From(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of DataSpecificationIec61360 from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataSpecificationIec61360 DataSpecificationIec61360From(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.DataSpecificationIec61360.html">DataSpecificationIec61360</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of DataSpecificationIec61360.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_EmbeddedDataSpecificationFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.EmbeddedDataSpecificationFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20668">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_EmbeddedDataSpecificationFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.EmbeddedDataSpecificationFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_EmbeddedDataSpecificationFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.EmbeddedDataSpecificationFrom(System.Xml.XmlReader)">EmbeddedDataSpecificationFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of EmbeddedDataSpecification from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EmbeddedDataSpecification EmbeddedDataSpecificationFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.EmbeddedDataSpecification.html">EmbeddedDataSpecification</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of EmbeddedDataSpecification.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_EntityFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.EntityFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20275">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_EntityFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.EntityFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_EntityFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.EntityFrom(System.Xml.XmlReader)">EntityFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Entity from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Entity EntityFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Entity.html">Entity</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of Entity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_EnvironmentFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.EnvironmentFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20615">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_EnvironmentFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.EnvironmentFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_EnvironmentFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.EnvironmentFrom(System.Xml.XmlReader)">EnvironmentFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Environment from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Environment EnvironmentFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Environment.html">Environment</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of Environment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_EventPayloadFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.EventPayloadFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20301">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_EventPayloadFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.EventPayloadFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_EventPayloadFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.EventPayloadFrom(System.Xml.XmlReader)">EventPayloadFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of EventPayload from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EventPayload EventPayloadFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.EventPayload.html">EventPayload</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of EventPayload.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_ExtensionFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.ExtensionFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19564">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_ExtensionFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ExtensionFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_ExtensionFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ExtensionFrom(System.Xml.XmlReader)">ExtensionFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Extension from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Extension ExtensionFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Extension.html">Extension</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of Extension.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_FileFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.FileFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20223">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_FileFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.FileFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_FileFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.FileFrom(System.Xml.XmlReader)">FileFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of File from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static File FileFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.File.html">File</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of File.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_IAbstractLangStringFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.IAbstractLangStringFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20536">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_IAbstractLangStringFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IAbstractLangStringFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_IAbstractLangStringFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IAbstractLangStringFrom(System.Xml.XmlReader)">IAbstractLangStringFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IAbstractLangString from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IAbstractLangString IAbstractLangStringFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IAbstractLangString.html">IAbstractLangString</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of IAbstractLangString.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_IDataElementFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.IDataElementFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20066">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_IDataElementFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IDataElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_IDataElementFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IDataElementFrom(System.Xml.XmlReader)">IDataElementFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IDataElement from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IDataElement IDataElementFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IDataElement.html">IDataElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of IDataElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_IDataSpecificationContentFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.IDataSpecificationContentFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20641">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_IDataSpecificationContentFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IDataSpecificationContentFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_IDataSpecificationContentFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IDataSpecificationContentFrom(System.Xml.XmlReader)">IDataSpecificationContentFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IDataSpecificationContent from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IDataSpecificationContent IDataSpecificationContentFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IDataSpecificationContent.html">IDataSpecificationContent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of IDataSpecificationContent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_IEventElementFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.IEventElementFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20327">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_IEventElementFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IEventElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_IEventElementFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IEventElementFrom(System.Xml.XmlReader)">IEventElementFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IEventElement from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEventElement IEventElementFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IEventElement.html">IEventElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of IEventElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_IHasDataSpecificationFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.IHasDataSpecificationFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19698">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_IHasDataSpecificationFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IHasDataSpecificationFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_IHasDataSpecificationFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IHasDataSpecificationFrom(System.Xml.XmlReader)">IHasDataSpecificationFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IHasDataSpecification from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IHasDataSpecification IHasDataSpecificationFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IHasDataSpecification.html">IHasDataSpecification</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of IHasDataSpecification.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_IHasExtensionsFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.IHasExtensionsFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19590">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_IHasExtensionsFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IHasExtensionsFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_IHasExtensionsFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IHasExtensionsFrom(System.Xml.XmlReader)">IHasExtensionsFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IHasExtensions from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IHasExtensions IHasExtensionsFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IHasExtensions.html">IHasExtensions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of IHasExtensions.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_IHasKindFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.IHasKindFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19671">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_IHasKindFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IHasKindFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_IHasKindFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IHasKindFrom(System.Xml.XmlReader)">IHasKindFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IHasKind from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IHasKind IHasKindFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IHasKind.html">IHasKind</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of IHasKind.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_IHasSemanticsFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.IHasSemanticsFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19537">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_IHasSemanticsFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IHasSemanticsFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_IHasSemanticsFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IHasSemanticsFrom(System.Xml.XmlReader)">IHasSemanticsFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IHasSemantics from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IHasSemantics IHasSemanticsFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IHasSemantics.html">IHasSemantics</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of IHasSemantics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_IIdentifiableFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.IIdentifiableFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19644">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_IIdentifiableFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IIdentifiableFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_IIdentifiableFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IIdentifiableFrom(System.Xml.XmlReader)">IIdentifiableFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IIdentifiable from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IIdentifiable IIdentifiableFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IIdentifiable.html">IIdentifiable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of IIdentifiable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_IQualifiableFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.IQualifiableFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19751">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_IQualifiableFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IQualifiableFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_IQualifiableFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IQualifiableFrom(System.Xml.XmlReader)">IQualifiableFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IQualifiable from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IQualifiable IQualifiableFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IQualifiable.html">IQualifiable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of IQualifiable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_IReferableFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.IReferableFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19617">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_IReferableFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IReferableFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_IReferableFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IReferableFrom(System.Xml.XmlReader)">IReferableFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IReferable from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReferable IReferableFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IReferable.html">IReferable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of IReferable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_IRelationshipElementFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.IRelationshipElementFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19961">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_IRelationshipElementFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IRelationshipElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_IRelationshipElementFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.IRelationshipElementFrom(System.Xml.XmlReader)">IRelationshipElementFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IRelationshipElement from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IRelationshipElement IRelationshipElementFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IRelationshipElement.html">IRelationshipElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of IRelationshipElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_ISubmodelElementFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.ISubmodelElementFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19934">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_ISubmodelElementFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ISubmodelElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_ISubmodelElementFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ISubmodelElementFrom(System.Xml.XmlReader)">ISubmodelElementFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of ISubmodelElement from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ISubmodelElement ISubmodelElementFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ISubmodelElement.html">ISubmodelElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of ISubmodelElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_KeyFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.KeyFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20510">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_KeyFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.KeyFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_KeyFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.KeyFrom(System.Xml.XmlReader)">KeyFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Key from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Key KeyFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Key.html">Key</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of Key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_LangStringDefinitionTypeIec61360From_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.LangStringDefinitionTypeIec61360From(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20824">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_LangStringDefinitionTypeIec61360From_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.LangStringDefinitionTypeIec61360From*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_LangStringDefinitionTypeIec61360From_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.LangStringDefinitionTypeIec61360From(System.Xml.XmlReader)">LangStringDefinitionTypeIec61360From(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of LangStringDefinitionTypeIec61360 from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LangStringDefinitionTypeIec61360 LangStringDefinitionTypeIec61360From(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.LangStringDefinitionTypeIec61360.html">LangStringDefinitionTypeIec61360</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of LangStringDefinitionTypeIec61360.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_LangStringNameTypeFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.LangStringNameTypeFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20563">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_LangStringNameTypeFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.LangStringNameTypeFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_LangStringNameTypeFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.LangStringNameTypeFrom(System.Xml.XmlReader)">LangStringNameTypeFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of LangStringNameType from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LangStringNameType LangStringNameTypeFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.LangStringNameType.html">LangStringNameType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of LangStringNameType.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_LangStringPreferredNameTypeIec61360From_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.LangStringPreferredNameTypeIec61360From(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20772">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_LangStringPreferredNameTypeIec61360From_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.LangStringPreferredNameTypeIec61360From*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_LangStringPreferredNameTypeIec61360From_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.LangStringPreferredNameTypeIec61360From(System.Xml.XmlReader)">LangStringPreferredNameTypeIec61360From(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of LangStringPreferredNameTypeIec61360 from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LangStringPreferredNameTypeIec61360 LangStringPreferredNameTypeIec61360From(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.LangStringPreferredNameTypeIec61360.html">LangStringPreferredNameTypeIec61360</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of LangStringPreferredNameTypeIec61360.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_LangStringShortNameTypeIec61360From_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.LangStringShortNameTypeIec61360From(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20798">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_LangStringShortNameTypeIec61360From_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.LangStringShortNameTypeIec61360From*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_LangStringShortNameTypeIec61360From_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.LangStringShortNameTypeIec61360From(System.Xml.XmlReader)">LangStringShortNameTypeIec61360From(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of LangStringShortNameTypeIec61360 from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LangStringShortNameTypeIec61360 LangStringShortNameTypeIec61360From(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.LangStringShortNameTypeIec61360.html">LangStringShortNameTypeIec61360</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of LangStringShortNameTypeIec61360.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_LangStringTextTypeFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.LangStringTextTypeFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20589">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_LangStringTextTypeFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.LangStringTextTypeFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_LangStringTextTypeFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.LangStringTextTypeFrom(System.Xml.XmlReader)">LangStringTextTypeFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of LangStringTextType from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LangStringTextType LangStringTextTypeFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.LangStringTextType.html">LangStringTextType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of LangStringTextType.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_LevelTypeFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.LevelTypeFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20694">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_LevelTypeFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.LevelTypeFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_LevelTypeFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.LevelTypeFrom(System.Xml.XmlReader)">LevelTypeFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of LevelType from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LevelType LevelTypeFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.LevelType.html">LevelType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of LevelType.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_MultiLanguagePropertyFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.MultiLanguagePropertyFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20119">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_MultiLanguagePropertyFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.MultiLanguagePropertyFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_MultiLanguagePropertyFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.MultiLanguagePropertyFrom(System.Xml.XmlReader)">MultiLanguagePropertyFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of MultiLanguageProperty from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MultiLanguageProperty MultiLanguagePropertyFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.MultiLanguageProperty.html">MultiLanguageProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of MultiLanguageProperty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_OperationFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.OperationFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20380">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_OperationFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.OperationFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_OperationFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.OperationFrom(System.Xml.XmlReader)">OperationFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Operation from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Operation OperationFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Operation.html">Operation</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of Operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_OperationVariableFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.OperationVariableFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20406">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_OperationVariableFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.OperationVariableFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_OperationVariableFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.OperationVariableFrom(System.Xml.XmlReader)">OperationVariableFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of OperationVariable from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static OperationVariable OperationVariableFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.OperationVariable.html">OperationVariable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of OperationVariable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_PropertyFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.PropertyFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20093">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_PropertyFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.PropertyFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_PropertyFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.PropertyFrom(System.Xml.XmlReader)">PropertyFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Property from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Property PropertyFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Property.html">Property</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of Property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_QualifierFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.QualifierFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19778">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_QualifierFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.QualifierFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_QualifierFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.QualifierFrom(System.Xml.XmlReader)">QualifierFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Qualifier from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Qualifier QualifierFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Qualifier.html">Qualifier</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of Qualifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_RangeFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.RangeFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20145">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_RangeFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.RangeFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_RangeFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.RangeFrom(System.Xml.XmlReader)">RangeFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Range from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Range RangeFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Range.html">Range</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of Range.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_ReferenceElementFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.ReferenceElementFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20171">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_ReferenceElementFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ReferenceElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_ReferenceElementFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ReferenceElementFrom(System.Xml.XmlReader)">ReferenceElementFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of ReferenceElement from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReferenceElement ReferenceElementFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ReferenceElement.html">ReferenceElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of ReferenceElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_ReferenceFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.ReferenceFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20484">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_ReferenceFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ReferenceFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_ReferenceFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ReferenceFrom(System.Xml.XmlReader)">ReferenceFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Reference from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Reference ReferenceFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Reference.html">Reference</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of Reference.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_RelationshipElementFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.RelationshipElementFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19988">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_RelationshipElementFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.RelationshipElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_RelationshipElementFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.RelationshipElementFrom(System.Xml.XmlReader)">RelationshipElementFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of RelationshipElement from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static RelationshipElement RelationshipElementFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.RelationshipElement.html">RelationshipElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of RelationshipElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_ResourceFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.ResourceFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19856">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_ResourceFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ResourceFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_ResourceFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ResourceFrom(System.Xml.XmlReader)">ResourceFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Resource from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Resource ResourceFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Resource.html">Resource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of Resource.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_SpecificAssetIdFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.SpecificAssetIdFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19882">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_SpecificAssetIdFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.SpecificAssetIdFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_SpecificAssetIdFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.SpecificAssetIdFrom(System.Xml.XmlReader)">SpecificAssetIdFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of SpecificAssetId from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SpecificAssetId SpecificAssetIdFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.SpecificAssetId.html">SpecificAssetId</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of SpecificAssetId.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_SubmodelElementCollectionFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.SubmodelElementCollectionFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20040">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_SubmodelElementCollectionFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.SubmodelElementCollectionFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_SubmodelElementCollectionFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.SubmodelElementCollectionFrom(System.Xml.XmlReader)">SubmodelElementCollectionFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of SubmodelElementCollection from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SubmodelElementCollection SubmodelElementCollectionFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.SubmodelElementCollection.html">SubmodelElementCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of SubmodelElementCollection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_SubmodelElementListFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.SubmodelElementListFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20014">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_SubmodelElementListFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.SubmodelElementListFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_SubmodelElementListFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.SubmodelElementListFrom(System.Xml.XmlReader)">SubmodelElementListFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of SubmodelElementList from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SubmodelElementList SubmodelElementListFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.SubmodelElementList.html">SubmodelElementList</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of SubmodelElementList.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_SubmodelFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.SubmodelFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19908">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_SubmodelFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.SubmodelFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_SubmodelFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.SubmodelFrom(System.Xml.XmlReader)">SubmodelFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Submodel from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Submodel SubmodelFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Submodel.html">Submodel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of Submodel.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_ValueListFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.ValueListFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20746">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_ValueListFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ValueListFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_ValueListFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ValueListFrom(System.Xml.XmlReader)">ValueListFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of ValueList from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ValueList ValueListFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ValueList.html">ValueList</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of ValueList.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize_ValueReferencePairFrom_System_Xml_XmlReader_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize.ValueReferencePairFrom(System.Xml.XmlReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L20720">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Xmlization_Deserialize_ValueReferencePairFrom_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ValueReferencePairFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Xmlization_Deserialize_ValueReferencePairFrom_System_Xml_XmlReader_" data-uid="AasCore.Aas3_0.Xmlization.Deserialize.ValueReferencePairFrom(System.Xml.XmlReader)">ValueReferencePairFrom(XmlReader)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of ValueReferencePair from <code data-dev-comment-type="paramref" class="paramref">reader</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ValueReferencePair ValueReferencePairFrom(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Xml.XmlReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Initialized XML reader with cursor set to the element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ValueReferencePair.html">ValueReferencePair</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a></td>
+        <td><p>Thrown when the element is not a valid XML
+representation of ValueReferencePair.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Xmlization_Deserialize.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Xmlization.Deserialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/xmlization.cs/#L19527" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Iterate, Copy and Transform </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Iterate, Copy and Transform ">
+    <meta name="generator" content="docfx 2.59.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/aas-core-csharp-logo-small.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="iterate-copy-and-transform">Iterate, Copy and Transform</h1>
+
+<p>The SDK provides various ways how you can loop through the elements of the model, and how these elements can be transformed.
+Each following section will look into one of the approaches.</p>
+<h2 id="overxorempty"><code>OverXOrEmpty</code></h2>
+<p>For all the optional lists, there is a corresponding <code>Over{property name}OrEmpty</code> getter.
+It gives you an <a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=net-6.0">System.Collection.IEnumerable</a>.
+If the property is not set, this getter will give you an empty enumerable.
+Otherwise, it will return the enumerable over the list.</p>
+<p>For example, see <code>OverSubmodelsOrEmpty</code> in <a href="../api/AasCore.Aas3_0.Environment.html#AasCore_Aas3_0_Environment_OverSubmodelsOrEmpty">AasCore.Aas3_0.Environment.OverSubmodelsOrEmpty</a>.</p>
+<h2 id="descendonce-and-descend"><code>DescendOnce</code> and <code>Descend</code></h2>
+<p>If you are writing a simple script, want to use <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/">LINQ</a> and do not care about the performance, the SDK provides two methods in the most general interface <a href="../api/AasCore.Aas3_0.IClass.html">IClass</a>, <code>DescendOnce</code> and <code>Descend</code>, which you can use to loop through the instances.</p>
+<p>Both <code>DescendOnce</code> and <code>Descend</code> iterate over model children of an <a href="../api/AasCore.Aas3_0.IClass.html">IClass</a>.
+<code>DescendOnce</code>, as it names suggests, stops after all the children has been iterated over.
+<code>Descend</code> continues recursively to grand-children <em>etc.</em></p>
+<p>Here is a short example how you can get all the properties from an environment whose ID-short starts with <code>another</code>:</p>
+<pre><code class="lang-cs">using System.Collections.Generic;
+using System.Linq;
+
+using Aas = AasCore.Aas3_0;
+
+public class Program
+{
+    public static void Main()
+    {
+        // Prepare the environment
+        var someProperty = new Aas.Property(
+            Aas.DataTypeDefXsd.Boolean)
+        {
+            IdShort = &quot;someProperty&quot;,
+        };
+
+        var anotherProperty = new Aas.Property(
+            Aas.DataTypeDefXsd.Boolean)
+        {
+            IdShort = &quot;anotherProperty&quot;
+        };
+
+        var yetAnotherProperty = new Aas.Property(
+            Aas.DataTypeDefXsd.Boolean)
+        {
+            IdShort = &quot;yetAnotherProperty&quot;
+        };
+
+        var submodel = new Aas.Submodel(
+            &quot;some-unique-global-identifier&quot;)
+        {
+            SubmodelElements = new List&lt;Aas.ISubmodelElement&gt;()
+            {
+                someProperty,
+                anotherProperty,
+                yetAnotherProperty
+            }
+        };
+
+        var environment = new Aas.Environment()
+        {
+            Submodels = new List&lt;Aas.ISubmodel&gt;()
+            {
+                submodel
+            }
+        };
+
+        // Iterate over all properties which have &quot;another&quot;
+        // in the ID-short
+        foreach (
+            var prop in environment
+                 .Descend()
+                 .OfType&lt;Aas.IProperty&gt;()
+                 .Where(
+                     prop =&gt; (
+                       prop.IdShort != null
+                       &amp;&amp; prop.IdShort.ToLower().Contains(&quot;another&quot;)
+                     )
+                 )
+        )
+        {
+            System.Console.WriteLine(prop.IdShort);
+        }
+
+        // Outputs:
+        // anotherProperty
+        // yetAnotherProperty
+    }
+}
+</code></pre>
+<p>Iteration with <code>Descend</code> and <code>DescendOnce</code> works well if the performance is irrelevant.
+However, if the performance matters, this is not a good approach.
+First, all the children model elements will be visited (even though you need only a small subset).
+Second, the call to LINQ's <code>OfType&lt;Aas.IProperty&gt;</code> needs to perform a type cast for every child.</p>
+<p>Let's see in the next section how we could use a more efficient, but also a more complex approach.</p>
+<h2 id="visitor">Visitor</h2>
+<p><a href="https://en.wikipedia.org/wiki/Visitor_pattern">Visitor pattern</a> is a common design pattern in software engineering.
+We will not explain the details of the pattern here as you can read about in the ample literature in books or in Internet.</p>
+<p>The cornerstone of the visitor pattern in <a href="https://en.wikipedia.org/wiki/Double_dispatch">double dispatch</a>: instead of casting to the desired type during the iteration, we add a method <code>Accept</code> to <a href="../api/AasCore.Aas3_0.IClass.html">IClass</a>, whose implementations then directly dispatch to the appropriate method.</p>
+<p>This allows us to spare casts and directly dispatch the execution.
+The SDK already implements <code>Accept</code> methods, so you only have to implement the visitor.</p>
+<p>The visitor class has a visiting method for each class of the meta-model.
+In the SDK, we provide different flavors of the visitor abstract classes which you can readily implement:</p>
+<ul>
+<li><a href="../api/AasCore.Aas3_0.Visitation.AbstractVisitor.html">AbstractVisitor</a> which needs all the visit methods to be implemented,</li>
+<li><a href="../api/AasCore.Aas3_0.Visitation.VisitorThrough.html">VisitorThrough</a> which visits all the elements and does nothing, and</li>
+<li><a href="../api/AasCore.Aas3_0.Visitation.AbstractVisitorWithContext-1.html">AbstractVisitorWithContext</a> which propagates a context object along the iteration.</li>
+</ul>
+<p>Let us re-write the above example related to <code>Descend</code> method with a visitor pattern:</p>
+<pre><code class="lang-cs">using System.Collections.Generic;
+
+using Aas = AasCore.Aas3_0;
+using AasVisitation = AasCore.Aas3_0.Visitation;
+
+class Visitor : AasVisitation.VisitorThrough
+{
+    public override void Visit(Aas.Property prop)
+    {
+        if (prop.IdShort.ToLower().Contains(&quot;another&quot;))
+        {
+            System.Console.WriteLine(prop.IdShort);
+        }
+    }
+};
+
+public class Program
+{
+    public static void Main()
+    {
+        // Prepare the environment
+        var someProperty = new Aas.Property(
+            Aas.DataTypeDefXsd.Boolean)
+        {
+            IdShort = &quot;someProperty&quot;,
+        };
+
+        var anotherProperty = new Aas.Property(
+            Aas.DataTypeDefXsd.Boolean)
+        {
+            IdShort = &quot;anotherProperty&quot;
+        };
+
+        var yetAnotherProperty = new Aas.Property(
+            Aas.DataTypeDefXsd.Boolean)
+        {
+            IdShort = &quot;yetAnotherProperty&quot;
+        };
+
+        var submodel = new Aas.Submodel(
+            &quot;some-unique-global-identifier&quot;)
+        {
+            SubmodelElements = new List&lt;Aas.ISubmodelElement&gt;()
+            {
+                someProperty,
+                anotherProperty,
+                yetAnotherProperty
+            }
+        };
+
+        var environment = new Aas.Environment()
+        {
+            Submodels = new List&lt;Aas.ISubmodel&gt;()
+            {
+                submodel
+            }
+        };
+
+        // Iterate over all properties which have &quot;another&quot;
+        // in the ID-short
+        var visitor = new Visitor();
+        visitor.Visit(environment);
+
+        // Outputs:
+        // anotherProperty
+        // yetAnotherProperty
+    }
+}
+</code></pre>
+<p>There are important differences to iteration with <code>Descend</code>:</p>
+<ul>
+<li>Due to <a href="https://en.wikipedia.org/wiki/Double_dispatch">double dispatch</a>, we spare a cast.
+This is usually more efficient.</li>
+<li>We can handle multiple types of the elements, not only a single type (<code>Property</code> in this case).
+This can allow for better readability of the code as well as better performance if two or more element types need to be considered in <em>one</em> iteration.</li>
+<li>The iteration logic in <code>Descend</code> lives very close to where it is executed.
+In contrast, the visitor needs to be defined as a separate class.
+While sometimes faster, writing the visitor makes the code less readable.</li>
+</ul>
+<h2 id="descend-or-visitor">Descend or Visitor?</h2>
+<p>In general, people familiar with the <a href="https://en.wikipedia.org/wiki/Visitor_pattern">visitor pattern</a> and object-oriented programming will prefer, obviously, visitor class.
+People who like LINQ will prefer <code>Descend</code>.</p>
+<p>It is difficult to discuss different tastes, so you should probably come up with explicit code guidelines in your code and stick to them.</p>
+<p>Make sure you always profile before you sacrifice readability and blindly apply one or the other approach for performance reasons.</p>
+<h2 id="shallow-and-deep-copies">Shallow and Deep Copies</h2>
+<p>In the static class [Copying], we provide methods for making shallow and deep copies of an instance of AAS model.</p>
+<p>In both manners of copying, primitive values (such as <code>bool</code>, <code>string</code> <em>etc.</em>) are copied by value.</p>
+<p>Shallow copying copies all the non-primitive values by reference.
+The lists are also copied by reference, and no new lists are created in the copy.</p>
+<p>Deep copying makes a deep copy recursively, where we make a deep copy of all the underlying non-primitive values.</p>
+<p>Here is an example of how you can make a shallow and a deep copy of an [Environment]:</p>
+<pre><code class="lang-cs">using System.Collections.Generic;
+using System.Linq;
+
+using Aas = AasCore.Aas3_0;
+
+public class Program
+{
+    public static void Main()
+    {
+          // Prepare the environment
+          var someProperty = new Aas.Property(
+              Aas.DataTypeDefXsd.Boolean)
+          {
+              IdShort = &quot;someProperty&quot;,
+          };
+
+          var submodel = new Aas.Submodel(
+              &quot;some-unique-global-identifier&quot;)
+          {
+              SubmodelElements = new List&lt;Aas.ISubmodelElement&gt;()
+              {
+                  someProperty
+              }
+          };
+
+          var environment = new Aas.Environment()
+          {
+              Submodels = new List&lt;Aas.ISubmodel&gt;()
+              {
+                  submodel
+              }
+          };
+
+          // Make a deep copy
+          var deepCopy = Aas.Copying.Deep(environment);
+  
+          // Make a shallow copy
+          var shallowCopy = Aas.Copying.Shallow(environment);
+  
+          // Changes to the property affect only the shallow copy,
+          // but not the deep one
+          environment.Submodels[0].SubmodelElements![0].IdShort = &quot;changed&quot;;
+
+          System.Console.WriteLine(
+              shallowCopy.Submodels![0].SubmodelElements![0].IdShort);
+  
+          System.Console.WriteLine(
+              deepCopy.Submodels![0].SubmodelElements![0].IdShort);
+              
+          // Output:
+          // changed
+          // someProperty
+    }
+}
+</code></pre>
+<h2 id="transformer">Transformer</h2>
+<p>A transformer pattern is an analogous to <a href="https://en.wikipedia.org/wiki/Visitor_pattern">visitor pattern</a>, where we &quot;transform&quot; the visited element into some other form (be it a string or a different object).
+It is very common in compiler design, where the abstract syntax tree is transformed into a different representation.</p>
+<p>The SDK provides two different flavors of a transformer:</p>
+<ul>
+<li><a href="../api/AasCore.Aas3_0.Visitation.AbstractTransformer-1.html">AbstractTransformer</a>, where the model element is directly transformed into something, and</li>
+<li><a href="../api/AasCore.Aas3_0.Visitation.AbstractTransformerWithContext-2.html">AbstractTransformerWithContext</a>, which propagates the context object along the transformations.</li>
+</ul>
+<p>Since we need to provide a transformation method for each class of the meta-model, we deliberately omit an example due to the length of the code.
+If you need a practical example, see the source code of the <a href="../api/AasCore.Aas3_0.Verification.html">Verification</a> static class, where we implemented the verification logic using an <a href="../api/AasCore.Aas3_0.Visitation.AbstractTransformer-1.html">AbstractTransformer</a>.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/doc/source/getting_started/iterate_copy_and_transform.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

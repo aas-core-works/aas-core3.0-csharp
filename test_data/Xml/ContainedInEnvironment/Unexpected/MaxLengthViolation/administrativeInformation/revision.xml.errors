@@ -1,4 +1,0 @@
-assetAdministrationShells[0].administration.revision: Invariant violated:
-Revision type shall match the revision pattern;
-assetAdministrationShells[0].administration.revision: Invariant violated:
-RevisionType shall have a maximum length of 4 characters.

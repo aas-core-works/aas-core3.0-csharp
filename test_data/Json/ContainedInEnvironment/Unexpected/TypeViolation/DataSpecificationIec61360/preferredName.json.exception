@@ -1,1 +1,0 @@
-Expected a JsonArray, but got System.Text.Json.Nodes.JsonValueTrimmable`1[System.Text.Json.JsonElement] at: assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent.preferredName

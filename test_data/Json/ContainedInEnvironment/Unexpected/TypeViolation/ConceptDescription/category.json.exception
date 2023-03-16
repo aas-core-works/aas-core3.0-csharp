@@ -1,1 +1,0 @@
-Expected a JsonValue, but got System.Text.Json.Nodes.JsonArray at: conceptDescriptions[0].category

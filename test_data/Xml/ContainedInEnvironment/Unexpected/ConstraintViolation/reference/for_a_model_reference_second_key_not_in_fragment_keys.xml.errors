@@ -1,2 +1,0 @@
-submodels[0].submodelElements[0].value: Invariant violated:
-Constraint AASd-125: For model references with more than one key in Reference/keys the value of Key/type of each of the keys following the first key of Reference/keys shall be one of Fragment keys.

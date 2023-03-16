@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IReference
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IReference
+   ">
+    <meta name="generator" content="docfx 2.59.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/aas-core-csharp-logo-small.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AasCore.Aas3_0.IReference">
+  
+  
+  <h1 id="AasCore_Aas3_0_IReference" data-uid="AasCore.Aas3_0.IReference" class="text-break">Interface IReference
+  </h1>
+  <div class="markdown level0 summary"><p>Reference to either a model element of the same or another AAS or to an external
+entity.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="AasCore.Aas3_0.IClass.html#AasCore_Aas3_0_IClass_DescendOnce">IClass.DescendOnce()</a>
+    </div>
+    <div>
+      <a class="xref" href="AasCore.Aas3_0.IClass.html#AasCore_Aas3_0_IClass_Descend">IClass.Descend()</a>
+    </div>
+    <div>
+      <a class="xref" href="AasCore.Aas3_0.IClass.html#AasCore_Aas3_0_IClass_Accept_AasCore_Aas3_0_Visitation_IVisitor_">IClass.Accept(Visitation.IVisitor)</a>
+    </div>
+    <div>
+      <a class="xref" href="AasCore.Aas3_0.IClass.html#AasCore_Aas3_0_IClass_Accept__1_AasCore_Aas3_0_Visitation_IVisitorWithContext___0____0_">IClass.Accept&lt;TContext&gt;(Visitation.IVisitorWithContext&lt;TContext&gt;, TContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="AasCore.Aas3_0.IClass.html#AasCore_Aas3_0_IClass_Transform__1_AasCore_Aas3_0_Visitation_ITransformer___0__">IClass.Transform&lt;T&gt;(Visitation.ITransformer&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="AasCore.Aas3_0.IClass.html#AasCore_Aas3_0_IClass_Transform__2_AasCore_Aas3_0_Visitation_ITransformerWithContext___0___1____0_">IClass.Transform&lt;TContext, T&gt;(Visitation.ITransformerWithContext&lt;TContext, T&gt;, TContext)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="AasCore.Aas3_0.html">AasCore.Aas3_0</a></h6>
+  <h6><strong>Assembly</strong>: AasCore.Aas3_0.dll</h6>
+  <h5 id="AasCore_Aas3_0_IReference_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IReference : IClass</code></pre>
+  </div>
+  <h5 id="AasCore_Aas3_0_IReference_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+A reference is an ordered list of keys.
+</p>
+<p>
+A model reference is an ordered list of keys, each key referencing an element. The
+complete list of keys may for example be concatenated to a path that then gives
+unique access to an element.
+</p>
+<p>
+An external reference is a reference to an external entity.
+</p>
+<p>
+Constraints:
+</p>
+<ul>
+<li>
+  Constraint AASd-121:
+  For <a class="xref" href="AasCore.Aas3_0.Reference.html">Reference</a>&apos;s the value of <a class="xref" href="AasCore.Aas3_0.Key.html#AasCore_Aas3_0_Key_Type">Type</a> of the first key of &quot;
+<a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Keys">Keys</a> shall be one of <a class="xref" href="AasCore.Aas3_0.Constants.html#AasCore_Aas3_0_Constants_GloballyIdentifiables">GloballyIdentifiables</a>.
+</li>
+<li>
+  Constraint AASd-122:
+  For external references, i.e. <a class="xref" href="AasCore.Aas3_0.Reference.html">Reference</a>&apos;s with
+<a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Type">Type</a> = <a class="xref" href="AasCore.Aas3_0.ReferenceTypes.html#AasCore_Aas3_0_ReferenceTypes_ExternalReference">ExternalReference</a>, the value
+of <a class="xref" href="AasCore.Aas3_0.Key.html#AasCore_Aas3_0_Key_Type">Type</a> of the first key of <a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Keys">Keys</a> shall be one of
+<a class="xref" href="AasCore.Aas3_0.Constants.html#AasCore_Aas3_0_Constants_GenericGloballyIdentifiables">GenericGloballyIdentifiables</a>.
+</li>
+<li>
+  Constraint AASd-123:
+  For model references, i.e. <a class="xref" href="AasCore.Aas3_0.Reference.html">Reference</a>&apos;s with
+<a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Type">Type</a> = <a class="xref" href="AasCore.Aas3_0.ReferenceTypes.html#AasCore_Aas3_0_ReferenceTypes_ModelReference">ModelReference</a>, the value
+of <a class="xref" href="AasCore.Aas3_0.Key.html#AasCore_Aas3_0_Key_Type">Type</a> of the first key of <a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Keys">Keys</a> shall be one of
+<a class="xref" href="AasCore.Aas3_0.Constants.html#AasCore_Aas3_0_Constants_AasIdentifiables">AasIdentifiables</a>.
+</li>
+<li>
+  Constraint AASd-124:
+  For external references, i.e. <a class="xref" href="AasCore.Aas3_0.Reference.html">Reference</a>&apos;s with
+<a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Type">Type</a> = <a class="xref" href="AasCore.Aas3_0.ReferenceTypes.html#AasCore_Aas3_0_ReferenceTypes_ExternalReference">ExternalReference</a>, the last
+key of <a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Keys">Keys</a> shall be either one of
+<a class="xref" href="AasCore.Aas3_0.Constants.html#AasCore_Aas3_0_Constants_GenericGloballyIdentifiables">GenericGloballyIdentifiables</a> or one of
+<a class="xref" href="AasCore.Aas3_0.Constants.html#AasCore_Aas3_0_Constants_GenericFragmentKeys">GenericFragmentKeys</a>.
+</li>
+<li>
+<p>
+Constraint AASd-125:
+For model references, i.e. <a class="xref" href="AasCore.Aas3_0.Reference.html">Reference</a>&apos;s with
+<a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Type">Type</a> = <a class="xref" href="AasCore.Aas3_0.ReferenceTypes.html#AasCore_Aas3_0_ReferenceTypes_ModelReference">ModelReference</a>, with more
+than one key in <a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Keys">Keys</a> the value of <a class="xref" href="AasCore.Aas3_0.Key.html#AasCore_Aas3_0_Key_Type">Type</a>
+of each of the keys following the first
+key of <a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Keys">Keys</a> shall be one of <a class="xref" href="AasCore.Aas3_0.Constants.html#AasCore_Aas3_0_Constants_FragmentKeys">FragmentKeys</a>.
+</p>
+<p>
+Constraint AASd-125 ensures that the shortest path is used.
+</p>
+</li>
+<li>
+  Constraint AASd-126:
+  For model references, i.e. <a class="xref" href="AasCore.Aas3_0.Reference.html">Reference</a>&apos;s with
+<a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Type">Type</a> = <a class="xref" href="AasCore.Aas3_0.ReferenceTypes.html#AasCore_Aas3_0_ReferenceTypes_ModelReference">ModelReference</a>, with more
+than one key in <a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Keys">Keys</a> the value of <a class="xref" href="AasCore.Aas3_0.Key.html#AasCore_Aas3_0_Key_Type">Type</a>
+of the last key in the reference key chain may be
+one of <a class="xref" href="AasCore.Aas3_0.Constants.html#AasCore_Aas3_0_Constants_GenericFragmentKeys">GenericFragmentKeys</a> or no key at all
+shall have a value out of <a class="xref" href="AasCore.Aas3_0.Constants.html#AasCore_Aas3_0_Constants_GenericFragmentKeys">GenericFragmentKeys</a>.
+</li>
+<li>
+<p>
+Constraint AASd-127:
+For model references, i.e. <a class="xref" href="AasCore.Aas3_0.Reference.html">Reference</a>&apos;s with
+<a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Type">Type</a> = <a class="xref" href="AasCore.Aas3_0.ReferenceTypes.html#AasCore_Aas3_0_ReferenceTypes_ModelReference">ModelReference</a>, with more
+than one key in <a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Keys">Keys</a> a key with <a class="xref" href="AasCore.Aas3_0.Key.html#AasCore_Aas3_0_Key_Type">Type</a>
+<a class="xref" href="AasCore.Aas3_0.KeyTypes.html#AasCore_Aas3_0_KeyTypes_FragmentReference">FragmentReference</a> shall be preceded by a key with
+<a class="xref" href="AasCore.Aas3_0.Key.html#AasCore_Aas3_0_Key_Type">Type</a> <a class="xref" href="AasCore.Aas3_0.KeyTypes.html#AasCore_Aas3_0_KeyTypes_File">File</a> or <a class="xref" href="AasCore.Aas3_0.KeyTypes.html#AasCore_Aas3_0_KeyTypes_Blob">Blob</a>. All other
+AAS fragments, i.e. <a class="xref" href="AasCore.Aas3_0.Key.html#AasCore_Aas3_0_Key_Type">Type</a> values
+out of <a class="xref" href="AasCore.Aas3_0.Constants.html#AasCore_Aas3_0_Constants_AasSubmodelElementsAsKeys">AasSubmodelElementsAsKeys</a>, do not support fragments.
+</p>
+<p>
+Which kind of fragments are supported depends on the content type and the
+specification of allowed fragment identifiers for the corresponding resource
+being referenced via the reference.
+</p>
+</li>
+<li>
+  Constraint AASd-128:
+  For model references, i.e. <a class="xref" href="AasCore.Aas3_0.Reference.html">Reference</a>&apos;s with
+<a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Type">Type</a> = <a class="xref" href="AasCore.Aas3_0.ReferenceTypes.html#AasCore_Aas3_0_ReferenceTypes_ModelReference">ModelReference</a>, the
+<a class="xref" href="AasCore.Aas3_0.Key.html#AasCore_Aas3_0_Key_Value">Value</a> of a <a class="xref" href="AasCore.Aas3_0.Key.html">Key</a> preceded by a <a class="xref" href="AasCore.Aas3_0.Key.html">Key</a> with
+<a class="xref" href="AasCore.Aas3_0.Key.html#AasCore_Aas3_0_Key_Type">Type</a> = <a class="xref" href="AasCore.Aas3_0.KeyTypes.html#AasCore_Aas3_0_KeyTypes_SubmodelElementList">SubmodelElementList</a> is an integer
+number denoting the position in the array of the submodel element list.
+</li>
+</ul>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_IReference_Keys.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.IReference.Keys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10755">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_IReference_Keys_" data-uid="AasCore.Aas3_0.IReference.Keys*"></a>
+  <h4 id="AasCore_Aas3_0_IReference_Keys" data-uid="AasCore.Aas3_0.IReference.Keys">Keys</h4>
+  <div class="markdown level1 summary"><p>Unique references in their name space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;IKey&gt; Keys { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="AasCore.Aas3_0.IKey.html">IKey</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_IReference_ReferredSemanticId.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.IReference.ReferredSemanticId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10750">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_IReference_ReferredSemanticId_" data-uid="AasCore.Aas3_0.IReference.ReferredSemanticId*"></a>
+  <h4 id="AasCore_Aas3_0_IReference_ReferredSemanticId" data-uid="AasCore.Aas3_0.IReference.ReferredSemanticId">ReferredSemanticId</h4>
+  <div class="markdown level1 summary"><p><a class="xref" href="AasCore.Aas3_0.IHasSemantics.html#AasCore_Aas3_0_IHasSemantics_SemanticId">SemanticId</a> of the referenced model element
+(<a class="xref" href="AasCore.Aas3_0.Reference.html#AasCore_Aas3_0_Reference_Type">Type</a> = <a class="xref" href="AasCore.Aas3_0.ReferenceTypes.html#AasCore_Aas3_0_ReferenceTypes_ModelReference">ModelReference</a>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IReference ReferredSemanticId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IReference.html">IReference</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="AasCore_Aas3_0_IReference_ReferredSemanticId_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+For external references there typically is no semantic ID.
+</p>
+<p>
+It is recommended to use a external reference.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_IReference_Type.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.IReference.Type%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10736">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_IReference_Type_" data-uid="AasCore.Aas3_0.IReference.Type*"></a>
+  <h4 id="AasCore_Aas3_0_IReference_Type" data-uid="AasCore.Aas3_0.IReference.Type">Type</h4>
+  <div class="markdown level1 summary"><p>Type of the reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ReferenceTypes Type { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ReferenceTypes.html">ReferenceTypes</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="AasCore_Aas3_0_IReference_Type_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Denotes, whether reference is an external reference or a model reference.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_IReference.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.IReference%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10728" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

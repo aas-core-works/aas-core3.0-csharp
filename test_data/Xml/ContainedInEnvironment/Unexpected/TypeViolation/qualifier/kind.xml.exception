@@ -1,2 +1,0 @@
-The property Kind of an instance of class Qualifier could not be de-serialized from an unexpected enumeration literal: 
-						 at: submodels/*[0]/qualifiers/*[0]/kind

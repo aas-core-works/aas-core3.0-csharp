@@ -1,2 +1,0 @@
-submodels[0].submodelElements[0].value: Invariant violated:
-Constraint AASd-127: For model references, with more than one key in Reference/keys a key with Key/type Fragment reference shall be preceded by a key with Key/type File or Blob. 

@@ -1,2 +1,0 @@
-submodels[0].submodelElements[0].value: Invariant violated:
-Constraint AASd-128: For model references, the value of a key preceded by a key with type Submodel element list is an integer number denoting the position in the array of the submodel element list.

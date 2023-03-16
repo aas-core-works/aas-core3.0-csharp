@@ -1,1 +1,0 @@
-Expected a JsonValue, but got System.Text.Json.Nodes.JsonArray at: submodels[0].qualifiers[0].type

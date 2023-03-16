@@ -1,0 +1,687 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class LevelType
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class LevelType
+   ">
+    <meta name="generator" content="docfx 2.59.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/aas-core-csharp-logo-small.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AasCore.Aas3_0.LevelType">
+  
+  
+  <h1 id="AasCore_Aas3_0_LevelType" data-uid="AasCore.Aas3_0.LevelType" class="text-break">Class LevelType
+  </h1>
+  <div class="markdown level0 summary"><p>Value represented by up to four variants of a numeric value in a specific role:
+<code>MIN</code>, <code>NOM</code>, <code>TYP</code> and <code>MAX</code>. True means that the value is available,
+false means the value is not available.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">LevelType</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="AasCore.Aas3_0.ILevelType.html">ILevelType</a></div>
+    <div><a class="xref" href="AasCore.Aas3_0.IClass.html">IClass</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="AasCore.Aas3_0.html">AasCore.Aas3_0</a></h6>
+  <h6><strong>Assembly</strong>: AasCore.Aas3_0.dll</h6>
+  <h5 id="AasCore_Aas3_0_LevelType_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class LevelType : ILevelType, IClass</code></pre>
+  </div>
+  <h5 id="AasCore_Aas3_0_LevelType_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+EXAMPLE from [IEC61360-1]: In the case of having a property which is
+of the LEVEL_TYPE min/max − expressing a range − only those two values
+need to be provided.
+</p>
+<p>
+<p>
+This is how AAS deals with the following combinations of level types:
+</p>
+<ul>
+<li>
+  Either all attributes are false. In this case the concept is mapped
+  to a <a class="xref" href="AasCore.Aas3_0.Property.html">Property</a> and level type is ignored.
+</li>
+<li>
+  At most one of the attributes is set to true. In this case
+  the concept is mapped to a <a class="xref" href="AasCore.Aas3_0.Property.html">Property</a>.
+</li>
+<li>
+  Min and max are set to true. In this case the concept is mapped
+  to a <a class="xref" href="AasCore.Aas3_0.Range.html">Range</a>.
+</li>
+<li>
+  More than one attribute is set to true but not min and max only
+  (see second case). In this case the concept is mapped
+  to a <a class="xref" href="AasCore.Aas3_0.SubmodelElementCollection.html">SubmodelElementCollection</a> with the corresponding
+  number of Properties.
+  Example: If attribute <a class="xref" href="AasCore.Aas3_0.LevelType.html#AasCore_Aas3_0_LevelType_Min">Min</a> and <a class="xref" href="AasCore.Aas3_0.LevelType.html#AasCore_Aas3_0_LevelType_Nom">Nom</a> are set to true
+  then the concept is mapped to a <a class="xref" href="AasCore.Aas3_0.SubmodelElementCollection.html">SubmodelElementCollection</a>
+  with two Properties within: min and nom.
+  The data type of both Properties is the same.
+</li>
+</ul>
+</p>
+<p>
+In the cases 2. and 4. the <a class="xref" href="AasCore.Aas3_0.Property.html#AasCore_Aas3_0_Property_SemanticId">SemanticId</a> of the Property
+or Properties within the <a class="xref" href="AasCore.Aas3_0.SubmodelElementCollection.html">SubmodelElementCollection</a> needs to include
+information about the level type. Otherwise, the semantics is not described
+in a unique way. Please refer to the specification.
+</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_LevelType__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.LevelType.%23ctor(System.Boolean%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L12255">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_LevelType__ctor_" data-uid="AasCore.Aas3_0.LevelType.#ctor*"></a>
+  <h4 id="AasCore_Aas3_0_LevelType__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="AasCore.Aas3_0.LevelType.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean)">LevelType(Boolean, Boolean, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LevelType(bool min, bool nom, bool typ, bool max)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">min</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">nom</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">typ</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">max</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_LevelType_Max.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.LevelType.Max%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L12194">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_LevelType_Max_" data-uid="AasCore.Aas3_0.LevelType.Max*"></a>
+  <h4 id="AasCore_Aas3_0_LevelType_Max" data-uid="AasCore.Aas3_0.LevelType.Max">Max</h4>
+  <div class="markdown level1 summary"><p>Maximum of the value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Max { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_LevelType_Min.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.LevelType.Min%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L12179">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_LevelType_Min_" data-uid="AasCore.Aas3_0.LevelType.Min*"></a>
+  <h4 id="AasCore_Aas3_0_LevelType_Min" data-uid="AasCore.Aas3_0.LevelType.Min">Min</h4>
+  <div class="markdown level1 summary"><p>Minimum of the value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Min { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_LevelType_Nom.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.LevelType.Nom%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L12184">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_LevelType_Nom_" data-uid="AasCore.Aas3_0.LevelType.Nom*"></a>
+  <h4 id="AasCore_Aas3_0_LevelType_Nom" data-uid="AasCore.Aas3_0.LevelType.Nom">Nom</h4>
+  <div class="markdown level1 summary"><p>Nominal value (value as designated)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Nom { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_LevelType_Typ.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.LevelType.Typ%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L12189">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_LevelType_Typ_" data-uid="AasCore.Aas3_0.LevelType.Typ*"></a>
+  <h4 id="AasCore_Aas3_0_LevelType_Typ" data-uid="AasCore.Aas3_0.LevelType.Typ">Typ</h4>
+  <div class="markdown level1 summary"><p>Value as typically present</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Typ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_LevelType_Accept_AasCore_Aas3_0_Visitation_IVisitor_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.LevelType.Accept(AasCore.Aas3_0.Visitation.IVisitor)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L12219">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_LevelType_Accept_" data-uid="AasCore.Aas3_0.LevelType.Accept*"></a>
+  <h4 id="AasCore_Aas3_0_LevelType_Accept_AasCore_Aas3_0_Visitation_IVisitor_" data-uid="AasCore.Aas3_0.LevelType.Accept(AasCore.Aas3_0.Visitation.IVisitor)">Accept(Visitation.IVisitor)</h4>
+  <div class="markdown level1 summary"><p>Accept the <code data-dev-comment-type="paramref" class="paramref">visitor</code> to visit this instance
+for double dispatch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Accept(Visitation.IVisitor visitor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Visitation.IVisitor.html">Visitation.IVisitor</a></td>
+        <td><span class="parametername">visitor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_LevelType_Accept__1_AasCore_Aas3_0_Visitation_IVisitorWithContext___0____0_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.LevelType.Accept%60%601(AasCore.Aas3_0.Visitation.IVisitorWithContext%7B%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L12228">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_LevelType_Accept_" data-uid="AasCore.Aas3_0.LevelType.Accept*"></a>
+  <h4 id="AasCore_Aas3_0_LevelType_Accept__1_AasCore_Aas3_0_Visitation_IVisitorWithContext___0____0_" data-uid="AasCore.Aas3_0.LevelType.Accept``1(AasCore.Aas3_0.Visitation.IVisitorWithContext{``0},``0)">Accept&lt;TContext&gt;(Visitation.IVisitorWithContext&lt;TContext&gt;, TContext)</h4>
+  <div class="markdown level1 summary"><p>Accept the visitor to visit this instance for double dispatch
+with the <code data-dev-comment-type="paramref" class="paramref">context</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Accept&lt;TContext&gt;(Visitation.IVisitorWithContext&lt;TContext&gt; visitor, TContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Visitation.IVisitorWithContext-1.html">Visitation.IVisitorWithContext</a>&lt;TContext&gt;</td>
+        <td><span class="parametername">visitor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TContext</span></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_LevelType_Descend.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.LevelType.Descend%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L12209">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_LevelType_Descend_" data-uid="AasCore.Aas3_0.LevelType.Descend*"></a>
+  <h4 id="AasCore_Aas3_0_LevelType_Descend" data-uid="AasCore.Aas3_0.LevelType.Descend">Descend()</h4>
+  <div class="markdown level1 summary"><p>Iterate recursively over all the class instances referenced from this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;IClass&gt; Descend()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="AasCore.Aas3_0.IClass.html">IClass</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_LevelType_DescendOnce.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.LevelType.DescendOnce%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L12200">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_LevelType_DescendOnce_" data-uid="AasCore.Aas3_0.LevelType.DescendOnce*"></a>
+  <h4 id="AasCore_Aas3_0_LevelType_DescendOnce" data-uid="AasCore.Aas3_0.LevelType.DescendOnce">DescendOnce()</h4>
+  <div class="markdown level1 summary"><p>Iterate over all the class instances referenced from this instance
+without further recursion.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;IClass&gt; DescendOnce()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="AasCore.Aas3_0.IClass.html">IClass</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_LevelType_Transform__1_AasCore_Aas3_0_Visitation_ITransformer___0__.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.LevelType.Transform%60%601(AasCore.Aas3_0.Visitation.ITransformer%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L12239">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_LevelType_Transform_" data-uid="AasCore.Aas3_0.LevelType.Transform*"></a>
+  <h4 id="AasCore_Aas3_0_LevelType_Transform__1_AasCore_Aas3_0_Visitation_ITransformer___0__" data-uid="AasCore.Aas3_0.LevelType.Transform``1(AasCore.Aas3_0.Visitation.ITransformer{``0})">Transform&lt;T&gt;(Visitation.ITransformer&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Accept the <code data-dev-comment-type="paramref" class="paramref">transformer</code> to transform this instance
+for double dispatch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Transform&lt;T&gt;(Visitation.ITransformer&lt;T&gt; transformer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Visitation.ITransformer-1.html">Visitation.ITransformer</a>&lt;T&gt;</td>
+        <td><span class="parametername">transformer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_LevelType_Transform__2_AasCore_Aas3_0_Visitation_ITransformerWithContext___0___1____0_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.LevelType.Transform%60%602(AasCore.Aas3_0.Visitation.ITransformerWithContext%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L12248">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_LevelType_Transform_" data-uid="AasCore.Aas3_0.LevelType.Transform*"></a>
+  <h4 id="AasCore_Aas3_0_LevelType_Transform__2_AasCore_Aas3_0_Visitation_ITransformerWithContext___0___1____0_" data-uid="AasCore.Aas3_0.LevelType.Transform``2(AasCore.Aas3_0.Visitation.ITransformerWithContext{``0,``1},``0)">Transform&lt;TContext, T&gt;(Visitation.ITransformerWithContext&lt;TContext, T&gt;, TContext)</h4>
+  <div class="markdown level1 summary"><p>Accept the <code data-dev-comment-type="paramref" class="paramref">transformer</code> to visit this instance
+for double dispatch with the <code data-dev-comment-type="paramref" class="paramref">context</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Transform&lt;TContext, T&gt;(Visitation.ITransformerWithContext&lt;TContext, T&gt; transformer, TContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Visitation.ITransformerWithContext-2.html">Visitation.ITransformerWithContext</a>&lt;TContext, T&gt;</td>
+        <td><span class="parametername">transformer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TContext</span></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TContext</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="AasCore.Aas3_0.ILevelType.html">ILevelType</a>
+  </div>
+  <div>
+      <a class="xref" href="AasCore.Aas3_0.IClass.html">IClass</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_LevelType.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.LevelType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L12174" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

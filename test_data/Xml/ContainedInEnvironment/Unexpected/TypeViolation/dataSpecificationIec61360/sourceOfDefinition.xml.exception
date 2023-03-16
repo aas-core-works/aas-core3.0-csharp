@@ -1,1 +1,0 @@
-Expected an XML end element to conclude a property of class DataSpecificationIec61360 with the element name sourceOfDefinition, but got the node of type Element with the value  at: assetAdministrationShells/*[0]/embeddedDataSpecifications/*[0]/dataSpecificationContent/dataSpecificationIec61360

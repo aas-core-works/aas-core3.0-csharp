@@ -1,1 +1,0 @@
-Expected a JsonValue, but got System.Text.Json.Nodes.JsonArray at: assetAdministrationShells[0].administration.version

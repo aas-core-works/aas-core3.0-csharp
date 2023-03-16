@@ -1,4 +1,0 @@
-submodels[0].idShort: Invariant violated:
-Constraint AASd-130: An attribute with data type 'string' shall consist of these characters only: ^[\x09\x0A\x0D\x20-\uD7FF\uE000-\uFFFD\U00010000-\U0010FFFF]*$;
-submodels[0].idShort: Invariant violated:
-ID-short of Referables shall only feature letters, digits, underscore (``_``); starting mandatory with a letter. *I.e.* ``[a-zA-Z][a-zA-Z0-9_]*``.

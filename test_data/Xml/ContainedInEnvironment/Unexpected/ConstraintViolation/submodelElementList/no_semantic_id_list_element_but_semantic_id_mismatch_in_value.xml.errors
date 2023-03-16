@@ -1,2 +1,0 @@
-submodels[0].submodelElements[0]: Invariant violated:
-Constraint AASd-114: If two first level child elements have a semantic ID then they shall be identical.

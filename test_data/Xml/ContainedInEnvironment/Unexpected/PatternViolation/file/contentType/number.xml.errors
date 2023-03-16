@@ -1,2 +1,0 @@
-submodels[0].submodelElements[0].contentType: Invariant violated:
-The value must represent a valid content MIME type according to RFC 2046.

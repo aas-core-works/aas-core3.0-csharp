@@ -1,1 +1,0 @@
-Expected a JsonObject, but got System.Text.Json.Nodes.JsonArray at: assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent.unitId

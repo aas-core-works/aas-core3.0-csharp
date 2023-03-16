@@ -1,2 +1,0 @@
-submodels[0].submodelElements[0]: Invariant violated:
-Constraint AASd-109: If type value list element is equal to Property or Range value type list element shall be set and all first level child elements shall have the value type as specified in value type list element.

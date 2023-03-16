@@ -1,2 +1,0 @@
-submodels[0].submodelElements[0]: Invariant violated:
-Constraint AASd-107: If a first level child element has a semantic ID it shall be identical to semantic ID list element.

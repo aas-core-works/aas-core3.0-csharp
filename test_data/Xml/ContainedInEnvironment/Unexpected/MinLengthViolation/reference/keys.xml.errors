@@ -1,4 +1,0 @@
-assetAdministrationShells[0]: Invariant violated:
-Derived-from must be a model reference to an asset administration shell.;
-assetAdministrationShells[0].derivedFrom: Invariant violated:
-Keys must contain at least one item.

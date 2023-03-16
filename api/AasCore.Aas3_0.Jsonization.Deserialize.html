@@ -1,0 +1,4267 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Jsonization.Deserialize
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Jsonization.Deserialize
+   ">
+    <meta name="generator" content="docfx 2.59.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/aas-core-csharp-logo-small.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AasCore.Aas3_0.Jsonization.Deserialize">
+  
+  
+  <h1 id="AasCore_Aas3_0_Jsonization_Deserialize" data-uid="AasCore.Aas3_0.Jsonization.Deserialize" class="text-break">Class Jsonization.Deserialize
+  </h1>
+  <div class="markdown level0 summary"><p>Deserialize instances of meta-model classes from JSON nodes.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Jsonization.Deserialize</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="AasCore.Aas3_0.html">AasCore.Aas3_0</a></h6>
+  <h6><strong>Assembly</strong>: AasCore.Aas3_0.dll</h6>
+  <h5 id="AasCore_Aas3_0_Jsonization_Deserialize_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class Deserialize</code></pre>
+  </div>
+  <h5 id="AasCore_Aas3_0_Jsonization_Deserialize_examples"><strong>Examples</strong></h5>
+  <p>Here is an example how to parse an instance of IHasSemantics:</p>
+<pre><code>string someString = &quot;... some JSON ...&quot;;
+var node = System.Text.Json.Nodes.JsonNode.Parse(someString);
+Aas.IHasSemantics anInstance = Deserialize.IHasSemanticsFrom(
+    node);</code></pre>
+
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_AasSubmodelElementsFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.AasSubmodelElementsFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14990">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_AasSubmodelElementsFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.AasSubmodelElementsFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_AasSubmodelElementsFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.AasSubmodelElementsFrom(System.Text.Json.Nodes.JsonNode)">AasSubmodelElementsFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of AasSubmodelElements from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AasSubmodelElements AasSubmodelElementsFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.AasSubmodelElements.html">AasSubmodelElements</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of AasSubmodelElements.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_AdministrativeInformationFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.AdministrativeInformationFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14662">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_AdministrativeInformationFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.AdministrativeInformationFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_AdministrativeInformationFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.AdministrativeInformationFrom(System.Text.Json.Nodes.JsonNode)">AdministrativeInformationFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of AdministrativeInformation from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AdministrativeInformation AdministrativeInformationFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.AdministrativeInformation.html">AdministrativeInformation</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of AdministrativeInformation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_AnnotatedRelationshipElementFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.AnnotatedRelationshipElementFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15241">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_AnnotatedRelationshipElementFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.AnnotatedRelationshipElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_AnnotatedRelationshipElementFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.AnnotatedRelationshipElementFrom(System.Text.Json.Nodes.JsonNode)">AnnotatedRelationshipElementFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of AnnotatedRelationshipElement from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AnnotatedRelationshipElement AnnotatedRelationshipElementFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.AnnotatedRelationshipElement.html">AnnotatedRelationshipElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of AnnotatedRelationshipElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_AssetAdministrationShellFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.AssetAdministrationShellFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14763">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_AssetAdministrationShellFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.AssetAdministrationShellFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_AssetAdministrationShellFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.AssetAdministrationShellFrom(System.Text.Json.Nodes.JsonNode)">AssetAdministrationShellFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of AssetAdministrationShell from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AssetAdministrationShell AssetAdministrationShellFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.AssetAdministrationShell.html">AssetAdministrationShell</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of AssetAdministrationShell.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_AssetInformationFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.AssetInformationFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14788">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_AssetInformationFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.AssetInformationFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_AssetInformationFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.AssetInformationFrom(System.Text.Json.Nodes.JsonNode)">AssetInformationFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of AssetInformation from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AssetInformation AssetInformationFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.AssetInformation.html">AssetInformation</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of AssetInformation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_AssetKindFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.AssetKindFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14838">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_AssetKindFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.AssetKindFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_AssetKindFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.AssetKindFrom(System.Text.Json.Nodes.JsonNode)">AssetKindFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of AssetKind from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AssetKind AssetKindFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.AssetKind.html">AssetKind</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of AssetKind.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_BasicEventElementFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.BasicEventElementFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15417">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_BasicEventElementFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.BasicEventElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_BasicEventElementFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.BasicEventElementFrom(System.Text.Json.Nodes.JsonNode)">BasicEventElementFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of BasicEventElement from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BasicEventElement BasicEventElementFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.BasicEventElement.html">BasicEventElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of BasicEventElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_BlobFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.BlobFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15191">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_BlobFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.BlobFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_BlobFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.BlobFrom(System.Text.Json.Nodes.JsonNode)">BlobFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Blob from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Blob BlobFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Blob.html">Blob</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Blob.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_CapabilityFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.CapabilityFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15492">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_CapabilityFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.CapabilityFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_CapabilityFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.CapabilityFrom(System.Text.Json.Nodes.JsonNode)">CapabilityFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Capability from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Capability CapabilityFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Capability.html">Capability</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Capability.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_ConceptDescriptionFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.ConceptDescriptionFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15517">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_ConceptDescriptionFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ConceptDescriptionFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_ConceptDescriptionFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ConceptDescriptionFrom(System.Text.Json.Nodes.JsonNode)">ConceptDescriptionFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of ConceptDescription from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ConceptDescription ConceptDescriptionFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ConceptDescription.html">ConceptDescription</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of ConceptDescription.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_DataSpecificationIec61360From_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.DataSpecificationIec61360From(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15994">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_DataSpecificationIec61360From_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.DataSpecificationIec61360From*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_DataSpecificationIec61360From_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.DataSpecificationIec61360From(System.Text.Json.Nodes.JsonNode)">DataSpecificationIec61360From(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of DataSpecificationIec61360 from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataSpecificationIec61360 DataSpecificationIec61360From(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.DataSpecificationIec61360.html">DataSpecificationIec61360</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of DataSpecificationIec61360.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_DataTypeDefXsdFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.DataTypeDefXsdFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15642">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_DataTypeDefXsdFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.DataTypeDefXsdFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_DataTypeDefXsdFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.DataTypeDefXsdFrom(System.Text.Json.Nodes.JsonNode)">DataTypeDefXsdFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of DataTypeDefXsd from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataTypeDefXsd DataTypeDefXsdFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.DataTypeDefXsd.html">DataTypeDefXsd</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of DataTypeDefXsd.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_DataTypeIec61360From_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.DataTypeIec61360From(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15819">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_DataTypeIec61360From_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.DataTypeIec61360From*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_DataTypeIec61360From_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.DataTypeIec61360From(System.Text.Json.Nodes.JsonNode)">DataTypeIec61360From(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of DataTypeIec61360 from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataTypeIec61360 DataTypeIec61360From(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.DataTypeIec61360.html">DataTypeIec61360</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of DataTypeIec61360.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_DirectionFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.DirectionFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15316">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_DirectionFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.DirectionFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_DirectionFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.DirectionFrom(System.Text.Json.Nodes.JsonNode)">DirectionFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Direction from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Direction DirectionFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Direction.html">Direction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Direction.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_EmbeddedDataSpecificationFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.EmbeddedDataSpecificationFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15794">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_EmbeddedDataSpecificationFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.EmbeddedDataSpecificationFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_EmbeddedDataSpecificationFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.EmbeddedDataSpecificationFrom(System.Text.Json.Nodes.JsonNode)">EmbeddedDataSpecificationFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of EmbeddedDataSpecification from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EmbeddedDataSpecification EmbeddedDataSpecificationFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.EmbeddedDataSpecification.html">EmbeddedDataSpecification</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of EmbeddedDataSpecification.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_EntityFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.EntityFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15266">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_EntityFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.EntityFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_EntityFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.EntityFrom(System.Text.Json.Nodes.JsonNode)">EntityFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Entity from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Entity EntityFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Entity.html">Entity</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Entity.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_EntityTypeFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.EntityTypeFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15291">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_EntityTypeFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.EntityTypeFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_EntityTypeFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.EntityTypeFrom(System.Text.Json.Nodes.JsonNode)">EntityTypeFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of EntityType from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EntityType EntityTypeFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.EntityType.html">EntityType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of EntityType.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_EnvironmentFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.EnvironmentFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15743">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_EnvironmentFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.EnvironmentFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_EnvironmentFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.EnvironmentFrom(System.Text.Json.Nodes.JsonNode)">EnvironmentFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Environment from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Environment EnvironmentFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Environment.html">Environment</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Environment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_EventPayloadFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.EventPayloadFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15366">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_EventPayloadFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.EventPayloadFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_EventPayloadFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.EventPayloadFrom(System.Text.Json.Nodes.JsonNode)">EventPayloadFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of EventPayload from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static EventPayload EventPayloadFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.EventPayload.html">EventPayload</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of EventPayload.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_ExtensionFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.ExtensionFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14482">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_ExtensionFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ExtensionFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_ExtensionFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ExtensionFrom(System.Text.Json.Nodes.JsonNode)">ExtensionFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Extension from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Extension ExtensionFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Extension.html">Extension</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Extension.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_FileFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.FileFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15216">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_FileFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.FileFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_FileFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.FileFrom(System.Text.Json.Nodes.JsonNode)">FileFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of File from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static File FileFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.File.html">File</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of File.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_IAbstractLangStringFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.IAbstractLangStringFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15667">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_IAbstractLangStringFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IAbstractLangStringFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_IAbstractLangStringFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IAbstractLangStringFrom(System.Text.Json.Nodes.JsonNode)">IAbstractLangStringFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IAbstractLangString from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IAbstractLangString IAbstractLangStringFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IAbstractLangString.html">IAbstractLangString</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of IAbstractLangString.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_IDataElementFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.IDataElementFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15065">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_IDataElementFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IDataElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_IDataElementFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IDataElementFrom(System.Text.Json.Nodes.JsonNode)">IDataElementFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IDataElement from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IDataElement IDataElementFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IDataElement.html">IDataElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of IDataElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_IDataSpecificationContentFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.IDataSpecificationContentFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15768">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_IDataSpecificationContentFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IDataSpecificationContentFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_IDataSpecificationContentFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IDataSpecificationContentFrom(System.Text.Json.Nodes.JsonNode)">IDataSpecificationContentFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IDataSpecificationContent from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IDataSpecificationContent IDataSpecificationContentFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IDataSpecificationContent.html">IDataSpecificationContent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of IDataSpecificationContent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_IEventElementFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.IEventElementFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15391">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_IEventElementFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IEventElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_IEventElementFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IEventElementFrom(System.Text.Json.Nodes.JsonNode)">IEventElementFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IEventElement from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEventElement IEventElementFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IEventElement.html">IEventElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of IEventElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_IHasDataSpecificationFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.IHasDataSpecificationFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14636">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_IHasDataSpecificationFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IHasDataSpecificationFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_IHasDataSpecificationFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IHasDataSpecificationFrom(System.Text.Json.Nodes.JsonNode)">IHasDataSpecificationFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IHasDataSpecification from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IHasDataSpecification IHasDataSpecificationFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IHasDataSpecification.html">IHasDataSpecification</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of IHasDataSpecification.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_IHasExtensionsFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.IHasExtensionsFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14507">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_IHasExtensionsFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IHasExtensionsFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_IHasExtensionsFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IHasExtensionsFrom(System.Text.Json.Nodes.JsonNode)">IHasExtensionsFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IHasExtensions from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IHasExtensions IHasExtensionsFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IHasExtensions.html">IHasExtensions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of IHasExtensions.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_IHasKindFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.IHasKindFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14610">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_IHasKindFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IHasKindFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_IHasKindFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IHasKindFrom(System.Text.Json.Nodes.JsonNode)">IHasKindFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IHasKind from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IHasKind IHasKindFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IHasKind.html">IHasKind</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of IHasKind.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_IHasSemanticsFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.IHasSemanticsFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14456">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_IHasSemanticsFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IHasSemanticsFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_IHasSemanticsFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IHasSemanticsFrom(System.Text.Json.Nodes.JsonNode)">IHasSemanticsFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IHasSemantics from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IHasSemantics IHasSemanticsFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IHasSemantics.html">IHasSemantics</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of IHasSemantics.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_IIdentifiableFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.IIdentifiableFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14559">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_IIdentifiableFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IIdentifiableFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_IIdentifiableFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IIdentifiableFrom(System.Text.Json.Nodes.JsonNode)">IIdentifiableFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IIdentifiable from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IIdentifiable IIdentifiableFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IIdentifiable.html">IIdentifiable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of IIdentifiable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_IQualifiableFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.IQualifiableFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14687">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_IQualifiableFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IQualifiableFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_IQualifiableFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IQualifiableFrom(System.Text.Json.Nodes.JsonNode)">IQualifiableFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IQualifiable from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IQualifiable IQualifiableFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IQualifiable.html">IQualifiable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of IQualifiable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_IReferableFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.IReferableFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14533">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_IReferableFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IReferableFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_IReferableFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IReferableFrom(System.Text.Json.Nodes.JsonNode)">IReferableFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IReferable from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReferable IReferableFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IReferable.html">IReferable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of IReferable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_IRelationshipElementFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.IRelationshipElementFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14939">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_IRelationshipElementFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IRelationshipElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_IRelationshipElementFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.IRelationshipElementFrom(System.Text.Json.Nodes.JsonNode)">IRelationshipElementFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of IRelationshipElement from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IRelationshipElement IRelationshipElementFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IRelationshipElement.html">IRelationshipElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of IRelationshipElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_ISubmodelElementFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.ISubmodelElementFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14913">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_ISubmodelElementFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ISubmodelElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_ISubmodelElementFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ISubmodelElementFrom(System.Text.Json.Nodes.JsonNode)">ISubmodelElementFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of ISubmodelElement from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ISubmodelElement ISubmodelElementFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ISubmodelElement.html">ISubmodelElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of ISubmodelElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_KeyFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.KeyFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15592">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_KeyFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.KeyFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_KeyFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.KeyFrom(System.Text.Json.Nodes.JsonNode)">KeyFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Key from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Key KeyFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Key.html">Key</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_KeyTypesFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.KeyTypesFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15617">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_KeyTypesFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.KeyTypesFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_KeyTypesFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.KeyTypesFrom(System.Text.Json.Nodes.JsonNode)">KeyTypesFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of KeyTypes from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static KeyTypes KeyTypesFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.KeyTypes.html">KeyTypes</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of KeyTypes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_LangStringDefinitionTypeIec61360From_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.LangStringDefinitionTypeIec61360From(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15969">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_LangStringDefinitionTypeIec61360From_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.LangStringDefinitionTypeIec61360From*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_LangStringDefinitionTypeIec61360From_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.LangStringDefinitionTypeIec61360From(System.Text.Json.Nodes.JsonNode)">LangStringDefinitionTypeIec61360From(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of LangStringDefinitionTypeIec61360 from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LangStringDefinitionTypeIec61360 LangStringDefinitionTypeIec61360From(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.LangStringDefinitionTypeIec61360.html">LangStringDefinitionTypeIec61360</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of LangStringDefinitionTypeIec61360.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_LangStringNameTypeFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.LangStringNameTypeFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15693">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_LangStringNameTypeFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.LangStringNameTypeFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_LangStringNameTypeFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.LangStringNameTypeFrom(System.Text.Json.Nodes.JsonNode)">LangStringNameTypeFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of LangStringNameType from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LangStringNameType LangStringNameTypeFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.LangStringNameType.html">LangStringNameType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of LangStringNameType.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_LangStringPreferredNameTypeIec61360From_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.LangStringPreferredNameTypeIec61360From(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15919">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_LangStringPreferredNameTypeIec61360From_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.LangStringPreferredNameTypeIec61360From*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_LangStringPreferredNameTypeIec61360From_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.LangStringPreferredNameTypeIec61360From(System.Text.Json.Nodes.JsonNode)">LangStringPreferredNameTypeIec61360From(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of LangStringPreferredNameTypeIec61360 from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LangStringPreferredNameTypeIec61360 LangStringPreferredNameTypeIec61360From(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.LangStringPreferredNameTypeIec61360.html">LangStringPreferredNameTypeIec61360</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of LangStringPreferredNameTypeIec61360.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_LangStringShortNameTypeIec61360From_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.LangStringShortNameTypeIec61360From(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15944">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_LangStringShortNameTypeIec61360From_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.LangStringShortNameTypeIec61360From*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_LangStringShortNameTypeIec61360From_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.LangStringShortNameTypeIec61360From(System.Text.Json.Nodes.JsonNode)">LangStringShortNameTypeIec61360From(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of LangStringShortNameTypeIec61360 from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LangStringShortNameTypeIec61360 LangStringShortNameTypeIec61360From(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.LangStringShortNameTypeIec61360.html">LangStringShortNameTypeIec61360</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of LangStringShortNameTypeIec61360.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_LangStringTextTypeFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.LangStringTextTypeFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15718">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_LangStringTextTypeFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.LangStringTextTypeFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_LangStringTextTypeFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.LangStringTextTypeFrom(System.Text.Json.Nodes.JsonNode)">LangStringTextTypeFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of LangStringTextType from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LangStringTextType LangStringTextTypeFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.LangStringTextType.html">LangStringTextType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of LangStringTextType.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_LevelTypeFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.LevelTypeFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15844">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_LevelTypeFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.LevelTypeFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_LevelTypeFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.LevelTypeFrom(System.Text.Json.Nodes.JsonNode)">LevelTypeFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of LevelType from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static LevelType LevelTypeFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.LevelType.html">LevelType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of LevelType.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_ModellingKindFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.ModellingKindFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14585">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_ModellingKindFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ModellingKindFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_ModellingKindFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ModellingKindFrom(System.Text.Json.Nodes.JsonNode)">ModellingKindFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of ModellingKind from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ModellingKind ModellingKindFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ModellingKind.html">ModellingKind</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of ModellingKind.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_MultiLanguagePropertyFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.MultiLanguagePropertyFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15116">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_MultiLanguagePropertyFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.MultiLanguagePropertyFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_MultiLanguagePropertyFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.MultiLanguagePropertyFrom(System.Text.Json.Nodes.JsonNode)">MultiLanguagePropertyFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of MultiLanguageProperty from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MultiLanguageProperty MultiLanguagePropertyFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.MultiLanguageProperty.html">MultiLanguageProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of MultiLanguageProperty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_OperationFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.OperationFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15442">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_OperationFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.OperationFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_OperationFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.OperationFrom(System.Text.Json.Nodes.JsonNode)">OperationFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Operation from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Operation OperationFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Operation.html">Operation</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_OperationVariableFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.OperationVariableFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15467">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_OperationVariableFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.OperationVariableFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_OperationVariableFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.OperationVariableFrom(System.Text.Json.Nodes.JsonNode)">OperationVariableFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of OperationVariable from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static OperationVariable OperationVariableFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.OperationVariable.html">OperationVariable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of OperationVariable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_PropertyFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.PropertyFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15091">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_PropertyFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.PropertyFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_PropertyFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.PropertyFrom(System.Text.Json.Nodes.JsonNode)">PropertyFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Property from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Property PropertyFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Property.html">Property</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_QualifierFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.QualifierFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14738">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_QualifierFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.QualifierFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_QualifierFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.QualifierFrom(System.Text.Json.Nodes.JsonNode)">QualifierFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Qualifier from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Qualifier QualifierFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Qualifier.html">Qualifier</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Qualifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_QualifierKindFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.QualifierKindFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14713">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_QualifierKindFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.QualifierKindFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_QualifierKindFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.QualifierKindFrom(System.Text.Json.Nodes.JsonNode)">QualifierKindFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of QualifierKind from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static QualifierKind QualifierKindFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.QualifierKind.html">QualifierKind</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of QualifierKind.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_RangeFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.RangeFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15141">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_RangeFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.RangeFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_RangeFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.RangeFrom(System.Text.Json.Nodes.JsonNode)">RangeFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Range from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Range RangeFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Range.html">Range</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Range.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_ReferenceElementFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.ReferenceElementFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15166">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_ReferenceElementFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ReferenceElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_ReferenceElementFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ReferenceElementFrom(System.Text.Json.Nodes.JsonNode)">ReferenceElementFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of ReferenceElement from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReferenceElement ReferenceElementFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ReferenceElement.html">ReferenceElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of ReferenceElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_ReferenceFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.ReferenceFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15567">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_ReferenceFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ReferenceFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_ReferenceFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ReferenceFrom(System.Text.Json.Nodes.JsonNode)">ReferenceFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Reference from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Reference ReferenceFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Reference.html">Reference</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Reference.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_ReferenceTypesFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.ReferenceTypesFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15542">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_ReferenceTypesFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ReferenceTypesFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_ReferenceTypesFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ReferenceTypesFrom(System.Text.Json.Nodes.JsonNode)">ReferenceTypesFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of ReferenceTypes from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ReferenceTypes ReferenceTypesFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ReferenceTypes.html">ReferenceTypes</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of ReferenceTypes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_RelationshipElementFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.RelationshipElementFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14965">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_RelationshipElementFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.RelationshipElementFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_RelationshipElementFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.RelationshipElementFrom(System.Text.Json.Nodes.JsonNode)">RelationshipElementFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of RelationshipElement from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static RelationshipElement RelationshipElementFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.RelationshipElement.html">RelationshipElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of RelationshipElement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_ResourceFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.ResourceFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14813">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_ResourceFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ResourceFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_ResourceFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ResourceFrom(System.Text.Json.Nodes.JsonNode)">ResourceFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Resource from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Resource ResourceFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Resource.html">Resource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Resource.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_SpecificAssetIdFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.SpecificAssetIdFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14863">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_SpecificAssetIdFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.SpecificAssetIdFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_SpecificAssetIdFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.SpecificAssetIdFrom(System.Text.Json.Nodes.JsonNode)">SpecificAssetIdFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of SpecificAssetId from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SpecificAssetId SpecificAssetIdFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.SpecificAssetId.html">SpecificAssetId</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of SpecificAssetId.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_StateOfEventFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.StateOfEventFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15341">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_StateOfEventFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.StateOfEventFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_StateOfEventFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.StateOfEventFrom(System.Text.Json.Nodes.JsonNode)">StateOfEventFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of StateOfEvent from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static StateOfEvent StateOfEventFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.StateOfEvent.html">StateOfEvent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of StateOfEvent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_SubmodelElementCollectionFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.SubmodelElementCollectionFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15040">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_SubmodelElementCollectionFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.SubmodelElementCollectionFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_SubmodelElementCollectionFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.SubmodelElementCollectionFrom(System.Text.Json.Nodes.JsonNode)">SubmodelElementCollectionFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of SubmodelElementCollection from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SubmodelElementCollection SubmodelElementCollectionFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.SubmodelElementCollection.html">SubmodelElementCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of SubmodelElementCollection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_SubmodelElementListFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.SubmodelElementListFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15015">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_SubmodelElementListFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.SubmodelElementListFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_SubmodelElementListFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.SubmodelElementListFrom(System.Text.Json.Nodes.JsonNode)">SubmodelElementListFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of SubmodelElementList from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SubmodelElementList SubmodelElementListFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.SubmodelElementList.html">SubmodelElementList</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of SubmodelElementList.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_SubmodelFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.SubmodelFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14888">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_SubmodelFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.SubmodelFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_SubmodelFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.SubmodelFrom(System.Text.Json.Nodes.JsonNode)">SubmodelFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of Submodel from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Submodel SubmodelFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Submodel.html">Submodel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of Submodel.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_ValueListFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.ValueListFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15894">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_ValueListFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ValueListFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_ValueListFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ValueListFrom(System.Text.Json.Nodes.JsonNode)">ValueListFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of ValueList from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ValueList ValueListFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ValueList.html">ValueList</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of ValueList.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize_ValueReferencePairFrom_System_Text_Json_Nodes_JsonNode_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize.ValueReferencePairFrom(System.Text.Json.Nodes.JsonNode)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L15869">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Jsonization_Deserialize_ValueReferencePairFrom_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ValueReferencePairFrom*"></a>
+  <h4 id="AasCore_Aas3_0_Jsonization_Deserialize_ValueReferencePairFrom_System_Text_Json_Nodes_JsonNode_" data-uid="AasCore.Aas3_0.Jsonization.Deserialize.ValueReferencePairFrom(System.Text.Json.Nodes.JsonNode)">ValueReferencePairFrom(JsonNode)</h4>
+  <div class="markdown level1 summary"><p>Deserialize an instance of ValueReferencePair from <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ValueReferencePair ValueReferencePairFrom(JsonNode node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.Nodes.JsonNode</span></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>JSON node to be parsed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ValueReferencePair.html">ValueReferencePair</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.Jsonization.Exception.html">Jsonization.Exception</a></td>
+        <td><p>Thrown when <code data-dev-comment-type="paramref" class="paramref">node</code> is not a valid JSON
+representation of ValueReferencePair.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Jsonization_Deserialize.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Jsonization.Deserialize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/jsonization.cs/#L14446" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

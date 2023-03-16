@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>XML De/serialization </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="XML De/serialization ">
+    <meta name="generator" content="docfx 2.59.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/aas-core-csharp-logo-small.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="xml-deserialization">XML De/serialization</h1>
+
+<p>The code that de/serializes AAS models from and to XML documents lives in the static class <a href="../api/AasCore.Aas3_0.Xmlization.html">Xmlization</a>.</p>
+<h2 id="serialize">Serialize</h2>
+<p>You serialize a model using the static class <a href="../api/AasCore.Aas3_0.Xmlization.Serialize.html">Xmlization.Serialize</a> by calling its <code>To</code> method on an <a href="../api/AasCore.Aas3_0.Environment.html">Environment</a>.
+The <code>To</code> method writes to a <a href="https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlwriter">System.Xml.XmlWriter</a>.</p>
+<p>Here is an example snippet:</p>
+<pre><code class="lang-cs">using System.Collections.Generic;
+
+using Aas = AasCore.Aas3_0;
+using AasXmlization = AasCore.Aas3_0.Xmlization;
+
+public class Program
+{
+    public static void Main()
+    {
+        // Prepare the environment
+        var someProperty = new Aas.Property(
+            Aas.DataTypeDefXsd.Boolean)
+        {
+            IdShort = &quot;someProperty&quot;,
+        };
+
+        var submodel = new Aas.Submodel(
+            &quot;some-unique-global-identifier&quot;)
+        {
+            SubmodelElements = new List&lt;Aas.ISubmodelElement&gt;()
+            {
+                someProperty
+            }
+        };
+
+        var environment = new Aas.Environment()
+        {
+            Submodels = new List&lt;Aas.ISubmodel&gt;()
+            {
+                submodel
+            }
+        };
+
+        // Serialize to an XML writer
+        var outputBuilder = new System.Text.StringBuilder();
+
+        using var writer = System.Xml.XmlWriter.Create(
+            outputBuilder,
+            new System.Xml.XmlWriterSettings()
+            {
+                Encoding = System.Text.Encoding.UTF8
+            }
+        );
+
+        AasXmlization.Serialize.To(
+            environment,
+            writer
+        );
+        
+        writer.Flush();
+
+        // Print the output
+        System.Console.WriteLine(
+            outputBuilder.ToString()
+        );
+
+        // Outputs (all on a single line):
+        // &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;
+        // &lt;environment xmlns=&quot;https://admin-shell.io/aas/3/0&quot;&gt;
+        // &lt;submodels&gt;&lt;submodel&gt;&lt;id&gt;some-unique-global-identifier&lt;/id&gt;
+        // &lt;submodelElements&gt;&lt;property&gt;&lt;idShort&gt;someProperty&lt;/idShort&gt;
+        // &lt;valueType&gt;xs:boolean&lt;/valueType&gt;&lt;/property&gt;&lt;/submodelElements&gt;
+        // &lt;/submodel&gt;&lt;/submodels&gt;&lt;/environment&gt;
+    }
+}
+</code></pre>
+<h2 id="de-serialize">De-serialize</h2>
+<p>The de-serialization is encapsulated in <a href="../api/AasCore.Aas3_0.Xmlization.Deserialize.html">Xmlization.Deserialize</a> static class.
+The crucial method is <code>EnvironmentFrom</code> which reads from an <a href="https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlreader">System.Xml.XmlReader</a> and re-creates back an instance of <a href="../api/AasCore.Aas3_0.Environment.html">Environment</a>.</p>
+<p>The methods <code>*From</code> from <a href="../api/AasCore.Aas3_0.Xmlization.Deserialize.html">Xmlization.Deserialize</a> expect the reader to already point to the XML element of the instance.
+If you have non-content fields, such as an XML declaration, you have to invoke <a href="https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlreader.movetocontent">System.Xml.XmlReader.MoveToContent</a> first.</p>
+<p>Here is a snippet which parses XML as text and then de-serializes it into an instance of <a href="../api/AasCore.Aas3_0.Environment.html">Environment</a>:</p>
+<pre><code class="lang-cs">using System.Collections.Generic;
+
+using Aas = AasCore.Aas3_0;
+using AasXmlization = AasCore.Aas3_0.Xmlization;
+
+public class Program
+{
+    public static void Main()
+    {
+        var text = (
+            &quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;utf-8\&quot;?&gt;&quot; +
+            &quot;&lt;environment xmlns=\&quot;https://admin-shell.io/aas/3/0\&quot;&gt;&quot; +
+            &quot;&lt;submodels&gt;&lt;submodel&gt;&lt;id&gt;some-unique-global-identifier&lt;/id&gt;&quot; +
+            &quot;&lt;submodelElements&gt;&lt;property&gt;&lt;idShort&gt;someProperty&lt;/idShort&gt;&quot; +
+            &quot;&lt;valueType&gt;xs:boolean&lt;/valueType&gt;&lt;/property&gt;&lt;/submodelElements&gt;&quot; +
+            &quot;&lt;/submodel&gt;&lt;/submodels&gt;&lt;/environment&gt;&quot;
+        );
+
+        using var stringReader = new System.IO.StringReader(
+            text);
+
+        using var xmlReader = System.Xml.XmlReader.Create(
+            stringReader);
+
+        // This step is necessary to skip the non-content. Otherwise,
+        // the deserialization would have thrown an exception.
+        xmlReader.MoveToContent();
+
+        var environment = AasXmlization.Deserialize.EnvironmentFrom(
+            xmlReader);
+
+        // Print the types of the model elements contained
+        // in the environment
+        foreach (var something in environment.Descend())
+        {
+            System.Console.WriteLine(something.GetType());
+        }
+
+        // Outputs:
+        // AasCore.Aas3_0.Submodel
+        // AasCore.Aas3_0.Property
+    }
+}
+</code></pre>
+<h3 id="errors">Errors</h3>
+<p>If the XML document from <a href="https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlreader">System.Xml.XmlReader</a> comes in an unexpected form, our SDK throws a <a href="../api/AasCore.Aas3_0.Xmlization.Exception.html">Xmlization.Exception</a>.
+This can happen, for example, if unexpected XML elements or XML attributes are encountered, or an expected XML element is missing.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/doc/source/getting_started/xmlize.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

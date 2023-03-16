@@ -1,0 +1,1424 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Visitation.AbstractVisitor
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Visitation.AbstractVisitor
+   ">
+    <meta name="generator" content="docfx 2.59.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/aas-core-csharp-logo-small.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor">
+  
+  
+  <h1 id="AasCore_Aas3_0_Visitation_AbstractVisitor" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor" class="text-break">Class Visitation.AbstractVisitor
+  </h1>
+  <div class="markdown level0 summary"><p>Perform double-dispatch to visit the concrete instances.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Visitation.AbstractVisitor</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="AasCore.Aas3_0.Visitation.IVisitor.html">Visitation.IVisitor</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="AasCore.Aas3_0.html">AasCore.Aas3_0</a></h6>
+  <h6><strong>Assembly</strong>: AasCore.Aas3_0.dll</h6>
+  <h5 id="AasCore_Aas3_0_Visitation_AbstractVisitor_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class AbstractVisitor : Visitation.IVisitor</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_Visit_AasCore_Aas3_0_IClass_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.Visit(AasCore.Aas3_0.IClass)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L576">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_Visit_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.Visit*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_Visit_AasCore_Aas3_0_IClass_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.Visit(AasCore.Aas3_0.IClass)">Visit(IClass)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Visit(IClass that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IClass.html">IClass</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitAdministrativeInformation_AasCore_Aas3_0_IAdministrativeInformation_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitAdministrativeInformation(AasCore.Aas3_0.IAdministrativeInformation)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L583">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitAdministrativeInformation_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitAdministrativeInformation*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitAdministrativeInformation_AasCore_Aas3_0_IAdministrativeInformation_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitAdministrativeInformation(AasCore.Aas3_0.IAdministrativeInformation)">VisitAdministrativeInformation(IAdministrativeInformation)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitAdministrativeInformation(IAdministrativeInformation that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IAdministrativeInformation.html">IAdministrativeInformation</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitAnnotatedRelationshipElement_AasCore_Aas3_0_IAnnotatedRelationshipElement_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitAnnotatedRelationshipElement(AasCore.Aas3_0.IAnnotatedRelationshipElement)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L631">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitAnnotatedRelationshipElement_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitAnnotatedRelationshipElement*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitAnnotatedRelationshipElement_AasCore_Aas3_0_IAnnotatedRelationshipElement_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitAnnotatedRelationshipElement(AasCore.Aas3_0.IAnnotatedRelationshipElement)">VisitAnnotatedRelationshipElement(IAnnotatedRelationshipElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitAnnotatedRelationshipElement(IAnnotatedRelationshipElement that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IAnnotatedRelationshipElement.html">IAnnotatedRelationshipElement</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitAssetAdministrationShell_AasCore_Aas3_0_IAssetAdministrationShell_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitAssetAdministrationShell(AasCore.Aas3_0.IAssetAdministrationShell)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L589">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitAssetAdministrationShell_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitAssetAdministrationShell*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitAssetAdministrationShell_AasCore_Aas3_0_IAssetAdministrationShell_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitAssetAdministrationShell(AasCore.Aas3_0.IAssetAdministrationShell)">VisitAssetAdministrationShell(IAssetAdministrationShell)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitAssetAdministrationShell(IAssetAdministrationShell that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IAssetAdministrationShell.html">IAssetAdministrationShell</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitAssetInformation_AasCore_Aas3_0_IAssetInformation_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitAssetInformation(AasCore.Aas3_0.IAssetInformation)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L592">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitAssetInformation_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitAssetInformation*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitAssetInformation_AasCore_Aas3_0_IAssetInformation_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitAssetInformation(AasCore.Aas3_0.IAssetInformation)">VisitAssetInformation(IAssetInformation)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitAssetInformation(IAssetInformation that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IAssetInformation.html">IAssetInformation</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitBasicEventElement_AasCore_Aas3_0_IBasicEventElement_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitBasicEventElement(AasCore.Aas3_0.IBasicEventElement)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L640">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitBasicEventElement_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitBasicEventElement*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitBasicEventElement_AasCore_Aas3_0_IBasicEventElement_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitBasicEventElement(AasCore.Aas3_0.IBasicEventElement)">VisitBasicEventElement(IBasicEventElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitBasicEventElement(IBasicEventElement that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IBasicEventElement.html">IBasicEventElement</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitBlob_AasCore_Aas3_0_IBlob_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitBlob(AasCore.Aas3_0.IBlob)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L625">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitBlob_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitBlob*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitBlob_AasCore_Aas3_0_IBlob_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitBlob(AasCore.Aas3_0.IBlob)">VisitBlob(IBlob)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitBlob(IBlob that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IBlob.html">IBlob</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitCapability_AasCore_Aas3_0_ICapability_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitCapability(AasCore.Aas3_0.ICapability)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L649">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitCapability_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitCapability*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitCapability_AasCore_Aas3_0_ICapability_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitCapability(AasCore.Aas3_0.ICapability)">VisitCapability(ICapability)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitCapability(ICapability that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ICapability.html">ICapability</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitConceptDescription_AasCore_Aas3_0_IConceptDescription_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitConceptDescription(AasCore.Aas3_0.IConceptDescription)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L652">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitConceptDescription_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitConceptDescription*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitConceptDescription_AasCore_Aas3_0_IConceptDescription_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitConceptDescription(AasCore.Aas3_0.IConceptDescription)">VisitConceptDescription(IConceptDescription)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitConceptDescription(IConceptDescription that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IConceptDescription.html">IConceptDescription</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitDataSpecificationIec61360_AasCore_Aas3_0_IDataSpecificationIec61360_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitDataSpecificationIec61360(AasCore.Aas3_0.IDataSpecificationIec61360)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L691">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitDataSpecificationIec61360_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitDataSpecificationIec61360*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitDataSpecificationIec61360_AasCore_Aas3_0_IDataSpecificationIec61360_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitDataSpecificationIec61360(AasCore.Aas3_0.IDataSpecificationIec61360)">VisitDataSpecificationIec61360(IDataSpecificationIec61360)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitDataSpecificationIec61360(IDataSpecificationIec61360 that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IDataSpecificationIec61360.html">IDataSpecificationIec61360</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitEmbeddedDataSpecification_AasCore_Aas3_0_IEmbeddedDataSpecification_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitEmbeddedDataSpecification(AasCore.Aas3_0.IEmbeddedDataSpecification)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L670">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitEmbeddedDataSpecification_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitEmbeddedDataSpecification*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitEmbeddedDataSpecification_AasCore_Aas3_0_IEmbeddedDataSpecification_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitEmbeddedDataSpecification(AasCore.Aas3_0.IEmbeddedDataSpecification)">VisitEmbeddedDataSpecification(IEmbeddedDataSpecification)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitEmbeddedDataSpecification(IEmbeddedDataSpecification that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IEmbeddedDataSpecification.html">IEmbeddedDataSpecification</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitEntity_AasCore_Aas3_0_IEntity_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitEntity(AasCore.Aas3_0.IEntity)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L634">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitEntity_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitEntity*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitEntity_AasCore_Aas3_0_IEntity_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitEntity(AasCore.Aas3_0.IEntity)">VisitEntity(IEntity)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitEntity(IEntity that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IEntity.html">IEntity</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitEnvironment_AasCore_Aas3_0_IEnvironment_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitEnvironment(AasCore.Aas3_0.IEnvironment)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L667">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitEnvironment_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitEnvironment*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitEnvironment_AasCore_Aas3_0_IEnvironment_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitEnvironment(AasCore.Aas3_0.IEnvironment)">VisitEnvironment(IEnvironment)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitEnvironment(IEnvironment that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IEnvironment.html">IEnvironment</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitEventPayload_AasCore_Aas3_0_IEventPayload_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitEventPayload(AasCore.Aas3_0.IEventPayload)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L637">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitEventPayload_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitEventPayload*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitEventPayload_AasCore_Aas3_0_IEventPayload_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitEventPayload(AasCore.Aas3_0.IEventPayload)">VisitEventPayload(IEventPayload)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitEventPayload(IEventPayload that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IEventPayload.html">IEventPayload</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitExtension_AasCore_Aas3_0_IExtension_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitExtension(AasCore.Aas3_0.IExtension)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L580">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitExtension_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitExtension*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitExtension_AasCore_Aas3_0_IExtension_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitExtension(AasCore.Aas3_0.IExtension)">VisitExtension(IExtension)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitExtension(IExtension that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IExtension.html">IExtension</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitFile_AasCore_Aas3_0_IFile_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitFile(AasCore.Aas3_0.IFile)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L628">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitFile_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitFile*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitFile_AasCore_Aas3_0_IFile_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitFile(AasCore.Aas3_0.IFile)">VisitFile(IFile)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitFile(IFile that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IFile.html">IFile</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitKey_AasCore_Aas3_0_IKey_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitKey(AasCore.Aas3_0.IKey)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L658">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitKey_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitKey*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitKey_AasCore_Aas3_0_IKey_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitKey(AasCore.Aas3_0.IKey)">VisitKey(IKey)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitKey(IKey that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IKey.html">IKey</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringDefinitionTypeIec61360_AasCore_Aas3_0_ILangStringDefinitionTypeIec61360_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringDefinitionTypeIec61360(AasCore.Aas3_0.ILangStringDefinitionTypeIec61360)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L688">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringDefinitionTypeIec61360_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringDefinitionTypeIec61360*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringDefinitionTypeIec61360_AasCore_Aas3_0_ILangStringDefinitionTypeIec61360_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringDefinitionTypeIec61360(AasCore.Aas3_0.ILangStringDefinitionTypeIec61360)">VisitLangStringDefinitionTypeIec61360(ILangStringDefinitionTypeIec61360)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitLangStringDefinitionTypeIec61360(ILangStringDefinitionTypeIec61360 that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ILangStringDefinitionTypeIec61360.html">ILangStringDefinitionTypeIec61360</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringNameType_AasCore_Aas3_0_ILangStringNameType_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringNameType(AasCore.Aas3_0.ILangStringNameType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L661">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringNameType_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringNameType*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringNameType_AasCore_Aas3_0_ILangStringNameType_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringNameType(AasCore.Aas3_0.ILangStringNameType)">VisitLangStringNameType(ILangStringNameType)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitLangStringNameType(ILangStringNameType that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ILangStringNameType.html">ILangStringNameType</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringPreferredNameTypeIec61360_AasCore_Aas3_0_ILangStringPreferredNameTypeIec61360_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringPreferredNameTypeIec61360(AasCore.Aas3_0.ILangStringPreferredNameTypeIec61360)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L682">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringPreferredNameTypeIec61360_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringPreferredNameTypeIec61360*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringPreferredNameTypeIec61360_AasCore_Aas3_0_ILangStringPreferredNameTypeIec61360_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringPreferredNameTypeIec61360(AasCore.Aas3_0.ILangStringPreferredNameTypeIec61360)">VisitLangStringPreferredNameTypeIec61360(ILangStringPreferredNameTypeIec61360)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitLangStringPreferredNameTypeIec61360(ILangStringPreferredNameTypeIec61360 that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ILangStringPreferredNameTypeIec61360.html">ILangStringPreferredNameTypeIec61360</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringShortNameTypeIec61360_AasCore_Aas3_0_ILangStringShortNameTypeIec61360_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringShortNameTypeIec61360(AasCore.Aas3_0.ILangStringShortNameTypeIec61360)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L685">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringShortNameTypeIec61360_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringShortNameTypeIec61360*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringShortNameTypeIec61360_AasCore_Aas3_0_ILangStringShortNameTypeIec61360_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringShortNameTypeIec61360(AasCore.Aas3_0.ILangStringShortNameTypeIec61360)">VisitLangStringShortNameTypeIec61360(ILangStringShortNameTypeIec61360)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitLangStringShortNameTypeIec61360(ILangStringShortNameTypeIec61360 that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ILangStringShortNameTypeIec61360.html">ILangStringShortNameTypeIec61360</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringTextType_AasCore_Aas3_0_ILangStringTextType_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringTextType(AasCore.Aas3_0.ILangStringTextType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L664">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringTextType_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringTextType*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLangStringTextType_AasCore_Aas3_0_ILangStringTextType_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLangStringTextType(AasCore.Aas3_0.ILangStringTextType)">VisitLangStringTextType(ILangStringTextType)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitLangStringTextType(ILangStringTextType that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ILangStringTextType.html">ILangStringTextType</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLevelType_AasCore_Aas3_0_ILevelType_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLevelType(AasCore.Aas3_0.ILevelType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L673">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLevelType_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLevelType*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitLevelType_AasCore_Aas3_0_ILevelType_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitLevelType(AasCore.Aas3_0.ILevelType)">VisitLevelType(ILevelType)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitLevelType(ILevelType that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ILevelType.html">ILevelType</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitMultiLanguageProperty_AasCore_Aas3_0_IMultiLanguageProperty_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitMultiLanguageProperty(AasCore.Aas3_0.IMultiLanguageProperty)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L616">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitMultiLanguageProperty_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitMultiLanguageProperty*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitMultiLanguageProperty_AasCore_Aas3_0_IMultiLanguageProperty_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitMultiLanguageProperty(AasCore.Aas3_0.IMultiLanguageProperty)">VisitMultiLanguageProperty(IMultiLanguageProperty)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitMultiLanguageProperty(IMultiLanguageProperty that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IMultiLanguageProperty.html">IMultiLanguageProperty</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitOperation_AasCore_Aas3_0_IOperation_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitOperation(AasCore.Aas3_0.IOperation)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L643">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitOperation_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitOperation*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitOperation_AasCore_Aas3_0_IOperation_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitOperation(AasCore.Aas3_0.IOperation)">VisitOperation(IOperation)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitOperation(IOperation that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IOperation.html">IOperation</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitOperationVariable_AasCore_Aas3_0_IOperationVariable_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitOperationVariable(AasCore.Aas3_0.IOperationVariable)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L646">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitOperationVariable_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitOperationVariable*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitOperationVariable_AasCore_Aas3_0_IOperationVariable_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitOperationVariable(AasCore.Aas3_0.IOperationVariable)">VisitOperationVariable(IOperationVariable)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitOperationVariable(IOperationVariable that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IOperationVariable.html">IOperationVariable</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitProperty_AasCore_Aas3_0_IProperty_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitProperty(AasCore.Aas3_0.IProperty)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L613">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitProperty_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitProperty*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitProperty_AasCore_Aas3_0_IProperty_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitProperty(AasCore.Aas3_0.IProperty)">VisitProperty(IProperty)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitProperty(IProperty that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IProperty.html">IProperty</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitQualifier_AasCore_Aas3_0_IQualifier_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitQualifier(AasCore.Aas3_0.IQualifier)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L586">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitQualifier_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitQualifier*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitQualifier_AasCore_Aas3_0_IQualifier_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitQualifier(AasCore.Aas3_0.IQualifier)">VisitQualifier(IQualifier)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitQualifier(IQualifier that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IQualifier.html">IQualifier</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitRange_AasCore_Aas3_0_IRange_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitRange(AasCore.Aas3_0.IRange)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L619">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitRange_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitRange*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitRange_AasCore_Aas3_0_IRange_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitRange(AasCore.Aas3_0.IRange)">VisitRange(IRange)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitRange(IRange that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IRange.html">IRange</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitReference_AasCore_Aas3_0_IReference_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitReference(AasCore.Aas3_0.IReference)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L655">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitReference_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitReference*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitReference_AasCore_Aas3_0_IReference_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitReference(AasCore.Aas3_0.IReference)">VisitReference(IReference)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitReference(IReference that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IReference.html">IReference</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitReferenceElement_AasCore_Aas3_0_IReferenceElement_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitReferenceElement(AasCore.Aas3_0.IReferenceElement)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L622">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitReferenceElement_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitReferenceElement*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitReferenceElement_AasCore_Aas3_0_IReferenceElement_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitReferenceElement(AasCore.Aas3_0.IReferenceElement)">VisitReferenceElement(IReferenceElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitReferenceElement(IReferenceElement that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IReferenceElement.html">IReferenceElement</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitRelationshipElement_AasCore_Aas3_0_IRelationshipElement_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitRelationshipElement(AasCore.Aas3_0.IRelationshipElement)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L604">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitRelationshipElement_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitRelationshipElement*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitRelationshipElement_AasCore_Aas3_0_IRelationshipElement_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitRelationshipElement(AasCore.Aas3_0.IRelationshipElement)">VisitRelationshipElement(IRelationshipElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitRelationshipElement(IRelationshipElement that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IRelationshipElement.html">IRelationshipElement</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitResource_AasCore_Aas3_0_IResource_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitResource(AasCore.Aas3_0.IResource)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L595">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitResource_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitResource*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitResource_AasCore_Aas3_0_IResource_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitResource(AasCore.Aas3_0.IResource)">VisitResource(IResource)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitResource(IResource that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IResource.html">IResource</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitSpecificAssetId_AasCore_Aas3_0_ISpecificAssetId_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitSpecificAssetId(AasCore.Aas3_0.ISpecificAssetId)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L598">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitSpecificAssetId_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitSpecificAssetId*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitSpecificAssetId_AasCore_Aas3_0_ISpecificAssetId_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitSpecificAssetId(AasCore.Aas3_0.ISpecificAssetId)">VisitSpecificAssetId(ISpecificAssetId)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitSpecificAssetId(ISpecificAssetId that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ISpecificAssetId.html">ISpecificAssetId</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitSubmodel_AasCore_Aas3_0_ISubmodel_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitSubmodel(AasCore.Aas3_0.ISubmodel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L601">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitSubmodel_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitSubmodel*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitSubmodel_AasCore_Aas3_0_ISubmodel_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitSubmodel(AasCore.Aas3_0.ISubmodel)">VisitSubmodel(ISubmodel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitSubmodel(ISubmodel that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ISubmodel.html">ISubmodel</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitSubmodelElementCollection_AasCore_Aas3_0_ISubmodelElementCollection_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitSubmodelElementCollection(AasCore.Aas3_0.ISubmodelElementCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L610">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitSubmodelElementCollection_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitSubmodelElementCollection*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitSubmodelElementCollection_AasCore_Aas3_0_ISubmodelElementCollection_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitSubmodelElementCollection(AasCore.Aas3_0.ISubmodelElementCollection)">VisitSubmodelElementCollection(ISubmodelElementCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitSubmodelElementCollection(ISubmodelElementCollection that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ISubmodelElementCollection.html">ISubmodelElementCollection</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitSubmodelElementList_AasCore_Aas3_0_ISubmodelElementList_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitSubmodelElementList(AasCore.Aas3_0.ISubmodelElementList)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L607">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitSubmodelElementList_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitSubmodelElementList*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitSubmodelElementList_AasCore_Aas3_0_ISubmodelElementList_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitSubmodelElementList(AasCore.Aas3_0.ISubmodelElementList)">VisitSubmodelElementList(ISubmodelElementList)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitSubmodelElementList(ISubmodelElementList that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.ISubmodelElementList.html">ISubmodelElementList</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitValueList_AasCore_Aas3_0_IValueList_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitValueList(AasCore.Aas3_0.IValueList)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L679">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitValueList_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitValueList*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitValueList_AasCore_Aas3_0_IValueList_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitValueList(AasCore.Aas3_0.IValueList)">VisitValueList(IValueList)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitValueList(IValueList that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IValueList.html">IValueList</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor_VisitValueReferencePair_AasCore_Aas3_0_IValueReferencePair_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor.VisitValueReferencePair(AasCore.Aas3_0.IValueReferencePair)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L676">View Source</a>
+  </span>
+  <a id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitValueReferencePair_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitValueReferencePair*"></a>
+  <h4 id="AasCore_Aas3_0_Visitation_AbstractVisitor_VisitValueReferencePair_AasCore_Aas3_0_IValueReferencePair_" data-uid="AasCore.Aas3_0.Visitation.AbstractVisitor.VisitValueReferencePair(AasCore.Aas3_0.IValueReferencePair)">VisitValueReferencePair(IValueReferencePair)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void VisitValueReferencePair(IValueReferencePair that)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="AasCore.Aas3_0.IValueReferencePair.html">IValueReferencePair</a></td>
+        <td><span class="parametername">that</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="AasCore.Aas3_0.Visitation.IVisitor.html">Visitation.IVisitor</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_Visitation_AbstractVisitor.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.Visitation.AbstractVisitor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/visitation.cs/#L574" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

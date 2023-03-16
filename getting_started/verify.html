@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Verify </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Verify ">
+    <meta name="generator" content="docfx 2.59.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/aas-core-csharp-logo-small.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="verify">Verify</h1>
+
+<p>Our SDK allows you to verify that a model satisfies the constraints of the meta-model.</p>
+<p>The verification logic is concentrated in the static class <a href="../api/AasCore.Aas3_0.Verification.html">Verification</a>, and all it takes is a call to <code>Verify</code> method.
+The method <code>Verify</code> will check that constraints in the given model element are satisfied, including the recursion into children elements.
+The method returns an iterator of errors, which you can use to for further processing (<em>e.g.</em>, report to the user).</p>
+<p>Here is a short example snippet:</p>
+<pre><code class="lang-cs">using System.Collections.Generic;
+using System.Linq;
+
+using Aas = AasCore.Aas3_0;
+using AasVerification = AasCore.Aas3_0.Verification;
+using AasReporting = AasCore.Aas3_0.Reporting;
+
+public class Program
+{
+    public static void Main()
+    {
+        // Prepare the environment
+        var someProperty = new Aas.Property(
+            Aas.DataTypeDefXsd.Boolean)
+        {
+            // 🗲🗲💀🗲🗲
+            // The ID-shorts must be proper variable names,
+            // but there is a dash (&quot;-&quot;) in this ID-short.
+            IdShort = &quot;some-Property&quot;,
+        };
+
+        var submodel = new Aas.Submodel(
+            &quot;some-unique-global-identifier&quot;)
+        {
+            SubmodelElements = new List&lt;Aas.ISubmodelElement&gt;()
+            {
+                someProperty
+            }
+        };
+
+        var environment = new Aas.Environment()
+        {
+            Submodels = new List&lt;Aas.ISubmodel&gt;()
+            {
+                submodel
+            }
+        };
+
+        // Verify the environment and print out the errors
+        foreach (var error in AasVerification.Verify(environment))
+        {
+            System.Console.WriteLine(
+                error.Cause
+            );
+        }
+
+        // Outputs:
+        // Invariant violated:
+        // ID-short of Referables shall only feature letters, digits, underscore (``_``);
+        // starting mandatory with a letter. *I.e.* ``[a-zA-Z][a-zA-Z0-9_]+``.
+    }
+}
+</code></pre>
+<h2 id="reporting">Reporting</h2>
+<p>The error is an instance of <a href="../api/AasCore.Aas3_0.Reporting.Error.html">Error</a>, living in the scope of the static class <a href="../api/AasCore.Aas3_0.Reporting.html">Reporting</a>.
+You can use the methods <code>GenerateJsonPath</code> and <code>GenerateRelativeXPath</code> to convert the error's path to a readable path.</p>
+<p>Here is the above snippet modified so that the path is included in the prints:</p>
+<pre><code class="lang-cs">// ...
+
+using AasVerification = AasCore.Aas3_0.Verification;
+using AasReporting = AasCore.Aas3_0.Reporting;
+
+public class Program
+{
+    public static void Main()
+    {
+        // ...
+
+        // Verify the environment and print out the errors
+        foreach (var error in AasVerification.Verify(environment))
+        {
+            System.Console.WriteLine(
+                AasReporting.GenerateJsonPath(error.PathSegments)
+                + &quot;: &quot;
+                + error.Cause
+            );
+        }
+
+        // Outputs:
+        // submodels[0].submodelElements[0].idShort: Invariant violated:
+        // ID-short of Referables shall only feature letters, digits, underscore (``_``);
+        // starting mandatory with a letter. *I.e.* ``[a-zA-Z][a-zA-Z0-9_]+``.
+    }
+}
+</code></pre>
+<h2 id="limit-the-number-of-reported-errors">Limit the Number of Reported Errors</h2>
+<p>Since the <code>Verify</code> method of the static class <a href="../api/AasCore.Aas3_0.Verification.html">Verification</a> gives you an iterator (an <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerable">IEnumerable</a>), you can simply stop the verification after observing a certain number of errors.</p>
+<p>Here is a snippet which reports only the first 10 errors:</p>
+<pre><code class="lang-cs">
+// Verify the environment and print out the first 10 errors
+int errorCount = 0;
+foreach (var error in AasVerification.Verify(environment))
+{
+    System.Console.WriteLine(error.Cause);
+
+    errorCount++;
+    if (errorCount == 10) break;
+}
+</code></pre>
+<h2 id="omitted-constraints">Omitted Constraints</h2>
+<p>Not all constraints specified in the meta-model can be verified.
+Some constraints require external dependencies such as an AAS registry.
+Verifying the constraints with external dependencies is out-of-scope of our SDK, as we still lack standardized interfaces to those dependencies.</p>
+<p>However, all the constraints which need no external dependency are verified.
+For a full list of exception, consult the <a href="https://github.com/aas-core-works/aas-core-meta/blob/931b355682c4a7b84a2fb94932cf09bcf7ce9a1f/aas_core_meta/v3rc2.py#L4">aas-core-meta description of the meta-model</a> which this SDK has been generated after.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/doc/source/getting_started/verify.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

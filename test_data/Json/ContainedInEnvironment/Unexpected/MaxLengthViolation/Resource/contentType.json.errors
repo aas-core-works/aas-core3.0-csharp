@@ -1,2 +1,0 @@
-assetAdministrationShells[0].assetInformation.defaultThumbnail.contentType: Invariant violated:
-ContentType shall have a maximum length of 100 characters.

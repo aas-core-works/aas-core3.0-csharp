@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Enhancing </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Enhancing ">
+    <meta name="generator" content="docfx 2.59.3.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/aas-core-csharp-logo-small.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="enhancing">Enhancing</h1>
+
+<p>In any complex application, creating, modifying and de/serializing AAS instances is not enough.
+You have to insert your custom application-specific data to the model in order for the model to be useful.</p>
+<p>Take, for example, parent-child relationship.
+The current library ignores it, and there is no easy way for you to find out to which <a href="../api/AasCore.Aas3_0.Submodel.html">Submodel</a> a particular <a href="../api/AasCore.Aas3_0.ISubmodelElement.html">ISubmodelElement</a> belongs to.</p>
+<p>We did want to keep the types as simple as possible — the parent-child relationships can get tricky very soon if you have multiple environments with shared submodels <em>etc.</em>
+Instead of overcomplicating the code and making it barely traceable, we decided to keep it simple and frugal in features.</p>
+<p>However, that is little solace if you are developing an GUI editor where you know for sure that there will be only one environment, and where parent-child relationships are crucial for so many tasks.
+What is more, parent-child relationships are not the only data that need to be intertwined — you probably want history, localized caches <em>etc.</em></p>
+<h2 id="hasthable">Hasthable?</h2>
+<p>There are different ways how application-specific data can be synced with the model.
+One popular technique is to use <a href="https://learn.microsoft.com/en-US/dotnet/api/system.collections.hashtable">Hashtable</a>'s and simply map model instances to your custom nuggets of data.
+This works well if the data is read-only, and you can spare the cycles for the lookups (which is often acceptable as they run on average in time complexity <code>O(1)</code> anyhow).</p>
+<p>Otherwise, if you need to modify the data, maintaining the consistency between the <a href="https://learn.microsoft.com/en-US/dotnet/api/system.collections.hashtable">Hashtable</a> and your nuggets becomes difficult.
+For example, if you forget to remove the entries from the <a href="https://learn.microsoft.com/en-US/dotnet/api/system.collections.hashtable">Hashtable</a> when you remove the instances from the model, you might clog your garbage collector.</p>
+<h2 id="wrapping">Wrapping</h2>
+<p>Hence, if you modify the data, you need to keep it close to the model instance.
+In dynamic languages, such as Python and JavaScript, you can simply add your custom fields to the object.
+This does not work in such a static language like C#.</p>
+<p>One solution, usually called <a href="https://en.wikipedia.org/wiki/Decorator_pattern">Decorator pattern</a>, is to <em>wrap</em> or <em>decorate</em> the instances with your application-specific data.
+The decorated objects should satisfy both the interface of the original model and provide a way to retrieve your custom nuggets of information.</p>
+<p>Writing wrappers for many classes in the AAS meta-model is a tedious task.
+We therefore pre-generated the most of the boilerplate code in the static class <a href="../api/AasCore.Aas3_0.Enhancing.html">Enhancing</a>.</p>
+<p>In the context of decoration, we call your specific data <em>enhancements</em>.
+First, you need to specify how individual instances are enhanced, <em>i.e.</em> how to produce enhancements for each one of them.
+We call this an <em>enhancement factory</em>.
+Second, you need to recursively wrap your instances with the given enhancement factory.</p>
+<p>The <a href="../api/AasCore.Aas3_0.Enhancing.html">Enhancing</a> is generic and can work with any form of enhancement classes.
+You need to specify your enhancement factory as a <a href="https://learn.microsoft.com/en-us/dotnet/api/system.func-2">function delegate</a> which takes an instance of <a href="../api/AasCore.Aas3_0.IClass.html">IClass</a> as input and returns an enhancement, or <code>null</code>, if you do not want to enhance the particular instance.</p>
+<p>The wrapping and unwrapping is specified in the generic class <a href="../api/AasCore.Aas3_0.Enhancing.Enhancer-1.html">Enhancer</a>, which takes the enhancement factory as the only argument.</p>
+<p>The methods <code>Enhancer.Wrap</code> and <code>Enhancer.Unwrap</code> perform the wrapping and unwrapping, respectively.
+The method <code>Enhancer.MustWrap</code> is a shortcut method that spares you a non-null check of <code>Enhancer.Unwrap</code>.</p>
+<h2 id="example-parent-child-enhancement">Example: Parent-Child Enhancement</h2>
+<p>Let us now consider the aforementioned example.
+We want to keep track of parent-child relationships in a model.</p>
+<p>The following code snippets first constructs an environment for illustration.
+Then we specify the enhancement such that each instance is initialized with the parent set to <code>null</code>.
+Finally, we modify the enhancements such that they reflect the parent-child relationships.</p>
+<pre><code class="lang-cs">using Aas = AasCore.Aas3_0;
+using AasEnhancing = AasCore.Aas3_0.Enhancing;
+
+using System.Linq;
+using System.Collections.Generic;
+
+public class Program
+{
+    class Enhancement
+    {
+        public Aas.IClass? Parent = null;
+    }
+
+    public static void Main()
+    {
+        // Prepare the environment
+        var someProperty = new Aas.Property(
+            Aas.DataTypeDefXsd.Boolean)
+        {
+            IdShort = &quot;someProperty&quot;,
+        };
+
+        var submodel = new Aas.Submodel(
+            &quot;some-unique-global-identifier&quot;)
+        {
+            SubmodelElements = new List&lt;Aas.ISubmodelElement&gt;()
+            {
+                someProperty
+            }
+        };
+
+        Aas.IEnvironment environment = new Aas.Environment()
+        {
+            Submodels = new List&lt;Aas.ISubmodel&gt;()
+            {
+                submodel
+            }
+        };
+
+        // Prepare the enhancer
+        var enhancer = new Aas.Enhancing.Enhancer&lt;Enhancement&gt;(
+            (instance =&gt; new Enhancement())
+        );
+
+        // Enhance with parent set to `null`
+        environment = (Aas.IEnvironment) enhancer.Wrap(environment);
+
+        var queue = new Queue&lt;Aas.IClass&gt;();
+        queue.Enqueue(environment);
+        while (queue.Count &gt; 0)
+        {
+            var instance = queue.Dequeue();
+            foreach (var child in instance.DescendOnce())
+            {
+                enhancer.MustUnwrap(child).Parent = instance;
+                queue.Enqueue(child);
+            }
+        }
+
+        // Retrieve the parent of the first submodel
+        System.Console.WriteLine(
+            enhancer.MustUnwrap(environment.Submodels![0]).Parent 
+            == environment
+        );
+
+        // Prints:
+        // True
+    }
+}
+</code></pre>
+<p>Note that this approach is indeed more maintainable than the one with <a href="https://learn.microsoft.com/en-US/dotnet/api/system.collections.hashtable">Hashtable</a>, but you still need to take extra care.
+If you create new submodels and insert them into the environment, you have to make sure that you wrap them appropriately.
+If you move a submodel from one environment to another, you have to update the parent link manually <em>etc.</em></p>
+<h2 id="example-selective-enhancement">Example: Selective Enhancement</h2>
+<p>We demonstrate now how you can selectively enhance only some instances in the <a href="../api/AasCore.Aas3_0.Environment.html">Environment</a>.</p>
+<p>For example, let us assign a unique identifier to all instances which are referable, <em>i.e.</em>, implement <a href="../api/AasCore.Aas3_0.IReferable.html">IReferable</a>.
+All the other instances are not enhanced.</p>
+<pre><code class="lang-cs">using Aas = AasCore.Aas3_0;
+using AasEnhancing = AasCore.Aas3_0.Enhancing;
+
+using System.Linq;
+using System.Collections.Generic;
+
+public class Program
+{
+    class IdEnhancement
+    {
+        public long Id;
+
+        public IdEnhancement(long id)
+        {
+            Id = id;
+        }
+    }
+
+    public static void Main()
+    {
+        // Prepare the environment
+        Aas.IEnvironment environment = new Aas.Environment()
+        {
+            Submodels = new List&lt;Aas.ISubmodel&gt;()
+            {
+                new Aas.Submodel(
+                    &quot;some-unique-global-identifier&quot;)
+                {
+                    SubmodelElements = new List&lt;Aas.ISubmodelElement&gt;()
+                    {
+                        new Aas.Property(
+                            Aas.DataTypeDefXsd.Boolean)
+                        {
+                            IdShort = &quot;someProperty&quot;,
+                        }
+                    },
+                    Administration = new Aas.AdministrativeInformation()
+                    {
+                        Version=&quot;1.0&quot;
+                    }
+                }
+            }
+        };
+
+        // Prepare the enhancer
+        long lastId = 0;
+        var enhancementFactory = new System.Func&lt;IClass, IdEnhancement?&gt;(
+            instance =&gt;
+            {
+                if (instance is Aas.IReferable)
+                {
+                    lastId++;
+                    return new IdEnhancement(lastId);
+                }
+
+                return null;
+            }
+        );
+
+        var enhancer = new Aas.Enhancing.Enhancer&lt;IdEnhancement&gt;(
+            enhancementFactory
+        );
+
+        // Enhance
+        environment = (Aas.IEnvironment)enhancer.Wrap(environment);
+
+        // The submodel and property are enhanced.
+        IdEnhancement enhancement = enhancer.MustUnwrap(environment.Submodels![0]);
+        System.Console.WriteLine(enhancement.Id);
+
+        // Prints:
+        // 2
+
+        enhancement = enhancer.MustUnwrap(environment.Submodels![0].SubmodelElements![0]);
+        System.Console.WriteLine(enhancement.Id);
+
+        // Prints:
+        // 1
+
+        // The administrative information is not referable, and thus not enhanced.
+        IdEnhancement? maybeEnhancement = enhancer.Unwrap(
+            environment.Submodels![0].Administration!
+        );
+
+        System.Console.WriteLine(maybeEnhancement == null);
+
+        // Prints:
+        // True
+    }
+}
+</code></pre>
+<h2 id="no-re-wraps-allowed">No Re-wraps Allowed</h2>
+<p>We disallow re-wraps of already wrapped instances to avoid costly iterations over the object trees, and throw an exception.
+Additionally, we want to prevent bugs in many settings where the enhancement factory assigns unique identifiers to instances or performs non-idempotent operations.</p>
+<p>Please let us know by [creating an issue] if you need re-wraps to be allowed, and please tell us more about your particular scenario.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/doc/source/getting_started/enhancing.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

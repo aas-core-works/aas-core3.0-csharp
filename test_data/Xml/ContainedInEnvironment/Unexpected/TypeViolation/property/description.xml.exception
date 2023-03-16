@@ -1,1 +1,0 @@
-Expected an XML end element to conclude a property of class Property with the element name description, but got the node of type Text with the value Unexpected string value at: submodels/*[0]/submodelElements/*[0]

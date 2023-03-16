@@ -1,1 +1,0 @@
-Required property "valueId" is missing at: assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent.valueList.valueReferencePairs[0]

@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Decisions </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Decisions ">
+    <meta name="generator" content="docfx 2.59.3.0">
+    
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="images/aas-core-csharp-logo-small.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="design-decisions">Design Decisions</h1>
+
+<p>We explain a couple of design decisions and trade-offs we deliberately made during the development of the SDK.
+These are our opinions — you may or may not agree, which is totally OK as there are always more than one way to do things and do them well.</p>
+<p>However, the decisions elaborated here are not meant to convince you.
+We want to give you insight about why we did certain things, and why we didn't implement them in some other way.</p>
+<h2 id="aggregations-as-lists-instead-of-dictionaries">Aggregations as Lists instead of Dictionaries</h2>
+<p>We decided to implement all the aggregations in the meta-model as <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1">System.Collections.Generic.List</a> instead of <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2?view=net-6.0">System.Collections.Generic.Dictionary</a>.</p>
+<p>Some structures just &quot;scream&quot; for a dictionary, such as <code>SubmodelElements</code> property in a <a href="api/AasCore.Aas3_0.Submodel.html">Submodel</a>.
+The submodel elements need to be unique w.r.t. their ID-shorts.
+So why didn't we model them as dictionaries, where keys are ID-shorts?</p>
+<p>There are multiple reasons:</p>
+<ul>
+<li>&quot;There are only two hard things in Computer Science: cache invalidation and naming things&quot; (see <a href="https://skeptics.stackexchange.com/questions/19836/has-phil-karlton-ever-said-there-are-only-two-hard-things-in-computer-science">this StackExchange</a>).
+For example, the key in the dictionary and the <code>IdShort</code> property of the submodel element need to be always in sync.
+Keeping such things in sync can be hard.</li>
+<li>When de-serializing, you need to hash on all the key/value pairs.
+In many situations, you do not perform any look-ups, but want to read the whole environment only once, and act upon it.
+Hashing would have wasted computational resources.</li>
+<li>You may want to index on more things than <code>IdShort</code>.
+For example, retrieving submodel elements by their <code>SemanticId</code> is almost equally important.</li>
+<li>The order of the key/value pairs in a dictionary might not follow the order in the underlying serialized file.
+For example, if <a href="https://docs.microsoft.com/en-us/dotnet/api/system.collections.hashtable">System.Collections.HashTable</a> is used, the order is random.
+This would make the round-trip de-serialization 🠒 serialization non-deterministic.</li>
+<li>Generating code based on dictionaries would have incurred additional complexity in <a href="https://github.com/aas-core-works/aas-core-meta/">aas-core-meta</a> and <a href="https://github.com/aas-core-works/aas-core-codegen/">aas-core-codegen</a> as we would need to capture indexing in our machine-readable meta-models.</li>
+</ul>
+<p>We therefore leave indexing (and syncing of the indices) to the user instead of pre-maturely providing a basic index on one of the features.</p>
+<h2 id="no-parent--child-associations">No Parent ⟷ Child Associations</h2>
+<p>We did not model the parent ⟷ child relations between the model elements for similar reasons why we did not implement dictionaries.
+Namely, keeping the associations in sync is hard.
+While you might have clear parent ⟷ child relationship when you deserialize an environment, this relationship becomes less clear when you start re-using objects between environments.</p>
+<p>Moreover, you need to sync the parent when an instance associated as its child is deleted.
+The complexity of this sync becomes hard (and computationally costly) as your object tree grows.
+And what if you re-assign the instance to multiple parents?</p>
+<p>For example, an instance of <a href="api/AasCore.Aas3_0.Submodel.html">Submodel</a> may appear in multiple instances of <a href="api/AasCore.Aas3_0.Environment.html">Environment</a>.
+Which environment is the parent?</p>
+<p>Multiple solutions are possible, and they depend on the application domain.
+In some cases, where you deal with static data, a simple dictionary parent 🠒 child is sufficient.
+In other cases, more involved data structures and updating strategies are needed.</p>
+<p>As we did not want to prejudice the SDK for a particular application domain, we left out parent ⟷ child associations.</p>
+<p>We indeed discussed a couple of concrete solutions, but failed to find a unifying approach which would satisfy multiple scenarios.
+Please <a href="https://github.com/aas-core-works/aas-core3.0-csharp/issues/new/choose">create an issue</a> if you would like to discuss this point further.</p>
+<h2 id="values-as-strings">Values as Strings</h2>
+<p>As you can see, say, in [Property] class, the <code>Value</code> property holds strings.
+This is indeed intentional though it might seem a bit outlandish.</p>
+<p>You have to bear in mind that the lexical space of <a href="https://www.w3.org/TR/xmlschema-2/">XML basic data types</a>, which we use to encode values in such properties, is large, and larger than C# primitive types.</p>
+<p>For example, <code>xs:double</code>'s can have an arbitrary prefix of zeros (<code>001234</code> is a valid <code>xs:double</code>).</p>
+<p>For another example, <code>xs:decimal</code> allows for an arbitrary size and precision.
+In C#, <a href="https://docs.microsoft.com/en-us/dotnet/api/system.decimal">System.Decimal</a> is probably our best bet, but it has a fixed precision.
+It might well be that our application domain requires more precision than <a href="https://docs.microsoft.com/en-us/dotnet/api/system.decimal">System.Decimal</a>!</p>
+<p>Writing code for a setting where various systems interoperate with mixed application domains is difficult.
+We wanted to stick to the specification, which mandates <a href="https://www.w3.org/TR/xmlschema-2/">XML basic data types</a>, and thus leave the parsing of values up to the users.
+Thus, we do not restrict the domain where our SDK can be used.
+The users will know the best what precision and form they need.</p>
+<h2 id="no-aas-registry">No AAS Registry</h2>
+<p>An AAS Registry is considered an external dependency, since it requires network requests.
+We left it out-of-scope on purpose as this SDK focuses on the data exchange.
+Further aas-core projects will work on an AAS registry.</p>
+<p>One important consequence of leaving out the registry is that some constraints in the meta-model can not be enforced, as we do not know how to resolve the references.</p>
+<p>The full list of omitted constraints is available in <a href="https://github.com/aas-core-works/aas-core-meta/blob/931b355682c4a7b84a2fb94932cf09bcf7ce9a1f/aas_core_meta/v3rc2.py#L4">the code of aas-core-meta</a>.</p>
+<h2 id="build-your-own-abstraction-on-top">Build Your Own Abstraction on Top</h2>
+<p>We intentionally kept the API surface of the SDK minimal.
+The idea was to give you basic building blocks which you can use to construct more complex structures.</p>
+<p>For example, <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/">LINQ</a> in conjunction with <code>Descend</code> method of <a href="api/AasCore.Aas3_0.IClass.html">IClass</a> allows for powerful queries.</p>
+<p>An implementation of <a href="api/AasCore.Aas3_0.Visitation.AbstractVisitor.html">AbstractVisitor</a> or <a href="api/AasCore.Aas3_0.Visitation.AbstractTransformer-1.html">AbstractTransformer</a> allows you to write converters to other formats.
+They give you a pre-structured code which you merely need to fill in, thus reducing your mental overhead.</p>
+<h2 id="maintainability-versus-performance">Maintainability <em>versus</em> Performance</h2>
+<p>We chose to sacrifice the performance for maintainability of the code.
+In particular, we decided to generate the code automatically using <a href="https://github.com/aas-core-works/aas-core-codegen/">aas-core-codegen</a>.</p>
+<p>This imposed certain suboptimal spots in the code.
+For example, the constraints are automatically transpiled.
+A lot of constraints could have been optimized, but we are stuck with their representation in Python and the way they are translated into C#.</p>
+<p>We believe that this is a valid trade-off at the moment.
+At the moment, the meta-model changes too frequently to manually come up with the changes in an SDK without sacrificing the correctness.</p>
+<p>As more critical applications and domains in the AAS space arise, and the meta-model becomes more stable, hand optimization of certain parts of our SDK will probably make more sense.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/doc/source/design_decisions.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

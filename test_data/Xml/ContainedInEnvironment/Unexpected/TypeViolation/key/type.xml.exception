@@ -1,2 +1,0 @@
-The property Type of an instance of class Key could not be de-serialized from an unexpected enumeration literal: 
-							 at: assetAdministrationShells/*[0]/derivedFrom/keys/*[0]/type
