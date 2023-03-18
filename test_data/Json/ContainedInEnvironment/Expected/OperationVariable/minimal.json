@@ -2,6 +2,7 @@
   "submodels": [
     {
       "id": "something_48c66017",
+      "idShort": "something_f8c8ea97",
       "modelType": "Submodel",
       "submodelElements": [
         {
@@ -10,6 +11,7 @@
             {
               "value": {
                 "contentType": "15j/5j",
+                "idShort": "something_c8b0a9a0",
                 "modelType": "File"
               }
             }

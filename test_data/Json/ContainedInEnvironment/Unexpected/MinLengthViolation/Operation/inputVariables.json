@@ -2,6 +2,7 @@
   "submodels": [
     {
       "id": "something_48c66017",
+      "idShort": "something_f8c8ea97",
       "modelType": "Submodel",
       "submodelElements": [
         {
@@ -54,6 +55,7 @@
           "inoutputVariables": [
             {
               "value": {
+                "idShort": "something_89e4ed5f",
                 "modelType": "MultiLanguageProperty"
               }
             }
@@ -72,6 +74,7 @@
                   ],
                   "type": "ModelReference"
                 },
+                "idShort": "something_0921a907",
                 "modelType": "AnnotatedRelationshipElement",
                 "second": {
                   "keys": [

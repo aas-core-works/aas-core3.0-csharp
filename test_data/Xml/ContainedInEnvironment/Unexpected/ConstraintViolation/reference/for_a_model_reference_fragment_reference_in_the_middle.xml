@@ -1,6 +1,7 @@
 <environment xmlns="https://admin-shell.io/aas/3/0">
 	<submodels>
 		<submodel>
+			<idShort>someSubmodel</idShort>
 			<id>https://example.com/some-submodel</id>
 			<submodelElements>
 				<referenceElement>
