@@ -17,13 +17,13 @@ from aas_core_codegen import intermediate
 from aas_core_codegen.common import Stripped
 from aas_core_codegen.csharp import common as csharp_common
 
-import aas_core_3_0_csharp_testgen.common
-from aas_core_3_0_csharp_testgen import test_data_io
+import test_codegen.common
+from test_codegen import test_data_io
 
 
 def main() -> int:
     """Execute the main routine."""
-    symbol_table = aas_core_3_0_csharp_testgen.common.load_symbol_table()
+    symbol_table = test_codegen.common.load_symbol_table()
 
     this_path = pathlib.Path(os.path.realpath(__file__))
     repo_root = this_path.parent.parent.parent

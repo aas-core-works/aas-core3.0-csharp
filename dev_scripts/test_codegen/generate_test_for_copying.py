@@ -25,7 +25,7 @@ from aas_core_codegen.csharp.common import (
     INDENT3 as III,
 )
 
-from aas_core_3_0_csharp_testgen.common import load_symbol_table
+from test_codegen.common import load_symbol_table
 
 
 def _generate_shallow_equals(cls: intermediate.ConcreteClass) -> Stripped:

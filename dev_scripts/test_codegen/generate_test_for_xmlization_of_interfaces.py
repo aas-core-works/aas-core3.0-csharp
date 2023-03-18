@@ -1,4 +1,4 @@
-"""Generate the test code for the JSON de/serialization of interfaces."""
+"""Generate the test code for the XML de/serialization of interfaces."""
 
 import io
 import os
@@ -16,7 +16,7 @@ import aas_core_codegen.run
 from aas_core_codegen import intermediate
 from aas_core_codegen.common import Stripped
 
-from aas_core_3_0_csharp_testgen.common import load_symbol_table
+from test_codegen.common import load_symbol_table
 
 
 def main() -> int:
@@ -46,6 +46,7 @@ def main() -> int:
             interface_name_csharp = aas_core_codegen.csharp.naming.interface_name(
                 our_type.interface.name
             )
+
             cls_name_csharp = aas_core_codegen.csharp.naming.class_name(cls.name)
 
             blocks.append(
@@ -54,30 +55,60 @@ def main() -> int:
 [Test]
 public void Test_round_trip_{interface_name_csharp}_from_{cls_name_csharp}()
 {{
+    // We load from JSON here just to jump-start the round trip.
+    // The round-trip goes then over XML.
     var instance = Aas.Tests.CommonJsonization.LoadMaximal{cls_name_csharp}();
 
-    var jsonObject = Aas.Jsonization.Serialize.ToJsonObject(instance);
+    // The round-trip starts here.
+    var outputBuilder = new System.Text.StringBuilder();
 
-    var anotherInstance = Aas.Jsonization.Deserialize.{interface_name_csharp}From(
-        jsonObject);
-
-    var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
-        anotherInstance);
-            
-    Aas.Tests.CommonJson.CheckJsonNodesEqual(
-        jsonObject,
-        anotherJsonObject,
-        out Aas.Reporting.Error? error);
-
-    if (error != null)
+    // Serialize to XML
     {{
-        Assert.Fail(
-            "When we serialize the complete instance of {cls_name_csharp} " +
-            "as {interface_name_csharp}, we get an error in the round trip: " +
-            $"{{Reporting.GenerateJsonPath(error.PathSegments)}}: " +
-            error.Cause
-        );
+        using var xmlWriter = System.Xml.XmlWriter.Create(
+            outputBuilder,
+            new System.Xml.XmlWriterSettings()
+            {{
+                Encoding = System.Text.Encoding.UTF8,
+                OmitXmlDeclaration = true
+            }});
+
+        Aas.Xmlization.Serialize.To(
+            instance,
+            xmlWriter);
     }}
+
+    // De-serialize from XML
+    string outputText = outputBuilder.ToString();
+
+    using var outputReader = new System.IO.StringReader(outputText);
+
+    using var xmlReader = System.Xml.XmlReader.Create(
+        outputReader,
+        new System.Xml.XmlReaderSettings());
+
+    var anotherInstance = Aas.Xmlization.Deserialize.{interface_name_csharp}From(
+        xmlReader);
+
+    // Serialize back to XML
+    var anotherOutputBuilder = new System.Text.StringBuilder();
+
+    {{
+        using var anotherXmlWriter = System.Xml.XmlWriter.Create(
+            anotherOutputBuilder,
+            new System.Xml.XmlWriterSettings()
+            {{
+                Encoding = System.Text.Encoding.UTF8,
+                OmitXmlDeclaration = true
+            }});
+
+        Aas.Xmlization.Serialize.To(
+            anotherInstance,
+            anotherXmlWriter);
+    }}
+
+
+    // Compare
+    Assert.AreEqual(outputText, anotherOutputBuilder.ToString());
 }}  // void Test_round_trip_{interface_name_csharp}_from_{cls_name_csharp}"""
                 )
             )
@@ -96,7 +127,7 @@ using NUnit.Framework;  // can't alias
 
 namespace AasCore.Aas3_0.Tests
 {
-    public class TestJsonizationOfInterfaces
+    public class TestXmlizationOfInterfaces
     {
 """
     )
@@ -109,7 +140,7 @@ namespace AasCore.Aas3_0.Tests
 
     writer.write(
         """
-    }  // class TestJsonizationOfInterfaces
+    }  // class TestXmlizationOfInterfaces
 }  // namespace AasCore.Aas3_0.Tests
 
 /*
@@ -122,7 +153,7 @@ namespace AasCore.Aas3_0.Tests
     this_path = pathlib.Path(os.path.realpath(__file__))
     repo_root = this_path.parent.parent.parent
 
-    target_pth = repo_root / "src/AasCore.Aas3_0.Tests/TestJsonizationOfInterfaces.cs"
+    target_pth = repo_root / "src/AasCore.Aas3_0.Tests/TestXmlizationOfInterfaces.cs"
     target_pth.write_text(writer.getvalue(), encoding="utf-8")
 
     return 0

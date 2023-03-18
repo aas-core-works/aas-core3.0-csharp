@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/testgen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/testgen/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.9 (aas-core3.0-csharp)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (aas-core3.0-csharp)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">

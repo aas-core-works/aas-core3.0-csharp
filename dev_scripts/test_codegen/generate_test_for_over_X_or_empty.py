@@ -12,8 +12,8 @@ from aas_core_codegen.common import Stripped, Identifier
 from aas_core_codegen.csharp import naming as csharp_naming
 from aas_core_codegen.python import naming as python_naming
 
-from aas_core_3_0_csharp_testgen import test_data_io
-from aas_core_3_0_csharp_testgen.common import load_symbol_table
+from test_codegen import test_data_io
+from test_codegen.common import load_symbol_table
 
 
 def main() -> int:
