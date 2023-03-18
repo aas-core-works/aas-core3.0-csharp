@@ -1,4 +1,4 @@
-"""Generate the test code for the ``DescendOnce`` methods."""
+"""Generate the test code for the ``Descend`` methods and ``VisitorThrough``."""
 
 import io
 import os
@@ -17,12 +17,12 @@ from aas_core_codegen import intermediate
 from aas_core_codegen.common import Stripped
 from aas_core_codegen.csharp import common as csharp_common
 
-import aas_core_3_0_csharp_testgen.common
+import test_codegen.common
 
 
 def main() -> int:
     """Execute the main routine."""
-    symbol_table = aas_core_3_0_csharp_testgen.common.load_symbol_table()
+    symbol_table = test_codegen.common.load_symbol_table()
 
     this_path = pathlib.Path(os.path.realpath(__file__))
     repo_root = this_path.parent.parent.parent
@@ -33,12 +33,66 @@ def main() -> int:
     blocks.append(
         Stripped(
             """\
+private static string Trace(Aas.IClass instance)
+{
+    switch (instance)
+    {
+        case IIdentifiable identifiable:
+            {
+                return $"{identifiable.GetType()} with ID {identifiable.Id}";
+            }
+        case IReferable referable:
+            {
+                return $"{referable.GetType()} with ID-short {referable.IdShort}";
+            }
+        default:
+            {
+                return instance.GetType().Name;
+            }
+    }
+}
+
+class TracingVisitorThrough : Aas.Visitation.VisitorThrough
+{
+    public readonly List<string> Log = new List<string>();
+
+    public override void Visit(IClass that)
+    {
+        Log.Add(Trace(that));
+        base.Visit(that);
+    }
+}
+
+private static void AssertDescendAndVisitorThroughSame(
+    Aas.IClass instance)
+{
+    var logFromDescend = new List<string>();
+    foreach (var subInstance in instance.Descend())
+    {
+        logFromDescend.Add(Trace(subInstance));
+    }
+    
+    var visitor = new TracingVisitorThrough();
+    visitor.Visit(instance);
+    var traceFromVisitor = visitor.Log;
+
+    Assert.IsNotEmpty(traceFromVisitor);
+
+    Assert.AreEqual(
+        Trace(instance),
+        traceFromVisitor[0]);
+
+    traceFromVisitor.RemoveAt(0);
+
+    Assert.That(traceFromVisitor, Is.EquivalentTo(logFromDescend));
+}
+
 private static void CompareOrRerecordTrace(
     IClass instance,
     string expectedPath)
 {
     var writer = new System.IO.StringWriter();
-    foreach (var descendant in instance.DescendOnce())
+    foreach (var descendant in instance.Descend())
     {
         switch (descendant)
         {
@@ -106,7 +160,7 @@ private static void CompareOrRerecordTrace(
             Stripped(
                 f"""\
 [Test]
-public void Test_{cls_name_csharp}()
+public void Test_Descend_of_{cls_name_csharp}()
 {{
     Aas.{cls_name_csharp} instance = (
         Aas.Tests.CommonJsonization.LoadMaximal{cls_name_csharp}());
@@ -115,10 +169,20 @@ public void Test_{cls_name_csharp}()
         instance,
         Path.Combine(
             Aas.Tests.Common.TestDataDir,
-            "DescendOnce",
+            "Descend",
             {csharp_common.string_literal(cls_name_json)},
             "maximal.json.trace"));
-}}  // public void Test_{cls_name_csharp}"""
+}}  // public void Test_Descend_of_{cls_name_csharp}
+
+[Test]
+public void Test_Descend_against_VisitorThrough_for_{cls_name_csharp}()
+{{
+    Aas.{cls_name_csharp} instance = (
+        Aas.Tests.CommonJsonization.LoadMaximal{cls_name_csharp}());
+    
+    AssertDescendAndVisitorThroughSame(
+        instance);
+}}  // public void Test_Descend_against_VisitorThrough_for_{cls_name_csharp}"""
             )
         )
 
@@ -135,10 +199,11 @@ using Directory = System.IO.Directory;
 using Path = System.IO.Path;
 
 using NUnit.Framework; // can't alias
+using System.Collections.Generic;  // can't alias
 
 namespace AasCore.Aas3_0.Tests
 {
-    public class TestDescendOnce
+    public class TestDescendAndVisitorThrough
     {
 """
     )
@@ -151,7 +216,7 @@ namespace AasCore.Aas3_0.Tests
 
     writer.write(
         """
-    }  // class TestDescendOnce
+    }  // class TestDescendAndVisitorThrough
 }  // namespace AasCore.Aas3_0.Tests
 
 /*
@@ -161,7 +226,7 @@ namespace AasCore.Aas3_0.Tests
 """
     )
 
-    target_pth = repo_root / "src/AasCore.Aas3_0.Tests/TestDescendOnce.cs"
+    target_pth = repo_root / "src/AasCore.Aas3_0.Tests/TestDescendAndVisitorThrough.cs"
     target_pth.write_text(writer.getvalue(), encoding="utf-8")
 
     return 0

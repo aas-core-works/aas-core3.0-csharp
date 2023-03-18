@@ -17,7 +17,7 @@ from aas_core_codegen import intermediate
 from aas_core_codegen.common import Stripped
 from aas_core_codegen.csharp import common as csharp_common
 
-from aas_core_3_0_csharp_testgen.common import load_symbol_table
+from test_codegen.common import load_symbol_table
 
 
 def main() -> int:
