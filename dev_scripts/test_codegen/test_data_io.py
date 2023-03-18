@@ -2,15 +2,13 @@
 import inspect
 import itertools
 import json
-import os.path
 import pathlib
-from typing import Optional
 
-from icontract import require
+import aas_core_codegen.naming
 from aas_core_codegen import intermediate
 from aas_core_codegen.common import Identifier
-import aas_core_codegen.naming
 from aas_core_codegen.python import naming as python_naming
+from icontract import require
 
 from aas_core3 import types as aas_types, jsonization as aas_jsonization
 
