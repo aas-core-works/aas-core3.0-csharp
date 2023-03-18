@@ -2,6 +2,7 @@
   "submodels": [
     {
       "id": "https://example.com/some-submodel",
+      "idShort": "someSubmodel",
       "modelType": "Submodel",
       "submodelElements": [
         {

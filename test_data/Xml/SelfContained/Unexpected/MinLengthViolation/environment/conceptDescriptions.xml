@@ -1,6 +1,7 @@
 <environment xmlns="https://admin-shell.io/aas/3/0">
 	<assetAdministrationShells>
 		<assetAdministrationShell>
+			<idShort>something_783819f1</idShort>
 			<id>something_0edbd82e</id>
 			<assetInformation>
 				<assetKind>NotApplicable</assetKind>
@@ -10,6 +11,7 @@
 	</assetAdministrationShells>
 	<submodels>
 		<submodel>
+			<idShort>something_f8c8ea97</idShort>
 			<id>something_1e53dcdd</id>
 		</submodel>
 	</submodels>

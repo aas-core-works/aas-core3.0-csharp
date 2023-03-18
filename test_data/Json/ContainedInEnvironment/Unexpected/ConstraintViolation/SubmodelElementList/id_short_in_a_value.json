@@ -1,11 +1,12 @@
 {
   "submodels": [
     {
-      "id": "something_48c66017",
+      "id": "https://example.com/some-submodel",
+      "idShort": "someSubmodel",
       "modelType": "Submodel",
       "submodelElements": [
         {
-          "idShort": "something3fdd3eb4",
+          "idShort": "someList",
           "modelType": "SubmodelElementList",
           "semanticIdListElement": {
             "keys": [

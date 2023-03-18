@@ -2,6 +2,7 @@
   "submodels": [
     {
       "id": "something_48c66017",
+      "idShort": "something_f8c8ea97",
       "modelType": "Submodel",
       "submodelElements": [
         {
@@ -80,6 +81,7 @@
           },
           "statements": [
             {
+              "idShort": "something_7cdc9635",
               "modelType": "Range",
               "valueType": "xs:gMonthDay"
             }
