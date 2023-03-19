@@ -120,6 +120,28 @@ def _uninstall_and_install_aas_core_codegen(
     )
 
 
+def _copy_code_from_aas_core_codegen(
+    aas_core_codegen_repo: pathlib.Path, our_repo: pathlib.Path
+) -> None:
+    """Copy the generated code from aas-core-codegen's test data."""
+    source_dir = (
+        aas_core_codegen_repo
+        / "test_data/csharp/test_main/aas_core_meta.v3/expected_output"
+    )
+
+    target_dir = our_repo / "src/AasCore.Aas3_0"
+
+    print(
+        f"Copying the code: "
+        f"from {source_dir} "
+        f"to {target_dir.relative_to(our_repo)} ..."
+    )
+
+    for pth in source_dir.glob("*.cs"):
+        tgt_pth = target_dir / pth.name
+        shutil.copy(pth, tgt_pth)
+
+
 def _copy_python_sdk_from_aas_core_codegen(
     aas_core_codegen_repo: pathlib.Path,
     our_repo: pathlib.Path,
@@ -556,6 +578,10 @@ def main() -> int:
 
     _uninstall_and_install_aas_core_codegen(
         our_repo=our_repo, aas_core_codegen_revision=aas_core_codegen_revision
+    )
+
+    _copy_code_from_aas_core_codegen(
+        aas_core_codegen_repo=aas_core_codegen_repo, our_repo=our_repo
     )
 
     _copy_python_sdk_from_aas_core_codegen(
