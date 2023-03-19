@@ -297,7 +297,7 @@ def _run_tests_and_rerecord(our_repo: pathlib.Path) -> None:
 
 
 def _run_check(our_repo: pathlib.Path) -> None:
-    """Run the tests with the environment variables set to re-record."""
+    """Run all the pre-commit checks."""
     subprocess.check_call(["powershell", "./Check.ps1"], cwd=our_repo / "src")
 
 
