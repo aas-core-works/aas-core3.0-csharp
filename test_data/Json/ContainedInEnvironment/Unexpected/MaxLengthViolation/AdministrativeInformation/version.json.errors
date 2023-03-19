@@ -1,2 +1,2 @@
 assetAdministrationShells[0].administration.version: Invariant violated:
-VersionType shall have a maximum length of 4 characters.
+Version type shall have a maximum length of 4 characters.

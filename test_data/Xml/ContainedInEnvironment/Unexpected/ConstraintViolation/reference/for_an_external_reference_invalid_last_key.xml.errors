@@ -1,2 +1,2 @@
 submodels[0].submodelElements[0].value: Invariant violated:
-Constraint AASd-124: For external references the last key of Reference/keys shall be either one of Generic globally identifiables or one of Generic fragment keys.
+Constraint AASd-124: For external references the last key of keys shall be either one of Generic Globally Identifiables or one of Generic Fragment Keys.

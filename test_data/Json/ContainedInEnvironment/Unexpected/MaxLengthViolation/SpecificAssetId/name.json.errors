@@ -1,2 +1,2 @@
 assetAdministrationShells[0].assetInformation.specificAssetIds[0].name: Invariant violated:
-LabelType shall have a maximum length of 64 characters.
+Label type shall have a maximum length of 64 characters.
