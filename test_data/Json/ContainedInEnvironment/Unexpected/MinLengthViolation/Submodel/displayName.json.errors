@@ -1,2 +1,2 @@
 submodels[0]: Invariant violated:
-Display name must be either not set or have at least one item
+Display name must be either not set or have at least one item.

@@ -1,2 +1,2 @@
 assetAdministrationShells[0].assetInformation.globalAssetId: Invariant violated:
-Check if string is not empty.
+The value must not be empty.

@@ -1,2 +1,2 @@
 assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent.shortName[0].text: Invariant violated:
-Check if string is not empty.
+The value must not be empty.

@@ -1,2 +1,2 @@
 submodels[0].submodelElements[0].maxInterval: Invariant violated:
-The value must match the pattern of xs:duration
+The value must match the pattern of xs:duration.

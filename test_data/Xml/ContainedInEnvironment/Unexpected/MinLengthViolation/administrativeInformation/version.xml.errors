@@ -1,4 +1,4 @@
 assetAdministrationShells[0].administration.version: Invariant violated:
-Check if string is not empty.;
+The value must not be empty.;
 assetAdministrationShells[0].administration.version: Invariant violated:
-Version type shall match the version pattern
+Version type shall match the version pattern.

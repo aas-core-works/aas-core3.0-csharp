@@ -1,6 +1,6 @@
 submodels[0].submodelElements[0].value: Invariant violated:
-Constraint AASd-121: For References the value of Key/type of the first key of Reference/keys shall be one of GloballyIdentifiables.;
+Constraint AASd-121: For References the value of type of the first key of keys shall be one of Globally Identifiables.;
 submodels[0].submodelElements[0].value: Invariant violated:
-Constraint AASd-122: For external references the value of Key/type of the first key of Reference/keys shall be one of Generic globally identifiables.;
+Constraint AASd-122: For external references the value of type of the first key of keys shall be one of Generic Globally Identifiables.;
 submodels[0].submodelElements[0].value: Invariant violated:
-Constraint AASd-124: For external references the last key of Reference/keys shall be either one of Generic globally identifiables or one of Generic fragment keys.
+Constraint AASd-124: For external references the last key of keys shall be either one of Generic Globally Identifiables or one of Generic Fragment Keys.
