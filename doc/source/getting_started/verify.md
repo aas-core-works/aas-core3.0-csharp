@@ -33,6 +33,7 @@ public class Program
         };
 
         var submodel = new Aas.Submodel(
+            "someIdShort",
             "some-unique-global-identifier")
         {
             SubmodelElements = new List<Aas.ISubmodelElement>()

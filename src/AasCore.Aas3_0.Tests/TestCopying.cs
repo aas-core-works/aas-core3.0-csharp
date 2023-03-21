@@ -3807,7 +3807,9 @@ namespace AasCore.Aas3_0.Tests
             };
 
             var submodel = new Aas.Submodel(
-                "some-unique-global-identifier")
+                        "someIdShort",
+                "some-unique-global-identifier"
+                )
             {
                 SubmodelElements = new List<Aas.ISubmodelElement>()
                 {

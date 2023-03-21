@@ -28,8 +28,8 @@ setup(
     keywords="asset administration shell code generation industry 4.0 industrie i4.0",
     packages=find_packages(exclude=["tests", "continuous_integration", "dev_scripts"]),
     install_requires=[
-        "aas-core-meta@git+https://github.com/aas-core-works/aas-core-meta@3191ea5#egg=aas-core-meta",
-        "aas-core-codegen@git+https://github.com/aas-core-works/aas-core-codegen@9b47d57#egg=aas-core-codegen",
+        "aas-core-meta@git+https://github.com/aas-core-works/aas-core-meta@02712de#egg=aas-core-meta",
+        "aas-core-codegen@git+https://github.com/aas-core-works/aas-core-codegen@07eb6b6#egg=aas-core-codegen",
     ],
     py_modules=["test_codegen"],
 )
