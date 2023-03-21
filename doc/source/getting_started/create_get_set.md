@@ -46,6 +46,7 @@ public class Program
 		var someElement = new Aas.Property(
 			Aas.DataTypeDefXsd.Int)
 		{
+		    IdShort="someElement",
 			Value="1984"
 		};
 		
@@ -58,6 +59,7 @@ public class Program
 		var anotherElement = new Aas.Blob(
 			"application/octet-stream")
 		{
+		    IdShort="anotherElement",
 			Value=content
 		};
 		
@@ -72,6 +74,7 @@ public class Program
 		};
 		
 		var submodel = new Aas.Submodel(
+		    "someIdShort",
 			"some-unique-global-identifier")
 		{
 			SubmodelElements = elements
