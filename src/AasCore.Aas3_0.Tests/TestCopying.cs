@@ -157,7 +157,6 @@ namespace AasCore.Aas3_0.Tests
                                     .All(item => item))
                         : that.Extensions == null && casted.Extensions == null
                     && that.Category == casted.Category
-                    && that.IdShort == casted.IdShort
                     && (that.DisplayName != null && casted.DisplayName != null)
                         ? that.DisplayName.Count == casted.DisplayName.Count
                             && (
@@ -182,6 +181,7 @@ namespace AasCore.Aas3_0.Tests
                                 casted.Administration)
                         : that.Administration == null && casted.Administration == null
                     && that.Id == casted.Id
+                    && that.IdShort == casted.IdShort
                     && (that.EmbeddedDataSpecifications != null && casted.EmbeddedDataSpecifications != null)
                         ? that.EmbeddedDataSpecifications.Count == casted.EmbeddedDataSpecifications.Count
                             && (
@@ -306,7 +306,6 @@ namespace AasCore.Aas3_0.Tests
                                     .All(item => item))
                         : that.Extensions == null && casted.Extensions == null
                     && that.Category == casted.Category
-                    && that.IdShort == casted.IdShort
                     && (that.DisplayName != null && casted.DisplayName != null)
                         ? that.DisplayName.Count == casted.DisplayName.Count
                             && (
@@ -331,6 +330,7 @@ namespace AasCore.Aas3_0.Tests
                                 casted.Administration)
                         : that.Administration == null && casted.Administration == null
                     && that.Id == casted.Id
+                    && that.IdShort == casted.IdShort
                     && (that.Kind != null && casted.Kind != null)
                         ? that.Kind == casted.Kind
                         : that.Kind == null && casted.Kind == null
@@ -1617,7 +1617,6 @@ namespace AasCore.Aas3_0.Tests
                                     .All(item => item))
                         : that.Extensions == null && casted.Extensions == null
                     && that.Category == casted.Category
-                    && that.IdShort == casted.IdShort
                     && (that.DisplayName != null && casted.DisplayName != null)
                         ? that.DisplayName.Count == casted.DisplayName.Count
                             && (
@@ -1642,6 +1641,7 @@ namespace AasCore.Aas3_0.Tests
                                 casted.Administration)
                         : that.Administration == null && casted.Administration == null
                     && that.Id == casted.Id
+                    && that.IdShort == casted.IdShort
                     && (that.EmbeddedDataSpecifications != null && casted.EmbeddedDataSpecifications != null)
                         ? that.EmbeddedDataSpecifications.Count == casted.EmbeddedDataSpecifications.Count
                             && (
@@ -1988,11 +1988,11 @@ namespace AasCore.Aas3_0.Tests
             return (
                 that.Extensions == other.Extensions
                 && that.Category == other.Category
-                && that.IdShort == other.IdShort
                 && that.DisplayName == other.DisplayName
                 && that.Description == other.Description
                 && that.Administration == other.Administration
                 && that.Id == other.Id
+                && that.IdShort == other.IdShort
                 && that.EmbeddedDataSpecifications == other.EmbeddedDataSpecifications
                 && that.DerivedFrom == other.DerivedFrom
                 && that.AssetInformation == other.AssetInformation
@@ -2037,11 +2037,11 @@ namespace AasCore.Aas3_0.Tests
             return (
                 that.Extensions == other.Extensions
                 && that.Category == other.Category
-                && that.IdShort == other.IdShort
                 && that.DisplayName == other.DisplayName
                 && that.Description == other.Description
                 && that.Administration == other.Administration
                 && that.Id == other.Id
+                && that.IdShort == other.IdShort
                 && that.Kind == other.Kind
                 && that.SemanticId == other.SemanticId
                 && that.SupplementalSemanticIds == other.SupplementalSemanticIds
@@ -2342,11 +2342,11 @@ namespace AasCore.Aas3_0.Tests
             return (
                 that.Extensions == other.Extensions
                 && that.Category == other.Category
-                && that.IdShort == other.IdShort
                 && that.DisplayName == other.DisplayName
                 && that.Description == other.Description
                 && that.Administration == other.Administration
                 && that.Id == other.Id
+                && that.IdShort == other.IdShort
                 && that.EmbeddedDataSpecifications == other.EmbeddedDataSpecifications
                 && that.IsCaseOf == other.IsCaseOf);
         }
@@ -3807,7 +3807,9 @@ namespace AasCore.Aas3_0.Tests
             };
 
             var submodel = new Aas.Submodel(
-                "some-unique-global-identifier")
+                "some-unique-global-identifier",
+                "someIdShort"
+            )
             {
                 SubmodelElements = new List<Aas.ISubmodelElement>()
                 {

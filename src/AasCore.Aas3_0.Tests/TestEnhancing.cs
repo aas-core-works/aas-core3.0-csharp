@@ -14,7 +14,7 @@ using NUnit.Framework; // can't alias
 namespace AasCore.Aas3_0.Tests
 {
     public class TestEnhancing
-    {
+        {
         class Enhancement
         {
             public readonly long SomeCustomId;
@@ -48,7 +48,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -78,7 +78,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -108,7 +108,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -138,7 +138,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -168,7 +168,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -198,7 +198,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -228,7 +228,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -258,7 +258,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -288,7 +288,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -318,7 +318,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -348,7 +348,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -378,7 +378,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -408,7 +408,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -438,7 +438,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -468,7 +468,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -498,7 +498,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -528,7 +528,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -558,7 +558,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -588,7 +588,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -618,7 +618,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -648,7 +648,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -678,7 +678,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -708,7 +708,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -738,7 +738,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -768,7 +768,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -798,7 +798,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -828,7 +828,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -858,7 +858,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -888,7 +888,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -918,7 +918,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -948,7 +948,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -978,7 +978,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -1008,7 +1008,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -1038,7 +1038,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -1068,7 +1068,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -1098,7 +1098,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -1128,7 +1128,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);
@@ -1158,7 +1158,7 @@ namespace AasCore.Aas3_0.Tests
             );
 
             var enhancer = CreateEnhancer();
-
+    
             Assert.IsNull(enhancer.Unwrap(instance));
 
             var wrapped = enhancer.Wrap(instance);

@@ -174,7 +174,7 @@ namespace AasCore.Aas3_0.Tests
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "DescendOnce",
-                    "SpecificAssetId",
+                    "SpecificAssetID",
                     "maximal.json.trace"));
         }  // public void Test_SpecificAssetId
 
@@ -594,7 +594,7 @@ namespace AasCore.Aas3_0.Tests
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "DescendOnce",
-                    "LangStringPreferredNameTypeIec61360",
+                    "LangStringPreferredNameTypeIEC61360",
                     "maximal.json.trace"));
         }  // public void Test_LangStringPreferredNameTypeIec61360
 
@@ -609,7 +609,7 @@ namespace AasCore.Aas3_0.Tests
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "DescendOnce",
-                    "LangStringShortNameTypeIec61360",
+                    "LangStringShortNameTypeIEC61360",
                     "maximal.json.trace"));
         }  // public void Test_LangStringShortNameTypeIec61360
 
@@ -624,7 +624,7 @@ namespace AasCore.Aas3_0.Tests
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "DescendOnce",
-                    "LangStringDefinitionTypeIec61360",
+                    "LangStringDefinitionTypeIEC61360",
                     "maximal.json.trace"));
         }  // public void Test_LangStringDefinitionTypeIec61360
 
@@ -639,7 +639,7 @@ namespace AasCore.Aas3_0.Tests
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "DescendOnce",
-                    "DataSpecificationIec61360",
+                    "DataSpecificationIEC61360",
                     "maximal.json.trace"));
         }  // public void Test_DataSpecificationIec61360
     }  // class TestDescendOnce

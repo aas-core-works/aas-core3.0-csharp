@@ -92,10 +92,10 @@ namespace AasCore.Aas3_0
             {
                 return new Aas.AssetAdministrationShell(
                     that.Id,
+                    that.IdShort,
                     that.AssetInformation,
                     that.Extensions,
                     that.Category,
-                    that.IdShort,
                     that.DisplayName,
                     that.Description,
                     that.Administration,
@@ -141,9 +141,9 @@ namespace AasCore.Aas3_0
             {
                 return new Aas.Submodel(
                     that.Id,
+                    that.IdShort,
                     that.Extensions,
                     that.Category,
-                    that.IdShort,
                     that.DisplayName,
                     that.Description,
                     that.Administration,
@@ -446,9 +446,9 @@ namespace AasCore.Aas3_0
             {
                 return new Aas.ConceptDescription(
                     that.Id,
+                    that.IdShort,
                     that.Extensions,
                     that.Category,
-                    that.IdShort,
                     that.DisplayName,
                     that.Description,
                     that.Administration,
@@ -576,10 +576,9 @@ namespace AasCore.Aas3_0
 
         /// <summary>Dispatch the making of deep copies.</summary>
         internal class DeepCopier : Visitation.AbstractTransformer<Aas.IClass>
-        {
-            public override Aas.IClass TransformExtension(
-               Aas.IExtension that
-           )
+        {    public override Aas.IClass TransformExtension(
+                Aas.IExtension that
+            )
             {
                 List<IReference>? theSupplementalSemanticIds = null;
                 if (that.SupplementalSemanticIds != null)
@@ -732,10 +731,10 @@ namespace AasCore.Aas3_0
 
                 return new Aas.AssetAdministrationShell(
                     that.Id,
+                    that.IdShort,
                     Deep(that.AssetInformation),
                     theExtensions,
                     that.Category,
-                    that.IdShort,
                     theDisplayName,
                     theDescription,
                     (that.Administration != null)
@@ -896,9 +895,9 @@ namespace AasCore.Aas3_0
 
                 return new Aas.Submodel(
                     that.Id,
+                    that.IdShort,
                     theExtensions,
                     that.Category,
-                    that.IdShort,
                     theDisplayName,
                     theDescription,
                     (that.Administration != null)
@@ -2345,9 +2344,9 @@ namespace AasCore.Aas3_0
 
                 return new Aas.ConceptDescription(
                     that.Id,
+                    that.IdShort,
                     theExtensions,
                     that.Category,
-                    that.IdShort,
                     theDisplayName,
                     theDescription,
                     (that.Administration != null)

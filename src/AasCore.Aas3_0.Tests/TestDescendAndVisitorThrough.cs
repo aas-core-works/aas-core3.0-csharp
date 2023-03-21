@@ -52,7 +52,7 @@ namespace AasCore.Aas3_0.Tests
             {
                 logFromDescend.Add(Trace(subInstance));
             }
-
+    
             var visitor = new TracingVisitorThrough();
             visitor.Visit(instance);
             var traceFromVisitor = visitor.Log;
@@ -148,7 +148,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Extension instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalExtension());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_Extension
@@ -173,7 +173,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.AdministrativeInformation instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalAdministrativeInformation());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_AdministrativeInformation
@@ -198,7 +198,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Qualifier instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalQualifier());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_Qualifier
@@ -223,7 +223,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.AssetAdministrationShell instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalAssetAdministrationShell());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_AssetAdministrationShell
@@ -248,7 +248,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.AssetInformation instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalAssetInformation());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_AssetInformation
@@ -273,7 +273,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Resource instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalResource());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_Resource
@@ -289,7 +289,7 @@ namespace AasCore.Aas3_0.Tests
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "Descend",
-                    "SpecificAssetId",
+                    "SpecificAssetID",
                     "maximal.json.trace"));
         }  // public void Test_Descend_of_SpecificAssetId
 
@@ -298,7 +298,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.SpecificAssetId instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalSpecificAssetId());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_SpecificAssetId
@@ -323,7 +323,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Submodel instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalSubmodel());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_Submodel
@@ -348,7 +348,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.RelationshipElement instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalRelationshipElement());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_RelationshipElement
@@ -373,7 +373,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.SubmodelElementList instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalSubmodelElementList());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_SubmodelElementList
@@ -398,7 +398,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.SubmodelElementCollection instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalSubmodelElementCollection());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_SubmodelElementCollection
@@ -423,7 +423,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Property instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalProperty());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_Property
@@ -448,7 +448,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.MultiLanguageProperty instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalMultiLanguageProperty());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_MultiLanguageProperty
@@ -473,7 +473,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Range instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalRange());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_Range
@@ -498,7 +498,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.ReferenceElement instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalReferenceElement());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_ReferenceElement
@@ -523,7 +523,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Blob instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalBlob());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_Blob
@@ -548,7 +548,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.File instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalFile());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_File
@@ -573,7 +573,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.AnnotatedRelationshipElement instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalAnnotatedRelationshipElement());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_AnnotatedRelationshipElement
@@ -598,7 +598,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Entity instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalEntity());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_Entity
@@ -623,7 +623,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.EventPayload instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalEventPayload());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_EventPayload
@@ -648,7 +648,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.BasicEventElement instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalBasicEventElement());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_BasicEventElement
@@ -673,7 +673,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Operation instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalOperation());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_Operation
@@ -698,7 +698,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.OperationVariable instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalOperationVariable());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_OperationVariable
@@ -723,7 +723,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Capability instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalCapability());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_Capability
@@ -748,7 +748,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.ConceptDescription instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalConceptDescription());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_ConceptDescription
@@ -773,7 +773,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Reference instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalReference());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_Reference
@@ -798,7 +798,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Key instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalKey());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_Key
@@ -823,7 +823,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.LangStringNameType instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalLangStringNameType());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_LangStringNameType
@@ -848,7 +848,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.LangStringTextType instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalLangStringTextType());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_LangStringTextType
@@ -873,7 +873,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.Environment instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalEnvironment());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_Environment
@@ -898,7 +898,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.EmbeddedDataSpecification instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalEmbeddedDataSpecification());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_EmbeddedDataSpecification
@@ -923,7 +923,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.LevelType instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalLevelType());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_LevelType
@@ -948,7 +948,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.ValueReferencePair instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalValueReferencePair());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_ValueReferencePair
@@ -973,7 +973,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.ValueList instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalValueList());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_ValueList
@@ -989,7 +989,7 @@ namespace AasCore.Aas3_0.Tests
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "Descend",
-                    "LangStringPreferredNameTypeIec61360",
+                    "LangStringPreferredNameTypeIEC61360",
                     "maximal.json.trace"));
         }  // public void Test_Descend_of_LangStringPreferredNameTypeIec61360
 
@@ -998,7 +998,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.LangStringPreferredNameTypeIec61360 instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalLangStringPreferredNameTypeIec61360());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_LangStringPreferredNameTypeIec61360
@@ -1014,7 +1014,7 @@ namespace AasCore.Aas3_0.Tests
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "Descend",
-                    "LangStringShortNameTypeIec61360",
+                    "LangStringShortNameTypeIEC61360",
                     "maximal.json.trace"));
         }  // public void Test_Descend_of_LangStringShortNameTypeIec61360
 
@@ -1023,7 +1023,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.LangStringShortNameTypeIec61360 instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalLangStringShortNameTypeIec61360());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_LangStringShortNameTypeIec61360
@@ -1039,7 +1039,7 @@ namespace AasCore.Aas3_0.Tests
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "Descend",
-                    "LangStringDefinitionTypeIec61360",
+                    "LangStringDefinitionTypeIEC61360",
                     "maximal.json.trace"));
         }  // public void Test_Descend_of_LangStringDefinitionTypeIec61360
 
@@ -1048,7 +1048,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.LangStringDefinitionTypeIec61360 instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalLangStringDefinitionTypeIec61360());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_LangStringDefinitionTypeIec61360
@@ -1064,7 +1064,7 @@ namespace AasCore.Aas3_0.Tests
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
                     "Descend",
-                    "DataSpecificationIec61360",
+                    "DataSpecificationIEC61360",
                     "maximal.json.trace"));
         }  // public void Test_Descend_of_DataSpecificationIec61360
 
@@ -1073,7 +1073,7 @@ namespace AasCore.Aas3_0.Tests
         {
             Aas.DataSpecificationIec61360 instance = (
                 Aas.Tests.CommonJsonization.LoadMaximalDataSpecificationIec61360());
-
+    
             AssertDescendAndVisitorThroughSame(
                 instance);
         }  // public void Test_Descend_against_VisitorThrough_for_DataSpecificationIec61360

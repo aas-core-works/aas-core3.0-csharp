@@ -179,8 +179,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "extension"
                 ),
@@ -191,7 +191,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -210,18 +210,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "extension");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Extension for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -231,7 +231,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -257,19 +257,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "extension"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Extension for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -279,7 +279,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -296,8 +296,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "administrativeInformation"
                 ),
@@ -308,7 +308,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -327,18 +327,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "administrativeInformation");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of AdministrativeInformation for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -348,7 +348,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -374,19 +374,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "administrativeInformation"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of AdministrativeInformation for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -396,7 +396,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -413,8 +413,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "qualifier"
                 ),
@@ -425,7 +425,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -444,18 +444,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "qualifier");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Qualifier for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -465,7 +465,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -491,19 +491,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "qualifier"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Qualifier for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -513,7 +513,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -530,8 +530,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "assetAdministrationShell"
                 ),
@@ -542,7 +542,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -561,18 +561,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "assetAdministrationShell");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of AssetAdministrationShell for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -582,7 +582,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -608,19 +608,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "assetAdministrationShell"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of AssetAdministrationShell for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -630,7 +630,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -647,8 +647,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "assetInformation"
                 ),
@@ -659,7 +659,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -678,18 +678,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "assetInformation");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of AssetInformation for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -699,7 +699,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -725,19 +725,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "assetInformation"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of AssetInformation for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -747,7 +747,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -764,8 +764,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "resource"
                 ),
@@ -776,7 +776,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -795,18 +795,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "resource");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Resource for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -816,7 +816,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -842,19 +842,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "resource"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Resource for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -864,7 +864,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -881,8 +881,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "specificAssetId"
                 ),
@@ -893,7 +893,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -912,18 +912,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "specificAssetId");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of SpecificAssetId for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -933,7 +933,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -959,19 +959,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "specificAssetId"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of SpecificAssetId for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -981,7 +981,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -998,8 +998,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "submodel"
                 ),
@@ -1010,7 +1010,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -1029,18 +1029,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "submodel");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Submodel for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1050,7 +1050,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -1076,19 +1076,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "submodel"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Submodel for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1098,7 +1098,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -1115,8 +1115,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "relationshipElement"
                 ),
@@ -1127,7 +1127,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -1146,18 +1146,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "relationshipElement");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of RelationshipElement for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1167,7 +1167,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -1193,19 +1193,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "relationshipElement"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of RelationshipElement for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1215,7 +1215,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -1232,8 +1232,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "submodelElementList"
                 ),
@@ -1244,7 +1244,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -1263,18 +1263,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "submodelElementList");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of SubmodelElementList for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1284,7 +1284,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -1310,19 +1310,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "submodelElementList"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of SubmodelElementList for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1332,7 +1332,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -1349,8 +1349,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "submodelElementCollection"
                 ),
@@ -1361,7 +1361,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -1380,18 +1380,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "submodelElementCollection");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of SubmodelElementCollection for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1401,7 +1401,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -1427,19 +1427,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "submodelElementCollection"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of SubmodelElementCollection for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1449,7 +1449,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -1466,8 +1466,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "property"
                 ),
@@ -1478,7 +1478,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -1497,18 +1497,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "property");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Property for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1518,7 +1518,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -1544,19 +1544,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "property"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Property for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1566,7 +1566,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -1583,8 +1583,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "multiLanguageProperty"
                 ),
@@ -1595,7 +1595,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -1614,18 +1614,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "multiLanguageProperty");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of MultiLanguageProperty for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1635,7 +1635,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -1661,19 +1661,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "multiLanguageProperty"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of MultiLanguageProperty for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1683,7 +1683,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -1700,8 +1700,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "range"
                 ),
@@ -1712,7 +1712,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -1731,18 +1731,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "range");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Range for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1752,7 +1752,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -1778,19 +1778,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "range"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Range for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1800,7 +1800,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -1817,8 +1817,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "referenceElement"
                 ),
@@ -1829,7 +1829,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -1848,18 +1848,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "referenceElement");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of ReferenceElement for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1869,7 +1869,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -1895,19 +1895,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "referenceElement"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of ReferenceElement for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1917,7 +1917,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -1934,8 +1934,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "blob"
                 ),
@@ -1946,7 +1946,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -1965,18 +1965,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "blob");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Blob for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -1986,7 +1986,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -2012,19 +2012,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "blob"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Blob for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2034,7 +2034,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -2051,8 +2051,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "file"
                 ),
@@ -2063,7 +2063,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -2082,18 +2082,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "file");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of File for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2103,7 +2103,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -2129,19 +2129,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "file"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of File for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2151,7 +2151,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -2168,8 +2168,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "annotatedRelationshipElement"
                 ),
@@ -2180,7 +2180,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -2199,18 +2199,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "annotatedRelationshipElement");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of AnnotatedRelationshipElement for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2220,7 +2220,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -2246,19 +2246,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "annotatedRelationshipElement"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of AnnotatedRelationshipElement for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2268,7 +2268,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -2285,8 +2285,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "entity"
                 ),
@@ -2297,7 +2297,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -2316,18 +2316,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "entity");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Entity for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2337,7 +2337,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -2363,19 +2363,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "entity"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Entity for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2385,7 +2385,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -2402,8 +2402,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "SelfContained",
+                    "Xml", 
+                    "SelfContained", 
                     "Expected",
                     "eventPayload"
                 ),
@@ -2414,7 +2414,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var instance = Aas.Xmlization.Deserialize.EventPayloadFrom(
                     xmlReader);
 
@@ -2433,19 +2433,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "SelfContained",
-                    "Unexpected",
+                    "Xml", 
+                    "SelfContained", 
+                    "Unexpected", 
                     cause,
                     "eventPayload"
                 );
-
+         
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of EventPayload for the failure cause.
                     continue;
-                }
-
+                } 
+        
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2455,7 +2455,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -2481,19 +2481,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "SelfContained",
-                    "Unexpected",
+                    "Xml", 
+                    "SelfContained", 
+                    "Unexpected", 
                     cause,
                     "eventPayload"
                 );
-
+         
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of EventPayload for the failure cause.
                     continue;
                 }
-
+        
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2503,7 +2503,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var instance = Aas.Xmlization.Deserialize.EventPayloadFrom(
                         xmlReader);
 
@@ -2520,8 +2520,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "basicEventElement"
                 ),
@@ -2532,7 +2532,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -2551,18 +2551,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "basicEventElement");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of BasicEventElement for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2572,7 +2572,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -2598,19 +2598,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "basicEventElement"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of BasicEventElement for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2620,7 +2620,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -2637,8 +2637,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "operation"
                 ),
@@ -2649,7 +2649,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -2668,18 +2668,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "operation");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Operation for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2689,7 +2689,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -2715,19 +2715,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "operation"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Operation for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2737,7 +2737,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -2754,8 +2754,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "operationVariable"
                 ),
@@ -2766,7 +2766,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -2785,18 +2785,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "operationVariable");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of OperationVariable for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2806,7 +2806,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -2832,19 +2832,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "operationVariable"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of OperationVariable for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2854,7 +2854,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -2871,8 +2871,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "capability"
                 ),
@@ -2883,7 +2883,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -2902,18 +2902,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "capability");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Capability for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2923,7 +2923,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -2949,19 +2949,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "capability"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Capability for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -2971,7 +2971,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -2988,8 +2988,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "conceptDescription"
                 ),
@@ -3000,7 +3000,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -3019,18 +3019,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "conceptDescription");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of ConceptDescription for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3040,7 +3040,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -3066,19 +3066,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "conceptDescription"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of ConceptDescription for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3088,7 +3088,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -3105,8 +3105,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "reference"
                 ),
@@ -3117,7 +3117,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -3136,18 +3136,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "reference");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Reference for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3157,7 +3157,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -3183,19 +3183,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "reference"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Reference for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3205,7 +3205,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -3222,8 +3222,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "key"
                 ),
@@ -3234,7 +3234,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -3253,18 +3253,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "key");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Key for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3274,7 +3274,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -3300,19 +3300,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "key"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Key for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3322,7 +3322,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -3339,8 +3339,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "langStringNameType"
                 ),
@@ -3351,7 +3351,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -3370,18 +3370,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "langStringNameType");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of LangStringNameType for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3391,7 +3391,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -3417,19 +3417,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "langStringNameType"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of LangStringNameType for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3439,7 +3439,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -3456,8 +3456,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "langStringTextType"
                 ),
@@ -3468,7 +3468,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -3487,18 +3487,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "langStringTextType");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of LangStringTextType for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3508,7 +3508,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -3534,19 +3534,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "langStringTextType"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of LangStringTextType for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3556,7 +3556,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -3573,8 +3573,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "SelfContained",
+                    "Xml", 
+                    "SelfContained", 
                     "Expected",
                     "environment"
                 ),
@@ -3585,7 +3585,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var instance = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -3604,19 +3604,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "SelfContained",
-                    "Unexpected",
+                    "Xml", 
+                    "SelfContained", 
+                    "Unexpected", 
                     cause,
                     "environment"
                 );
-
+         
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Environment for the failure cause.
                     continue;
-                }
-
+                } 
+        
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3626,7 +3626,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -3652,19 +3652,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "SelfContained",
-                    "Unexpected",
+                    "Xml", 
+                    "SelfContained", 
+                    "Unexpected", 
                     cause,
                     "environment"
                 );
-
+         
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of Environment for the failure cause.
                     continue;
                 }
-
+        
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3674,7 +3674,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var instance = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -3691,8 +3691,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "embeddedDataSpecification"
                 ),
@@ -3703,7 +3703,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -3722,18 +3722,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "embeddedDataSpecification");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of EmbeddedDataSpecification for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3743,7 +3743,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -3769,19 +3769,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "embeddedDataSpecification"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of EmbeddedDataSpecification for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3791,7 +3791,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -3808,8 +3808,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "levelType"
                 ),
@@ -3820,7 +3820,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -3839,18 +3839,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "levelType");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of LevelType for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3860,7 +3860,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -3886,19 +3886,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "levelType"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of LevelType for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3908,7 +3908,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -3925,8 +3925,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "valueReferencePair"
                 ),
@@ -3937,7 +3937,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -3956,18 +3956,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "valueReferencePair");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of ValueReferencePair for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -3977,7 +3977,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -4003,19 +4003,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "valueReferencePair"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of ValueReferencePair for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -4025,7 +4025,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -4042,8 +4042,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "valueList"
                 ),
@@ -4054,7 +4054,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -4073,18 +4073,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "valueList");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of ValueList for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -4094,7 +4094,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -4120,19 +4120,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "valueList"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of ValueList for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -4142,7 +4142,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -4159,8 +4159,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "langStringPreferredNameTypeIec61360"
                 ),
@@ -4171,7 +4171,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -4190,18 +4190,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "langStringPreferredNameTypeIec61360");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of LangStringPreferredNameTypeIec61360 for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -4211,7 +4211,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -4237,19 +4237,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "langStringPreferredNameTypeIec61360"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of LangStringPreferredNameTypeIec61360 for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -4259,7 +4259,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -4276,8 +4276,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "langStringShortNameTypeIec61360"
                 ),
@@ -4288,7 +4288,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -4307,18 +4307,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "langStringShortNameTypeIec61360");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of LangStringShortNameTypeIec61360 for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -4328,7 +4328,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -4354,19 +4354,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "langStringShortNameTypeIec61360"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of LangStringShortNameTypeIec61360 for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -4376,7 +4376,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -4393,8 +4393,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "langStringDefinitionTypeIec61360"
                 ),
@@ -4405,7 +4405,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -4424,18 +4424,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "langStringDefinitionTypeIec61360");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of LangStringDefinitionTypeIec61360 for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -4445,7 +4445,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -4471,19 +4471,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "langStringDefinitionTypeIec61360"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of LangStringDefinitionTypeIec61360 for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -4493,7 +4493,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 
@@ -4510,8 +4510,8 @@ namespace AasCore.Aas3_0.Tests
             var paths = Directory.GetFiles(
                 Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
+                    "Xml", 
+                    "ContainedInEnvironment", 
                     "Expected",
                     "dataSpecificationIec61360"
                 ),
@@ -4522,7 +4522,7 @@ namespace AasCore.Aas3_0.Tests
             foreach (var path in paths)
             {
                 using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                 var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                     xmlReader);
 
@@ -4541,18 +4541,18 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "dataSpecificationIec61360");
-
+            
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of DataSpecificationIec61360 for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -4562,7 +4562,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+            
                     Aas.Xmlization.Exception? exception = null;
 
                     try
@@ -4588,19 +4588,19 @@ namespace AasCore.Aas3_0.Tests
             {
                 string baseDir = Path.Combine(
                     Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
+                    "Xml", 
+                    "ContainedInEnvironment", 
+                    "Unexpected", 
                     cause,
                     "dataSpecificationIec61360"
                 );
-
+    
                 if (!Directory.Exists(baseDir))
                 {
                     // No examples of DataSpecificationIec61360 for the failure cause.
                     continue;
                 }
-
+    
                 var paths = Directory.GetFiles(
                     baseDir,
                     "*.xml",
@@ -4610,7 +4610,7 @@ namespace AasCore.Aas3_0.Tests
                 foreach (var path in paths)
                 {
                     using var xmlReader = System.Xml.XmlReader.Create(path);
-
+        
                     var container = Aas.Xmlization.Deserialize.EnvironmentFrom(
                         xmlReader);
 

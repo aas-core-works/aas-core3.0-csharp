@@ -23,7 +23,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -52,7 +52,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -81,7 +81,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -110,7 +110,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -139,7 +139,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -168,7 +168,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -197,7 +197,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -226,7 +226,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -255,7 +255,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -284,7 +284,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -313,7 +313,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -342,7 +342,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -371,7 +371,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -400,7 +400,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -429,7 +429,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -458,7 +458,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -487,7 +487,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -516,7 +516,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -545,7 +545,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -574,7 +574,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -603,7 +603,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -632,7 +632,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -661,7 +661,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -690,7 +690,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -719,7 +719,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -748,7 +748,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -777,7 +777,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -806,7 +806,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -835,7 +835,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -864,7 +864,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -893,7 +893,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -922,7 +922,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -951,7 +951,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -980,7 +980,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1009,7 +1009,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1038,7 +1038,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1067,7 +1067,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1096,7 +1096,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1125,7 +1125,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1154,7 +1154,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1183,7 +1183,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1212,7 +1212,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1241,7 +1241,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1270,7 +1270,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1299,7 +1299,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1328,7 +1328,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1357,7 +1357,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1386,7 +1386,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1415,7 +1415,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1444,7 +1444,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1473,7 +1473,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1502,7 +1502,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1531,7 +1531,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1560,7 +1560,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1589,7 +1589,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1618,7 +1618,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1647,7 +1647,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1676,7 +1676,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1705,7 +1705,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1734,7 +1734,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1763,7 +1763,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1792,7 +1792,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1821,7 +1821,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1850,7 +1850,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1879,7 +1879,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1908,7 +1908,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1937,7 +1937,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1966,7 +1966,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -1995,7 +1995,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2024,7 +2024,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2053,7 +2053,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2082,7 +2082,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2111,7 +2111,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2140,7 +2140,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2169,7 +2169,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2198,7 +2198,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2227,7 +2227,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2256,7 +2256,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2285,7 +2285,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2314,7 +2314,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2343,7 +2343,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2372,7 +2372,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2401,7 +2401,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2430,7 +2430,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2459,7 +2459,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2488,7 +2488,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2517,7 +2517,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2546,7 +2546,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2575,7 +2575,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2604,7 +2604,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2633,7 +2633,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2662,7 +2662,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2691,7 +2691,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2720,7 +2720,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2749,7 +2749,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2778,7 +2778,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2807,7 +2807,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2836,7 +2836,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2865,7 +2865,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2894,7 +2894,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2923,7 +2923,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2952,7 +2952,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -2981,7 +2981,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -3010,7 +3010,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -3039,7 +3039,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -3068,7 +3068,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -3097,7 +3097,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -3126,7 +3126,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,
@@ -3155,7 +3155,7 @@ namespace AasCore.Aas3_0.Tests
 
             var anotherJsonObject = Aas.Jsonization.Serialize.ToJsonObject(
                 anotherInstance);
-
+            
             Aas.Tests.CommonJson.CheckJsonNodesEqual(
                 jsonObject,
                 anotherJsonObject,

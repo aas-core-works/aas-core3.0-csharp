@@ -468,6 +468,24 @@ namespace AasCore.Aas3_0
         /// The globally unique identification of the element.
         /// </summary>
         public string Id { get; set; }
+
+        /// <summary>
+        /// In case of identifiables this attribute is a short name of the element.
+        /// In case of referable this ID is an identifying string of the element within
+        /// its name space.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// In case the element is a property and the property has a semantic definition
+        /// (<see cref="Aas.IHasSemantics.SemanticId" />) conformant to IEC61360
+        /// the <see cref="Aas.IIdentifiable.IdShort" /> is typically identical to the short name in English.
+        /// </para>
+        /// <para>
+        /// <see cref="Aas.IIdentifiable.IdShort" /> is strengthened to required in this class,
+        /// see Constraint AASd-117.
+        /// </para>
+        /// </remarks>
+        new public string IdShort { get; set; }
     }
 
     /// <summary>
@@ -1186,18 +1204,6 @@ namespace AasCore.Aas3_0
         public string? Category { get; set; }
 
         /// <summary>
-        /// In case of identifiables this attribute is a short name of the element.
-        /// In case of referable this ID is an identifying string of the element within
-        /// its name space.
-        /// </summary>
-        /// <remarks>
-        /// In case the element is a property and the property has a semantic definition
-        /// (<see cref="Aas.IHasSemantics.SemanticId" />) conformant to IEC61360
-        /// the <see cref="Aas.IReferable.IdShort" /> is typically identical to the short name in English.
-        /// </remarks>
-        public string? IdShort { get; set; }
-
-        /// <summary>
         /// Display name. Can be provided in several languages.
         /// </summary>
         public List<ILangStringNameType>? DisplayName { get; set; }
@@ -1235,6 +1241,33 @@ namespace AasCore.Aas3_0
         /// The globally unique identification of the element.
         /// </summary>
         public string Id { get; set; }
+
+        /// <summary>
+        /// In case of identifiables this attribute is a short name of the element.
+        /// In case of referable this ID is an identifying string of the element within
+        /// its name space.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// In case the element is a property and the property has a semantic definition
+        /// (<see cref="Aas.IHasSemantics.SemanticId" />) conformant to IEC61360
+        /// the <see cref="Aas.IIdentifiable.IdShort" /> is typically identical to the short name in English.
+        /// </para>
+        /// <para>
+        /// <see cref="Aas.IIdentifiable.IdShort" /> is strengthened to required in this class,
+        /// see Constraint AASd-117.
+        /// </para>
+        /// </remarks>
+        public string IdShort { get; set; }
+        string? IReferable.IdShort
+        {
+            get => this.IdShort;
+            set => this.IdShort = value
+                ?? throw new System.ArgumentException(
+                    "Unexpected assignment of null to IdShort " +
+                    $"of {this.GetType()}."
+                );
+        }
 
         /// <summary>
         /// Embedded data specification.
@@ -1519,10 +1552,10 @@ namespace AasCore.Aas3_0
 
         public AssetAdministrationShell(
             string id,
+            string idShort,
             IAssetInformation assetInformation,
             List<IExtension>? extensions = null,
             string? category = null,
-            string? idShort = null,
             List<ILangStringNameType>? displayName = null,
             List<ILangStringTextType>? description = null,
             IAdministrativeInformation? administration = null,
@@ -2286,18 +2319,6 @@ namespace AasCore.Aas3_0
         public string? Category { get; set; }
 
         /// <summary>
-        /// In case of identifiables this attribute is a short name of the element.
-        /// In case of referable this ID is an identifying string of the element within
-        /// its name space.
-        /// </summary>
-        /// <remarks>
-        /// In case the element is a property and the property has a semantic definition
-        /// (<see cref="Aas.IHasSemantics.SemanticId" />) conformant to IEC61360
-        /// the <see cref="Aas.IReferable.IdShort" /> is typically identical to the short name in English.
-        /// </remarks>
-        public string? IdShort { get; set; }
-
-        /// <summary>
         /// Display name. Can be provided in several languages.
         /// </summary>
         public List<ILangStringNameType>? DisplayName { get; set; }
@@ -2335,6 +2356,33 @@ namespace AasCore.Aas3_0
         /// The globally unique identification of the element.
         /// </summary>
         public string Id { get; set; }
+
+        /// <summary>
+        /// In case of identifiables this attribute is a short name of the element.
+        /// In case of referable this ID is an identifying string of the element within
+        /// its name space.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// In case the element is a property and the property has a semantic definition
+        /// (<see cref="Aas.IHasSemantics.SemanticId" />) conformant to IEC61360
+        /// the <see cref="Aas.IIdentifiable.IdShort" /> is typically identical to the short name in English.
+        /// </para>
+        /// <para>
+        /// <see cref="Aas.IIdentifiable.IdShort" /> is strengthened to required in this class,
+        /// see Constraint AASd-117.
+        /// </para>
+        /// </remarks>
+        public string IdShort { get; set; }
+        string? IReferable.IdShort
+        {
+            get => this.IdShort;
+            set => this.IdShort = value
+                ?? throw new System.ArgumentException(
+                    "Unexpected assignment of null to IdShort " +
+                    $"of {this.GetType()}."
+                );
+        }
 
         /// <summary>
         /// Kind of the element: either type or instance.
@@ -2702,9 +2750,9 @@ namespace AasCore.Aas3_0
 
         public Submodel(
             string id,
+            string idShort,
             List<IExtension>? extensions = null,
             string? category = null,
-            string? idShort = null,
             List<ILangStringNameType>? displayName = null,
             List<ILangStringTextType>? description = null,
             IAdministrativeInformation? administration = null,
@@ -4556,7 +4604,7 @@ namespace AasCore.Aas3_0
         {
             string result = Category ?? "VARIABLE";
 
-#if DEBUG
+        #if DEBUG
             if (!Constants.ValidCategoriesForDataElement.Contains(
                     result))
             {
@@ -4564,7 +4612,7 @@ namespace AasCore.Aas3_0
                     $"Unexpected default category: {result}"
                 );
             }
-#endif
+        #endif
 
             return result;
         }
@@ -5050,7 +5098,7 @@ namespace AasCore.Aas3_0
         {
             string result = Category ?? "VARIABLE";
 
-#if DEBUG
+        #if DEBUG
             if (!Constants.ValidCategoriesForDataElement.Contains(
                     result))
             {
@@ -5058,7 +5106,7 @@ namespace AasCore.Aas3_0
                     $"Unexpected default category: {result}"
                 );
             }
-#endif
+        #endif
 
             return result;
         }
@@ -5540,7 +5588,7 @@ namespace AasCore.Aas3_0
         {
             string result = Category ?? "VARIABLE";
 
-#if DEBUG
+        #if DEBUG
             if (!Constants.ValidCategoriesForDataElement.Contains(
                     result))
             {
@@ -5548,7 +5596,7 @@ namespace AasCore.Aas3_0
                     $"Unexpected default category: {result}"
                 );
             }
-#endif
+        #endif
 
             return result;
         }
@@ -5970,7 +6018,7 @@ namespace AasCore.Aas3_0
         {
             string result = Category ?? "VARIABLE";
 
-#if DEBUG
+        #if DEBUG
             if (!Constants.ValidCategoriesForDataElement.Contains(
                     result))
             {
@@ -5978,7 +6026,7 @@ namespace AasCore.Aas3_0
                     $"Unexpected default category: {result}"
                 );
             }
-#endif
+        #endif
 
             return result;
         }
@@ -6448,7 +6496,7 @@ namespace AasCore.Aas3_0
         {
             string result = Category ?? "VARIABLE";
 
-#if DEBUG
+        #if DEBUG
             if (!Constants.ValidCategoriesForDataElement.Contains(
                     result))
             {
@@ -6456,7 +6504,7 @@ namespace AasCore.Aas3_0
                     $"Unexpected default category: {result}"
                 );
             }
-#endif
+        #endif
 
             return result;
         }
@@ -6896,7 +6944,7 @@ namespace AasCore.Aas3_0
         {
             string result = Category ?? "VARIABLE";
 
-#if DEBUG
+        #if DEBUG
             if (!Constants.ValidCategoriesForDataElement.Contains(
                     result))
             {
@@ -6904,7 +6952,7 @@ namespace AasCore.Aas3_0
                     $"Unexpected default category: {result}"
                 );
             }
-#endif
+        #endif
 
             return result;
         }
@@ -10295,18 +10343,6 @@ namespace AasCore.Aas3_0
         public string? Category { get; set; }
 
         /// <summary>
-        /// In case of identifiables this attribute is a short name of the element.
-        /// In case of referable this ID is an identifying string of the element within
-        /// its name space.
-        /// </summary>
-        /// <remarks>
-        /// In case the element is a property and the property has a semantic definition
-        /// (<see cref="Aas.IHasSemantics.SemanticId" />) conformant to IEC61360
-        /// the <see cref="Aas.IReferable.IdShort" /> is typically identical to the short name in English.
-        /// </remarks>
-        public string? IdShort { get; set; }
-
-        /// <summary>
         /// Display name. Can be provided in several languages.
         /// </summary>
         public List<ILangStringNameType>? DisplayName { get; set; }
@@ -10344,6 +10380,33 @@ namespace AasCore.Aas3_0
         /// The globally unique identification of the element.
         /// </summary>
         public string Id { get; set; }
+
+        /// <summary>
+        /// In case of identifiables this attribute is a short name of the element.
+        /// In case of referable this ID is an identifying string of the element within
+        /// its name space.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// In case the element is a property and the property has a semantic definition
+        /// (<see cref="Aas.IHasSemantics.SemanticId" />) conformant to IEC61360
+        /// the <see cref="Aas.IIdentifiable.IdShort" /> is typically identical to the short name in English.
+        /// </para>
+        /// <para>
+        /// <see cref="Aas.IIdentifiable.IdShort" /> is strengthened to required in this class,
+        /// see Constraint AASd-117.
+        /// </para>
+        /// </remarks>
+        public string IdShort { get; set; }
+        string? IReferable.IdShort
+        {
+            get => this.IdShort;
+            set => this.IdShort = value
+                ?? throw new System.ArgumentException(
+                    "Unexpected assignment of null to IdShort " +
+                    $"of {this.GetType()}."
+                );
+        }
 
         /// <summary>
         /// Embedded data specification.
@@ -10590,9 +10653,9 @@ namespace AasCore.Aas3_0
 
         public ConceptDescription(
             string id,
+            string idShort,
             List<IExtension>? extensions = null,
             string? category = null,
-            string? idShort = null,
             List<ILangStringNameType>? displayName = null,
             List<ILangStringTextType>? description = null,
             IAdministrativeInformation? administration = null,

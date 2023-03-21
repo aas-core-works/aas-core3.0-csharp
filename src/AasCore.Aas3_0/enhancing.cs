@@ -347,12 +347,6 @@ namespace AasCore.Aas3_0
                 set => _instance.Category = value;
             }
 
-            public string? IdShort
-            {
-                get => _instance.IdShort;
-                set => _instance.IdShort = value;
-            }
-
             public List<ILangStringNameType>? DisplayName
             {
                 get => _instance.DisplayName;
@@ -375,6 +369,22 @@ namespace AasCore.Aas3_0
             {
                 get => _instance.Id;
                 set => _instance.Id = value;
+            }
+
+            public string IdShort
+            {
+                get => _instance.IdShort;
+                set => _instance.IdShort = value;
+            }
+
+            string? IReferable.IdShort
+            {
+                get => this._instance.IdShort;
+                set => this._instance.IdShort = value
+                    ?? throw new System.ArgumentException(
+                        "Unexpected assignment of null to IdShort " +
+                        $"of {this.GetType()}."
+                    );
             }
 
             public List<IEmbeddedDataSpecification>? EmbeddedDataSpecifications
@@ -724,12 +734,6 @@ namespace AasCore.Aas3_0
                 set => _instance.Category = value;
             }
 
-            public string? IdShort
-            {
-                get => _instance.IdShort;
-                set => _instance.IdShort = value;
-            }
-
             public List<ILangStringNameType>? DisplayName
             {
                 get => _instance.DisplayName;
@@ -752,6 +756,22 @@ namespace AasCore.Aas3_0
             {
                 get => _instance.Id;
                 set => _instance.Id = value;
+            }
+
+            public string IdShort
+            {
+                get => _instance.IdShort;
+                set => _instance.IdShort = value;
+            }
+
+            string? IReferable.IdShort
+            {
+                get => this._instance.IdShort;
+                set => this._instance.IdShort = value
+                    ?? throw new System.ArgumentException(
+                        "Unexpected assignment of null to IdShort " +
+                        $"of {this.GetType()}."
+                    );
             }
 
             public ModellingKind? Kind
@@ -3253,12 +3273,6 @@ namespace AasCore.Aas3_0
                 set => _instance.Category = value;
             }
 
-            public string? IdShort
-            {
-                get => _instance.IdShort;
-                set => _instance.IdShort = value;
-            }
-
             public List<ILangStringNameType>? DisplayName
             {
                 get => _instance.DisplayName;
@@ -3281,6 +3295,22 @@ namespace AasCore.Aas3_0
             {
                 get => _instance.Id;
                 set => _instance.Id = value;
+            }
+
+            public string IdShort
+            {
+                get => _instance.IdShort;
+                set => _instance.IdShort = value;
+            }
+
+            string? IReferable.IdShort
+            {
+                get => this._instance.IdShort;
+                set => this._instance.IdShort = value
+                    ?? throw new System.ArgumentException(
+                        "Unexpected assignment of null to IdShort " +
+                        $"of {this.GetType()}."
+                    );
             }
 
             public List<IEmbeddedDataSpecification>? EmbeddedDataSpecifications
@@ -4322,8 +4352,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -4341,8 +4370,7 @@ namespace AasCore.Aas3_0
                     that.RefersTo = (
                         that.RefersTo
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -4380,8 +4408,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -4447,8 +4474,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -4500,8 +4526,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -4519,8 +4544,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -4538,8 +4562,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -4571,8 +4594,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -4615,8 +4637,7 @@ namespace AasCore.Aas3_0
                     that.Submodels = (
                         that.Submodels
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -4654,8 +4675,7 @@ namespace AasCore.Aas3_0
                     that.SpecificAssetIds = (
                         that.SpecificAssetIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ISpecificAssetId
@@ -4741,8 +4761,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -4794,8 +4813,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -4813,8 +4831,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -4832,8 +4849,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -4879,8 +4895,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -4898,8 +4913,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -4917,8 +4931,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -4936,8 +4949,7 @@ namespace AasCore.Aas3_0
                     that.SubmodelElements = (
                         that.SubmodelElements
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ISubmodelElement
@@ -4975,8 +4987,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -4994,8 +5005,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -5013,8 +5023,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -5046,8 +5055,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -5065,8 +5073,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -5084,8 +5091,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -5145,8 +5151,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -5164,8 +5169,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -5183,8 +5187,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -5216,8 +5219,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -5235,8 +5237,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -5254,8 +5255,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -5287,8 +5287,7 @@ namespace AasCore.Aas3_0
                     that.Value = (
                         that.Value
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ISubmodelElement
@@ -5326,8 +5325,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -5345,8 +5343,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -5364,8 +5361,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -5397,8 +5393,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -5416,8 +5411,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -5435,8 +5429,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -5454,8 +5447,7 @@ namespace AasCore.Aas3_0
                     that.Value = (
                         that.Value
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ISubmodelElement
@@ -5493,8 +5485,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -5512,8 +5503,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -5531,8 +5521,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -5564,8 +5553,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -5583,8 +5571,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -5602,8 +5589,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -5655,8 +5641,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -5674,8 +5659,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -5693,8 +5677,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -5726,8 +5709,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -5745,8 +5727,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -5764,8 +5745,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -5783,8 +5763,7 @@ namespace AasCore.Aas3_0
                     that.Value = (
                         that.Value
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -5836,8 +5815,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -5855,8 +5833,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -5874,8 +5851,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -5907,8 +5883,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -5926,8 +5901,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -5945,8 +5919,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -5984,8 +5957,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -6003,8 +5975,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -6022,8 +5993,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -6055,8 +6025,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -6074,8 +6043,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -6093,8 +6061,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -6146,8 +6113,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -6165,8 +6131,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -6184,8 +6149,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -6217,8 +6181,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -6236,8 +6199,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -6255,8 +6217,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -6294,8 +6255,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -6313,8 +6273,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -6332,8 +6291,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -6365,8 +6323,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -6384,8 +6341,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -6403,8 +6359,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -6442,8 +6397,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -6461,8 +6415,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -6480,8 +6433,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -6513,8 +6465,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -6532,8 +6483,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -6551,8 +6501,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -6592,8 +6541,7 @@ namespace AasCore.Aas3_0
                     that.Annotations = (
                         that.Annotations
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IDataElement
@@ -6631,8 +6579,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -6650,8 +6597,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -6669,8 +6615,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -6702,8 +6647,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -6721,8 +6665,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -6740,8 +6683,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -6759,8 +6701,7 @@ namespace AasCore.Aas3_0
                     that.Statements = (
                         that.Statements
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ISubmodelElement
@@ -6778,8 +6719,7 @@ namespace AasCore.Aas3_0
                     that.SpecificAssetIds = (
                         that.SpecificAssetIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ISpecificAssetId
@@ -6901,8 +6841,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -6920,8 +6859,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -6939,8 +6877,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -6972,8 +6909,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -6991,8 +6927,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -7010,8 +6945,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -7074,8 +7008,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -7093,8 +7026,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -7112,8 +7044,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -7145,8 +7076,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -7164,8 +7094,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -7183,8 +7112,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -7202,8 +7130,7 @@ namespace AasCore.Aas3_0
                     that.InputVariables = (
                         that.InputVariables
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IOperationVariable
@@ -7221,8 +7148,7 @@ namespace AasCore.Aas3_0
                     that.OutputVariables = (
                         that.OutputVariables
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IOperationVariable
@@ -7240,8 +7166,7 @@ namespace AasCore.Aas3_0
                     that.InoutputVariables = (
                         that.InoutputVariables
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IOperationVariable
@@ -7310,8 +7235,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -7329,8 +7253,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -7348,8 +7271,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -7381,8 +7303,7 @@ namespace AasCore.Aas3_0
                     that.SupplementalSemanticIds = (
                         that.SupplementalSemanticIds
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -7400,8 +7321,7 @@ namespace AasCore.Aas3_0
                     that.Qualifiers = (
                         that.Qualifiers
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IQualifier
@@ -7419,8 +7339,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -7458,8 +7377,7 @@ namespace AasCore.Aas3_0
                     that.Extensions = (
                         that.Extensions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IExtension
@@ -7477,8 +7395,7 @@ namespace AasCore.Aas3_0
                     that.DisplayName = (
                         that.DisplayName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringNameType
@@ -7496,8 +7413,7 @@ namespace AasCore.Aas3_0
                     that.Description = (
                         that.Description
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringTextType
@@ -7529,8 +7445,7 @@ namespace AasCore.Aas3_0
                     that.EmbeddedDataSpecifications = (
                         that.EmbeddedDataSpecifications
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IEmbeddedDataSpecification
@@ -7548,8 +7463,7 @@ namespace AasCore.Aas3_0
                     that.IsCaseOf = (
                         that.IsCaseOf
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IReference
@@ -7599,8 +7513,7 @@ namespace AasCore.Aas3_0
                 that.Keys = (
                     that.Keys
                     .Select(
-                        (item) =>
-                        {
+                        (item) => {
                             var transformed = Transform(item);
                             return (
                                 transformed as Aas.IKey
@@ -7697,8 +7610,7 @@ namespace AasCore.Aas3_0
                     that.AssetAdministrationShells = (
                         that.AssetAdministrationShells
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IAssetAdministrationShell
@@ -7716,8 +7628,7 @@ namespace AasCore.Aas3_0
                     that.Submodels = (
                         that.Submodels
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ISubmodel
@@ -7735,8 +7646,7 @@ namespace AasCore.Aas3_0
                     that.ConceptDescriptions = (
                         that.ConceptDescriptions
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.IConceptDescription
@@ -7865,8 +7775,7 @@ namespace AasCore.Aas3_0
                 that.ValueReferencePairs = (
                     that.ValueReferencePairs
                     .Select(
-                        (item) =>
-                        {
+                        (item) => {
                             var transformed = Transform(item);
                             return (
                                 transformed as Aas.IValueReferencePair
@@ -7961,8 +7870,7 @@ namespace AasCore.Aas3_0
                 that.PreferredName = (
                     that.PreferredName
                     .Select(
-                        (item) =>
-                        {
+                        (item) => {
                             var transformed = Transform(item);
                             return (
                                 transformed as Aas.ILangStringPreferredNameTypeIec61360
@@ -7979,8 +7887,7 @@ namespace AasCore.Aas3_0
                     that.ShortName = (
                         that.ShortName
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringShortNameTypeIec61360
@@ -8012,8 +7919,7 @@ namespace AasCore.Aas3_0
                     that.Definition = (
                         that.Definition
                         .Select(
-                            (item) =>
-                            {
+                            (item) => {
                                 var transformed = Transform(item);
                                 return (
                                     transformed as Aas.ILangStringDefinitionTypeIec61360
@@ -8098,7 +8004,7 @@ namespace AasCore.Aas3_0
                 // ReSharper disable once SuspiciousTypeConversion.Global
                 var enhanced = that as Enhanced<TEnhancement>;
                 return enhanced?._getEnhancement();
-            }
+                }
 
             /// <summary>
             /// Unwrap the given model instance.

@@ -389,7 +389,9 @@ public void Test_snippet_in_docs()
     };
 
     var submodel = new Aas.Submodel(
-        "some-unique-global-identifier")
+        "some-unique-global-identifier",
+        "someIdShort"
+    )
     {
         SubmodelElements = new List<Aas.ISubmodelElement>()
         {
