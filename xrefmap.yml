@@ -636,15 +636,15 @@ references:
   commentId: T:AasCore.Aas3_0.AssetAdministrationShell
   fullName: AasCore.Aas3_0.AssetAdministrationShell
   nameWithType: AssetAdministrationShell
-- uid: AasCore.Aas3_0.AssetAdministrationShell.#ctor(System.String,System.String,AasCore.Aas3_0.IAssetInformation,System.Collections.Generic.List{AasCore.Aas3_0.IExtension},System.String,System.Collections.Generic.List{AasCore.Aas3_0.ILangStringNameType},System.Collections.Generic.List{AasCore.Aas3_0.ILangStringTextType},AasCore.Aas3_0.IAdministrativeInformation,System.Collections.Generic.List{AasCore.Aas3_0.IEmbeddedDataSpecification},AasCore.Aas3_0.IReference,System.Collections.Generic.List{AasCore.Aas3_0.IReference})
-  name: AssetAdministrationShell(String, String, IAssetInformation, List<IExtension>, String, List<ILangStringNameType>, List<ILangStringTextType>, IAdministrativeInformation, List<IEmbeddedDataSpecification>, IReference, List<IReference>)
-  href: api/AasCore.Aas3_0.AssetAdministrationShell.html#AasCore_Aas3_0_AssetAdministrationShell__ctor_System_String_System_String_AasCore_Aas3_0_IAssetInformation_System_Collections_Generic_List_AasCore_Aas3_0_IExtension__System_String_System_Collections_Generic_List_AasCore_Aas3_0_ILangStringNameType__System_Collections_Generic_List_AasCore_Aas3_0_ILangStringTextType__AasCore_Aas3_0_IAdministrativeInformation_System_Collections_Generic_List_AasCore_Aas3_0_IEmbeddedDataSpecification__AasCore_Aas3_0_IReference_System_Collections_Generic_List_AasCore_Aas3_0_IReference__
-  commentId: M:AasCore.Aas3_0.AssetAdministrationShell.#ctor(System.String,System.String,AasCore.Aas3_0.IAssetInformation,System.Collections.Generic.List{AasCore.Aas3_0.IExtension},System.String,System.Collections.Generic.List{AasCore.Aas3_0.ILangStringNameType},System.Collections.Generic.List{AasCore.Aas3_0.ILangStringTextType},AasCore.Aas3_0.IAdministrativeInformation,System.Collections.Generic.List{AasCore.Aas3_0.IEmbeddedDataSpecification},AasCore.Aas3_0.IReference,System.Collections.Generic.List{AasCore.Aas3_0.IReference})
-  name.vb: AssetAdministrationShell(String, String, IAssetInformation, List(Of IExtension), String, List(Of ILangStringNameType), List(Of ILangStringTextType), IAdministrativeInformation, List(Of IEmbeddedDataSpecification), IReference, List(Of IReference))
-  fullName: AasCore.Aas3_0.AssetAdministrationShell.AssetAdministrationShell(System.String, System.String, AasCore.Aas3_0.IAssetInformation, System.Collections.Generic.List<AasCore.Aas3_0.IExtension>, System.String, System.Collections.Generic.List<AasCore.Aas3_0.ILangStringNameType>, System.Collections.Generic.List<AasCore.Aas3_0.ILangStringTextType>, AasCore.Aas3_0.IAdministrativeInformation, System.Collections.Generic.List<AasCore.Aas3_0.IEmbeddedDataSpecification>, AasCore.Aas3_0.IReference, System.Collections.Generic.List<AasCore.Aas3_0.IReference>)
-  fullName.vb: AasCore.Aas3_0.AssetAdministrationShell.AssetAdministrationShell(System.String, System.String, AasCore.Aas3_0.IAssetInformation, System.Collections.Generic.List(Of AasCore.Aas3_0.IExtension), System.String, System.Collections.Generic.List(Of AasCore.Aas3_0.ILangStringNameType), System.Collections.Generic.List(Of AasCore.Aas3_0.ILangStringTextType), AasCore.Aas3_0.IAdministrativeInformation, System.Collections.Generic.List(Of AasCore.Aas3_0.IEmbeddedDataSpecification), AasCore.Aas3_0.IReference, System.Collections.Generic.List(Of AasCore.Aas3_0.IReference))
-  nameWithType: AssetAdministrationShell.AssetAdministrationShell(String, String, IAssetInformation, List<IExtension>, String, List<ILangStringNameType>, List<ILangStringTextType>, IAdministrativeInformation, List<IEmbeddedDataSpecification>, IReference, List<IReference>)
-  nameWithType.vb: AssetAdministrationShell.AssetAdministrationShell(String, String, IAssetInformation, List(Of IExtension), String, List(Of ILangStringNameType), List(Of ILangStringTextType), IAdministrativeInformation, List(Of IEmbeddedDataSpecification), IReference, List(Of IReference))
+- uid: AasCore.Aas3_0.AssetAdministrationShell.#ctor(System.String,AasCore.Aas3_0.IAssetInformation,System.Collections.Generic.List{AasCore.Aas3_0.IExtension},System.String,System.String,System.Collections.Generic.List{AasCore.Aas3_0.ILangStringNameType},System.Collections.Generic.List{AasCore.Aas3_0.ILangStringTextType},AasCore.Aas3_0.IAdministrativeInformation,System.Collections.Generic.List{AasCore.Aas3_0.IEmbeddedDataSpecification},AasCore.Aas3_0.IReference,System.Collections.Generic.List{AasCore.Aas3_0.IReference})
+  name: AssetAdministrationShell(String, IAssetInformation, List<IExtension>, String, String, List<ILangStringNameType>, List<ILangStringTextType>, IAdministrativeInformation, List<IEmbeddedDataSpecification>, IReference, List<IReference>)
+  href: api/AasCore.Aas3_0.AssetAdministrationShell.html#AasCore_Aas3_0_AssetAdministrationShell__ctor_System_String_AasCore_Aas3_0_IAssetInformation_System_Collections_Generic_List_AasCore_Aas3_0_IExtension__System_String_System_String_System_Collections_Generic_List_AasCore_Aas3_0_ILangStringNameType__System_Collections_Generic_List_AasCore_Aas3_0_ILangStringTextType__AasCore_Aas3_0_IAdministrativeInformation_System_Collections_Generic_List_AasCore_Aas3_0_IEmbeddedDataSpecification__AasCore_Aas3_0_IReference_System_Collections_Generic_List_AasCore_Aas3_0_IReference__
+  commentId: M:AasCore.Aas3_0.AssetAdministrationShell.#ctor(System.String,AasCore.Aas3_0.IAssetInformation,System.Collections.Generic.List{AasCore.Aas3_0.IExtension},System.String,System.String,System.Collections.Generic.List{AasCore.Aas3_0.ILangStringNameType},System.Collections.Generic.List{AasCore.Aas3_0.ILangStringTextType},AasCore.Aas3_0.IAdministrativeInformation,System.Collections.Generic.List{AasCore.Aas3_0.IEmbeddedDataSpecification},AasCore.Aas3_0.IReference,System.Collections.Generic.List{AasCore.Aas3_0.IReference})
+  name.vb: AssetAdministrationShell(String, IAssetInformation, List(Of IExtension), String, String, List(Of ILangStringNameType), List(Of ILangStringTextType), IAdministrativeInformation, List(Of IEmbeddedDataSpecification), IReference, List(Of IReference))
+  fullName: AasCore.Aas3_0.AssetAdministrationShell.AssetAdministrationShell(System.String, AasCore.Aas3_0.IAssetInformation, System.Collections.Generic.List<AasCore.Aas3_0.IExtension>, System.String, System.String, System.Collections.Generic.List<AasCore.Aas3_0.ILangStringNameType>, System.Collections.Generic.List<AasCore.Aas3_0.ILangStringTextType>, AasCore.Aas3_0.IAdministrativeInformation, System.Collections.Generic.List<AasCore.Aas3_0.IEmbeddedDataSpecification>, AasCore.Aas3_0.IReference, System.Collections.Generic.List<AasCore.Aas3_0.IReference>)
+  fullName.vb: AasCore.Aas3_0.AssetAdministrationShell.AssetAdministrationShell(System.String, AasCore.Aas3_0.IAssetInformation, System.Collections.Generic.List(Of AasCore.Aas3_0.IExtension), System.String, System.String, System.Collections.Generic.List(Of AasCore.Aas3_0.ILangStringNameType), System.Collections.Generic.List(Of AasCore.Aas3_0.ILangStringTextType), AasCore.Aas3_0.IAdministrativeInformation, System.Collections.Generic.List(Of AasCore.Aas3_0.IEmbeddedDataSpecification), AasCore.Aas3_0.IReference, System.Collections.Generic.List(Of AasCore.Aas3_0.IReference))
+  nameWithType: AssetAdministrationShell.AssetAdministrationShell(String, IAssetInformation, List<IExtension>, String, String, List<ILangStringNameType>, List<ILangStringTextType>, IAdministrativeInformation, List<IEmbeddedDataSpecification>, IReference, List<IReference>)
+  nameWithType.vb: AssetAdministrationShell.AssetAdministrationShell(String, IAssetInformation, List(Of IExtension), String, String, List(Of ILangStringNameType), List(Of ILangStringTextType), IAdministrativeInformation, List(Of IEmbeddedDataSpecification), IReference, List(Of IReference))
 - uid: AasCore.Aas3_0.AssetAdministrationShell.#ctor*
   name: AssetAdministrationShell
   href: api/AasCore.Aas3_0.AssetAdministrationShell.html#AasCore_Aas3_0_AssetAdministrationShell__ctor_
@@ -652,23 +652,6 @@ references:
   isSpec: "True"
   fullName: AasCore.Aas3_0.AssetAdministrationShell.AssetAdministrationShell
   nameWithType: AssetAdministrationShell.AssetAdministrationShell
-- uid: AasCore.Aas3_0.AssetAdministrationShell.AasCore#Aas3_0#IReferable#IdShort
-  name: IReferable.IdShort
-  href: api/AasCore.Aas3_0.AssetAdministrationShell.html#AasCore_Aas3_0_AssetAdministrationShell_AasCore_Aas3_0_IReferable_IdShort
-  commentId: P:AasCore.Aas3_0.AssetAdministrationShell.AasCore#Aas3_0#IReferable#IdShort
-  name.vb: AasCore.Aas3_0.IReferable.IdShort
-  fullName: AasCore.Aas3_0.AssetAdministrationShell.AasCore.Aas3_0.IReferable.IdShort
-  nameWithType: AssetAdministrationShell.IReferable.IdShort
-  nameWithType.vb: AssetAdministrationShell.AasCore.Aas3_0.IReferable.IdShort
-- uid: AasCore.Aas3_0.AssetAdministrationShell.AasCore#Aas3_0#IReferable#IdShort*
-  name: IReferable.IdShort
-  href: api/AasCore.Aas3_0.AssetAdministrationShell.html#AasCore_Aas3_0_AssetAdministrationShell_AasCore_Aas3_0_IReferable_IdShort_
-  commentId: Overload:AasCore.Aas3_0.AssetAdministrationShell.AasCore#Aas3_0#IReferable#IdShort
-  isSpec: "True"
-  name.vb: AasCore.Aas3_0.IReferable.IdShort
-  fullName: AasCore.Aas3_0.AssetAdministrationShell.AasCore.Aas3_0.IReferable.IdShort
-  nameWithType: AssetAdministrationShell.IReferable.IdShort
-  nameWithType.vb: AssetAdministrationShell.AasCore.Aas3_0.IReferable.IdShort
 - uid: AasCore.Aas3_0.AssetAdministrationShell.Accept(AasCore.Aas3_0.Visitation.IVisitor)
   name: Accept(Visitation.IVisitor)
   href: api/AasCore.Aas3_0.AssetAdministrationShell.html#AasCore_Aas3_0_AssetAdministrationShell_Accept_AasCore_Aas3_0_Visitation_IVisitor_
@@ -2166,15 +2149,15 @@ references:
   commentId: T:AasCore.Aas3_0.ConceptDescription
   fullName: AasCore.Aas3_0.ConceptDescription
   nameWithType: ConceptDescription
-- uid: AasCore.Aas3_0.ConceptDescription.#ctor(System.String,System.String,System.Collections.Generic.List{AasCore.Aas3_0.IExtension},System.String,System.Collections.Generic.List{AasCore.Aas3_0.ILangStringNameType},System.Collections.Generic.List{AasCore.Aas3_0.ILangStringTextType},AasCore.Aas3_0.IAdministrativeInformation,System.Collections.Generic.List{AasCore.Aas3_0.IEmbeddedDataSpecification},System.Collections.Generic.List{AasCore.Aas3_0.IReference})
-  name: ConceptDescription(String, String, List<IExtension>, String, List<ILangStringNameType>, List<ILangStringTextType>, IAdministrativeInformation, List<IEmbeddedDataSpecification>, List<IReference>)
-  href: api/AasCore.Aas3_0.ConceptDescription.html#AasCore_Aas3_0_ConceptDescription__ctor_System_String_System_String_System_Collections_Generic_List_AasCore_Aas3_0_IExtension__System_String_System_Collections_Generic_List_AasCore_Aas3_0_ILangStringNameType__System_Collections_Generic_List_AasCore_Aas3_0_ILangStringTextType__AasCore_Aas3_0_IAdministrativeInformation_System_Collections_Generic_List_AasCore_Aas3_0_IEmbeddedDataSpecification__System_Collections_Generic_List_AasCore_Aas3_0_IReference__
-  commentId: M:AasCore.Aas3_0.ConceptDescription.#ctor(System.String,System.String,System.Collections.Generic.List{AasCore.Aas3_0.IExtension},System.String,System.Collections.Generic.List{AasCore.Aas3_0.ILangStringNameType},System.Collections.Generic.List{AasCore.Aas3_0.ILangStringTextType},AasCore.Aas3_0.IAdministrativeInformation,System.Collections.Generic.List{AasCore.Aas3_0.IEmbeddedDataSpecification},System.Collections.Generic.List{AasCore.Aas3_0.IReference})
-  name.vb: ConceptDescription(String, String, List(Of IExtension), String, List(Of ILangStringNameType), List(Of ILangStringTextType), IAdministrativeInformation, List(Of IEmbeddedDataSpecification), List(Of IReference))
-  fullName: AasCore.Aas3_0.ConceptDescription.ConceptDescription(System.String, System.String, System.Collections.Generic.List<AasCore.Aas3_0.IExtension>, System.String, System.Collections.Generic.List<AasCore.Aas3_0.ILangStringNameType>, System.Collections.Generic.List<AasCore.Aas3_0.ILangStringTextType>, AasCore.Aas3_0.IAdministrativeInformation, System.Collections.Generic.List<AasCore.Aas3_0.IEmbeddedDataSpecification>, System.Collections.Generic.List<AasCore.Aas3_0.IReference>)
-  fullName.vb: AasCore.Aas3_0.ConceptDescription.ConceptDescription(System.String, System.String, System.Collections.Generic.List(Of AasCore.Aas3_0.IExtension), System.String, System.Collections.Generic.List(Of AasCore.Aas3_0.ILangStringNameType), System.Collections.Generic.List(Of AasCore.Aas3_0.ILangStringTextType), AasCore.Aas3_0.IAdministrativeInformation, System.Collections.Generic.List(Of AasCore.Aas3_0.IEmbeddedDataSpecification), System.Collections.Generic.List(Of AasCore.Aas3_0.IReference))
-  nameWithType: ConceptDescription.ConceptDescription(String, String, List<IExtension>, String, List<ILangStringNameType>, List<ILangStringTextType>, IAdministrativeInformation, List<IEmbeddedDataSpecification>, List<IReference>)
-  nameWithType.vb: ConceptDescription.ConceptDescription(String, String, List(Of IExtension), String, List(Of ILangStringNameType), List(Of ILangStringTextType), IAdministrativeInformation, List(Of IEmbeddedDataSpecification), List(Of IReference))
+- uid: AasCore.Aas3_0.ConceptDescription.#ctor(System.String,System.Collections.Generic.List{AasCore.Aas3_0.IExtension},System.String,System.String,System.Collections.Generic.List{AasCore.Aas3_0.ILangStringNameType},System.Collections.Generic.List{AasCore.Aas3_0.ILangStringTextType},AasCore.Aas3_0.IAdministrativeInformation,System.Collections.Generic.List{AasCore.Aas3_0.IEmbeddedDataSpecification},System.Collections.Generic.List{AasCore.Aas3_0.IReference})
+  name: ConceptDescription(String, List<IExtension>, String, String, List<ILangStringNameType>, List<ILangStringTextType>, IAdministrativeInformation, List<IEmbeddedDataSpecification>, List<IReference>)
+  href: api/AasCore.Aas3_0.ConceptDescription.html#AasCore_Aas3_0_ConceptDescription__ctor_System_String_System_Collections_Generic_List_AasCore_Aas3_0_IExtension__System_String_System_String_System_Collections_Generic_List_AasCore_Aas3_0_ILangStringNameType__System_Collections_Generic_List_AasCore_Aas3_0_ILangStringTextType__AasCore_Aas3_0_IAdministrativeInformation_System_Collections_Generic_List_AasCore_Aas3_0_IEmbeddedDataSpecification__System_Collections_Generic_List_AasCore_Aas3_0_IReference__
+  commentId: M:AasCore.Aas3_0.ConceptDescription.#ctor(System.String,System.Collections.Generic.List{AasCore.Aas3_0.IExtension},System.String,System.String,System.Collections.Generic.List{AasCore.Aas3_0.ILangStringNameType},System.Collections.Generic.List{AasCore.Aas3_0.ILangStringTextType},AasCore.Aas3_0.IAdministrativeInformation,System.Collections.Generic.List{AasCore.Aas3_0.IEmbeddedDataSpecification},System.Collections.Generic.List{AasCore.Aas3_0.IReference})
+  name.vb: ConceptDescription(String, List(Of IExtension), String, String, List(Of ILangStringNameType), List(Of ILangStringTextType), IAdministrativeInformation, List(Of IEmbeddedDataSpecification), List(Of IReference))
+  fullName: AasCore.Aas3_0.ConceptDescription.ConceptDescription(System.String, System.Collections.Generic.List<AasCore.Aas3_0.IExtension>, System.String, System.String, System.Collections.Generic.List<AasCore.Aas3_0.ILangStringNameType>, System.Collections.Generic.List<AasCore.Aas3_0.ILangStringTextType>, AasCore.Aas3_0.IAdministrativeInformation, System.Collections.Generic.List<AasCore.Aas3_0.IEmbeddedDataSpecification>, System.Collections.Generic.List<AasCore.Aas3_0.IReference>)
+  fullName.vb: AasCore.Aas3_0.ConceptDescription.ConceptDescription(System.String, System.Collections.Generic.List(Of AasCore.Aas3_0.IExtension), System.String, System.String, System.Collections.Generic.List(Of AasCore.Aas3_0.ILangStringNameType), System.Collections.Generic.List(Of AasCore.Aas3_0.ILangStringTextType), AasCore.Aas3_0.IAdministrativeInformation, System.Collections.Generic.List(Of AasCore.Aas3_0.IEmbeddedDataSpecification), System.Collections.Generic.List(Of AasCore.Aas3_0.IReference))
+  nameWithType: ConceptDescription.ConceptDescription(String, List<IExtension>, String, String, List<ILangStringNameType>, List<ILangStringTextType>, IAdministrativeInformation, List<IEmbeddedDataSpecification>, List<IReference>)
+  nameWithType.vb: ConceptDescription.ConceptDescription(String, List(Of IExtension), String, String, List(Of ILangStringNameType), List(Of ILangStringTextType), IAdministrativeInformation, List(Of IEmbeddedDataSpecification), List(Of IReference))
 - uid: AasCore.Aas3_0.ConceptDescription.#ctor*
   name: ConceptDescription
   href: api/AasCore.Aas3_0.ConceptDescription.html#AasCore_Aas3_0_ConceptDescription__ctor_
@@ -2182,23 +2165,6 @@ references:
   isSpec: "True"
   fullName: AasCore.Aas3_0.ConceptDescription.ConceptDescription
   nameWithType: ConceptDescription.ConceptDescription
-- uid: AasCore.Aas3_0.ConceptDescription.AasCore#Aas3_0#IReferable#IdShort
-  name: IReferable.IdShort
-  href: api/AasCore.Aas3_0.ConceptDescription.html#AasCore_Aas3_0_ConceptDescription_AasCore_Aas3_0_IReferable_IdShort
-  commentId: P:AasCore.Aas3_0.ConceptDescription.AasCore#Aas3_0#IReferable#IdShort
-  name.vb: AasCore.Aas3_0.IReferable.IdShort
-  fullName: AasCore.Aas3_0.ConceptDescription.AasCore.Aas3_0.IReferable.IdShort
-  nameWithType: ConceptDescription.IReferable.IdShort
-  nameWithType.vb: ConceptDescription.AasCore.Aas3_0.IReferable.IdShort
-- uid: AasCore.Aas3_0.ConceptDescription.AasCore#Aas3_0#IReferable#IdShort*
-  name: IReferable.IdShort
-  href: api/AasCore.Aas3_0.ConceptDescription.html#AasCore_Aas3_0_ConceptDescription_AasCore_Aas3_0_IReferable_IdShort_
-  commentId: Overload:AasCore.Aas3_0.ConceptDescription.AasCore#Aas3_0#IReferable#IdShort
-  isSpec: "True"
-  name.vb: AasCore.Aas3_0.IReferable.IdShort
-  fullName: AasCore.Aas3_0.ConceptDescription.AasCore.Aas3_0.IReferable.IdShort
-  nameWithType: ConceptDescription.IReferable.IdShort
-  nameWithType.vb: ConceptDescription.AasCore.Aas3_0.IReferable.IdShort
 - uid: AasCore.Aas3_0.ConceptDescription.Accept(AasCore.Aas3_0.Visitation.IVisitor)
   name: Accept(Visitation.IVisitor)
   href: api/AasCore.Aas3_0.ConceptDescription.html#AasCore_Aas3_0_ConceptDescription_Accept_AasCore_Aas3_0_Visitation_IVisitor_
@@ -4012,25 +3978,6 @@ references:
   fullName.vb: AasCore.Aas3_0.Enhancing.EnhancedAssetAdministrationShell(Of TEnhancement).EnhancedAssetAdministrationShell
   nameWithType: Enhancing.EnhancedAssetAdministrationShell<TEnhancement>.EnhancedAssetAdministrationShell
   nameWithType.vb: Enhancing.EnhancedAssetAdministrationShell(Of TEnhancement).EnhancedAssetAdministrationShell
-- uid: AasCore.Aas3_0.Enhancing.EnhancedAssetAdministrationShell`1.AasCore#Aas3_0#IReferable#IdShort
-  name: IReferable.IdShort
-  href: api/AasCore.Aas3_0.Enhancing.EnhancedAssetAdministrationShell-1.html#AasCore_Aas3_0_Enhancing_EnhancedAssetAdministrationShell_1_AasCore_Aas3_0_IReferable_IdShort
-  commentId: P:AasCore.Aas3_0.Enhancing.EnhancedAssetAdministrationShell`1.AasCore#Aas3_0#IReferable#IdShort
-  name.vb: AasCore.Aas3_0.IReferable.IdShort
-  fullName: AasCore.Aas3_0.Enhancing.EnhancedAssetAdministrationShell<TEnhancement>.AasCore.Aas3_0.IReferable.IdShort
-  fullName.vb: AasCore.Aas3_0.Enhancing.EnhancedAssetAdministrationShell(Of TEnhancement).AasCore.Aas3_0.IReferable.IdShort
-  nameWithType: Enhancing.EnhancedAssetAdministrationShell<TEnhancement>.IReferable.IdShort
-  nameWithType.vb: Enhancing.EnhancedAssetAdministrationShell(Of TEnhancement).AasCore.Aas3_0.IReferable.IdShort
-- uid: AasCore.Aas3_0.Enhancing.EnhancedAssetAdministrationShell`1.AasCore#Aas3_0#IReferable#IdShort*
-  name: IReferable.IdShort
-  href: api/AasCore.Aas3_0.Enhancing.EnhancedAssetAdministrationShell-1.html#AasCore_Aas3_0_Enhancing_EnhancedAssetAdministrationShell_1_AasCore_Aas3_0_IReferable_IdShort_
-  commentId: Overload:AasCore.Aas3_0.Enhancing.EnhancedAssetAdministrationShell`1.AasCore#Aas3_0#IReferable#IdShort
-  isSpec: "True"
-  name.vb: AasCore.Aas3_0.IReferable.IdShort
-  fullName: AasCore.Aas3_0.Enhancing.EnhancedAssetAdministrationShell<TEnhancement>.AasCore.Aas3_0.IReferable.IdShort
-  fullName.vb: AasCore.Aas3_0.Enhancing.EnhancedAssetAdministrationShell(Of TEnhancement).AasCore.Aas3_0.IReferable.IdShort
-  nameWithType: Enhancing.EnhancedAssetAdministrationShell<TEnhancement>.IReferable.IdShort
-  nameWithType.vb: Enhancing.EnhancedAssetAdministrationShell(Of TEnhancement).AasCore.Aas3_0.IReferable.IdShort
 - uid: AasCore.Aas3_0.Enhancing.EnhancedAssetAdministrationShell`1.Accept(AasCore.Aas3_0.Visitation.IVisitor)
   name: Accept(Visitation.IVisitor)
   href: api/AasCore.Aas3_0.Enhancing.EnhancedAssetAdministrationShell-1.html#AasCore_Aas3_0_Enhancing_EnhancedAssetAdministrationShell_1_Accept_AasCore_Aas3_0_Visitation_IVisitor_
@@ -5922,25 +5869,6 @@ references:
   fullName.vb: AasCore.Aas3_0.Enhancing.EnhancedConceptDescription(Of TEnhancement).EnhancedConceptDescription
   nameWithType: Enhancing.EnhancedConceptDescription<TEnhancement>.EnhancedConceptDescription
   nameWithType.vb: Enhancing.EnhancedConceptDescription(Of TEnhancement).EnhancedConceptDescription
-- uid: AasCore.Aas3_0.Enhancing.EnhancedConceptDescription`1.AasCore#Aas3_0#IReferable#IdShort
-  name: IReferable.IdShort
-  href: api/AasCore.Aas3_0.Enhancing.EnhancedConceptDescription-1.html#AasCore_Aas3_0_Enhancing_EnhancedConceptDescription_1_AasCore_Aas3_0_IReferable_IdShort
-  commentId: P:AasCore.Aas3_0.Enhancing.EnhancedConceptDescription`1.AasCore#Aas3_0#IReferable#IdShort
-  name.vb: AasCore.Aas3_0.IReferable.IdShort
-  fullName: AasCore.Aas3_0.Enhancing.EnhancedConceptDescription<TEnhancement>.AasCore.Aas3_0.IReferable.IdShort
-  fullName.vb: AasCore.Aas3_0.Enhancing.EnhancedConceptDescription(Of TEnhancement).AasCore.Aas3_0.IReferable.IdShort
-  nameWithType: Enhancing.EnhancedConceptDescription<TEnhancement>.IReferable.IdShort
-  nameWithType.vb: Enhancing.EnhancedConceptDescription(Of TEnhancement).AasCore.Aas3_0.IReferable.IdShort
-- uid: AasCore.Aas3_0.Enhancing.EnhancedConceptDescription`1.AasCore#Aas3_0#IReferable#IdShort*
-  name: IReferable.IdShort
-  href: api/AasCore.Aas3_0.Enhancing.EnhancedConceptDescription-1.html#AasCore_Aas3_0_Enhancing_EnhancedConceptDescription_1_AasCore_Aas3_0_IReferable_IdShort_
-  commentId: Overload:AasCore.Aas3_0.Enhancing.EnhancedConceptDescription`1.AasCore#Aas3_0#IReferable#IdShort
-  isSpec: "True"
-  name.vb: AasCore.Aas3_0.IReferable.IdShort
-  fullName: AasCore.Aas3_0.Enhancing.EnhancedConceptDescription<TEnhancement>.AasCore.Aas3_0.IReferable.IdShort
-  fullName.vb: AasCore.Aas3_0.Enhancing.EnhancedConceptDescription(Of TEnhancement).AasCore.Aas3_0.IReferable.IdShort
-  nameWithType: Enhancing.EnhancedConceptDescription<TEnhancement>.IReferable.IdShort
-  nameWithType.vb: Enhancing.EnhancedConceptDescription(Of TEnhancement).AasCore.Aas3_0.IReferable.IdShort
 - uid: AasCore.Aas3_0.Enhancing.EnhancedConceptDescription`1.Accept(AasCore.Aas3_0.Visitation.IVisitor)
   name: Accept(Visitation.IVisitor)
   href: api/AasCore.Aas3_0.Enhancing.EnhancedConceptDescription-1.html#AasCore_Aas3_0_Enhancing_EnhancedConceptDescription_1_Accept_AasCore_Aas3_0_Visitation_IVisitor_
@@ -12976,25 +12904,6 @@ references:
   fullName.vb: AasCore.Aas3_0.Enhancing.EnhancedSubmodel(Of TEnhancement).EnhancedSubmodel
   nameWithType: Enhancing.EnhancedSubmodel<TEnhancement>.EnhancedSubmodel
   nameWithType.vb: Enhancing.EnhancedSubmodel(Of TEnhancement).EnhancedSubmodel
-- uid: AasCore.Aas3_0.Enhancing.EnhancedSubmodel`1.AasCore#Aas3_0#IReferable#IdShort
-  name: IReferable.IdShort
-  href: api/AasCore.Aas3_0.Enhancing.EnhancedSubmodel-1.html#AasCore_Aas3_0_Enhancing_EnhancedSubmodel_1_AasCore_Aas3_0_IReferable_IdShort
-  commentId: P:AasCore.Aas3_0.Enhancing.EnhancedSubmodel`1.AasCore#Aas3_0#IReferable#IdShort
-  name.vb: AasCore.Aas3_0.IReferable.IdShort
-  fullName: AasCore.Aas3_0.Enhancing.EnhancedSubmodel<TEnhancement>.AasCore.Aas3_0.IReferable.IdShort
-  fullName.vb: AasCore.Aas3_0.Enhancing.EnhancedSubmodel(Of TEnhancement).AasCore.Aas3_0.IReferable.IdShort
-  nameWithType: Enhancing.EnhancedSubmodel<TEnhancement>.IReferable.IdShort
-  nameWithType.vb: Enhancing.EnhancedSubmodel(Of TEnhancement).AasCore.Aas3_0.IReferable.IdShort
-- uid: AasCore.Aas3_0.Enhancing.EnhancedSubmodel`1.AasCore#Aas3_0#IReferable#IdShort*
-  name: IReferable.IdShort
-  href: api/AasCore.Aas3_0.Enhancing.EnhancedSubmodel-1.html#AasCore_Aas3_0_Enhancing_EnhancedSubmodel_1_AasCore_Aas3_0_IReferable_IdShort_
-  commentId: Overload:AasCore.Aas3_0.Enhancing.EnhancedSubmodel`1.AasCore#Aas3_0#IReferable#IdShort
-  isSpec: "True"
-  name.vb: AasCore.Aas3_0.IReferable.IdShort
-  fullName: AasCore.Aas3_0.Enhancing.EnhancedSubmodel<TEnhancement>.AasCore.Aas3_0.IReferable.IdShort
-  fullName.vb: AasCore.Aas3_0.Enhancing.EnhancedSubmodel(Of TEnhancement).AasCore.Aas3_0.IReferable.IdShort
-  nameWithType: Enhancing.EnhancedSubmodel<TEnhancement>.IReferable.IdShort
-  nameWithType.vb: Enhancing.EnhancedSubmodel(Of TEnhancement).AasCore.Aas3_0.IReferable.IdShort
 - uid: AasCore.Aas3_0.Enhancing.EnhancedSubmodel`1.Accept(AasCore.Aas3_0.Visitation.IVisitor)
   name: Accept(Visitation.IVisitor)
   href: api/AasCore.Aas3_0.Enhancing.EnhancedSubmodel-1.html#AasCore_Aas3_0_Enhancing_EnhancedSubmodel_1_Accept_AasCore_Aas3_0_Visitation_IVisitor_
@@ -17323,19 +17232,6 @@ references:
   isSpec: "True"
   fullName: AasCore.Aas3_0.IIdentifiable.Id
   nameWithType: IIdentifiable.Id
-- uid: AasCore.Aas3_0.IIdentifiable.IdShort
-  name: IdShort
-  href: api/AasCore.Aas3_0.IIdentifiable.html#AasCore_Aas3_0_IIdentifiable_IdShort
-  commentId: P:AasCore.Aas3_0.IIdentifiable.IdShort
-  fullName: AasCore.Aas3_0.IIdentifiable.IdShort
-  nameWithType: IIdentifiable.IdShort
-- uid: AasCore.Aas3_0.IIdentifiable.IdShort*
-  name: IdShort
-  href: api/AasCore.Aas3_0.IIdentifiable.html#AasCore_Aas3_0_IIdentifiable_IdShort_
-  commentId: Overload:AasCore.Aas3_0.IIdentifiable.IdShort
-  isSpec: "True"
-  fullName: AasCore.Aas3_0.IIdentifiable.IdShort
-  nameWithType: IIdentifiable.IdShort
 - uid: AasCore.Aas3_0.IKey
   name: IKey
   href: api/AasCore.Aas3_0.IKey.html
@@ -23550,15 +23446,15 @@ references:
   commentId: T:AasCore.Aas3_0.Submodel
   fullName: AasCore.Aas3_0.Submodel
   nameWithType: Submodel
-- uid: AasCore.Aas3_0.Submodel.#ctor(System.String,System.String,System.Collections.Generic.List{AasCore.Aas3_0.IExtension},System.String,System.Collections.Generic.List{AasCore.Aas3_0.ILangStringNameType},System.Collections.Generic.List{AasCore.Aas3_0.ILangStringTextType},AasCore.Aas3_0.IAdministrativeInformation,System.Nullable{AasCore.Aas3_0.ModellingKind},AasCore.Aas3_0.IReference,System.Collections.Generic.List{AasCore.Aas3_0.IReference},System.Collections.Generic.List{AasCore.Aas3_0.IQualifier},System.Collections.Generic.List{AasCore.Aas3_0.IEmbeddedDataSpecification},System.Collections.Generic.List{AasCore.Aas3_0.ISubmodelElement})
-  name: Submodel(String, String, List<IExtension>, String, List<ILangStringNameType>, List<ILangStringTextType>, IAdministrativeInformation, Nullable<ModellingKind>, IReference, List<IReference>, List<IQualifier>, List<IEmbeddedDataSpecification>, List<ISubmodelElement>)
-  href: api/AasCore.Aas3_0.Submodel.html#AasCore_Aas3_0_Submodel__ctor_System_String_System_String_System_Collections_Generic_List_AasCore_Aas3_0_IExtension__System_String_System_Collections_Generic_List_AasCore_Aas3_0_ILangStringNameType__System_Collections_Generic_List_AasCore_Aas3_0_ILangStringTextType__AasCore_Aas3_0_IAdministrativeInformation_System_Nullable_AasCore_Aas3_0_ModellingKind__AasCore_Aas3_0_IReference_System_Collections_Generic_List_AasCore_Aas3_0_IReference__System_Collections_Generic_List_AasCore_Aas3_0_IQualifier__System_Collections_Generic_List_AasCore_Aas3_0_IEmbeddedDataSpecification__System_Collections_Generic_List_AasCore_Aas3_0_ISubmodelElement__
-  commentId: M:AasCore.Aas3_0.Submodel.#ctor(System.String,System.String,System.Collections.Generic.List{AasCore.Aas3_0.IExtension},System.String,System.Collections.Generic.List{AasCore.Aas3_0.ILangStringNameType},System.Collections.Generic.List{AasCore.Aas3_0.ILangStringTextType},AasCore.Aas3_0.IAdministrativeInformation,System.Nullable{AasCore.Aas3_0.ModellingKind},AasCore.Aas3_0.IReference,System.Collections.Generic.List{AasCore.Aas3_0.IReference},System.Collections.Generic.List{AasCore.Aas3_0.IQualifier},System.Collections.Generic.List{AasCore.Aas3_0.IEmbeddedDataSpecification},System.Collections.Generic.List{AasCore.Aas3_0.ISubmodelElement})
-  name.vb: Submodel(String, String, List(Of IExtension), String, List(Of ILangStringNameType), List(Of ILangStringTextType), IAdministrativeInformation, Nullable(Of ModellingKind), IReference, List(Of IReference), List(Of IQualifier), List(Of IEmbeddedDataSpecification), List(Of ISubmodelElement))
-  fullName: AasCore.Aas3_0.Submodel.Submodel(System.String, System.String, System.Collections.Generic.List<AasCore.Aas3_0.IExtension>, System.String, System.Collections.Generic.List<AasCore.Aas3_0.ILangStringNameType>, System.Collections.Generic.List<AasCore.Aas3_0.ILangStringTextType>, AasCore.Aas3_0.IAdministrativeInformation, System.Nullable<AasCore.Aas3_0.ModellingKind>, AasCore.Aas3_0.IReference, System.Collections.Generic.List<AasCore.Aas3_0.IReference>, System.Collections.Generic.List<AasCore.Aas3_0.IQualifier>, System.Collections.Generic.List<AasCore.Aas3_0.IEmbeddedDataSpecification>, System.Collections.Generic.List<AasCore.Aas3_0.ISubmodelElement>)
-  fullName.vb: AasCore.Aas3_0.Submodel.Submodel(System.String, System.String, System.Collections.Generic.List(Of AasCore.Aas3_0.IExtension), System.String, System.Collections.Generic.List(Of AasCore.Aas3_0.ILangStringNameType), System.Collections.Generic.List(Of AasCore.Aas3_0.ILangStringTextType), AasCore.Aas3_0.IAdministrativeInformation, System.Nullable(Of AasCore.Aas3_0.ModellingKind), AasCore.Aas3_0.IReference, System.Collections.Generic.List(Of AasCore.Aas3_0.IReference), System.Collections.Generic.List(Of AasCore.Aas3_0.IQualifier), System.Collections.Generic.List(Of AasCore.Aas3_0.IEmbeddedDataSpecification), System.Collections.Generic.List(Of AasCore.Aas3_0.ISubmodelElement))
-  nameWithType: Submodel.Submodel(String, String, List<IExtension>, String, List<ILangStringNameType>, List<ILangStringTextType>, IAdministrativeInformation, Nullable<ModellingKind>, IReference, List<IReference>, List<IQualifier>, List<IEmbeddedDataSpecification>, List<ISubmodelElement>)
-  nameWithType.vb: Submodel.Submodel(String, String, List(Of IExtension), String, List(Of ILangStringNameType), List(Of ILangStringTextType), IAdministrativeInformation, Nullable(Of ModellingKind), IReference, List(Of IReference), List(Of IQualifier), List(Of IEmbeddedDataSpecification), List(Of ISubmodelElement))
+- uid: AasCore.Aas3_0.Submodel.#ctor(System.String,System.Collections.Generic.List{AasCore.Aas3_0.IExtension},System.String,System.String,System.Collections.Generic.List{AasCore.Aas3_0.ILangStringNameType},System.Collections.Generic.List{AasCore.Aas3_0.ILangStringTextType},AasCore.Aas3_0.IAdministrativeInformation,System.Nullable{AasCore.Aas3_0.ModellingKind},AasCore.Aas3_0.IReference,System.Collections.Generic.List{AasCore.Aas3_0.IReference},System.Collections.Generic.List{AasCore.Aas3_0.IQualifier},System.Collections.Generic.List{AasCore.Aas3_0.IEmbeddedDataSpecification},System.Collections.Generic.List{AasCore.Aas3_0.ISubmodelElement})
+  name: Submodel(String, List<IExtension>, String, String, List<ILangStringNameType>, List<ILangStringTextType>, IAdministrativeInformation, Nullable<ModellingKind>, IReference, List<IReference>, List<IQualifier>, List<IEmbeddedDataSpecification>, List<ISubmodelElement>)
+  href: api/AasCore.Aas3_0.Submodel.html#AasCore_Aas3_0_Submodel__ctor_System_String_System_Collections_Generic_List_AasCore_Aas3_0_IExtension__System_String_System_String_System_Collections_Generic_List_AasCore_Aas3_0_ILangStringNameType__System_Collections_Generic_List_AasCore_Aas3_0_ILangStringTextType__AasCore_Aas3_0_IAdministrativeInformation_System_Nullable_AasCore_Aas3_0_ModellingKind__AasCore_Aas3_0_IReference_System_Collections_Generic_List_AasCore_Aas3_0_IReference__System_Collections_Generic_List_AasCore_Aas3_0_IQualifier__System_Collections_Generic_List_AasCore_Aas3_0_IEmbeddedDataSpecification__System_Collections_Generic_List_AasCore_Aas3_0_ISubmodelElement__
+  commentId: M:AasCore.Aas3_0.Submodel.#ctor(System.String,System.Collections.Generic.List{AasCore.Aas3_0.IExtension},System.String,System.String,System.Collections.Generic.List{AasCore.Aas3_0.ILangStringNameType},System.Collections.Generic.List{AasCore.Aas3_0.ILangStringTextType},AasCore.Aas3_0.IAdministrativeInformation,System.Nullable{AasCore.Aas3_0.ModellingKind},AasCore.Aas3_0.IReference,System.Collections.Generic.List{AasCore.Aas3_0.IReference},System.Collections.Generic.List{AasCore.Aas3_0.IQualifier},System.Collections.Generic.List{AasCore.Aas3_0.IEmbeddedDataSpecification},System.Collections.Generic.List{AasCore.Aas3_0.ISubmodelElement})
+  name.vb: Submodel(String, List(Of IExtension), String, String, List(Of ILangStringNameType), List(Of ILangStringTextType), IAdministrativeInformation, Nullable(Of ModellingKind), IReference, List(Of IReference), List(Of IQualifier), List(Of IEmbeddedDataSpecification), List(Of ISubmodelElement))
+  fullName: AasCore.Aas3_0.Submodel.Submodel(System.String, System.Collections.Generic.List<AasCore.Aas3_0.IExtension>, System.String, System.String, System.Collections.Generic.List<AasCore.Aas3_0.ILangStringNameType>, System.Collections.Generic.List<AasCore.Aas3_0.ILangStringTextType>, AasCore.Aas3_0.IAdministrativeInformation, System.Nullable<AasCore.Aas3_0.ModellingKind>, AasCore.Aas3_0.IReference, System.Collections.Generic.List<AasCore.Aas3_0.IReference>, System.Collections.Generic.List<AasCore.Aas3_0.IQualifier>, System.Collections.Generic.List<AasCore.Aas3_0.IEmbeddedDataSpecification>, System.Collections.Generic.List<AasCore.Aas3_0.ISubmodelElement>)
+  fullName.vb: AasCore.Aas3_0.Submodel.Submodel(System.String, System.Collections.Generic.List(Of AasCore.Aas3_0.IExtension), System.String, System.String, System.Collections.Generic.List(Of AasCore.Aas3_0.ILangStringNameType), System.Collections.Generic.List(Of AasCore.Aas3_0.ILangStringTextType), AasCore.Aas3_0.IAdministrativeInformation, System.Nullable(Of AasCore.Aas3_0.ModellingKind), AasCore.Aas3_0.IReference, System.Collections.Generic.List(Of AasCore.Aas3_0.IReference), System.Collections.Generic.List(Of AasCore.Aas3_0.IQualifier), System.Collections.Generic.List(Of AasCore.Aas3_0.IEmbeddedDataSpecification), System.Collections.Generic.List(Of AasCore.Aas3_0.ISubmodelElement))
+  nameWithType: Submodel.Submodel(String, List<IExtension>, String, String, List<ILangStringNameType>, List<ILangStringTextType>, IAdministrativeInformation, Nullable<ModellingKind>, IReference, List<IReference>, List<IQualifier>, List<IEmbeddedDataSpecification>, List<ISubmodelElement>)
+  nameWithType.vb: Submodel.Submodel(String, List(Of IExtension), String, String, List(Of ILangStringNameType), List(Of ILangStringTextType), IAdministrativeInformation, Nullable(Of ModellingKind), IReference, List(Of IReference), List(Of IQualifier), List(Of IEmbeddedDataSpecification), List(Of ISubmodelElement))
 - uid: AasCore.Aas3_0.Submodel.#ctor*
   name: Submodel
   href: api/AasCore.Aas3_0.Submodel.html#AasCore_Aas3_0_Submodel__ctor_
@@ -23566,23 +23462,6 @@ references:
   isSpec: "True"
   fullName: AasCore.Aas3_0.Submodel.Submodel
   nameWithType: Submodel.Submodel
-- uid: AasCore.Aas3_0.Submodel.AasCore#Aas3_0#IReferable#IdShort
-  name: IReferable.IdShort
-  href: api/AasCore.Aas3_0.Submodel.html#AasCore_Aas3_0_Submodel_AasCore_Aas3_0_IReferable_IdShort
-  commentId: P:AasCore.Aas3_0.Submodel.AasCore#Aas3_0#IReferable#IdShort
-  name.vb: AasCore.Aas3_0.IReferable.IdShort
-  fullName: AasCore.Aas3_0.Submodel.AasCore.Aas3_0.IReferable.IdShort
-  nameWithType: Submodel.IReferable.IdShort
-  nameWithType.vb: Submodel.AasCore.Aas3_0.IReferable.IdShort
-- uid: AasCore.Aas3_0.Submodel.AasCore#Aas3_0#IReferable#IdShort*
-  name: IReferable.IdShort
-  href: api/AasCore.Aas3_0.Submodel.html#AasCore_Aas3_0_Submodel_AasCore_Aas3_0_IReferable_IdShort_
-  commentId: Overload:AasCore.Aas3_0.Submodel.AasCore#Aas3_0#IReferable#IdShort
-  isSpec: "True"
-  name.vb: AasCore.Aas3_0.IReferable.IdShort
-  fullName: AasCore.Aas3_0.Submodel.AasCore.Aas3_0.IReferable.IdShort
-  nameWithType: Submodel.IReferable.IdShort
-  nameWithType.vb: Submodel.AasCore.Aas3_0.IReferable.IdShort
 - uid: AasCore.Aas3_0.Submodel.Accept(AasCore.Aas3_0.Visitation.IVisitor)
   name: Accept(Visitation.IVisitor)
   href: api/AasCore.Aas3_0.Submodel.html#AasCore_Aas3_0_Submodel_Accept_AasCore_Aas3_0_Visitation_IVisitor_
