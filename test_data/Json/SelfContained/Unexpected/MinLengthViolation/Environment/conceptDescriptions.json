@@ -6,7 +6,6 @@
         "globalAssetId": "something_eea66fa1"
       },
       "id": "something_0edbd82e",
-      "idShort": "something_783819f1",
       "modelType": "AssetAdministrationShell"
     }
   ],
@@ -14,7 +13,6 @@
   "submodels": [
     {
       "id": "something_1e53dcdd",
-      "idShort": "something_f8c8ea97",
       "modelType": "Submodel"
     }
   ]

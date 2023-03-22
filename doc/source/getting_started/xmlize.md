@@ -33,7 +33,6 @@ public class Program
         };
 
         var submodel = new Aas.Submodel(
-            "someIdShort",
             "some-unique-global-identifier")
         {
             SubmodelElements = new List<Aas.ISubmodelElement>()
@@ -77,7 +76,6 @@ public class Program
         // <?xml version="1.0" encoding="utf-16"?>
         // <environment xmlns="https://admin-shell.io/aas/3/0">
         // <submodels><submodel>
-        // <idShort>someIdShort</idShort>
         // <id>some-unique-global-identifier</id>
         // <submodelElements><property><idShort>someProperty</idShort>
         // <valueType>xs:boolean</valueType></property></submodelElements>
@@ -115,7 +113,6 @@ public class Program
             "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
             "<environment xmlns=\"https://admin-shell.io/aas/3/0\">" +
             "<submodels><submodel>" +
-            "<idShort>someIdShort</idShort>" +
             "<id>some-unique-global-identifier</id>" +
             "<submodelElements><property><idShort>someProperty</idShort>" +
             "<valueType>xs:boolean</valueType></property></submodelElements>" +

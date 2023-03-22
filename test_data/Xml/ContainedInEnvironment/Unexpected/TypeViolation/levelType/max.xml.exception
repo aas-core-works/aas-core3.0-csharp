@@ -1,1 +1,1 @@
-The property Max of an instance of class LevelType could not be de-serialized: Content cannot be converted to the type Boolean. Line 35, position 11. at: assetAdministrationShells/*[0]/embeddedDataSpecifications/*[0]/dataSpecificationContent/dataSpecificationIec61360/levelType/max
+The property Max of an instance of class LevelType could not be de-serialized: Content cannot be converted to the type Boolean. Line 34, position 11. at: assetAdministrationShells/*[0]/embeddedDataSpecifications/*[0]/dataSpecificationContent/dataSpecificationIec61360/levelType/max

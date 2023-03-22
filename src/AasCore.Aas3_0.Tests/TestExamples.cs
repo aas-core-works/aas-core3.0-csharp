@@ -45,7 +45,6 @@ namespace AasCore.Aas3_0.Tests
             };
 
             var submodel = new Aas.Submodel(
-                "someIdShort",
                 "some-unique-global-identifier")
             {
                 SubmodelElements = elements
@@ -96,7 +95,6 @@ namespace AasCore.Aas3_0.Tests
             };
 
             var submodel = new Aas.Submodel(
-                "someIdShort",
                 "some-unique-global-identifier")
             {
                 SubmodelElements = new List<Aas.ISubmodelElement>()
@@ -175,7 +173,6 @@ namespace AasCore.Aas3_0.Tests
             };
 
             var submodel = new Aas.Submodel(
-                "someIdShort",
                 "some-unique-global-identifier")
             {
                 SubmodelElements = new List<Aas.ISubmodelElement>()
@@ -215,7 +212,6 @@ namespace AasCore.Aas3_0.Tests
             };
 
             var submodel = new Aas.Submodel(
-                "someIdShort",
                 "some-unique-global-identifier")
             {
                 SubmodelElements = new List<Aas.ISubmodelElement>()
@@ -266,7 +262,6 @@ namespace AasCore.Aas3_0.Tests
             };
 
             var submodel = new Aas.Submodel(
-                "someIdShort",
                 "some-unique-global-identifier")
             {
                 SubmodelElements = new List<Aas.ISubmodelElement>()
@@ -296,7 +291,6 @@ namespace AasCore.Aas3_0.Tests
             // {
             //   "submodels": [
             //     {
-            //       "idShort": "someIdShort",
             //       "id": "some-unique-global-identifier",
             //       "submodelElements": [
             //         {
@@ -317,7 +311,6 @@ namespace AasCore.Aas3_0.Tests
             var text = @"{
   ""submodels"": [
     {
-      ""idShort"": ""someIdShort"",
       ""id"": ""some-unique-global-identifier"",
       ""submodelElements"": [
         {
@@ -363,7 +356,6 @@ namespace AasCore.Aas3_0.Tests
             };
 
             var submodel = new Aas.Submodel(
-                "someIdShort",
                 "some-unique-global-identifier")
             {
                 SubmodelElements = new List<Aas.ISubmodelElement>()
@@ -399,7 +391,7 @@ namespace AasCore.Aas3_0.Tests
             writer.Flush();
             Assert.AreEqual(
                 "<environment xmlns=\"https://admin-shell.io/aas/3/0\">" +
-                "<submodels><submodel><idShort>someIdShort</idShort>" +
+                "<submodels><submodel>" +
                 "<id>some-unique-global-identifier</id>" +
                 "<submodelElements><property><idShort>someProperty</idShort>" +
                 "<valueType>xs:boolean</valueType></property></submodelElements>" +
@@ -414,7 +406,6 @@ namespace AasCore.Aas3_0.Tests
                 "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
                 "<environment xmlns=\"https://admin-shell.io/aas/3/0\">" +
                 "<submodels><submodel>" +
-                "<idShort>someIdShort</idShort>" +
                 "<id>some-unique-global-identifier</id>" +
                 "<submodelElements><property><idShort>someProperty</idShort>" +
                 "<valueType>xs:boolean</valueType></property></submodelElements>" +
@@ -464,7 +455,6 @@ namespace AasCore.Aas3_0.Tests
             };
 
             var submodel = new Aas.Submodel(
-                "someIdShort",
                 "some-unique-global-identifier")
             {
                 SubmodelElements = new List<Aas.ISubmodelElement>()
@@ -531,7 +521,6 @@ namespace AasCore.Aas3_0.Tests
                 Submodels = new List<Aas.ISubmodel>()
                 {
                     new Aas.Submodel(
-                        "someIdShort",
                         "some-unique-global-identifier")
                     {
                         SubmodelElements = new List<Aas.ISubmodelElement>()

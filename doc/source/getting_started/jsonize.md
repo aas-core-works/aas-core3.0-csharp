@@ -32,7 +32,6 @@ public class Program
         };
 
         var submodel = new Aas.Submodel(
-            "someIdShort",
             "some-unique-global-identifier")
         {
             SubmodelElements = new List<Aas.ISubmodelElement>()
@@ -61,7 +60,6 @@ public class Program
         // {
         //   "submodels": [
         //     {
-        //       "idShort": "someIdShort",
         //       "id": "some-unique-global-identifier",
         //       "submodelElements": [
         //         {
@@ -102,7 +100,6 @@ public class Program
         var text = @"{
   ""submodels"": [
     {
-      ""idShort"": ""someIdShort"",
       ""id"": ""some-unique-global-identifier"",
       ""submodelElements"": [
         {
