@@ -6,21 +6,18 @@
         "globalAssetId": "something_eea66fa1"
       },
       "id": "something_0edbd82e",
-      "idShort": "something_783819f1",
       "modelType": "AssetAdministrationShell"
     }
   ],
   "conceptDescriptions": [
     {
       "id": "something_ab025d0d",
-      "idShort": "something_39468b4f",
       "modelType": "ConceptDescription"
     }
   ],
   "submodels": [
     {
       "id": "something_1e53dcdd",
-      "idShort": "something_f8c8ea97",
       "modelType": "Submodel"
     }
   ]

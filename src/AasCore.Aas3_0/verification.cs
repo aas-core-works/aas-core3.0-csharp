@@ -3111,12 +3111,15 @@ namespace AasCore.Aas3_0
                     }
                 }
 
-                foreach (var error in Verification.VerifyIdShortType(that.IdShort))
+                if (that.IdShort != null)
                 {
-                    error.PrependSegment(
-                        new Reporting.NameSegment(
-                            "idShort"));
-                    yield return error;
+                    foreach (var error in Verification.VerifyIdShortType(that.IdShort))
+                    {
+                        error.PrependSegment(
+                            new Reporting.NameSegment(
+                                "idShort"));
+                        yield return error;
+                    }
                 }
 
                 if (that.DisplayName != null)
@@ -3683,12 +3686,15 @@ namespace AasCore.Aas3_0
                     }
                 }
 
-                foreach (var error in Verification.VerifyIdShortType(that.IdShort))
+                if (that.IdShort != null)
                 {
-                    error.PrependSegment(
-                        new Reporting.NameSegment(
-                            "idShort"));
-                    yield return error;
+                    foreach (var error in Verification.VerifyIdShortType(that.IdShort))
+                    {
+                        error.PrependSegment(
+                            new Reporting.NameSegment(
+                                "idShort"));
+                        yield return error;
+                    }
                 }
 
                 if (that.DisplayName != null)
@@ -7109,7 +7115,8 @@ namespace AasCore.Aas3_0
                         )
                     )
                     || (
-                        (that.GlobalAssetId == null)
+                        that.EntityType != EntityType.SelfManagedEntity
+                        && (that.GlobalAssetId == null)
                         && (that.SpecificAssetIds == null)
                     )))
                 {
@@ -8639,12 +8646,15 @@ namespace AasCore.Aas3_0
                     }
                 }
 
-                foreach (var error in Verification.VerifyIdShortType(that.IdShort))
+                if (that.IdShort != null)
                 {
-                    error.PrependSegment(
-                        new Reporting.NameSegment(
-                            "idShort"));
-                    yield return error;
+                    foreach (var error in Verification.VerifyIdShortType(that.IdShort))
+                    {
+                        error.PrependSegment(
+                            new Reporting.NameSegment(
+                                "idShort"));
+                        yield return error;
+                    }
                 }
 
                 if (that.DisplayName != null)

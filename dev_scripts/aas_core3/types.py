@@ -13,17 +13,21 @@ We did not implement the following constraints as they are too general and can n
 be formalized as part of the core library, but affects external components such as
 AAS registry or AAS server:
 
+* :ref:`Constraint AASd-022 <constraint_AASd-022>`
+
 We did not implement the following constraints since they depend on registry and
-de-referencing, so we can not formalize them with formalizing such external
-dependencies:
+de-referencing of :py:class:`Reference` objects:
 
 * :ref:`Constraint AASd-006 <constraint_AASd-006>`
 * :ref:`Constraint AASd-007 <constraint_AASd-007>`
+* :ref:`Constraint AASc-3a-003 <constraint_AASc-3a-003>`
 
 Some constraints are not enforceable as they depend on the wider context
 such as language understanding, so we could not formalize them:
 
-* :ref:`Constraint AASd-012 <constraint_AASd-012>`
+* :ref:`Constraint AASd-012 <constraint_AASd-012>`: This constraint requires that the texts inside
+  ``Multi_language_property`` shall have the same meanings in the separate languages.
+  This cannot be tested.
 * :ref:`Constraint AASd-116 <constraint_AASd-116>`: In the book, :ref:`Constraint AASd-116 <constraint_AASd-116>` imposes a
   case-insensitive equality against ``globalAssetId``. This is culturally-dependent,
   and depends on the system settings. For example, the case-folding
@@ -38,10 +42,10 @@ programming languages do not support inheritance of enumerations. The relationsh
 between the properties and the sets is defined through invariants. This causes
 the following divergences:
 
-* We decided therefore to remove the enumerations ``DataTypeDef`` and ``DataTypeDefRDF``
+* We decided therefore to remove the enumeration ``DataTypeDefRDF``
   and keep only :py:class:`DataTypeDefXSD` as enumeration. Otherwise, we would have
-  to write redundant invariants all over the meta-model because ``DataTypeDef`` and
-  ``DataTypeDefRDF`` are actually never used in any type definition.
+  to write redundant invariants all over the meta-model because ``DataTypeDefRDF``
+  is actually never used in any type definition.
 * The enumeration :py:class:`AASSubmodelElements` is used in two different contexts.
   One context is the definition of key types in a reference. Another context is
   the definition of element types in a :py:class:`SubmodelElementList`.
@@ -51,19 +55,37 @@ the following divergences:
   represent the first context (key type in a reference).
   Secondly, the enumeration :py:class:`AASSubmodelElements` is kept as designator
   for :py:attr:`SubmodelElementList.type_value_list_element`.
+* The specification introduces several types of ``Lang_string_set``.
+  These types differ between the allowed length of their text inside the singular
+  ``Lang_string`` objects. Since the native representation of ``Lang_string_set`` as
+  ``List`` of ``Lang_string`` is required by specification, it is impossible to
+  introduce separate ``Lang_string_set`` types. Therefore, the distinction is drawn here
+  between the ``Lang_string`` types.
+
+  ``DefinitionTypeIEC61360`` is represented as a
+  ``List`` of :py:class:`LangStringDefinitionTypeIEC61360`
+
+  ``MultiLanguageNameType`` is represented as a
+  ``List`` of :py:class:`LangStringNameType`
+
+  ``PreferredNameTypeIEC61360`` is represented as a
+  ``List`` of :py:class:`LangStringPreferredNameTypeIEC61360`
+
+  ``ShortNameTypeIEC61360`` is represented as a
+  ``List`` of :py:class:`LangStringShortNameTypeIEC61360`
+
+  ``MultiLanguageTextType`` is represented as a
+  ``List`` of :py:class:`LangStringTextType`
+
+  Furthermore, since ``Lang_string`` is not used anywhere, we rename it to
+  :py:class:`AbstractLangString`.
 
 Concerning the data specifications, we embed them within
-:py:class:`HasDataSpecification` instead of referencing them *via* a global reference.
+:py:class:`HasDataSpecification` instead of referencing them *via* an external reference.
 The working group decided to change the rules for serialization *after* the book was
 published. The data specifications are critical in applications, but there is no
 possibility to access them through a data channel as they are not part of
 an environment.
-
-:constraint AASd-022:
-    .. _constraint_AASd-022:
-
-    :py:attr:`Referable.id_short` of non-identifiable referables
-    within the same name space shall be unique (case-sensitive).
 """
 
 
@@ -169,17 +191,17 @@ class HasSemantics(Class):
 
     #: Identifier of the semantic definition of the element. It is called semantic ID
     #: of the element or also main semantic ID of the element.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     It is recommended to use a global reference.
     semantic_id: Optional['Reference']
 
     #: Identifier of a supplemental semantic definition of the element.
     #: It is called supplemental semantic ID of the element.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     It is recommended to use a global reference.
     supplemental_semantic_ids: Optional[List['Reference']]
 
@@ -204,16 +226,16 @@ class Extension(HasSemantics):
     """Single extension of an element."""
 
     #: Name of the extension.
-    #: 
+    #:
     #: :constraint AASd-077:
     #:     .. _constraint_AASd-077:
-    #: 
+    #:
     #:     The name of an extension (Extension/name) within :py:class:`HasExtensions` needs
     #:     to be unique.
     name: str
 
     #: Type of the value of the extension.
-    #: 
+    #:
     #: Default: :py:attr:`DataTypeDefXSD.STRING`
     value_type: Optional['DataTypeDefXSD']
 
@@ -355,15 +377,21 @@ class Referable(HasExtensions):
 
     This ID is not globally unique.
     This ID is unique within the name space of the element.
+
+    :constraint AASd-022:
+        .. _constraint_AASd-022:
+
+        :py:attr:`id_short` of non-identifiable referables
+        within the same name space shall be unique (case-sensitive).
     """
 
     #: The category is a value that gives further meta information
     #: w.r.t. to the class of the element.
     #: It affects the expected existence of attributes and the applicability of
     #: constraints.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     The category is not identical to the semantic definition
     #:     (:py:class:`HasSemantics`) of an element. The category e.g. could denote that
     #:     the element is a measurement value whereas the semantic definition of
@@ -373,9 +401,9 @@ class Referable(HasExtensions):
     #: In case of identifiables this attribute is a short name of the element.
     #: In case of referable this ID is an identifying string of the element within
     #: its name space.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     In case the element is a property and the property has a semantic definition
     #:     (:py:attr:`HasSemantics.semantic_id`) conformant to IEC61360
     #:     the :py:attr:`id_short` is typically identical to the short name in English.
@@ -385,12 +413,12 @@ class Referable(HasExtensions):
     display_name: Optional[List['LangStringNameType']]
 
     #: Description or comments on the element.
-    #: 
+    #:
     #: The description can be provided in several languages.
-    #: 
+    #:
     #: If no description is defined, then the definition of the concept
     #: description that defines the semantics of the element is used.
-    #: 
+    #:
     #: Additional information can be provided, e.g., if the element is
     #: qualified and which qualifier types can be expected in which
     #: context or which additional data specification templates are
@@ -433,46 +461,10 @@ class Referable(HasExtensions):
 class Identifiable(Referable):
     """An element that has a globally unique identifier."""
 
-    #: In case of identifiables this attribute is a short name of the element.
-    #: In case of referable this ID is an identifying string of the element within
-    #: its name space.
-    #: 
-    #: .. note::
-    #: 
-    #:     In case the element is a property and the property has a semantic definition
-    #:     (:py:attr:`HasSemantics.semantic_id`) conformant to IEC61360
-    #:     the :py:attr:`id_short` is typically identical to the short name in English.
-    #: 
-    #: :py:attr:`id_short` is strengthened to required in this class,
-    #: see :ref:`Constraint AASd-117 <constraint_AASd-117>`.
-    id_short: str
-
-    # region Strengthening of id_short
-    @property  # type: ignore
-    def id_short(
-            self
-    ) -> str:
-        return self._id_short
-
-    @id_short.setter
-    def id_short(
-            self,
-            new_id_short: Optional[str]
-    ) -> None:
-        if new_id_short is None:
-            raise ValueError(
-                "Unexpected None id_short "
-                "assigned to an instance of "
-                "Identifiable"
-            )
-
-        self._id_short = new_id_short
-    # endregion
-
     #: Administrative information of an identifiable element.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     Some of the administrative information like the version number might need to
     #:     be part of the identification.
     administration: Optional['AdministrativeInformation']
@@ -482,10 +474,10 @@ class Identifiable(Referable):
 
     def __init__(
             self,
-            id_short: str,
             id: str,
             extensions: Optional[List['Extension']] = None,
             category: Optional[str] = None,
+            id_short: Optional[str] = None,
             display_name: Optional[List['LangStringNameType']] = None,
             description: Optional[List['LangStringTextType']] = None,
             administration: Optional['AdministrativeInformation'] = None
@@ -501,9 +493,6 @@ class Identifiable(Referable):
         )
         self.id = id
         self.administration = administration
-        # region Strengthening
-        self._id_short = id_short
-        # endregion
 
 
 class ModellingKind(enum.Enum):
@@ -529,7 +518,7 @@ class HasKind(Class):
     """
 
     #: Kind of the element: either type or instance.
-    #: 
+    #:
     #: Default: :py:attr:`ModellingKind.INSTANCE`
     kind: Optional['ModellingKind']
 
@@ -589,19 +578,19 @@ class AdministrativeInformation(HasDataSpecification):
     creator: Optional['Reference']
 
     #: Identifier of the template that guided the creation of the element.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     In case of a submodel the :py:attr:`template_id` is the identifier
     #:     of the submodel template ID that guided the creation of the submodel
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     The :py:attr:`template_id` is not relevant for validation in Submodels.
     #:     For validation the :py:attr:`Submodel.semantic_id` shall be used.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     Usage of :py:attr:`template_id` is not restricted to submodel instances. So also
     #:     the creation of submodel templates can be guided by another submodel template.
     template_id: Optional[str]
@@ -705,10 +694,10 @@ class Qualifiable(Class):
     """
 
     #: Additional qualification of a qualifiable element.
-    #: 
+    #:
     #: :constraint AASd-021:
     #:     .. _constraint_AASd-021:
-    #: 
+    #:
     #:     Every qualifiable can only have one qualifier with the same
     #:     :py:attr:`Qualifier.type`.
     qualifiers: Optional[List['Qualifier']]
@@ -736,7 +725,7 @@ class QualifierKind(enum.Enum):
     """
 
     #: qualifies the value of the element and can change during run-time.
-    #: 
+    #:
     #: Value qualifiers are only applicable to elements with kind
     #: :py:attr:`ModellingKind.INSTANCE`.
     VALUE_QUALIFIER = 'ValueQualifier'
@@ -746,7 +735,7 @@ class QualifierKind(enum.Enum):
     CONCEPT_QUALIFIER = 'ConceptQualifier'
 
     #: qualifies the elements within a specific submodel on concept level.
-    #: 
+    #:
     #: Template qualifiers are only applicable to elements with kind
     #: :py:attr:`ModellingKind.TEMPLATE`.
     TEMPLATE_QUALIFIER = 'TemplateQualifier'
@@ -774,7 +763,7 @@ class Qualifier(HasSemantics):
 
     #: The qualifier kind describes the kind of the qualifier that is applied to the
     #: element.
-    #: 
+    #:
     #: Default: :py:attr:`QualifierKind.CONCEPT_QUALIFIER`
     kind: Optional['QualifierKind']
 
@@ -789,9 +778,9 @@ class Qualifier(HasSemantics):
     value: Optional[str]
 
     #: Reference to the global unique ID of a coded value.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     It is recommended to use a global reference.
     value_id: Optional['Reference']
 
@@ -901,11 +890,11 @@ class AssetAdministrationShell(Identifiable, HasDataSpecification):
     asset_information: 'AssetInformation'
 
     #: References to submodels of the AAS.
-    #: 
+    #:
     #: A submodel is a description of an aspect of the asset the AAS is representing.
-    #: 
+    #:
     #: The asset of an AAS is typically described by one or more submodels.
-    #: 
+    #:
     #: Temporarily no submodel might be assigned to the AAS.
     submodels: Optional[List['Reference']]
 
@@ -1029,11 +1018,11 @@ class AssetAdministrationShell(Identifiable, HasDataSpecification):
 
     def __init__(
             self,
-            id_short: str,
             id: str,
             asset_information: 'AssetInformation',
             extensions: Optional[List['Extension']] = None,
             category: Optional[str] = None,
+            id_short: Optional[str] = None,
             display_name: Optional[List['LangStringNameType']] = None,
             description: Optional[List['LangStringTextType']] = None,
             administration: Optional['AdministrativeInformation'] = None,
@@ -1044,10 +1033,10 @@ class AssetAdministrationShell(Identifiable, HasDataSpecification):
         """Initialize with the given values."""
         Identifiable.__init__(
             self,
-            id_short,
             id,
             extensions,
             category,
+            id_short,
             display_name,
             description,
             administration
@@ -1059,9 +1048,6 @@ class AssetAdministrationShell(Identifiable, HasDataSpecification):
         self.derived_from = derived_from
         self.asset_information = asset_information
         self.submodels = submodels
-        # region Strengthening
-        self._id_short = id_short
-        # endregion
 
 
 class AssetInformation(Class):
@@ -1112,14 +1098,14 @@ class AssetInformation(Class):
     asset_kind: 'AssetKind'
 
     #: Global identifier of the asset the AAS is representing.
-    #: 
+    #:
     #: This attribute is required as soon as the AAS is exchanged via partners in the life
     #: cycle of the asset. In a first phase of the life cycle the asset might not yet have
     #: a global ID but already an internal identifier. The internal identifier would be
     #: modelled via :py:attr:`specific_asset_ids`.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     This is a global reference.
     global_asset_id: Optional[str]
 
@@ -1130,16 +1116,16 @@ class AssetInformation(Class):
     #: In case :py:attr:`asset_kind` is applicable the :py:attr:`asset_type` is the asset ID
     #: of the type asset of the asset under consideration
     #: as identified by :py:attr:`global_asset_id`.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     In case :py:attr:`asset_kind` is "Instance" than the :py:attr:`asset_type` denotes
     #:     which "Type" the asset is of. But it is also possible
     #:     to have an :py:attr:`asset_type` of an asset of kind "Type".
     asset_type: Optional[str]
 
     #: Thumbnail of the asset represented by the Asset Administration Shell.
-    #: 
+    #:
     #: Used as default.
     default_thumbnail: Optional['Resource']
 
@@ -1234,12 +1220,12 @@ class Resource(Class):
     """
 
     #: Path and name of the resource (with file extension).
-    #: 
+    #:
     #: The path can be absolute or relative.
     path: str
 
     #: Content type of the content of the file.
-    #: 
+    #:
     #: The content type states which file extensions the file can have.
     content_type: Optional[str]
 
@@ -1347,9 +1333,9 @@ class SpecificAssetID(HasSemantics):
     value: str
 
     #: The (external) subject the key belongs to or has meaning to.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     This is a global reference.
     external_subject_id: Optional['Reference']
 
@@ -1591,10 +1577,10 @@ class Submodel(
 
     def __init__(
             self,
-            id_short: str,
             id: str,
             extensions: Optional[List['Extension']] = None,
             category: Optional[str] = None,
+            id_short: Optional[str] = None,
             display_name: Optional[List['LangStringNameType']] = None,
             description: Optional[List['LangStringTextType']] = None,
             administration: Optional['AdministrativeInformation'] = None,
@@ -1608,10 +1594,10 @@ class Submodel(
         """Initialize with the given values."""
         Identifiable.__init__(
             self,
-            id_short,
             id,
             extensions,
             category,
+            id_short,
             display_name,
             description,
             administration
@@ -1634,9 +1620,6 @@ class Submodel(
             embedded_data_specifications
         )
         self.submodel_elements = submodel_elements
-        # region Strengthening
-        self._id_short = id_short
-        # endregion
 
 
 class SubmodelElement(
@@ -1942,14 +1925,14 @@ class SubmodelElementList(SubmodelElement):
 
     #: Defines whether order in list is relevant. If :py:attr:`order_relevant` = ``False``
     #: then the list is representing a set or a bag.
-    #: 
+    #:
     #: Default: ``True``
     order_relevant: Optional[bool]
 
     #: Semantic ID the submodel elements contained in the list match to.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     It is recommended to use a global reference.
     semantic_id_list_element: Optional['Reference']
 
@@ -1960,7 +1943,7 @@ class SubmodelElementList(SubmodelElement):
     value_type_list_element: Optional['DataTypeDefXSD']
 
     #: Submodel element contained in the list.
-    #: 
+    #:
     #: The list is ordered.
     value: Optional[List['SubmodelElement']]
 
@@ -2362,9 +2345,9 @@ class Property(DataElement):
     value: Optional[str]
 
     #: Reference to the global unique ID of a coded value.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     It is recommended to use a global reference.
     value_id: Optional['Reference']
 
@@ -2531,9 +2514,9 @@ class MultiLanguageProperty(DataElement):
     value: Optional[List['LangStringTextType']]
 
     #: Reference to the global unique ID of a coded value.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     It is recommended to use a global reference.
     value_id: Optional['Reference']
 
@@ -2707,12 +2690,12 @@ class Range(DataElement):
     value_type: 'DataTypeDefXSD'
 
     #: The minimum value of the range.
-    #: 
+    #:
     #: If the min value is missing, then the value is assumed to be negative infinite.
     min: Optional[str]
 
     #: The maximum value of the range.
-    #: 
+    #:
     #: If the max value is missing, then the value is assumed to be positive infinite.
     max: Optional[str]
 
@@ -3017,20 +3000,20 @@ class Blob(DataElement):
     """
 
     #: The value of the :py:class:`Blob` instance of a blob data element.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     In contrast to the file property the file content is stored directly as value
     #:     in the :py:class:`Blob` data element.
     value: Optional[bytes]
 
     #: Content type of the content of the :py:class:`Blob`.
-    #: 
+    #:
     #: The content type (MIME type) states which file extensions the file can have.
-    #: 
+    #:
     #: Valid values are content types like e.g. ``application/json``, ``application/xls``,
     #: ``image/jpg``.
-    #: 
+    #:
     #: The allowed values are defined as in RFC2046.
     content_type: str
 
@@ -3179,12 +3162,12 @@ class File(DataElement):
     """
 
     #: Path and name of the referenced file (with file extension).
-    #: 
+    #:
     #: The path can be absolute or relative.
     value: Optional[str]
 
     #: Content type of the content of the file.
-    #: 
+    #:
     #: The content type states which file extensions the file can have.
     content_type: str
 
@@ -3522,9 +3505,9 @@ class Entity(SubmodelElement):
     entity_type: 'EntityType'
 
     #: Global identifier of the asset the entity is representing.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     This is a global reference.
     global_asset_id: Optional[str]
 
@@ -3717,7 +3700,7 @@ class EntityType(enum.Enum):
 
     #: Self-Managed Entities have their own AAS but can be part of the bill of material of
     #: a composite self-managed entity.
-    #: 
+    #:
     #: The asset of an I4.0 Component is a self-managed entity per definition.
     SELF_MANAGED_ENTITY = 'SelfManagedEntity'
 
@@ -3772,23 +3755,23 @@ class EventPayload(Class):
     source: 'Reference'
 
     #: :py:attr:`HasSemantics.semantic_id` of the source event element, if available
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     It is recommended to use a global reference.
     source_semantic_id: Optional['Reference']
 
     #: Reference to the referable, which defines the scope of the event.
-    #: 
+    #:
     #: Can be :py:class:`AssetAdministrationShell`, :py:class:`Submodel` or
     #: :py:class:`SubmodelElement`.
     observable_reference: 'Reference'
 
     #: :py:attr:`HasSemantics.semantic_id` of the referable which defines the scope of
     #: the event, if available.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     It is recommended to use a global reference.
     observable_semantic_id: Optional['Reference']
 
@@ -3797,9 +3780,9 @@ class EventPayload(Class):
     topic: Optional[str]
 
     #: Subject, who/which initiated the creation.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     This is an external reference.
     subject_id: Optional['Reference']
 
@@ -3961,18 +3944,18 @@ class BasicEventElement(EventElement):
     #: Reference to the :py:class:`Referable`, which defines the scope of the event.
     #: Can be :py:class:`AssetAdministrationShell`, :py:class:`Submodel`, or
     #: :py:class:`SubmodelElement`.
-    #: 
+    #:
     #: Reference to a referable, e.g., a data element or
     #: a submodel, that is being observed.
     observed: 'Reference'
 
     #: Direction of event.
-    #: 
+    #:
     #: Can be ``{ Input, Output }``.
     direction: 'Direction'
 
     #: State of event.
-    #: 
+    #:
     #: Can be ``{ On, Off }``.
     state: 'StateOfEvent'
 
@@ -3985,9 +3968,9 @@ class BasicEventElement(EventElement):
     #: :py:class:`SubmodelElementList`, :py:class:`SubmodelElementCollection` or
     #: :py:class:`Entity`, which contains :py:class:`DataElement`'s describing
     #: the proprietary specification for the message broker.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     For different message infrastructure, e.g., OPC UA or MQTT or AMQP, this
     #:     proprietary specification could be standardized by having respective Submodels.
     message_broker: Optional['Reference']
@@ -3998,19 +3981,19 @@ class BasicEventElement(EventElement):
 
     #: For input direction, reports on the maximum frequency, the software entity behind
     #: the respective Referable can handle input events.
-    #: 
+    #:
     #: For output events, specifies the maximum frequency of outputting this event to
     #: an outer infrastructure.
-    #: 
+    #:
     #: Might be not specified, that is, there is no minimum interval.
     min_interval: Optional[str]
 
     #: For input direction: not applicable.
-    #: 
+    #:
     #: For output direction: maximum interval in time, the respective Referable shall send
     #: an update of the status of the event, even if no other trigger condition for
     #: the event was not met.
-    #: 
+    #:
     #: Might be not specified, that is, there is no maximum interval
     max_interval: Optional[str]
 
@@ -4643,13 +4626,13 @@ class ConceptDescription(Identifiable, HasDataSpecification):
 
     #: Reference to an external definition the concept is compatible to or was derived
     #: from.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     It is recommended to use a global reference.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     Compare to is-case-of relationship in ISO 13584-32 & IEC EN 61360
     is_case_of: Optional[List['Reference']]
 
@@ -4759,10 +4742,10 @@ class ConceptDescription(Identifiable, HasDataSpecification):
 
     def __init__(
             self,
-            id_short: str,
             id: str,
             extensions: Optional[List['Extension']] = None,
             category: Optional[str] = None,
+            id_short: Optional[str] = None,
             display_name: Optional[List['LangStringNameType']] = None,
             description: Optional[List['LangStringTextType']] = None,
             administration: Optional['AdministrativeInformation'] = None,
@@ -4772,10 +4755,10 @@ class ConceptDescription(Identifiable, HasDataSpecification):
         """Initialize with the given values."""
         Identifiable.__init__(
             self,
-            id_short,
             id,
             extensions,
             category,
+            id_short,
             display_name,
             description,
             administration
@@ -4785,9 +4768,6 @@ class ConceptDescription(Identifiable, HasDataSpecification):
             embedded_data_specifications
         )
         self.is_case_of = is_case_of
-        # region Strengthening
-        self._id_short = id_short
-        # endregion
 
 
 class ReferenceTypes(enum.Enum):
@@ -4895,17 +4875,17 @@ class Reference(Class):
     """
 
     #: Type of the reference.
-    #: 
+    #:
     #: Denotes, whether reference is an external reference or a model reference.
     type: 'ReferenceTypes'
 
     #: :py:attr:`HasSemantics.semantic_id` of the referenced model element
     #: (:py:attr:`type` = :py:attr:`ReferenceTypes.MODEL_REFERENCE`).
-    #: 
+    #:
     #: For external references there typically is no semantic ID.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     It is recommended to use a external reference.
     referred_semantic_id: Optional['Reference']
 
@@ -4987,11 +4967,14 @@ class Key(Class):
     """A key is a reference to an element by its ID."""
 
     #: Denotes which kind of entity is referenced.
-    #: 
+    #:
+    #: In case :py:attr:`type` = :py:attr:`KeyTypes.GLOBAL_REFERENCE`,
+    #: the key represents a reference to a source that can be globally identified.
+    #:
     #: In case :py:attr:`type` = :py:attr:`KeyTypes.FRAGMENT_REFERENCE` the key represents
     #: a bookmark or a similar local identifier within its parent element as specified
     #: by the key that precedes this key.
-    #: 
+    #:
     #: In all other cases the key references a model element of the same or of another AAS.
     #: The name of the model element is explicitly listed.
     type: 'KeyTypes'
@@ -5083,9 +5066,9 @@ class KeyTypes(enum.Enum):
     CONCEPT_DESCRIPTION = 'ConceptDescription'
 
     #: Data element.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     Data Element is abstract, *i.e.* if a key uses :py:attr:`DATA_ELEMENT`
     #:     the reference may be a Property, a File etc.
     DATA_ELEMENT = 'DataElement'
@@ -5093,9 +5076,9 @@ class KeyTypes(enum.Enum):
     ENTITY = 'Entity'
 
     #: Event.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     :py:class:`EventElement` is abstract.
     EVENT_ELEMENT = 'EventElement'
 
@@ -5108,9 +5091,9 @@ class KeyTypes(enum.Enum):
     GLOBAL_REFERENCE = 'GlobalReference'
 
     #: Identifiable.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     Identifiable is abstract, i.e. if a key uses “Identifiable” the reference
     #:     may be an Asset Administration Shell, a Submodel or a Concept Description.
     IDENTIFIABLE = 'Identifiable'
@@ -5136,9 +5119,9 @@ class KeyTypes(enum.Enum):
     SUBMODEL = 'Submodel'
 
     #: Submodel Element
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     Submodel Element is abstract, *i.e.* if a key uses :py:attr:`SUBMODEL_ELEMENT`
     #:     the reference may be a :py:class:`Property`, an :py:class:`Operation` etc.
     SUBMODEL_ELEMENT = 'SubmodelElement'
@@ -5643,20 +5626,20 @@ class DataTypeIEC61360(enum.Enum):
     BOOLEAN = 'BOOLEAN'
 
     #: values containing values of type STRING conformant to Rfc 3987
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     In IEC61360-1 (2017) only URI is supported.
     #:     An IRI type allows in particular to express an URL or an URI.
     IRI = 'IRI'
 
     #: values conforming to ISO/IEC 11179 series global identifier sequences
-    #: 
+    #:
     #: IRDI can be used instead of the more specific data types ICID or ISO29002_IRDI.
-    #: 
+    #:
     #: ICID values are value conformant to an IRDI, where the delimiter between RAI and ID
     #: is “#” while the delimiter between DI and VI is confined to “##”
-    #: 
+    #:
     #: ISO29002_IRDI values are values containing a global identifier that identifies an
     #: administrated item in a registry. The structure of this identifier complies with
     #: identifier syntax defined in ISO/TS 29002-5. The identifier shall fulfil the
@@ -5673,9 +5656,9 @@ class DataTypeIEC61360(enum.Enum):
 
     #: values containing a time, conformant to ISO 8601:2004 but restricted to what is
     #: allowed in the corresponding type in xml.
-    #: 
+    #:
     #: Format hh:mm (ECLASS)
-    #: 
+    #:
     #: Example from IEC 61360-1:2017: "13:20:00-05:00" is the [TIME] representation of:
     #: 1.20 p.m. for Eastern Standard Time, which is 5 hours behind Coordinated
     #: Universal Time (UTC).
@@ -5683,15 +5666,15 @@ class DataTypeIEC61360(enum.Enum):
 
     #: values containing a time, conformant to ISO 8601:2004 but restricted to what is
     #: allowed in the corresponding type in xml.
-    #: 
+    #:
     #: Format yyyy-mm-dd hh:mm (ECLASS)
     TIMESTAMP = 'TIMESTAMP'
 
     #: values containing an address to a file. The values are of type URI and can represent
     #: an absolute or relative path.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     IEC61360 does not support the file type.
     FILE = 'FILE'
 
@@ -5700,9 +5683,9 @@ class DataTypeIEC61360(enum.Enum):
     HTML = 'HTML'
 
     #: values containing the content of a file. Values may be binaries.
-    #: 
+    #:
     #: HTML conformant to HTML5 is a special blob.
-    #: 
+    #:
     #: In IEC61360 binary is for a sequence of bits, each bit being represented by “0” and
     #: “1” only. A binary is a blob but a blob may also contain other source code.
     BLOB = 'BLOB'
@@ -5839,9 +5822,9 @@ class ValueReferencePair(Class):
     value: str
 
     #: Global unique id of the value.
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     It is recommended to use a global reference.
     value_id: 'Reference'
 
@@ -6248,14 +6231,14 @@ class DataSpecificationIEC61360(DataSpecificationContent):
     """
 
     #: Preferred name
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     It is advised to keep the length of the name limited to 35 characters.
-    #: 
+    #:
     #: :constraint AASc-3a-002:
     #:     .. _constraint_AASc-3a-002:
-    #: 
+    #:
     #:     :py:attr:`preferred_name` shall be provided at least in English.
     preferred_name: List['LangStringPreferredNameTypeIEC61360']
 
@@ -6266,12 +6249,12 @@ class DataSpecificationIEC61360(DataSpecificationContent):
     unit: Optional[str]
 
     #: Unique unit id
-    #: 
+    #:
     #: :py:attr:`unit` and :py:attr:`unit_id` need to be consistent if both attributes
     #: are set
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     It is recommended to use an external reference ID.
     unit_id: Optional['Reference']
 
@@ -6288,9 +6271,9 @@ class DataSpecificationIEC61360(DataSpecificationContent):
     definition: Optional[List['LangStringDefinitionTypeIEC61360']]
 
     #: Value Format
-    #: 
+    #:
     #: .. note::
-    #: 
+    #:
     #:     The value format is based on ISO 13584-42 and IEC 61360-2.
     value_format: Optional[str]
 
