@@ -504,7 +504,7 @@ namespace AasCore.Aas3_0.Tests
         {
             // ReSharper disable once MemberCanBePrivate.Local
             // ReSharper disable once NotAccessedField.Local
-            public long Id;
+            public readonly long Id;
 
             public IdEnhancement(long id)
             {
@@ -536,7 +536,7 @@ namespace AasCore.Aas3_0.Tests
             // Enhance
             return (Aas.IEnvironment)enhancer.Wrap(environment);
         }
-        
+
         [Test]
         public void Test_selective_enhancing()
         {
@@ -565,15 +565,15 @@ namespace AasCore.Aas3_0.Tests
             };
 
             // Enhance
-            environment = EnhanceSeparatedFromUnwrapping(environment); 
-            
+            environment = EnhanceSeparatedFromUnwrapping(environment);
+
             // Define the unwrapping
             var unwrapper = new Aas.Enhancing.Unwrapper<IdEnhancement>();
-            
+
             // The submodel and property are enhanced.
             // ReSharper disable once NotAccessedVariable
             IdEnhancement enhancement = unwrapper.MustUnwrap(environment.Submodels![0]);
-            
+
             Assert.AreEqual(2, enhancement.Id);
         }
     }
