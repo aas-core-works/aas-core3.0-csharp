@@ -256,3 +256,107 @@ Additionally, we want to prevent bugs in many settings where the enhancement fac
 Please let us know by [creating an issue] if you need re-wraps to be allowed, and please tell us more about your particular scenario.
 
 [create an issue]: https://github.com/aas-core-works/aas-core3.0-csharp/issues/new
+
+## Separating Enhancing from Unwrapping
+
+The [Enhancer] class expects an enhancement factory.
+This forces you to define the *unwrapping* logic at the same site where you define the enhancement factory.
+While more often than not you do define the two in the same place, sometimes you want to separate them.
+For example, when the enhancement factory requires external dependencies which are unavailable at the time of unwrapping.
+
+To that end, we implemented the class [Unwrapper], a parent of the [Enhancer] class, that is only concerned about unwrapping, and has no ties to the enhancement factory.
+
+[Unwrapper]: ../api/AasCore.Aas3_0.Enhancing.Unwrapper-1.yml 
+
+Here is the above example related to unique IDs rewritten such that unwrapping and enhancing are separated:
+
+```cs
+using Aas = AasCore.Aas3_0;
+using AasEnhancing = AasCore.Aas3_0.Enhancing;
+
+using System.Linq;
+using System.Collections.Generic;
+
+public class Program
+{
+    class IdEnhancement
+    {
+        public long Id;
+
+        public IdEnhancement(long id)
+        {
+            Id = id;
+        }
+    }
+
+    private Aas.IEnvironment EnhanceSeparatedFromUnwrapping(
+        Aas.IEnvironment environment
+    )
+    {
+        // Prepare the enhancer
+        long lastId = 0;
+        var enhancementFactory = new System.Func<IClass, IdEnhancement?>(
+            instance =>
+            {
+                if (instance is Aas.IReferable)
+                {
+                    lastId++;
+                    return new IdEnhancement(lastId);
+                }
+
+                return null;
+            }
+        );
+
+        var enhancer = new Aas.Enhancing.Enhancer<IdEnhancement>(
+            enhancementFactory
+        );
+
+        // Enhance
+        return (Aas.IEnvironment)enhancer.Wrap(environment);
+    }
+
+
+    public static void Main()
+    {
+        // Prepare the environment
+        Aas.IEnvironment environment = new Aas.Environment()
+        {
+            Submodels = new List<Aas.ISubmodel>()
+            {
+                new Aas.Submodel(
+                    "some-unique-global-identifier")
+                {
+                    SubmodelElements = new List<Aas.ISubmodelElement>()
+                    {
+                        new Aas.Property(
+                            Aas.DataTypeDefXsd.Boolean)
+                        {
+                            IdShort = "someProperty",
+                        }
+                    },
+                    Administration = new Aas.AdministrativeInformation()
+                    {
+                        Version="1.0"
+                    }
+                }
+            }
+        };
+
+        // Enhance
+        environment = EnhanceSeparatedFromUnwrapping(environment); 
+        
+        // Define the unwrapping
+        var unwrapper = new Aas.Enhancing.Unwrapper<IdEnhancement>();
+        
+        // The submodel and property are enhanced.
+        // ReSharper disable once NotAccessedVariable
+        IdEnhancement enhancement = unwrapper.MustUnwrap(environment.Submodels![0]);
+        
+        System.Console.WriteLine(enhancement.Id);
+
+        // Prints:
+        // 2
+    }
+}
+```
