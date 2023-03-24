@@ -14541,40 +14541,6 @@ references:
   fullName.vb: AasCore.Aas3_0.Enhancing.Enhancer(Of TEnhancement).Enhancer
   nameWithType: Enhancing.Enhancer<TEnhancement>.Enhancer
   nameWithType.vb: Enhancing.Enhancer(Of TEnhancement).Enhancer
-- uid: AasCore.Aas3_0.Enhancing.Enhancer`1.MustUnwrap(AasCore.Aas3_0.IClass)
-  name: MustUnwrap(IClass)
-  href: api/AasCore.Aas3_0.Enhancing.Enhancer-1.html#AasCore_Aas3_0_Enhancing_Enhancer_1_MustUnwrap_AasCore_Aas3_0_IClass_
-  commentId: M:AasCore.Aas3_0.Enhancing.Enhancer`1.MustUnwrap(AasCore.Aas3_0.IClass)
-  fullName: AasCore.Aas3_0.Enhancing.Enhancer<TEnhancement>.MustUnwrap(AasCore.Aas3_0.IClass)
-  fullName.vb: AasCore.Aas3_0.Enhancing.Enhancer(Of TEnhancement).MustUnwrap(AasCore.Aas3_0.IClass)
-  nameWithType: Enhancing.Enhancer<TEnhancement>.MustUnwrap(IClass)
-  nameWithType.vb: Enhancing.Enhancer(Of TEnhancement).MustUnwrap(IClass)
-- uid: AasCore.Aas3_0.Enhancing.Enhancer`1.MustUnwrap*
-  name: MustUnwrap
-  href: api/AasCore.Aas3_0.Enhancing.Enhancer-1.html#AasCore_Aas3_0_Enhancing_Enhancer_1_MustUnwrap_
-  commentId: Overload:AasCore.Aas3_0.Enhancing.Enhancer`1.MustUnwrap
-  isSpec: "True"
-  fullName: AasCore.Aas3_0.Enhancing.Enhancer<TEnhancement>.MustUnwrap
-  fullName.vb: AasCore.Aas3_0.Enhancing.Enhancer(Of TEnhancement).MustUnwrap
-  nameWithType: Enhancing.Enhancer<TEnhancement>.MustUnwrap
-  nameWithType.vb: Enhancing.Enhancer(Of TEnhancement).MustUnwrap
-- uid: AasCore.Aas3_0.Enhancing.Enhancer`1.Unwrap(AasCore.Aas3_0.IClass)
-  name: Unwrap(IClass)
-  href: api/AasCore.Aas3_0.Enhancing.Enhancer-1.html#AasCore_Aas3_0_Enhancing_Enhancer_1_Unwrap_AasCore_Aas3_0_IClass_
-  commentId: M:AasCore.Aas3_0.Enhancing.Enhancer`1.Unwrap(AasCore.Aas3_0.IClass)
-  fullName: AasCore.Aas3_0.Enhancing.Enhancer<TEnhancement>.Unwrap(AasCore.Aas3_0.IClass)
-  fullName.vb: AasCore.Aas3_0.Enhancing.Enhancer(Of TEnhancement).Unwrap(AasCore.Aas3_0.IClass)
-  nameWithType: Enhancing.Enhancer<TEnhancement>.Unwrap(IClass)
-  nameWithType.vb: Enhancing.Enhancer(Of TEnhancement).Unwrap(IClass)
-- uid: AasCore.Aas3_0.Enhancing.Enhancer`1.Unwrap*
-  name: Unwrap
-  href: api/AasCore.Aas3_0.Enhancing.Enhancer-1.html#AasCore_Aas3_0_Enhancing_Enhancer_1_Unwrap_
-  commentId: Overload:AasCore.Aas3_0.Enhancing.Enhancer`1.Unwrap
-  isSpec: "True"
-  fullName: AasCore.Aas3_0.Enhancing.Enhancer<TEnhancement>.Unwrap
-  fullName.vb: AasCore.Aas3_0.Enhancing.Enhancer(Of TEnhancement).Unwrap
-  nameWithType: Enhancing.Enhancer<TEnhancement>.Unwrap
-  nameWithType.vb: Enhancing.Enhancer(Of TEnhancement).Unwrap
 - uid: AasCore.Aas3_0.Enhancing.Enhancer`1.Wrap(AasCore.Aas3_0.IClass)
   name: Wrap(IClass)
   href: api/AasCore.Aas3_0.Enhancing.Enhancer-1.html#AasCore_Aas3_0_Enhancing_Enhancer_1_Wrap_AasCore_Aas3_0_IClass_
@@ -14592,6 +14558,49 @@ references:
   fullName.vb: AasCore.Aas3_0.Enhancing.Enhancer(Of TEnhancement).Wrap
   nameWithType: Enhancing.Enhancer<TEnhancement>.Wrap
   nameWithType.vb: Enhancing.Enhancer(Of TEnhancement).Wrap
+- uid: AasCore.Aas3_0.Enhancing.Unwrapper`1
+  name: Enhancing.Unwrapper<TEnhancement>
+  href: api/AasCore.Aas3_0.Enhancing.Unwrapper-1.html
+  commentId: T:AasCore.Aas3_0.Enhancing.Unwrapper`1
+  name.vb: Enhancing.Unwrapper(Of TEnhancement)
+  fullName: AasCore.Aas3_0.Enhancing.Unwrapper<TEnhancement>
+  fullName.vb: AasCore.Aas3_0.Enhancing.Unwrapper(Of TEnhancement)
+  nameWithType: Enhancing.Unwrapper<TEnhancement>
+  nameWithType.vb: Enhancing.Unwrapper(Of TEnhancement)
+- uid: AasCore.Aas3_0.Enhancing.Unwrapper`1.MustUnwrap(AasCore.Aas3_0.IClass)
+  name: MustUnwrap(IClass)
+  href: api/AasCore.Aas3_0.Enhancing.Unwrapper-1.html#AasCore_Aas3_0_Enhancing_Unwrapper_1_MustUnwrap_AasCore_Aas3_0_IClass_
+  commentId: M:AasCore.Aas3_0.Enhancing.Unwrapper`1.MustUnwrap(AasCore.Aas3_0.IClass)
+  fullName: AasCore.Aas3_0.Enhancing.Unwrapper<TEnhancement>.MustUnwrap(AasCore.Aas3_0.IClass)
+  fullName.vb: AasCore.Aas3_0.Enhancing.Unwrapper(Of TEnhancement).MustUnwrap(AasCore.Aas3_0.IClass)
+  nameWithType: Enhancing.Unwrapper<TEnhancement>.MustUnwrap(IClass)
+  nameWithType.vb: Enhancing.Unwrapper(Of TEnhancement).MustUnwrap(IClass)
+- uid: AasCore.Aas3_0.Enhancing.Unwrapper`1.MustUnwrap*
+  name: MustUnwrap
+  href: api/AasCore.Aas3_0.Enhancing.Unwrapper-1.html#AasCore_Aas3_0_Enhancing_Unwrapper_1_MustUnwrap_
+  commentId: Overload:AasCore.Aas3_0.Enhancing.Unwrapper`1.MustUnwrap
+  isSpec: "True"
+  fullName: AasCore.Aas3_0.Enhancing.Unwrapper<TEnhancement>.MustUnwrap
+  fullName.vb: AasCore.Aas3_0.Enhancing.Unwrapper(Of TEnhancement).MustUnwrap
+  nameWithType: Enhancing.Unwrapper<TEnhancement>.MustUnwrap
+  nameWithType.vb: Enhancing.Unwrapper(Of TEnhancement).MustUnwrap
+- uid: AasCore.Aas3_0.Enhancing.Unwrapper`1.Unwrap(AasCore.Aas3_0.IClass)
+  name: Unwrap(IClass)
+  href: api/AasCore.Aas3_0.Enhancing.Unwrapper-1.html#AasCore_Aas3_0_Enhancing_Unwrapper_1_Unwrap_AasCore_Aas3_0_IClass_
+  commentId: M:AasCore.Aas3_0.Enhancing.Unwrapper`1.Unwrap(AasCore.Aas3_0.IClass)
+  fullName: AasCore.Aas3_0.Enhancing.Unwrapper<TEnhancement>.Unwrap(AasCore.Aas3_0.IClass)
+  fullName.vb: AasCore.Aas3_0.Enhancing.Unwrapper(Of TEnhancement).Unwrap(AasCore.Aas3_0.IClass)
+  nameWithType: Enhancing.Unwrapper<TEnhancement>.Unwrap(IClass)
+  nameWithType.vb: Enhancing.Unwrapper(Of TEnhancement).Unwrap(IClass)
+- uid: AasCore.Aas3_0.Enhancing.Unwrapper`1.Unwrap*
+  name: Unwrap
+  href: api/AasCore.Aas3_0.Enhancing.Unwrapper-1.html#AasCore_Aas3_0_Enhancing_Unwrapper_1_Unwrap_
+  commentId: Overload:AasCore.Aas3_0.Enhancing.Unwrapper`1.Unwrap
+  isSpec: "True"
+  fullName: AasCore.Aas3_0.Enhancing.Unwrapper<TEnhancement>.Unwrap
+  fullName.vb: AasCore.Aas3_0.Enhancing.Unwrapper(Of TEnhancement).Unwrap
+  nameWithType: Enhancing.Unwrapper<TEnhancement>.Unwrap
+  nameWithType.vb: Enhancing.Unwrapper(Of TEnhancement).Unwrap
 - uid: AasCore.Aas3_0.Entity
   name: Entity
   href: api/AasCore.Aas3_0.Entity.html
