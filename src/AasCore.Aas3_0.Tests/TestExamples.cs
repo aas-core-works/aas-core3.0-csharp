@@ -512,6 +512,31 @@ namespace AasCore.Aas3_0.Tests
             }
         }
 
+        private Aas.IEnvironment EnhanceSeparatedFromUnwrapping(Aas.IEnvironment environment)
+        {
+            // Prepare the enhancer
+            long lastId = 0;
+            var enhancementFactory = new System.Func<IClass, IdEnhancement?>(
+                instance =>
+                {
+                    if (instance is Aas.IReferable)
+                    {
+                        lastId++;
+                        return new IdEnhancement(lastId);
+                    }
+
+                    return null;
+                }
+            );
+
+            var enhancer = new Aas.Enhancing.Enhancer<IdEnhancement>(
+                enhancementFactory
+            );
+
+            // Enhance
+            return (Aas.IEnvironment)enhancer.Wrap(environment);
+        }
+        
         [Test]
         public void Test_selective_enhancing()
         {
@@ -539,53 +564,17 @@ namespace AasCore.Aas3_0.Tests
                 }
             };
 
-            // Prepare the enhancer
-            long lastId = 0;
-            var enhancementFactory = new System.Func<IClass, IdEnhancement?>(
-                instance =>
-                {
-                    if (instance is Aas.IReferable)
-                    {
-                        lastId++;
-                        return new IdEnhancement(lastId);
-                    }
-
-                    return null;
-                }
-            );
-
-            var enhancer = new Aas.Enhancing.Enhancer<IdEnhancement>(
-                enhancementFactory
-            );
-
             // Enhance
-            environment = (Aas.IEnvironment)enhancer.Wrap(environment);
-
+            environment = EnhanceSeparatedFromUnwrapping(environment); 
+            
+            // Define the unwrapping
+            var unwrapper = new Aas.Enhancing.Unwrapper<IdEnhancement>();
+            
             // The submodel and property are enhanced.
             // ReSharper disable once NotAccessedVariable
-            IdEnhancement enhancement = enhancer.MustUnwrap(environment.Submodels![0]);
-            // System.Console.WriteLine(enhancement.Id);
-
-            // Prints:
-            // 2
-
-            // ReSharper disable once RedundantAssignment
-            enhancement = enhancer.MustUnwrap(environment.Submodels![0].SubmodelElements![0]);
-            // System.Console.WriteLine(enhancement.Id);
-
-            // Prints:
-            // 1
-
-            // The administrative information is not referable, and thus not enhanced.
-            // ReSharper disable once UnusedVariable
-            IdEnhancement? maybeEnhancement = enhancer.Unwrap(
-                environment.Submodels![0].Administration!
-            );
-
-            // System.Console.WriteLine(maybeEnhancement == null);
-
-            // Prints:
-            // True
+            IdEnhancement enhancement = unwrapper.MustUnwrap(environment.Submodels![0]);
+            
+            Assert.AreEqual(2, enhancement.Id);
         }
     }
 }

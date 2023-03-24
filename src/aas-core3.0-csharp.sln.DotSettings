@@ -38,5 +38,6 @@
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=testgen/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=ucschar/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=ucshar/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=unwrapper/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Xmlization/@EntryIndexedValue">True</s:Boolean>
 </wpf:ResourceDictionary>

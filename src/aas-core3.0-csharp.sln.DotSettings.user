@@ -3,5 +3,6 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::BDA0E5A2-D48D-4888-9D52-44BD529F8108::net6.0::AasCore.Aas3_0.Tests.TestExamples.Test_XML_serialization&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::BDA0E5A2-D48D-4888-9D52-44BD529F8108::net6.0::AasCore.Aas3_0.Tests.TestExamples.Test_JSON_deserialization&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BDA0E5A2-D48D-4888-9D52-44BD529F8108::net6.0::AasCore.Aas3_0.Tests.TestExamples.Test_selective_enhancing&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
