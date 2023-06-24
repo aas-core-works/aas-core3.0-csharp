@@ -1,1 +1,1 @@
-Expected an XML end element to conclude a property of class ConceptDescription with the element name administration, but got the node of type Text with the value Unexpected string value at: conceptDescriptions/*[0]
+Expected an XML start element representing a property of an instance of class AdministrativeInformation, but got the node of type Text with the value Unexpected string value at: conceptDescriptions/*[0]/administration

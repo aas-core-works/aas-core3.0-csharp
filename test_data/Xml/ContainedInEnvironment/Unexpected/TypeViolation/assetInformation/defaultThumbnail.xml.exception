@@ -1,1 +1,1 @@
-The required property Path has not been given in the XML representation of an instance of class Resource at: assetAdministrationShells/*[0]/assetInformation/defaultThumbnail
+Expected an XML start element representing a property of an instance of class Resource, but got the node of type Text with the value Unexpected string value at: assetAdministrationShells/*[0]/assetInformation/defaultThumbnail
