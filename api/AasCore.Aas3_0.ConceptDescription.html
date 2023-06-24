@@ -137,25 +137,64 @@ The description of the concept should follow a standardized schema (realized as
 data specification template).
 </p>
 <p>
-Note: categories are deprecated since V3.0 of Part 1a of the document series
-&quot;Details of the Asset Administration Shell&quot;.
-</p>
-<p>
-Note: categories are deprecated since V3.0 of Part 1a of the document series
-&quot;Details of the Asset Administration Shell&quot;.
-</p>
-<p>
-Categories are deprecated since V3.0 of Part 1a of the document series
-&quot;Details of the Asset Administration Shell&quot;.
-</p>
-<p>
-Categories are deprecated since V3.0 of Part 1a of the document series
-&quot;Details of the Asset Administration Shell&quot;.
-</p>
-<p>
 Constraints:
 </p>
 <ul>
+<li>
+<p>
+Constraint AASc-3a-004:
+For a <a class="xref" href="AasCore.Aas3_0.ConceptDescription.html">ConceptDescription</a> with <a class="xref" href="AasCore.Aas3_0.ConceptDescription.html#AasCore_Aas3_0_ConceptDescription_Category">Category</a> <code>PROPERTY</code> or
+<code>VALUE</code> using data specification IEC61360,
+the <a class="xref" href="AasCore.Aas3_0.DataSpecificationIec61360.html#AasCore_Aas3_0_DataSpecificationIec61360_DataType">DataType</a> is mandatory and shall be
+one of: <code>DATE</code>, <code>STRING</code>, <code>STRING_TRANSLATABLE</code>, <code>INTEGER_MEASURE</code>,
+<code>INTEGER_COUNT</code>, <code>INTEGER_CURRENCY</code>, <code>REAL_MEASURE</code>, <code>REAL_COUNT</code>,
+<code>REAL_CURRENCY</code>, <code>BOOLEAN</code>, <code>RATIONAL</code>, <code>RATIONAL_MEASURE</code>,
+<code>TIME</code>, <code>TIMESTAMP</code>.
+</p>
+<p>
+Note: categories are deprecated since V3.0 of Part 1a of the document series
+&quot;Details of the Asset Administration Shell&quot;.
+</p>
+</li>
+<li>
+<p>
+Constraint AASc-3a-005:
+For a <a class="xref" href="AasCore.Aas3_0.ConceptDescription.html">ConceptDescription</a> with <a class="xref" href="AasCore.Aas3_0.ConceptDescription.html#AasCore_Aas3_0_ConceptDescription_Category">Category</a> <code>REFERENCE</code>
+using data specification template IEC61360,
+the <a class="xref" href="AasCore.Aas3_0.DataSpecificationIec61360.html#AasCore_Aas3_0_DataSpecificationIec61360_DataType">DataType</a> shall be
+one of: <code>STRING</code>, <code>IRI</code>, <code>IRDI</code>.
+</p>
+<p>
+Note: categories are deprecated since V3.0 of Part 1a of the document series
+&quot;Details of the Asset Administration Shell&quot;.
+</p>
+</li>
+<li>
+<p>
+Constraint AASc-3a-006:
+For a <a class="xref" href="AasCore.Aas3_0.ConceptDescription.html">ConceptDescription</a> with <a class="xref" href="AasCore.Aas3_0.ConceptDescription.html#AasCore_Aas3_0_ConceptDescription_Category">Category</a> <code>DOCUMENT</code>
+using data specification IEC61360,
+the <a class="xref" href="AasCore.Aas3_0.DataSpecificationIec61360.html#AasCore_Aas3_0_DataSpecificationIec61360_DataType">DataType</a> shall be one of <code>FILE</code>,
+<code>BLOB</code>, <code>HTML</code>
+</p>
+<p>
+Categories are deprecated since V3.0 of Part 1a of the document series
+&quot;Details of the Asset Administration Shell&quot;.
+</p>
+</li>
+<li>
+<p>
+Constraint AASc-3a-007:
+For a <a class="xref" href="AasCore.Aas3_0.ConceptDescription.html">ConceptDescription</a> with <a class="xref" href="AasCore.Aas3_0.ConceptDescription.html#AasCore_Aas3_0_ConceptDescription_Category">Category</a> <code>QUALIFIER_TYPE</code>
+using data specification IEC61360,
+the <a class="xref" href="AasCore.Aas3_0.DataSpecificationIec61360.html#AasCore_Aas3_0_DataSpecificationIec61360_DataType">DataType</a> is mandatory and shall be
+defined.
+</p>
+<p>
+Categories are deprecated since V3.0 of Part 1a of the document series
+&quot;Details of the Asset Administration Shell&quot;.
+</p>
+</li>
 <li>
 <p>
 Constraint AASc-3a-008:
@@ -184,7 +223,7 @@ the <a class="xref" href="AasCore.Aas3_0.DataSpecificationIec61360.html#AasCore_
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription__ctor_System_String_System_Collections_Generic_List_AasCore_Aas3_0_IExtension__System_String_System_String_System_Collections_Generic_List_AasCore_Aas3_0_ILangStringNameType__System_Collections_Generic_List_AasCore_Aas3_0_ILangStringTextType__AasCore_Aas3_0_IAdministrativeInformation_System_Collections_Generic_List_AasCore_Aas3_0_IEmbeddedDataSpecification__System_Collections_Generic_List_AasCore_Aas3_0_IReference__.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.%23ctor(System.String%2CSystem.Collections.Generic.List%7BAasCore.Aas3_0.IExtension%7D%2CSystem.String%2CSystem.String%2CSystem.Collections.Generic.List%7BAasCore.Aas3_0.ILangStringNameType%7D%2CSystem.Collections.Generic.List%7BAasCore.Aas3_0.ILangStringTextType%7D%2CAasCore.Aas3_0.IAdministrativeInformation%2CSystem.Collections.Generic.List%7BAasCore.Aas3_0.IEmbeddedDataSpecification%7D%2CSystem.Collections.Generic.List%7BAasCore.Aas3_0.IReference%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10603">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10687">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription__ctor_" data-uid="AasCore.Aas3_0.ConceptDescription.#ctor*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription__ctor_System_String_System_Collections_Generic_List_AasCore_Aas3_0_IExtension__System_String_System_String_System_Collections_Generic_List_AasCore_Aas3_0_ILangStringNameType__System_Collections_Generic_List_AasCore_Aas3_0_ILangStringTextType__AasCore_Aas3_0_IAdministrativeInformation_System_Collections_Generic_List_AasCore_Aas3_0_IEmbeddedDataSpecification__System_Collections_Generic_List_AasCore_Aas3_0_IReference__" data-uid="AasCore.Aas3_0.ConceptDescription.#ctor(System.String,System.Collections.Generic.List{AasCore.Aas3_0.IExtension},System.String,System.String,System.Collections.Generic.List{AasCore.Aas3_0.ILangStringNameType},System.Collections.Generic.List{AasCore.Aas3_0.ILangStringTextType},AasCore.Aas3_0.IAdministrativeInformation,System.Collections.Generic.List{AasCore.Aas3_0.IEmbeddedDataSpecification},System.Collections.Generic.List{AasCore.Aas3_0.IReference})">ConceptDescription(String, List&lt;IExtension&gt;, String, String, List&lt;ILangStringNameType&gt;, List&lt;ILangStringTextType&gt;, IAdministrativeInformation, List&lt;IEmbeddedDataSpecification&gt;, List&lt;IReference&gt;)</h4>
@@ -258,7 +297,7 @@ the <a class="xref" href="AasCore.Aas3_0.DataSpecificationIec61360.html#AasCore_
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_Administration.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.Administration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10353">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10437">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_Administration_" data-uid="AasCore.Aas3_0.ConceptDescription.Administration*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_Administration" data-uid="AasCore.Aas3_0.ConceptDescription.Administration">Administration</h4>
@@ -293,7 +332,7 @@ be part of the identification.</p>
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_Category.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.Category%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10307">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10391">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_Category_" data-uid="AasCore.Aas3_0.ConceptDescription.Category*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_Category" data-uid="AasCore.Aas3_0.ConceptDescription.Category">Category</h4>
@@ -333,7 +372,7 @@ the element would denote that it is the measured temperature.</p>
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_Description.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.Description%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10344">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10428">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_Description_" data-uid="AasCore.Aas3_0.ConceptDescription.Description*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_Description" data-uid="AasCore.Aas3_0.ConceptDescription.Description">Description</h4>
@@ -379,7 +418,7 @@ provided.
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_DisplayName.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.DisplayName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10324">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10408">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_DisplayName_" data-uid="AasCore.Aas3_0.ConceptDescription.DisplayName*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_DisplayName" data-uid="AasCore.Aas3_0.ConceptDescription.DisplayName">DisplayName</h4>
@@ -410,7 +449,7 @@ provided.
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_EmbeddedDataSpecifications.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.EmbeddedDataSpecifications%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10363">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10447">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_EmbeddedDataSpecifications_" data-uid="AasCore.Aas3_0.ConceptDescription.EmbeddedDataSpecifications*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_EmbeddedDataSpecifications" data-uid="AasCore.Aas3_0.ConceptDescription.EmbeddedDataSpecifications">EmbeddedDataSpecifications</h4>
@@ -441,7 +480,7 @@ provided.
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_Extensions.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.Extensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10293">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10377">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_Extensions_" data-uid="AasCore.Aas3_0.ConceptDescription.Extensions*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_Extensions" data-uid="AasCore.Aas3_0.ConceptDescription.Extensions">Extensions</h4>
@@ -472,7 +511,7 @@ provided.
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_Id.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10358">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10442">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_Id_" data-uid="AasCore.Aas3_0.ConceptDescription.Id*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_Id" data-uid="AasCore.Aas3_0.ConceptDescription.Id">Id</h4>
@@ -503,7 +542,7 @@ provided.
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_IdShort.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.IdShort%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10319">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10403">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_IdShort_" data-uid="AasCore.Aas3_0.ConceptDescription.IdShort*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_IdShort" data-uid="AasCore.Aas3_0.ConceptDescription.IdShort">IdShort</h4>
@@ -541,7 +580,7 @@ the <a class="xref" href="AasCore.Aas3_0.IReferable.html#AasCore_Aas3_0_IReferab
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_IsCaseOf.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.IsCaseOf%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10377">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10461">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_IsCaseOf_" data-uid="AasCore.Aas3_0.ConceptDescription.IsCaseOf*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_IsCaseOf" data-uid="AasCore.Aas3_0.ConceptDescription.IsCaseOf">IsCaseOf</h4>
@@ -583,7 +622,7 @@ Compare to is-case-of relationship in ISO 13584-32 &amp; IEC EN 61360
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_Accept_AasCore_Aas3_0_Visitation_IVisitor_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.Accept(AasCore.Aas3_0.Visitation.IVisitor)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10567">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10651">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_Accept_" data-uid="AasCore.Aas3_0.ConceptDescription.Accept*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_Accept_AasCore_Aas3_0_Visitation_IVisitor_" data-uid="AasCore.Aas3_0.ConceptDescription.Accept(AasCore.Aas3_0.Visitation.IVisitor)">Accept(Visitation.IVisitor)</h4>
@@ -617,7 +656,7 @@ for double dispatch.</p>
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_Accept__1_AasCore_Aas3_0_Visitation_IVisitorWithContext___0____0_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.Accept%60%601(AasCore.Aas3_0.Visitation.IVisitorWithContext%7B%60%600%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10576">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10660">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_Accept_" data-uid="AasCore.Aas3_0.ConceptDescription.Accept*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_Accept__1_AasCore_Aas3_0_Visitation_IVisitorWithContext___0____0_" data-uid="AasCore.Aas3_0.ConceptDescription.Accept``1(AasCore.Aas3_0.Visitation.IVisitorWithContext{``0},``0)">Accept&lt;TContext&gt;(Visitation.IVisitorWithContext&lt;TContext&gt;, TContext)</h4>
@@ -671,7 +710,7 @@ with the <code data-dev-comment-type="paramref" class="paramref">context</code>.
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_Descend.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.Descend%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10479">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10563">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_Descend_" data-uid="AasCore.Aas3_0.ConceptDescription.Descend*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_Descend" data-uid="AasCore.Aas3_0.ConceptDescription.Descend">Descend()</h4>
@@ -702,7 +741,7 @@ with the <code data-dev-comment-type="paramref" class="paramref">context</code>.
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_DescendOnce.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.DescendOnce%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10428">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10512">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_DescendOnce_" data-uid="AasCore.Aas3_0.ConceptDescription.DescendOnce*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_DescendOnce" data-uid="AasCore.Aas3_0.ConceptDescription.DescendOnce">DescendOnce()</h4>
@@ -734,7 +773,7 @@ without further recursion.</p>
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_OverDescriptionOrEmpty.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.OverDescriptionOrEmpty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10400">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10484">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_OverDescriptionOrEmpty_" data-uid="AasCore.Aas3_0.ConceptDescription.OverDescriptionOrEmpty*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_OverDescriptionOrEmpty" data-uid="AasCore.Aas3_0.ConceptDescription.OverDescriptionOrEmpty">OverDescriptionOrEmpty()</h4>
@@ -765,7 +804,7 @@ without further recursion.</p>
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_OverDisplayNameOrEmpty.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.OverDisplayNameOrEmpty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10391">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10475">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_OverDisplayNameOrEmpty_" data-uid="AasCore.Aas3_0.ConceptDescription.OverDisplayNameOrEmpty*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_OverDisplayNameOrEmpty" data-uid="AasCore.Aas3_0.ConceptDescription.OverDisplayNameOrEmpty">OverDisplayNameOrEmpty()</h4>
@@ -796,7 +835,7 @@ without further recursion.</p>
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_OverEmbeddedDataSpecificationsOrEmpty.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.OverEmbeddedDataSpecificationsOrEmpty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10409">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10493">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_OverEmbeddedDataSpecificationsOrEmpty_" data-uid="AasCore.Aas3_0.ConceptDescription.OverEmbeddedDataSpecificationsOrEmpty*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_OverEmbeddedDataSpecificationsOrEmpty" data-uid="AasCore.Aas3_0.ConceptDescription.OverEmbeddedDataSpecificationsOrEmpty">OverEmbeddedDataSpecificationsOrEmpty()</h4>
@@ -827,7 +866,7 @@ without further recursion.</p>
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_OverExtensionsOrEmpty.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.OverExtensionsOrEmpty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10382">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10466">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_OverExtensionsOrEmpty_" data-uid="AasCore.Aas3_0.ConceptDescription.OverExtensionsOrEmpty*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_OverExtensionsOrEmpty" data-uid="AasCore.Aas3_0.ConceptDescription.OverExtensionsOrEmpty">OverExtensionsOrEmpty()</h4>
@@ -858,7 +897,7 @@ without further recursion.</p>
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_OverIsCaseOfOrEmpty.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.OverIsCaseOfOrEmpty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10418">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10502">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_OverIsCaseOfOrEmpty_" data-uid="AasCore.Aas3_0.ConceptDescription.OverIsCaseOfOrEmpty*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_OverIsCaseOfOrEmpty" data-uid="AasCore.Aas3_0.ConceptDescription.OverIsCaseOfOrEmpty">OverIsCaseOfOrEmpty()</h4>
@@ -889,7 +928,7 @@ without further recursion.</p>
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_Transform__1_AasCore_Aas3_0_Visitation_ITransformer___0__.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.Transform%60%601(AasCore.Aas3_0.Visitation.ITransformer%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10587">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10671">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_Transform_" data-uid="AasCore.Aas3_0.ConceptDescription.Transform*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_Transform__1_AasCore_Aas3_0_Visitation_ITransformer___0__" data-uid="AasCore.Aas3_0.ConceptDescription.Transform``1(AasCore.Aas3_0.Visitation.ITransformer{``0})">Transform&lt;T&gt;(Visitation.ITransformer&lt;T&gt;)</h4>
@@ -953,7 +992,7 @@ for double dispatch.</p>
     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription_Transform__2_AasCore_Aas3_0_Visitation_ITransformerWithContext___0___1____0_.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription.Transform%60%602(AasCore.Aas3_0.Visitation.ITransformerWithContext%7B%60%600%2C%60%601%7D%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10596">View Source</a>
+    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10680">View Source</a>
   </span>
   <a id="AasCore_Aas3_0_ConceptDescription_Transform_" data-uid="AasCore.Aas3_0.ConceptDescription.Transform*"></a>
   <h4 id="AasCore_Aas3_0_ConceptDescription_Transform__2_AasCore_Aas3_0_Visitation_ITransformerWithContext___0___1____0_" data-uid="AasCore.Aas3_0.ConceptDescription.Transform``2(AasCore.Aas3_0.Visitation.ITransformerWithContext{``0,``1},``0)">Transform&lt;TContext, T&gt;(Visitation.ITransformerWithContext&lt;TContext, T&gt;, TContext)</h4>
@@ -1051,7 +1090,7 @@ for double dispatch with the <code data-dev-comment-type="paramref" class="param
                     <a href="https://github.com/aas-core-works/aas-core3.0-csharp/new/main/apiSpec/new?filename=AasCore_Aas3_0_ConceptDescription.md&amp;value=---%0Auid%3A%20AasCore.Aas3_0.ConceptDescription%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10288" class="contribution-link">View Source</a>
+                    <a href="https://github.com/aas-core-works/aas-core3.0-csharp/blob/main/src/AasCore.Aas3_0/types.cs/#L10372" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
