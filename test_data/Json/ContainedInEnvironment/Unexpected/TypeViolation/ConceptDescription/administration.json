@@ -1,17 +1,7 @@
 {
   "conceptDescriptions": [
     {
-      "administration": [
-        {
-          "keys": [
-            {
-              "type": "GlobalReference",
-              "value": "unexpected instance"
-            }
-          ],
-          "type": "ExternalReference"
-        }
-      ],
+      "administration": "Unexpected string value",
       "category": "something_07a45fb3",
       "description": [
         {

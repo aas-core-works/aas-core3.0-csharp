@@ -30,17 +30,7 @@
 			</key>
 		</keys>
 	</observableReference>
-	<observableSemanticId>
-		<reference>
-			<type>ExternalReference</type>
-			<keys>
-				<key>
-					<type>GlobalReference</type>
-					<value>unexpected instance</value>
-				</key>
-			</keys>
-		</reference>
-	</observableSemanticId>
+	<observableSemanticId>Unexpected string value</observableSemanticId>
 	<topic>something_8f13d2dd</topic>
 	<subjectId>
 		<type>ExternalReference</type>

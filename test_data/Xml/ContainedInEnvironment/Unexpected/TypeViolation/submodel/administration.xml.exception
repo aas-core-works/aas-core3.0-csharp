@@ -1,1 +1,1 @@
-We expected properties of the class AdministrativeInformation, but got an unexpected element with the name reference at: submodels/*[0]/administration
+Expected an XML end element to conclude a property of class Submodel with the element name administration, but got the node of type Text with the value Unexpected string value at: submodels/*[0]

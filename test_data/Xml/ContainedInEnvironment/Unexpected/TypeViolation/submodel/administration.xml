@@ -20,17 +20,7 @@
 					<text>something_9a9e9635</text>
 				</langStringTextType>
 			</description>
-			<administration>
-				<reference>
-					<type>ExternalReference</type>
-					<keys>
-						<key>
-							<type>GlobalReference</type>
-							<value>unexpected instance</value>
-						</key>
-					</keys>
-				</reference>
-			</administration>
+			<administration>Unexpected string value</administration>
 			<id>something_48c66017</id>
 			<kind>Instance</kind>
 			<semanticId>

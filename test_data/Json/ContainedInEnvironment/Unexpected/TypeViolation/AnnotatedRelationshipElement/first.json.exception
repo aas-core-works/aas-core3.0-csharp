@@ -1,1 +1,1 @@
-Expected a JsonObject, but got System.Text.Json.Nodes.JsonArray at: submodels[0].submodelElements[0].first
+Expected a JsonObject, but got System.Text.Json.Nodes.JsonValueTrimmable`1[System.Text.Json.JsonElement] at: submodels[0].submodelElements[0].first

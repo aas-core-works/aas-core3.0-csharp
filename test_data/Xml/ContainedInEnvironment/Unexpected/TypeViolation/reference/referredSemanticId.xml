@@ -4,17 +4,7 @@
 			<id>something_142922d6</id>
 			<derivedFrom>
 				<type>ModelReference</type>
-				<referredSemanticId>
-					<reference>
-						<type>ExternalReference</type>
-						<keys>
-							<key>
-								<type>GlobalReference</type>
-								<value>unexpected instance</value>
-							</key>
-						</keys>
-					</reference>
-				</referredSemanticId>
+				<referredSemanticId>Unexpected string value</referredSemanticId>
 				<keys>
 					<key>
 						<type>AssetAdministrationShell</type>

@@ -4,17 +4,7 @@
 			<id>something_142922d6</id>
 			<embeddedDataSpecifications>
 				<embeddedDataSpecification>
-					<dataSpecification>
-						<reference>
-							<type>ExternalReference</type>
-							<keys>
-								<key>
-									<type>GlobalReference</type>
-									<value>unexpected instance</value>
-								</key>
-							</keys>
-						</reference>
-					</dataSpecification>
+					<dataSpecification>Unexpected string value</dataSpecification>
 					<dataSpecificationContent>
 						<dataSpecificationIec61360>
 							<preferredName>

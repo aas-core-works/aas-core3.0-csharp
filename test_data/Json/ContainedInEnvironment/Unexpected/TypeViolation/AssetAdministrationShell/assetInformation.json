@@ -2,17 +2,7 @@
   "assetAdministrationShells": [
     {
       "administration": {},
-      "assetInformation": [
-        {
-          "keys": [
-            {
-              "type": "GlobalReference",
-              "value": "unexpected instance"
-            }
-          ],
-          "type": "ExternalReference"
-        }
-      ],
+      "assetInformation": "Unexpected string value",
       "category": "something_1dc62cea",
       "derivedFrom": {
         "keys": [

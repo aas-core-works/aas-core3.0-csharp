@@ -1,1 +1,1 @@
-We expected properties of the class AssetInformation, but got an unexpected element with the name reference at: assetAdministrationShells/*[0]/assetInformation
+The required property AssetKind has not been given in the XML representation of an instance of class AssetInformation at: assetAdministrationShells/*[0]/assetInformation

@@ -1,1 +1,1 @@
-Expected a JsonObject, but got System.Text.Json.Nodes.JsonArray at: assetAdministrationShells[0].assetInformation
+Expected a JsonObject, but got System.Text.Json.Nodes.JsonValueTrimmable`1[System.Text.Json.JsonElement] at: assetAdministrationShells[0].assetInformation

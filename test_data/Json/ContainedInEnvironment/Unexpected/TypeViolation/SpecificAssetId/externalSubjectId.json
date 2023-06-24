@@ -5,17 +5,7 @@
         "assetKind": "NotApplicable",
         "specificAssetIds": [
           {
-            "externalSubjectId": [
-              {
-                "keys": [
-                  {
-                    "type": "GlobalReference",
-                    "value": "unexpected instance"
-                  }
-                ],
-                "type": "ExternalReference"
-              }
-            ],
+            "externalSubjectId": "Unexpected string value",
             "name": "something_b0b6ce88",
             "semanticId": {
               "keys": [

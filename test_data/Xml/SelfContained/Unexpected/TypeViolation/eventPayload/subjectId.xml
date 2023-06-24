@@ -40,17 +40,7 @@
 		</keys>
 	</observableSemanticId>
 	<topic>something_8f13d2dd</topic>
-	<subjectId>
-		<reference>
-			<type>ExternalReference</type>
-			<keys>
-				<key>
-					<type>GlobalReference</type>
-					<value>unexpected instance</value>
-				</key>
-			</keys>
-		</reference>
-	</subjectId>
+	<subjectId>Unexpected string value</subjectId>
 	<timeStamp>2022-04-01T24:00:00-00:00</timeStamp>
 	<payload>/TsF2AbyQb1dIa0=</payload>
 </eventPayload>

@@ -31,17 +31,7 @@
     ],
     "type": "ModelReference"
   },
-  "sourceSemanticId": [
-    {
-      "keys": [
-        {
-          "type": "GlobalReference",
-          "value": "unexpected instance"
-        }
-      ],
-      "type": "ExternalReference"
-    }
-  ],
+  "sourceSemanticId": "Unexpected string value",
   "subjectId": {
     "keys": [
       {

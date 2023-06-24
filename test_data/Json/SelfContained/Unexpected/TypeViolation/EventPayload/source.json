@@ -18,17 +18,7 @@
     "type": "ModelReference"
   },
   "payload": "/TsF2AbyQb1dIa0=",
-  "source": [
-    {
-      "keys": [
-        {
-          "type": "GlobalReference",
-          "value": "unexpected instance"
-        }
-      ],
-      "type": "ExternalReference"
-    }
-  ],
+  "source": "Unexpected string value",
   "sourceSemanticId": {
     "keys": [
       {

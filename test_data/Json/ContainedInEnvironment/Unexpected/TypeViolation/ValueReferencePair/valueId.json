@@ -32,17 +32,7 @@
               "valueReferencePairs": [
                 {
                   "value": "something_63781b6f",
-                  "valueId": [
-                    {
-                      "keys": [
-                        {
-                          "type": "GlobalReference",
-                          "value": "unexpected instance"
-                        }
-                      ],
-                      "type": "ExternalReference"
-                    }
-                  ]
+                  "valueId": "Unexpected string value"
                 }
               ]
             }

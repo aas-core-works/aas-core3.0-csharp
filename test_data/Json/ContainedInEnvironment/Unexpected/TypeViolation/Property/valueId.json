@@ -79,17 +79,7 @@
             }
           ],
           "value": "0061707",
-          "valueId": [
-            {
-              "keys": [
-                {
-                  "type": "GlobalReference",
-                  "value": "unexpected instance"
-                }
-              ],
-              "type": "ExternalReference"
-            }
-          ],
+          "valueId": "Unexpected string value",
           "valueType": "xs:decimal"
         }
       ]

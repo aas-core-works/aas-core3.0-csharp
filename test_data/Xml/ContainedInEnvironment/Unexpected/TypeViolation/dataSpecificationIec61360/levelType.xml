@@ -52,17 +52,7 @@
 							</definition>
 							<valueFormat>something_f019e5a8</valueFormat>
 							<value>something_13759f45</value>
-							<levelType>
-								<reference>
-									<type>ExternalReference</type>
-									<keys>
-										<key>
-											<type>GlobalReference</type>
-											<value>unexpected instance</value>
-										</key>
-									</keys>
-								</reference>
-							</levelType>
+							<levelType>Unexpected string value</levelType>
 						</dataSpecificationIec61360>
 					</dataSpecificationContent>
 				</embeddedDataSpecification>

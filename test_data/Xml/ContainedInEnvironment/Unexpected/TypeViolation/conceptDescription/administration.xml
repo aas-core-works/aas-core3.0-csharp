@@ -20,17 +20,7 @@
 					<text>something_863a162e</text>
 				</langStringTextType>
 			</description>
-			<administration>
-				<reference>
-					<type>ExternalReference</type>
-					<keys>
-						<key>
-							<type>GlobalReference</type>
-							<value>unexpected instance</value>
-						</key>
-					</keys>
-				</reference>
-			</administration>
+			<administration>Unexpected string value</administration>
 			<id>something_8ccad77f</id>
 			<embeddedDataSpecifications>
 				<embeddedDataSpecification>
