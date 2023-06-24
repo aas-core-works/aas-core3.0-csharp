@@ -32,17 +32,7 @@
 								</langStringShortNameTypeIec61360>
 							</shortName>
 							<unit>something_a6bd9450</unit>
-							<unitId>
-								<reference>
-									<type>ExternalReference</type>
-									<keys>
-										<key>
-											<type>GlobalReference</type>
-											<value>unexpected instance</value>
-										</key>
-									</keys>
-								</reference>
-							</unitId>
+							<unitId>Unexpected string value</unitId>
 							<sourceOfDefinition>something_1bd907c8</sourceOfDefinition>
 							<symbol>something_c13116d7</symbol>
 							<dataType>DATE</dataType>

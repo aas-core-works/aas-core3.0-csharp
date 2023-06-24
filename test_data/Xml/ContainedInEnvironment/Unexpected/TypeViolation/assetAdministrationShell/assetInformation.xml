@@ -59,17 +59,7 @@
 					</key>
 				</keys>
 			</derivedFrom>
-			<assetInformation>
-				<reference>
-					<type>ExternalReference</type>
-					<keys>
-						<key>
-							<type>GlobalReference</type>
-							<value>unexpected instance</value>
-						</key>
-					</keys>
-				</reference>
-			</assetInformation>
+			<assetInformation>Unexpected string value</assetInformation>
 			<submodels>
 				<reference>
 					<type>ModelReference</type>

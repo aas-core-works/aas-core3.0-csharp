@@ -1,17 +1,7 @@
 {
   "assetAdministrationShells": [
     {
-      "administration": [
-        {
-          "keys": [
-            {
-              "type": "GlobalReference",
-              "value": "unexpected instance"
-            }
-          ],
-          "type": "ExternalReference"
-        }
-      ],
+      "administration": "Unexpected string value",
       "assetInformation": {
         "assetKind": "NotApplicable",
         "globalAssetId": "something_eea66fa1"

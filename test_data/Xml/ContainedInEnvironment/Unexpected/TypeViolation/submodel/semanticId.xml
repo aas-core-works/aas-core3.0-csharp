@@ -23,17 +23,7 @@
 			<administration/>
 			<id>something_48c66017</id>
 			<kind>Instance</kind>
-			<semanticId>
-				<reference>
-					<type>ExternalReference</type>
-					<keys>
-						<key>
-							<type>GlobalReference</type>
-							<value>unexpected instance</value>
-						</key>
-					</keys>
-				</reference>
-			</semanticId>
+			<semanticId>Unexpected string value</semanticId>
 			<supplementalSemanticIds>
 				<reference>
 					<type>ModelReference</type>

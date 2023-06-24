@@ -29,17 +29,7 @@
 								<valueReferencePairs>
 									<valueReferencePair>
 										<value>something_63781b6f</value>
-										<valueId>
-											<reference>
-												<type>ExternalReference</type>
-												<keys>
-													<key>
-														<type>GlobalReference</type>
-														<value>unexpected instance</value>
-													</key>
-												</keys>
-											</reference>
-										</valueId>
+										<valueId>Unexpected string value</valueId>
 									</valueReferencePair>
 								</valueReferencePairs>
 							</valueList>

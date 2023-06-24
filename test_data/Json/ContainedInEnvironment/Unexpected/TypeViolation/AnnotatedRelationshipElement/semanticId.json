@@ -82,17 +82,7 @@
             ],
             "type": "ExternalReference"
           },
-          "semanticId": [
-            {
-              "keys": [
-                {
-                  "type": "GlobalReference",
-                  "value": "unexpected instance"
-                }
-              ],
-              "type": "ExternalReference"
-            }
-          ],
+          "semanticId": "Unexpected string value",
           "supplementalSemanticIds": [
             {
               "keys": [

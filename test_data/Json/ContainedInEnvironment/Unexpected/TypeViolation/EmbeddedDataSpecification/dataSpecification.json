@@ -7,17 +7,7 @@
       },
       "embeddedDataSpecifications": [
         {
-          "dataSpecification": [
-            {
-              "keys": [
-                {
-                  "type": "GlobalReference",
-                  "value": "unexpected instance"
-                }
-              ],
-              "type": "ExternalReference"
-            }
-          ],
+          "dataSpecification": "Unexpected string value",
           "dataSpecificationContent": {
             "modelType": "DataSpecificationIec61360",
             "preferredName": [

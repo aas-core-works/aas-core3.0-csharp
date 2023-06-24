@@ -24,17 +24,7 @@
                 "text": "something_2ae95f9f"
               }
             ],
-            "levelType": [
-              {
-                "keys": [
-                  {
-                    "type": "GlobalReference",
-                    "value": "unexpected instance"
-                  }
-                ],
-                "type": "ExternalReference"
-              }
-            ],
+            "levelType": "Unexpected string value",
             "modelType": "DataSpecificationIec61360",
             "preferredName": [
               {

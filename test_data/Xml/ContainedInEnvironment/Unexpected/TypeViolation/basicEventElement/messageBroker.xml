@@ -89,17 +89,7 @@
 					<direction>output</direction>
 					<state>off</state>
 					<messageTopic>something_99f1a7ac</messageTopic>
-					<messageBroker>
-						<reference>
-							<type>ExternalReference</type>
-							<keys>
-								<key>
-									<type>GlobalReference</type>
-									<value>unexpected instance</value>
-								</key>
-							</keys>
-						</reference>
-					</messageBroker>
+					<messageBroker>Unexpected string value</messageBroker>
 					<lastUpdate>-3020-08-21T24:00:00.0Z</lastUpdate>
 					<minInterval>-P1Y</minInterval>
 					<maxInterval>PT130S</maxInterval>

@@ -6,17 +6,7 @@
 				<assetKind>NotApplicable</assetKind>
 				<globalAssetId>something_c71f0c8f</globalAssetId>
 				<assetType>something_9f4c5692</assetType>
-				<defaultThumbnail>
-					<reference>
-						<type>ExternalReference</type>
-						<keys>
-							<key>
-								<type>GlobalReference</type>
-								<value>unexpected instance</value>
-							</key>
-						</keys>
-					</reference>
-				</defaultThumbnail>
+				<defaultThumbnail>Unexpected string value</defaultThumbnail>
 			</assetInformation>
 		</assetAdministrationShell>
 	</assetAdministrationShells>

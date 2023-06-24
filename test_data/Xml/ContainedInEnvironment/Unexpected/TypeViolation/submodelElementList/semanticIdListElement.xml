@@ -78,17 +78,7 @@
 						</embeddedDataSpecification>
 					</embeddedDataSpecifications>
 					<orderRelevant>true</orderRelevant>
-					<semanticIdListElement>
-						<reference>
-							<type>ExternalReference</type>
-							<keys>
-								<key>
-									<type>GlobalReference</type>
-									<value>unexpected instance</value>
-								</key>
-							</keys>
-						</reference>
-					</semanticIdListElement>
+					<semanticIdListElement>Unexpected string value</semanticIdListElement>
 					<typeValueListElement>Entity</typeValueListElement>
 					<valueTypeListElement>xs:byte</valueTypeListElement>
 					<value>

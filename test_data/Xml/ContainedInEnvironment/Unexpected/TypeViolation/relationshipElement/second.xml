@@ -86,17 +86,7 @@
 							</key>
 						</keys>
 					</first>
-					<second>
-						<reference>
-							<type>ExternalReference</type>
-							<keys>
-								<key>
-									<type>GlobalReference</type>
-									<value>unexpected instance</value>
-								</key>
-							</keys>
-						</reference>
-					</second>
+					<second>Unexpected string value</second>
 				</relationshipElement>
 			</submodelElements>
 		</submodel>

@@ -2,17 +2,7 @@
   "assetAdministrationShells": [
     {
       "administration": {
-        "creator": [
-          {
-            "keys": [
-              {
-                "type": "GlobalReference",
-                "value": "unexpected instance"
-              }
-            ],
-            "type": "ExternalReference"
-          }
-        ],
+        "creator": "Unexpected string value",
         "embeddedDataSpecifications": [
           {
             "dataSpecification": {

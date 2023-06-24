@@ -77,17 +77,7 @@
 							</dataSpecificationContent>
 						</embeddedDataSpecification>
 					</embeddedDataSpecifications>
-					<first>
-						<reference>
-							<type>ExternalReference</type>
-							<keys>
-								<key>
-									<type>GlobalReference</type>
-									<value>unexpected instance</value>
-								</key>
-							</keys>
-						</reference>
-					</first>
+					<first>Unexpected string value</first>
 					<second>
 						<type>ExternalReference</type>
 						<keys>

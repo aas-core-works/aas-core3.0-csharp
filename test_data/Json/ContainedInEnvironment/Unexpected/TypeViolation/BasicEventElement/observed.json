@@ -66,17 +66,7 @@
           "messageTopic": "something_99f1a7ac",
           "minInterval": "-P1Y",
           "modelType": "BasicEventElement",
-          "observed": [
-            {
-              "keys": [
-                {
-                  "type": "GlobalReference",
-                  "value": "unexpected instance"
-                }
-              ],
-              "type": "ExternalReference"
-            }
-          ],
+          "observed": "Unexpected string value",
           "qualifiers": [
             {
               "type": "something_500f973e",
