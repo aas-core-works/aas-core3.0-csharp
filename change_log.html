@@ -72,6 +72,16 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="change-log">Change Log</h1>
 
+<h2 id="100-rc5">1.0.0-rc5</h2>
+<ul>
+<li><p>Fix error message in xmlization on XML declaration (#25)</p>
+<p>When we encountered XML declarations, we threw exceptions with
+uninformative messages. Namely, we expect the reader to be moved to the
+content, but most users omitted to read that in the documentation.</p>
+<p>We refine the error message for this particular situation, and hint at
+<code>MoveToContent</code> method on the reader.</p>
+</li>
+</ul>
 <h2 id="100-rc4">1.0.0-rc4</h2>
 <ul>
 <li><p>Update to aas-core-meta, codegen, testgen 4d7e59e, f3d9538,
