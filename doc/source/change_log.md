@@ -1,5 +1,16 @@
 # Change Log
 
+## 1.0.0-rc5
+
+* Fix error message in xmlization on XML declaration (#25)
+
+  When we encountered XML declarations, we threw exceptions with
+  uninformative messages. Namely, we expect the reader to be moved to the
+  content, but most users omitted to read that in the documentation.
+
+  We refine the error message for this particular situation, and hint at
+  `MoveToContent` method on the reader.
+
 ## 1.0.0-rc4
 
 * Update to aas-core-meta, codegen, testgen 4d7e59e, f3d9538, 
