@@ -3016,7 +3016,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -3035,7 +3035,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -3507,7 +3507,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -3526,7 +3526,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -3896,7 +3896,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -3915,7 +3915,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -4171,7 +4171,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -4190,7 +4190,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -4570,7 +4570,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -4589,7 +4589,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -4881,7 +4881,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -4900,7 +4900,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -5190,7 +5190,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -5209,7 +5209,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -5278,7 +5278,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Value specifies no duplicate languages.");
+                        "Value must specify unique languages.");
                 }
 
                 if (!(
@@ -5508,7 +5508,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -5527,7 +5527,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -5826,7 +5826,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -5845,7 +5845,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -6107,7 +6107,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -6126,7 +6126,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -6396,7 +6396,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -6415,7 +6415,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -6685,7 +6685,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -6704,7 +6704,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -7004,7 +7004,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -7023,7 +7023,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -7485,7 +7485,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -7504,7 +7504,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -7849,7 +7849,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -7868,7 +7868,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -8231,7 +8231,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -8250,7 +8250,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -8490,7 +8490,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Description specifies no duplicate languages.");
+                        "Description must specify unique languages.");
                 }
 
                 if (!(
@@ -8509,7 +8509,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Display name specifies no duplicate languages.");
+                        "Display name must specify unique languages.");
                 }
 
                 if (!(
@@ -9206,7 +9206,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "String shall have a maximum length of 1023 characters.");
+                        "String shall have a maximum length of 255 characters.");
                 }
 
                 foreach (var error in Verification.VerifyBcp47LanguageTag(that.Language))
@@ -9237,7 +9237,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "String shall have a maximum length of 1023 characters.");
+                        "String shall have a maximum length of 18 characters.");
                 }
 
                 foreach (var error in Verification.VerifyBcp47LanguageTag(that.Language))
@@ -9337,7 +9337,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Definition specifies no duplicate languages.");
+                        "Definition must specify unique languages.");
                 }
 
                 if (!(
@@ -9355,7 +9355,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Short name specifies no duplicate languages.");
+                        "Short name must specify unique languages.");
                 }
 
                 if (!(that.PreferredName.Count >= 1))
@@ -9370,7 +9370,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Preferred name specifies no duplicate languages.");
+                        "Preferred name must specify unique languages.");
                 }
 
                 if (!(
