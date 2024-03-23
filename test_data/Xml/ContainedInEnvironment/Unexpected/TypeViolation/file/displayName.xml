@@ -14,7 +14,7 @@
 					<displayName>Unexpected string value</displayName>
 					<description>
 						<langStringTextType>
-							<language>en</language>
+							<language>es-419</language>
 							<text>something_be9deae0</text>
 						</langStringTextType>
 					</description>
@@ -59,7 +59,7 @@
 								<dataSpecificationIec61360>
 									<preferredName>
 										<langStringPreferredNameTypeIec61360>
-											<language>X-33DQI-g</language>
+											<language>sl-rozaj-biske</language>
 											<text>something_7e795ee2</text>
 										</langStringPreferredNameTypeIec61360>
 										<langStringPreferredNameTypeIec61360>
