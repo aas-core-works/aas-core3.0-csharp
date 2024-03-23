@@ -17,7 +17,7 @@
 						<dataSpecificationIec61360>
 							<preferredName>
 								<langStringPreferredNameTypeIec61360>
-									<language>X-33DQI-g</language>
+									<language>i-enochian</language>
 									<text>something_84b0b440</text>
 								</langStringPreferredNameTypeIec61360>
 								<langStringPreferredNameTypeIec61360>
@@ -27,7 +27,7 @@
 							</preferredName>
 							<shortName>
 								<langStringShortNameTypeIec61360>
-									<language>X-33DQI-g</language>
+									<language>x-whatever</language>
 									<text>something_65af8271</text>
 								</langStringShortNameTypeIec61360>
 							</shortName>
@@ -46,7 +46,7 @@
 							<dataType>totally utterly invalid</dataType>
 							<definition>
 								<langStringDefinitionTypeIec61360>
-									<language>X-33DQI-g</language>
+									<language>de-Qaaa</language>
 									<text>something_2ae95f9f</text>
 								</langStringDefinitionTypeIec61360>
 							</definition>

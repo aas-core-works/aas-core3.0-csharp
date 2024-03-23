@@ -20,7 +20,7 @@
             "dataType": "DATE",
             "definition": [
               {
-                "language": "X-33DQI-g",
+                "language": "de-Qaaa",
                 "text": "something_2ae95f9f"
               }
             ],
@@ -34,7 +34,7 @@
             "preferredName": "Unexpected string value",
             "shortName": [
               {
-                "language": "X-33DQI-g",
+                "language": "x-whatever",
                 "text": "something_65af8271"
               }
             ],

@@ -17,7 +17,7 @@
 						<dataSpecificationIec61360>
 							<preferredName>
 								<langStringPreferredNameTypeIec61360>
-									<language>X-33DQI-g</language>
+									<language>i-enochian</language>
 									<text>something_84b0b440</text>
 								</langStringPreferredNameTypeIec61360>
 								<langStringPreferredNameTypeIec61360>
@@ -27,7 +27,7 @@
 							</preferredName>
 							<shortName>
 								<langStringShortNameTypeIec61360>
-									<language>X-33DQI-g</language>
+									<language>cmn-Hans-CN</language>
 									<text></text>
 								</langStringShortNameTypeIec61360>
 							</shortName>

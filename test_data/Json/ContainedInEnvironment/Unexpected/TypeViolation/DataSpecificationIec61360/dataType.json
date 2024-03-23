@@ -30,7 +30,7 @@
             ],
             "definition": [
               {
-                "language": "X-33DQI-g",
+                "language": "de-Qaaa",
                 "text": "something_2ae95f9f"
               }
             ],
@@ -43,7 +43,7 @@
             "modelType": "DataSpecificationIec61360",
             "preferredName": [
               {
-                "language": "X-33DQI-g",
+                "language": "i-enochian",
                 "text": "something_84b0b440"
               },
               {
@@ -53,7 +53,7 @@
             ],
             "shortName": [
               {
-                "language": "X-33DQI-g",
+                "language": "x-whatever",
                 "text": "something_65af8271"
               }
             ],

@@ -8,7 +8,7 @@
           "category": "something_d7cf2dff",
           "description": [
             {
-              "language": "en",
+              "language": "es-419",
               "text": "something_be9deae0"
             }
           ],
@@ -29,7 +29,7 @@
                 "modelType": "DataSpecificationIec61360",
                 "preferredName": [
                   {
-                    "language": "X-33DQI-g",
+                    "language": "sl-rozaj-biske",
                     "text": "something_7e795ee2"
                   },
                   {

@@ -10,7 +10,7 @@
 			<idShort>PiXO1wyHierj</idShort>
 			<displayName>
 				<langStringNameType>
-					<language>de-CH</language>
+					<language>de</language>
 					<text>something_1e73716d</text>
 				</langStringNameType>
 			</displayName>
@@ -32,7 +32,7 @@
 						<dataSpecificationIec61360>
 							<preferredName>
 								<langStringPreferredNameTypeIec61360>
-									<language>x-Sw4u3ZDO-nJLabnE</language>
+									<language>zh-cmn-Hans-CN</language>
 									<text>something_5282e98e</text>
 								</langStringPreferredNameTypeIec61360>
 								<langStringPreferredNameTypeIec61360>
