@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.2 (2024-03-23)
+
+In this patch version, we propagate the fix from abnf-to-regex related
+to maximum qualifiers which had been mistakenly represented as exact
+repetition before.
+
 ## 1.0.1 (2024-03-13)
 
 This patch release brings about the fix for patterns concerning dates and
