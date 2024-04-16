@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.0.3 (2024-04-16)
+
+The `dataSpecification` field in `EmbeddedDataSpecification` is made
+optional, according to the book.
+
 ## 1.0.2 (2024-03-23)
 
 In this patch version, we propagate the fix from abnf-to-regex related
