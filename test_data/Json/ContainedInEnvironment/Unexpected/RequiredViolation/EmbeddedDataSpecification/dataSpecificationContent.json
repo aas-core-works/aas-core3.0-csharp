@@ -6,17 +6,7 @@
         "globalAssetId": "something_eea66fa1"
       },
       "embeddedDataSpecifications": [
-        {
-          "dataSpecification": {
-            "keys": [
-              {
-                "type": "GlobalReference",
-                "value": "urn:some-company06:e9f47be2"
-              }
-            ],
-            "type": "ExternalReference"
-          }
-        }
+        {}
       ],
       "id": "something_142922d6",
       "modelType": "AssetAdministrationShell"

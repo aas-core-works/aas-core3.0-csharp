@@ -34,15 +34,6 @@
 			</id>
 			<embeddedDataSpecifications>
 				<embeddedDataSpecification>
-					<dataSpecification>
-						<type>ModelReference</type>
-						<keys>
-							<key>
-								<type>Submodel</type>
-								<value>urn:example14:c4971d26</value>
-							</key>
-						</keys>
-					</dataSpecification>
 					<dataSpecificationContent>
 						<dataSpecificationIec61360>
 							<preferredName>
