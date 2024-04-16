@@ -1779,11 +1779,13 @@ namespace AasCore.Aas3_0.Tests
 
                 return (
                     Transform(
-                        that.DataSpecification,
-                        casted.DataSpecification)
-                    && Transform(
                         that.DataSpecificationContent,
-                        casted.DataSpecificationContent));
+                        casted.DataSpecificationContent)
+                    && (that.DataSpecification != null && casted.DataSpecification != null)
+                        ? Transform(
+                                that.DataSpecification,
+                                casted.DataSpecification)
+                        : that.DataSpecification == null && casted.DataSpecification == null);
             }
 
             public override bool TransformLevelType(
@@ -2397,8 +2399,8 @@ namespace AasCore.Aas3_0.Tests
             Aas.EmbeddedDataSpecification other)
         {
             return (
-                that.DataSpecification == other.DataSpecification
-                && that.DataSpecificationContent == other.DataSpecificationContent);
+                that.DataSpecificationContent == other.DataSpecificationContent
+                && that.DataSpecification == other.DataSpecification);
         }
 
         private static bool LevelTypeShallowEquals(

@@ -7,15 +7,6 @@
       },
       "embeddedDataSpecifications": [
         {
-          "dataSpecification": {
-            "keys": [
-              {
-                "type": "GlobalReference",
-                "value": "urn:some-company06:e9f47be2"
-              }
-            ],
-            "type": "ExternalReference"
-          },
           "dataSpecificationContent": {
             "definition": [
               {
