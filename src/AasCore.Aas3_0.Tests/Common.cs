@@ -12,12 +12,27 @@ namespace AasCore.Aas3_0.Tests
     /// </summary>
     public static class Common
     {
+        public static readonly string RecordModeEnvironmentVariableName = (
+            "AAS_CORE_AAS3_0_TESTS_RECORD_MODE"
+        );
+
         // NOTE (mristin, 2023-03-16):
         // It is tedious to record manually all the expected error messages. Therefore we include this variable
         // to steer the automatic recording. We intentionally inter-twine the recording code with the test code
         // to keep them close to each other so that they are easier to maintain.
         public static readonly bool RecordMode = (
-            System.Environment.GetEnvironmentVariable("AAS_CORE_AAS3_0_TESTS_RECORD_MODE")?.ToLower() == "true"
+            System.Environment.GetEnvironmentVariable(
+                RecordModeEnvironmentVariableName
+            )?.ToLower() == "true"
+            || System.Environment.GetEnvironmentVariable(
+                RecordModeEnvironmentVariableName
+            )?.ToLower() == "on"
+            || System.Environment.GetEnvironmentVariable(
+                RecordModeEnvironmentVariableName
+            )?.ToLower() == "1"
+            || System.Environment.GetEnvironmentVariable(
+                RecordModeEnvironmentVariableName
+            )?.ToLower() == "yes"
         );
 
         public static readonly string TestDataDir = (
@@ -66,19 +81,6 @@ namespace AasCore.Aas3_0.Tests
             }
         }
 
-        public static readonly List<string> CausesForVerificationFailure = (
-            new List<string>()
-            {
-                "DateTimeStampUtcViolationOnFebruary29th",
-                "MaxLengthViolation",
-                "MinLengthViolation",
-                "PatternViolation",
-                "InvalidValueExample",
-                "InvalidMinMaxExample",
-                "SetViolation",
-                "ConstraintViolation"
-            });
-
         public static void AssertEqualsExpectedOrRerecordVerificationErrors(
             List<Aas.Reporting.Error> errors, string path)
         {
@@ -103,7 +105,9 @@ namespace AasCore.Aas3_0.Tests
                 if (!System.IO.File.Exists(errorsPath))
                 {
                     throw new System.IO.FileNotFoundException(
-                        $"The file with the recorded errors does not exist: {errorsPath}");
+                        "The file with the recorded errors does not " +
+                        $"exist: {errorsPath}; maybe you want to set the environment " +
+                        $"variable {Aas.Tests.Common.RecordModeEnvironmentVariableName}?");
                 }
 
                 string expected = System.IO.File.ReadAllText(errorsPath);

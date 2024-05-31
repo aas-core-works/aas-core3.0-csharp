@@ -39,8 +39,8 @@ public void Test_{cls_name_csharp}_ok()
     var paths = Directory.GetFiles(
         Path.Combine(
             Aas.Tests.Common.TestDataDir,
-            "Json", 
-            "SelfContained", 
+            "Json",
+            "SelfContained",
             "Expected",
             {csharp_common.string_literal(cls_name_json)}
         ),
@@ -71,25 +71,31 @@ public void Test_{cls_name_csharp}_ok()
 [Test]
 public void Test_{cls_name_csharp}_deserialization_fail()
 {{
-    foreach (string cause in CausesForDeserializationFailure)
-    {{
-        string baseDir = Path.Combine(
-            Aas.Tests.Common.TestDataDir,
-            "Json", 
-            "SelfContained", 
-            "Unexpected", 
-            cause,
+    foreach (
+        string causeDir in
+        Directory.GetDirectories(
+            Path.Combine(
+                Aas.Tests.Common.TestDataDir,
+                "Json",
+                "SelfContained",
+                "Unexpected",
+                "Unserializable"
+            )
+        )
+    ) {{
+        string clsDir = Path.Combine(
+            causeDir,
             {csharp_common.string_literal(cls_name_json)}
         );
-         
-        if (!Directory.Exists(baseDir))
+
+        if (!Directory.Exists(clsDir))
         {{
             // No examples of {cls_name_csharp} for the failure cause.
             continue;
-        }} 
-        
+        }}
+
         var paths = Directory.GetFiles(
-            baseDir,
+            clsDir,
             "*.json",
             System.IO.SearchOption.AllDirectories).ToList();
         paths.Sort();
@@ -123,25 +129,31 @@ public void Test_{cls_name_csharp}_deserialization_fail()
 [Test]
 public void Test_{cls_name_csharp}_verification_fail()
 {{
-    foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
-    {{
-        string baseDir = Path.Combine(
-            Aas.Tests.Common.TestDataDir,
-            "Json", 
-            "SelfContained", 
-            "Unexpected", 
-            cause,
+    foreach (
+        string causeDir in
+        Directory.GetDirectories(
+            Path.Combine(
+                Aas.Tests.Common.TestDataDir,
+                "Json",
+                "SelfContained",
+                "Unexpected",
+                "Invalid"
+            )
+        )
+    ) {{
+        string clsDir = Path.Combine(
+            causeDir,
             {csharp_common.string_literal(cls_name_json)}
         );
-         
-        if (!Directory.Exists(baseDir))
+
+        if (!Directory.Exists(clsDir))
         {{
             // No examples of {cls_name_csharp} for the failure cause.
             continue;
         }}
-        
+
         var paths = Directory.GetFiles(
-            baseDir,
+            clsDir,
             "*.json",
             System.IO.SearchOption.AllDirectories).ToList();
         paths.Sort();
@@ -152,7 +164,7 @@ public void Test_{cls_name_csharp}_verification_fail()
 
             var instance = Aas.Jsonization.Deserialize.{cls_name_csharp}From(
                 node);
- 
+
             var errors = Aas.Verification.Verify(instance).ToList();
             Aas.Tests.Common.AssertEqualsExpectedOrRerecordVerificationErrors(
                 errors, path);
@@ -184,8 +196,8 @@ public void Test_{cls_name_csharp}_ok()
     var paths = Directory.GetFiles(
         Path.Combine(
             Aas.Tests.Common.TestDataDir,
-            "Json", 
-            "ContainedInEnvironment", 
+            "Json",
+            "ContainedInEnvironment",
             "Expected",
             {csharp_common.string_literal(cls_name_json)}
         ),
@@ -216,7 +228,7 @@ public void Test_{cls_name_csharp}_ok()
 [Test]
 public void Test_{cls_name_csharp}_deserialization_from_non_object_fail()
 {{
-    var node = Nodes.JsonValue.Create("INVALID") 
+    var node = Nodes.JsonValue.Create("INVALID")
         ?? throw new System.InvalidOperationException(
             "Unexpected failure of the node creation");
 
@@ -251,24 +263,31 @@ public void Test_{cls_name_csharp}_deserialization_from_non_object_fail()
 [Test]
 public void Test_{cls_name_csharp}_deserialization_fail()
 {{
-    foreach (string cause in CausesForDeserializationFailure)
-    {{
-        string baseDir = Path.Combine(
-            Aas.Tests.Common.TestDataDir,
-            "Json", 
-            "ContainedInEnvironment", 
-            "Unexpected", 
-            cause,
-            {csharp_common.string_literal(cls_name_json)});
-            
-        if (!Directory.Exists(baseDir))
+    foreach (
+        string causeDir in
+        Directory.GetDirectories(
+            Path.Combine(
+                Aas.Tests.Common.TestDataDir,
+                "Json",
+                "ContainedInEnvironment",
+                "Unexpected",
+                "Unserializable"
+            )
+        )
+    ) {{
+        string clsDir = Path.Combine(
+            causeDir,
+            {csharp_common.string_literal(cls_name_json)}
+        );
+
+        if (!Directory.Exists(clsDir))
         {{
             // No examples of {cls_name_csharp} for the failure cause.
             continue;
         }}
-    
+
         var paths = Directory.GetFiles(
-            baseDir,
+            clsDir,
             "*.json",
             System.IO.SearchOption.AllDirectories).ToList();
         paths.Sort();
@@ -302,25 +321,31 @@ public void Test_{cls_name_csharp}_deserialization_fail()
 [Test]
 public void Test_{cls_name_csharp}_verification_fail()
 {{
-    foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
-    {{
-        string baseDir = Path.Combine(
-            Aas.Tests.Common.TestDataDir,
-            "Json", 
-            "ContainedInEnvironment", 
-            "Unexpected", 
-            cause,
+    foreach (
+        string causeDir in
+        Directory.GetDirectories(
+            Path.Combine(
+                Aas.Tests.Common.TestDataDir,
+                "Json",
+                "ContainedInEnvironment",
+                "Unexpected",
+                "Invalid"
+            )
+        )
+    ) {{
+        string clsDir = Path.Combine(
+            causeDir,
             {csharp_common.string_literal(cls_name_json)}
         );
-    
-        if (!Directory.Exists(baseDir))
+
+        if (!Directory.Exists(clsDir))
         {{
             // No examples of {cls_name_csharp} for the failure cause.
             continue;
         }}
-    
+
         var paths = Directory.GetFiles(
-            baseDir,
+            clsDir,
             "*.json",
             System.IO.SearchOption.AllDirectories).ToList();
         paths.Sort();
@@ -398,16 +423,6 @@ private static void AssertSerializeDeserializeEqualsOriginal(
     }
 }
 
-private static readonly List<string> CausesForDeserializationFailure = (
-    new List<string>()
-    {
-        "TypeViolation",
-        "RequiredViolation",
-        "EnumViolation",
-        "NullViolation",
-        "UnexpectedAdditionalProperty"
-    });
-
 private static void AssertEqualsExpectedOrRerecordDeserializationException(
     Aas.Jsonization.Exception? exception,
     string path)
@@ -431,7 +446,9 @@ private static void AssertEqualsExpectedOrRerecordDeserializationException(
             if (!System.IO.File.Exists(exceptionPath))
             {
                 throw new System.IO.FileNotFoundException(
-                    $"The file with the recorded exception does not exist: {exceptionPath}");
+                    $"The file with the recorded exception does not exist: {exceptionPath}; " +
+                    "maybe you want to set the environment " +
+                    $"variable {Aas.Tests.Common.RecordModeEnvironmentVariableName}?");        
             }
 
             string expected = System.IO.File.ReadAllText(exceptionPath);
@@ -491,7 +508,6 @@ using Directory = System.IO.Directory;
 using Nodes = System.Text.Json.Nodes;
 using Path = System.IO.Path;
 
-using System.Collections.Generic;  // can't alias
 using System.Linq;  // can't alias
 using NUnit.Framework; // can't alias
 

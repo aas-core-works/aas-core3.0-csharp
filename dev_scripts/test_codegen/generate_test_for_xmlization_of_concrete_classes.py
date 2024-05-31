@@ -39,8 +39,8 @@ public void Test_{cls_name_csharp}_ok()
     var paths = Directory.GetFiles(
         Path.Combine(
             Aas.Tests.Common.TestDataDir,
-            "Xml", 
-            "SelfContained", 
+            "Xml",
+            "SelfContained",
             "Expected",
             {csharp_common.string_literal(cls_name_xml)}
         ),
@@ -51,7 +51,7 @@ public void Test_{cls_name_csharp}_ok()
     foreach (var path in paths)
     {{
         using var xmlReader = System.Xml.XmlReader.Create(path);
-        
+
         var instance = Aas.Xmlization.Deserialize.{cls_name_csharp}From(
             xmlReader);
 
@@ -71,25 +71,31 @@ public void Test_{cls_name_csharp}_ok()
 [Test]
 public void Test_{cls_name_csharp}_deserialization_fail()
 {{
-    foreach (string cause in CausesForDeserializationFailure)
-    {{
-        string baseDir = Path.Combine(
-            Aas.Tests.Common.TestDataDir,
-            "Xml", 
-            "SelfContained", 
-            "Unexpected", 
-            cause,
+    foreach (
+        string causeDir in
+        Directory.GetDirectories(
+            Path.Combine(
+                Aas.Tests.Common.TestDataDir,
+                "Xml",
+                "SelfContained",
+                "Unexpected",
+                "Unserializable"
+            )
+        )
+    ) {{
+        string clsDir = Path.Combine(
+            causeDir,
             {csharp_common.string_literal(cls_name_xml)}
         );
-         
-        if (!Directory.Exists(baseDir))
+
+        if (!Directory.Exists(clsDir))
         {{
             // No examples of {cls_name_csharp} for the failure cause.
             continue;
-        }} 
-        
+        }}
+
         var paths = Directory.GetFiles(
-            baseDir,
+            clsDir,
             "*.xml",
             System.IO.SearchOption.AllDirectories).ToList();
         paths.Sort();
@@ -97,7 +103,7 @@ public void Test_{cls_name_csharp}_deserialization_fail()
         foreach (var path in paths)
         {{
             using var xmlReader = System.Xml.XmlReader.Create(path);
-            
+
             Aas.Xmlization.Exception? exception = null;
 
             try
@@ -124,25 +130,31 @@ public void Test_{cls_name_csharp}_deserialization_fail()
 [Test]
 public void Test_{cls_name_csharp}_verification_fail()
 {{
-    foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
-    {{
-        string baseDir = Path.Combine(
-            Aas.Tests.Common.TestDataDir,
-            "Xml", 
-            "SelfContained", 
-            "Unexpected", 
-            cause,
+    foreach (
+        string causeDir in
+        Directory.GetDirectories(
+            Path.Combine(
+                Aas.Tests.Common.TestDataDir,
+                "Xml",
+                "SelfContained",
+                "Unexpected",
+                "Invalid"
+            )
+        )
+    ) {{
+        string clsDir = Path.Combine(
+            causeDir,
             {csharp_common.string_literal(cls_name_xml)}
         );
-         
-        if (!Directory.Exists(baseDir))
+
+        if (!Directory.Exists(clsDir))
         {{
             // No examples of {cls_name_csharp} for the failure cause.
             continue;
         }}
-        
+
         var paths = Directory.GetFiles(
-            baseDir,
+            clsDir,
             "*.xml",
             System.IO.SearchOption.AllDirectories).ToList();
         paths.Sort();
@@ -150,7 +162,7 @@ public void Test_{cls_name_csharp}_verification_fail()
         foreach (var path in paths)
         {{
             using var xmlReader = System.Xml.XmlReader.Create(path);
-        
+
             var instance = Aas.Xmlization.Deserialize.{cls_name_csharp}From(
                 xmlReader);
 
@@ -185,8 +197,8 @@ public void Test_{cls_name_csharp}_ok()
     var paths = Directory.GetFiles(
         Path.Combine(
             Aas.Tests.Common.TestDataDir,
-            "Xml", 
-            "ContainedInEnvironment", 
+            "Xml",
+            "ContainedInEnvironment",
             "Expected",
             {csharp_common.string_literal(cls_name_xml)}
         ),
@@ -197,7 +209,7 @@ public void Test_{cls_name_csharp}_ok()
     foreach (var path in paths)
     {{
         using var xmlReader = System.Xml.XmlReader.Create(path);
-        
+
         var container = Aas.Xmlization.Deserialize.{container_cls_csharp}From(
             xmlReader);
 
@@ -217,24 +229,31 @@ public void Test_{cls_name_csharp}_ok()
 [Test]
 public void Test_{cls_name_csharp}_deserialization_fail()
 {{
-    foreach (string cause in CausesForDeserializationFailure)
-    {{
-        string baseDir = Path.Combine(
-            Aas.Tests.Common.TestDataDir,
-            "Xml", 
-            "ContainedInEnvironment", 
-            "Unexpected", 
-            cause,
-            {csharp_common.string_literal(cls_name_xml)});
-            
-        if (!Directory.Exists(baseDir))
+    foreach (
+        string causeDir in
+        Directory.GetDirectories(
+            Path.Combine(
+                Aas.Tests.Common.TestDataDir,
+                "Xml",
+                "ContainedInEnvironment",
+                "Unexpected",
+                "Unserializable"
+            )
+        )
+    ) {{
+        string clsDir = Path.Combine(
+            causeDir,
+            {csharp_common.string_literal(cls_name_xml)}
+        );
+
+        if (!Directory.Exists(clsDir))
         {{
             // No examples of {cls_name_csharp} for the failure cause.
             continue;
         }}
-    
+
         var paths = Directory.GetFiles(
-            baseDir,
+            clsDir,
             "*.xml",
             System.IO.SearchOption.AllDirectories).ToList();
         paths.Sort();
@@ -242,7 +261,7 @@ public void Test_{cls_name_csharp}_deserialization_fail()
         foreach (var path in paths)
         {{
             using var xmlReader = System.Xml.XmlReader.Create(path);
-            
+
             Aas.Xmlization.Exception? exception = null;
 
             try
@@ -269,25 +288,31 @@ public void Test_{cls_name_csharp}_deserialization_fail()
 [Test]
 public void Test_{cls_name_csharp}_verification_fail()
 {{
-    foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
-    {{
-        string baseDir = Path.Combine(
-            Aas.Tests.Common.TestDataDir,
-            "Xml", 
-            "ContainedInEnvironment", 
-            "Unexpected", 
-            cause,
+    foreach (
+        string causeDir in
+        Directory.GetDirectories(
+            Path.Combine(
+                Aas.Tests.Common.TestDataDir,
+                "Xml",
+                "ContainedInEnvironment",
+                "Unexpected",
+                "Invalid"
+            )
+        )
+    ) {{
+        string clsDir = Path.Combine(
+            causeDir,
             {csharp_common.string_literal(cls_name_xml)}
         );
-    
-        if (!Directory.Exists(baseDir))
+
+        if (!Directory.Exists(clsDir))
         {{
             // No examples of {cls_name_csharp} for the failure cause.
             continue;
         }}
-    
+
         var paths = Directory.GetFiles(
-            baseDir,
+            clsDir,
             "*.xml",
             System.IO.SearchOption.AllDirectories).ToList();
         paths.Sort();
@@ -295,7 +320,7 @@ public void Test_{cls_name_csharp}_verification_fail()
         foreach (var path in paths)
         {{
             using var xmlReader = System.Xml.XmlReader.Create(path);
-        
+
             var container = Aas.Xmlization.Deserialize.{container_cls_csharp}From(
                 xmlReader);
 
@@ -443,15 +468,6 @@ private static void AssertSerializeDeserializeEqualsOriginal(
     }}
 }}
 
-private static readonly List<string> CausesForDeserializationFailure = (
-    new List<string>()
-    {{
-        "TypeViolation",
-        "RequiredViolation",
-        "EnumViolation",
-        "UnexpectedAdditionalProperty"
-    }});
-
 private static void AssertEqualsExpectedOrRerecordDeserializationException(
     Aas.Xmlization.Exception? exception,
     string path)
@@ -475,7 +491,9 @@ private static void AssertEqualsExpectedOrRerecordDeserializationException(
             if (!System.IO.File.Exists(exceptionPath))
             {{
                 throw new System.IO.FileNotFoundException(
-                    $"The file with the recorded exception does not exist: {{exceptionPath}}");
+                    "The file with the recorded exception does not " +
+                    $"exist: {{exceptionPath}}; maybe you want to set the environment " +
+                    $"variable {{Aas.Tests.Common.RecordModeEnvironmentVariableName}}?");
             }}
 
             string expected = System.IO.File.ReadAllText(exceptionPath);
@@ -535,7 +553,6 @@ using Directory = System.IO.Directory;
 using Path = System.IO.Path;
 
 using NUnit.Framework; // can't alias
-using System.Collections.Generic;  // can't alias
 using System.Linq;  // can't alias
 using System.Xml.Linq; // can't alias
 

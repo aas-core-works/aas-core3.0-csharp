@@ -40,7 +40,11 @@ namespace AasCore.Aas3_0.Tests
                 if (!System.IO.File.Exists(expectedPath))
                 {
                     throw new System.IO.FileNotFoundException(
-                        $"The file with the recorded value does not exist: {expectedPath}");
+                        $"The file with the recorded value does not exist: {expectedPath}; " +
+                        "maybe you want to set the environment " +
+                        $"variable {Aas.Tests.Common.RecordModeEnvironmentVariableName}?");
+
+
                 }
 
                 Nodes.JsonNode expected = Aas.Tests.CommonJson.ReadFromFile(
