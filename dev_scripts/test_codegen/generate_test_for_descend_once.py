@@ -82,7 +82,9 @@ private static void CompareOrRerecordTrace(
         if (!System.IO.File.Exists(expectedPath))
         {
             throw new System.IO.FileNotFoundException(
-                $"The file with the recorded trace does not exist: {expectedPath}");
+                $"The file with the recorded trace does not exist: {expectedPath}; " +
+                "maybe you want to set the environment " +
+                $"variable {Aas.Tests.Common.RecordModeEnvironmentVariableName}?");                
         }
 
         string expected = System.IO.File.ReadAllText(expectedPath);

@@ -8,7 +8,6 @@ using Directory = System.IO.Directory;
 using Nodes = System.Text.Json.Nodes;
 using Path = System.IO.Path;
 
-using System.Collections.Generic;  // can't alias
 using System.Linq;  // can't alias
 using NUnit.Framework; // can't alias
 
@@ -55,16 +54,6 @@ namespace AasCore.Aas3_0.Tests
             }
         }
 
-        private static readonly List<string> CausesForDeserializationFailure = (
-            new List<string>()
-            {
-                "TypeViolation",
-                "RequiredViolation",
-                "EnumViolation",
-                "NullViolation",
-                "UnexpectedAdditionalProperty"
-            });
-
         private static void AssertEqualsExpectedOrRerecordDeserializationException(
             Aas.Jsonization.Exception? exception,
             string path)
@@ -88,7 +77,9 @@ namespace AasCore.Aas3_0.Tests
                     if (!System.IO.File.Exists(exceptionPath))
                     {
                         throw new System.IO.FileNotFoundException(
-                            $"The file with the recorded exception does not exist: {exceptionPath}");
+                            $"The file with the recorded exception does not exist: {exceptionPath}; " +
+                            "maybe you want to set the environment " +
+                            $"variable {Aas.Tests.Common.RecordModeEnvironmentVariableName}?");
                     }
 
                     string expected = System.IO.File.ReadAllText(exceptionPath);
@@ -163,24 +154,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Extension_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "Extension");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "Extension"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Extension for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -209,25 +208,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Extension_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Extension"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Extension for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -309,24 +315,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AdministrativeInformation_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "AdministrativeInformation");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "AdministrativeInformation"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AdministrativeInformation for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -355,25 +369,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AdministrativeInformation_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "AdministrativeInformation"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AdministrativeInformation for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -455,24 +476,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Qualifier_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "Qualifier");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "Qualifier"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Qualifier for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -501,25 +530,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Qualifier_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Qualifier"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Qualifier for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -601,24 +637,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AssetAdministrationShell_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "AssetAdministrationShell");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "AssetAdministrationShell"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AssetAdministrationShell for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -647,25 +691,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AssetAdministrationShell_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "AssetAdministrationShell"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AssetAdministrationShell for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -747,24 +798,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AssetInformation_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "AssetInformation");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "AssetInformation"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AssetInformation for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -793,25 +852,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AssetInformation_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "AssetInformation"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AssetInformation for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -893,24 +959,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Resource_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "Resource");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "Resource"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Resource for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -939,25 +1013,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Resource_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Resource"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Resource for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1039,24 +1120,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_SpecificAssetId_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "SpecificAssetId");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "SpecificAssetId"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of SpecificAssetId for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1085,25 +1174,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_SpecificAssetId_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "SpecificAssetId"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of SpecificAssetId for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1185,24 +1281,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Submodel_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "Submodel");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "Submodel"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Submodel for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1231,25 +1335,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Submodel_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Submodel"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Submodel for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1331,24 +1442,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_RelationshipElement_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "RelationshipElement");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "RelationshipElement"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of RelationshipElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1377,25 +1496,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_RelationshipElement_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "RelationshipElement"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of RelationshipElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1477,24 +1603,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_SubmodelElementList_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "SubmodelElementList");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "SubmodelElementList"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of SubmodelElementList for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1523,25 +1657,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_SubmodelElementList_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "SubmodelElementList"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of SubmodelElementList for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1623,24 +1764,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_SubmodelElementCollection_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "SubmodelElementCollection");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "SubmodelElementCollection"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of SubmodelElementCollection for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1669,25 +1818,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_SubmodelElementCollection_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "SubmodelElementCollection"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of SubmodelElementCollection for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1769,24 +1925,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Property_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "Property");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "Property"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Property for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1815,25 +1979,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Property_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Property"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Property for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1915,24 +2086,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_MultiLanguageProperty_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "MultiLanguageProperty");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "MultiLanguageProperty"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of MultiLanguageProperty for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1961,25 +2140,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_MultiLanguageProperty_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "MultiLanguageProperty"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of MultiLanguageProperty for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2061,24 +2247,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Range_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "Range");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "Range"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Range for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2107,25 +2301,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Range_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Range"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Range for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2207,24 +2408,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ReferenceElement_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "ReferenceElement");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "ReferenceElement"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ReferenceElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2253,25 +2462,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ReferenceElement_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "ReferenceElement"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ReferenceElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2353,24 +2569,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Blob_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "Blob");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "Blob"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Blob for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2399,25 +2623,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Blob_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Blob"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Blob for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2499,24 +2730,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_File_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "File");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "File"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of File for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2545,25 +2784,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_File_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "File"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of File for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2645,24 +2891,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AnnotatedRelationshipElement_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "AnnotatedRelationshipElement");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "AnnotatedRelationshipElement"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AnnotatedRelationshipElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2691,25 +2945,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AnnotatedRelationshipElement_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "AnnotatedRelationshipElement"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AnnotatedRelationshipElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2791,24 +3052,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Entity_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "Entity");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "Entity"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Entity for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2837,25 +3106,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Entity_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Entity"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Entity for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2907,25 +3183,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_EventPayload_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "SelfContained",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "SelfContained",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "EventPayload"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of EventPayload for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2954,25 +3237,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_EventPayload_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "SelfContained",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "SelfContained",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "EventPayload"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of EventPayload for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3054,24 +3344,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_BasicEventElement_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "BasicEventElement");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "BasicEventElement"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of BasicEventElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3100,25 +3398,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_BasicEventElement_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "BasicEventElement"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of BasicEventElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3200,24 +3505,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Operation_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "Operation");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "Operation"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Operation for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3246,25 +3559,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Operation_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Operation"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Operation for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3346,24 +3666,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_OperationVariable_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "OperationVariable");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "OperationVariable"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of OperationVariable for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3392,25 +3720,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_OperationVariable_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "OperationVariable"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of OperationVariable for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3492,24 +3827,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Capability_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "Capability");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "Capability"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Capability for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3538,25 +3881,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Capability_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Capability"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Capability for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3638,24 +3988,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ConceptDescription_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "ConceptDescription");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "ConceptDescription"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ConceptDescription for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3684,25 +4042,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ConceptDescription_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "ConceptDescription"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ConceptDescription for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3784,24 +4149,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Reference_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "Reference");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "Reference"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Reference for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3830,25 +4203,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Reference_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Reference"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Reference for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3930,24 +4310,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Key_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "Key");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "Key"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Key for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3976,25 +4364,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Key_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Key"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Key for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4076,24 +4471,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringNameType_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "LangStringNameType");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "LangStringNameType"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringNameType for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4122,25 +4525,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringNameType_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "LangStringNameType"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringNameType for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4222,24 +4632,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringTextType_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "LangStringTextType");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "LangStringTextType"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringTextType for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4268,25 +4686,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringTextType_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "LangStringTextType"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringTextType for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4338,25 +4763,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Environment_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "SelfContained",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "SelfContained",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Environment"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Environment for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4385,25 +4817,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Environment_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "SelfContained",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "SelfContained",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "Environment"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Environment for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4485,24 +4924,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_EmbeddedDataSpecification_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "EmbeddedDataSpecification");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "EmbeddedDataSpecification"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of EmbeddedDataSpecification for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4531,25 +4978,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_EmbeddedDataSpecification_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "EmbeddedDataSpecification"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of EmbeddedDataSpecification for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4631,24 +5085,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LevelType_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "LevelType");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "LevelType"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LevelType for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4677,25 +5139,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LevelType_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "LevelType"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LevelType for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4777,24 +5246,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ValueReferencePair_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "ValueReferencePair");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "ValueReferencePair"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ValueReferencePair for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4823,25 +5300,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ValueReferencePair_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "ValueReferencePair"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ValueReferencePair for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4923,24 +5407,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ValueList_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "ValueList");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "ValueList"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ValueList for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4969,25 +5461,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ValueList_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "ValueList"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ValueList for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -5069,24 +5568,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringPreferredNameTypeIec61360_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "LangStringPreferredNameTypeIec61360");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "LangStringPreferredNameTypeIec61360"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringPreferredNameTypeIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -5115,25 +5622,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringPreferredNameTypeIec61360_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "LangStringPreferredNameTypeIec61360"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringPreferredNameTypeIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -5215,24 +5729,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringShortNameTypeIec61360_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "LangStringShortNameTypeIec61360");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "LangStringShortNameTypeIec61360"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringShortNameTypeIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -5261,25 +5783,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringShortNameTypeIec61360_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "LangStringShortNameTypeIec61360"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringShortNameTypeIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -5361,24 +5890,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringDefinitionTypeIec61360_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "LangStringDefinitionTypeIec61360");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "LangStringDefinitionTypeIec61360"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringDefinitionTypeIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -5407,25 +5944,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringDefinitionTypeIec61360_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "LangStringDefinitionTypeIec61360"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringDefinitionTypeIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -5507,24 +6051,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_DataSpecificationIec61360_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "DataSpecificationIec61360");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "DataSpecificationIec61360"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of DataSpecificationIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -5553,25 +6105,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_DataSpecificationIec61360_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Json",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Json",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "DataSpecificationIec61360"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of DataSpecificationIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.json",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();

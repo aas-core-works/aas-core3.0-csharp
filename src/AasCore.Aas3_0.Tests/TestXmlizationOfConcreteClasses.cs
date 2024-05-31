@@ -8,7 +8,6 @@ using Directory = System.IO.Directory;
 using Path = System.IO.Path;
 
 using NUnit.Framework; // can't alias
-using System.Collections.Generic;  // can't alias
 using System.Linq;  // can't alias
 using System.Xml.Linq; // can't alias
 
@@ -129,15 +128,6 @@ namespace AasCore.Aas3_0.Tests
             }
         }
 
-        private static readonly List<string> CausesForDeserializationFailure = (
-            new List<string>()
-            {
-                "TypeViolation",
-                "RequiredViolation",
-                "EnumViolation",
-                "UnexpectedAdditionalProperty"
-            });
-
         private static void AssertEqualsExpectedOrRerecordDeserializationException(
             Aas.Xmlization.Exception? exception,
             string path)
@@ -161,7 +151,9 @@ namespace AasCore.Aas3_0.Tests
                     if (!System.IO.File.Exists(exceptionPath))
                     {
                         throw new System.IO.FileNotFoundException(
-                            $"The file with the recorded exception does not exist: {exceptionPath}");
+                            "The file with the recorded exception does not " +
+                            $"exist: {exceptionPath}; maybe you want to set the environment " +
+                            $"variable {Aas.Tests.Common.RecordModeEnvironmentVariableName}?");
                     }
 
                     string expected = System.IO.File.ReadAllText(exceptionPath);
@@ -206,24 +198,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Extension_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "extension");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "extension"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Extension for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -253,25 +253,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Extension_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "extension"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Extension for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -323,24 +330,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AdministrativeInformation_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "administrativeInformation");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "administrativeInformation"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AdministrativeInformation for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -370,25 +385,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AdministrativeInformation_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "administrativeInformation"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AdministrativeInformation for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -440,24 +462,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Qualifier_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "qualifier");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "qualifier"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Qualifier for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -487,25 +517,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Qualifier_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "qualifier"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Qualifier for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -557,24 +594,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AssetAdministrationShell_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "assetAdministrationShell");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "assetAdministrationShell"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AssetAdministrationShell for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -604,25 +649,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AssetAdministrationShell_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "assetAdministrationShell"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AssetAdministrationShell for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -674,24 +726,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AssetInformation_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "assetInformation");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "assetInformation"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AssetInformation for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -721,25 +781,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AssetInformation_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "assetInformation"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AssetInformation for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -791,24 +858,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Resource_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "resource");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "resource"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Resource for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -838,25 +913,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Resource_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "resource"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Resource for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -908,24 +990,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_SpecificAssetId_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "specificAssetId");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "specificAssetId"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of SpecificAssetId for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -955,25 +1045,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_SpecificAssetId_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "specificAssetId"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of SpecificAssetId for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1025,24 +1122,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Submodel_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "submodel");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "submodel"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Submodel for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1072,25 +1177,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Submodel_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "submodel"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Submodel for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1142,24 +1254,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_RelationshipElement_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "relationshipElement");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "relationshipElement"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of RelationshipElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1189,25 +1309,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_RelationshipElement_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "relationshipElement"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of RelationshipElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1259,24 +1386,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_SubmodelElementList_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "submodelElementList");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "submodelElementList"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of SubmodelElementList for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1306,25 +1441,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_SubmodelElementList_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "submodelElementList"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of SubmodelElementList for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1376,24 +1518,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_SubmodelElementCollection_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "submodelElementCollection");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "submodelElementCollection"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of SubmodelElementCollection for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1423,25 +1573,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_SubmodelElementCollection_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "submodelElementCollection"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of SubmodelElementCollection for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1493,24 +1650,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Property_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "property");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "property"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Property for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1540,25 +1705,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Property_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "property"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Property for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1610,24 +1782,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_MultiLanguageProperty_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "multiLanguageProperty");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "multiLanguageProperty"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of MultiLanguageProperty for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1657,25 +1837,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_MultiLanguageProperty_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "multiLanguageProperty"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of MultiLanguageProperty for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1727,24 +1914,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Range_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "range");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "range"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Range for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1774,25 +1969,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Range_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "range"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Range for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1844,24 +2046,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ReferenceElement_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "referenceElement");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "referenceElement"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ReferenceElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1891,25 +2101,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ReferenceElement_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "referenceElement"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ReferenceElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -1961,24 +2178,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Blob_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "blob");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "blob"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Blob for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2008,25 +2233,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Blob_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "blob"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Blob for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2078,24 +2310,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_File_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "file");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "file"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of File for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2125,25 +2365,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_File_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "file"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of File for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2195,24 +2442,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AnnotatedRelationshipElement_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "annotatedRelationshipElement");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "annotatedRelationshipElement"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AnnotatedRelationshipElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2242,25 +2497,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_AnnotatedRelationshipElement_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "annotatedRelationshipElement"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of AnnotatedRelationshipElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2312,24 +2574,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Entity_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "entity");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "entity"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Entity for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2359,25 +2629,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Entity_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "entity"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Entity for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2429,25 +2706,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_EventPayload_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "SelfContained",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "SelfContained",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "eventPayload"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of EventPayload for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2477,25 +2761,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_EventPayload_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "SelfContained",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "SelfContained",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "eventPayload"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of EventPayload for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2547,24 +2838,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_BasicEventElement_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "basicEventElement");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "basicEventElement"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of BasicEventElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2594,25 +2893,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_BasicEventElement_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "basicEventElement"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of BasicEventElement for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2664,24 +2970,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Operation_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "operation");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "operation"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Operation for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2711,25 +3025,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Operation_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "operation"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Operation for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2781,24 +3102,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_OperationVariable_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "operationVariable");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "operationVariable"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of OperationVariable for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2828,25 +3157,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_OperationVariable_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "operationVariable"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of OperationVariable for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2898,24 +3234,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Capability_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "capability");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "capability"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Capability for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -2945,25 +3289,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Capability_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "capability"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Capability for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3015,24 +3366,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ConceptDescription_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "conceptDescription");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "conceptDescription"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ConceptDescription for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3062,25 +3421,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ConceptDescription_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "conceptDescription"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ConceptDescription for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3132,24 +3498,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Reference_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "reference");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "reference"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Reference for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3179,25 +3553,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Reference_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "reference"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Reference for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3249,24 +3630,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Key_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "key");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "key"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Key for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3296,25 +3685,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Key_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "key"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Key for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3366,24 +3762,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringNameType_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "langStringNameType");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "langStringNameType"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringNameType for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3413,25 +3817,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringNameType_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "langStringNameType"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringNameType for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3483,24 +3894,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringTextType_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "langStringTextType");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "langStringTextType"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringTextType for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3530,25 +3949,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringTextType_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "langStringTextType"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringTextType for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3600,25 +4026,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Environment_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "SelfContained",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "SelfContained",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "environment"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Environment for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3648,25 +4081,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_Environment_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "SelfContained",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "SelfContained",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "environment"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of Environment for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3718,24 +4158,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_EmbeddedDataSpecification_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "embeddedDataSpecification");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "embeddedDataSpecification"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of EmbeddedDataSpecification for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3765,25 +4213,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_EmbeddedDataSpecification_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "embeddedDataSpecification"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of EmbeddedDataSpecification for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3835,24 +4290,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LevelType_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "levelType");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "levelType"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LevelType for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3882,25 +4345,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LevelType_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "levelType"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LevelType for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3952,24 +4422,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ValueReferencePair_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "valueReferencePair");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "valueReferencePair"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ValueReferencePair for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -3999,25 +4477,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ValueReferencePair_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "valueReferencePair"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ValueReferencePair for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4069,24 +4554,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ValueList_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "valueList");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "valueList"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ValueList for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4116,25 +4609,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_ValueList_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "valueList"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of ValueList for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4186,24 +4686,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringPreferredNameTypeIec61360_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "langStringPreferredNameTypeIec61360");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "langStringPreferredNameTypeIec61360"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringPreferredNameTypeIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4233,25 +4741,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringPreferredNameTypeIec61360_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "langStringPreferredNameTypeIec61360"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringPreferredNameTypeIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4303,24 +4818,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringShortNameTypeIec61360_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "langStringShortNameTypeIec61360");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "langStringShortNameTypeIec61360"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringShortNameTypeIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4350,25 +4873,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringShortNameTypeIec61360_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "langStringShortNameTypeIec61360"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringShortNameTypeIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4420,24 +4950,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringDefinitionTypeIec61360_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "langStringDefinitionTypeIec61360");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "langStringDefinitionTypeIec61360"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringDefinitionTypeIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4467,25 +5005,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_LangStringDefinitionTypeIec61360_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "langStringDefinitionTypeIec61360"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of LangStringDefinitionTypeIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4537,24 +5082,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_DataSpecificationIec61360_deserialization_fail()
         {
-            foreach (string cause in CausesForDeserializationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Unserializable"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
-                    "dataSpecificationIec61360");
+                string clsDir = Path.Combine(
+                    causeDir,
+                    "dataSpecificationIec61360"
+                );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of DataSpecificationIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
@@ -4584,25 +5137,32 @@ namespace AasCore.Aas3_0.Tests
         [Test]
         public void Test_DataSpecificationIec61360_verification_fail()
         {
-            foreach (string cause in Aas.Tests.Common.CausesForVerificationFailure)
+            foreach (
+                string causeDir in
+                Directory.GetDirectories(
+                    Path.Combine(
+                        Aas.Tests.Common.TestDataDir,
+                        "Xml",
+                        "ContainedInEnvironment",
+                        "Unexpected",
+                        "Invalid"
+                    )
+                )
+            )
             {
-                string baseDir = Path.Combine(
-                    Aas.Tests.Common.TestDataDir,
-                    "Xml",
-                    "ContainedInEnvironment",
-                    "Unexpected",
-                    cause,
+                string clsDir = Path.Combine(
+                    causeDir,
                     "dataSpecificationIec61360"
                 );
 
-                if (!Directory.Exists(baseDir))
+                if (!Directory.Exists(clsDir))
                 {
                     // No examples of DataSpecificationIec61360 for the failure cause.
                     continue;
                 }
 
                 var paths = Directory.GetFiles(
-                    baseDir,
+                    clsDir,
                     "*.xml",
                     System.IO.SearchOption.AllDirectories).ToList();
                 paths.Sort();
