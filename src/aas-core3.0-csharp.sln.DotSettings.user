@@ -4,7 +4,7 @@
     &lt;TestId&gt;NUnit3x::BDA0E5A2-D48D-4888-9D52-44BD529F8108::net6.0::AasCore.Aas3_0.Tests.TestXmlizationErrors.Test_error_on_unexpected_declaration&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bd994a3b_002D4a4e_002D4b0b_002D90d4_002Ddfcb614164d9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test_XML_serialization" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bd994a3b_002D4a4e_002D4b0b_002D90d4_002Ddfcb614164d9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test_XML_serialization" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Or&gt;&#xD;
     &lt;ProjectFile&gt;BDA0E5A2-D48D-4888-9D52-44BD529F8108/f:TestXmlizationOfConcreteClasses.cs&lt;/ProjectFile&gt;&#xD;
     &lt;ProjectFile&gt;BDA0E5A2-D48D-4888-9D52-44BD529F8108/f:TestXmlizationOfConcreteClassesOutsideContainer.cs&lt;/ProjectFile&gt;&#xD;
@@ -17,12 +17,13 @@
     &lt;/TestAncestor&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d08349d0_002D1d79_002D48ae_002D9b89_002D73f1b5254923/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test_XML_serialization #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d08349d0_002D1d79_002D48ae_002D9b89_002D73f1b5254923/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test_XML_serialization #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::BDA0E5A2-D48D-4888-9D52-44BD529F8108::net6.0::AasCore.Aas3_0.Tests.TestExamples.Test_XML_serialization&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::BDA0E5A2-D48D-4888-9D52-44BD529F8108::net6.0::AasCore.Aas3_0.Tests.TestExamples.Test_JSON_deserialization&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::BDA0E5A2-D48D-4888-9D52-44BD529F8108::net6.0::AasCore.Aas3_0.Tests.TestExamples.Test_selective_enhancing&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::BDA0E5A2-D48D-4888-9D52-44BD529F8108::net6.0::AasCore.Aas3_0.Tests.TestXmlizationErrors.Test_error_on_unexpected_declaration&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BDA0E5A2-D48D-4888-9D52-44BD529F8108::net6.0::AasCore.Aas3_0.Tests.TestJsonizationOfConcreteClasses&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
