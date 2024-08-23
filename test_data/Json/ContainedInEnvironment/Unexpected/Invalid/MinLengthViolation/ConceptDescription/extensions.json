@@ -17,6 +17,15 @@
       ],
       "embeddedDataSpecifications": [
         {
+          "dataSpecification": {
+            "keys": [
+              {
+                "type": "Submodel",
+                "value": "urn:example14:c4971d26"
+              }
+            ],
+            "type": "ModelReference"
+          },
           "dataSpecificationContent": {
             "modelType": "DataSpecificationIec61360",
             "preferredName": [

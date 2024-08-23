@@ -9128,15 +9128,12 @@ namespace AasCore.Aas3_0
                     yield return error;
                 }
 
-                if (that.DataSpecification != null)
+                foreach (var error in Verification.Verify(that.DataSpecification))
                 {
-                    foreach (var error in Verification.Verify(that.DataSpecification))
-                    {
-                        error.PrependSegment(
-                            new Reporting.NameSegment(
-                                "dataSpecification"));
-                        yield return error;
-                    }
+                    error.PrependSegment(
+                        new Reporting.NameSegment(
+                            "dataSpecification"));
+                    yield return error;
                 }
             }
 
@@ -9382,7 +9379,7 @@ namespace AasCore.Aas3_0
                 {
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
-                        "Constraint AASc-002: preferred name shall be provided at " +
+                        "Constraint AASc-3a-002: preferred name shall be provided at " +
                         "least in English.");
                 }
 
@@ -9942,14 +9939,6 @@ namespace AasCore.Aas3_0
                 yield return new Reporting.Error(
                     "Invariant violated:\n" +
                     "Identifier shall have a maximum length of 2000 characters.");
-            }
-
-            if (!Verification.MatchesRfc8089Path(that))
-            {
-                yield return new Reporting.Error(
-                    "Invariant violated:\n" +
-                    "The value must represent a valid file URI scheme according " +
-                    "to RFC 8089.");
             }
         }
 

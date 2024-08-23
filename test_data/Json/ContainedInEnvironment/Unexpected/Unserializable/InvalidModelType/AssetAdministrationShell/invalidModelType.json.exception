@@ -1,0 +1,1 @@
+Expected the model type 'AssetAdministrationShell', but got aCompletelyInvalidModelType at: assetAdministrationShells[0].modelType
