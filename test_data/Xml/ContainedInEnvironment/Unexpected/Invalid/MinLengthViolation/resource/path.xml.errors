@@ -1,4 +1,2 @@
 assetAdministrationShells[0].assetInformation.defaultThumbnail.path: Invariant violated:
-The value must not be empty.;
-assetAdministrationShells[0].assetInformation.defaultThumbnail.path: Invariant violated:
-The value must represent a valid file URI scheme according to RFC 8089.
+The value must not be empty.

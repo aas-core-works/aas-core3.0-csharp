@@ -34,6 +34,15 @@
 							<value>something_a864dcb4</value>
 						</dataSpecificationIec61360>
 					</dataSpecificationContent>
+					<dataSpecification>
+						<type>ModelReference</type>
+						<keys>
+							<key>
+								<type>Submodel</type>
+								<value>urn:example14:c4971d26</value>
+							</key>
+						</keys>
+					</dataSpecification>
 				</embeddedDataSpecification>
 			</embeddedDataSpecifications>
 			<isCaseOf>

@@ -58,6 +58,15 @@
 									<value>something_4e9c19b7</value>
 								</dataSpecificationIec61360>
 							</dataSpecificationContent>
+							<dataSpecification>
+								<type>ModelReference</type>
+								<keys>
+									<key>
+										<type>Submodel</type>
+										<value>urn:another-company15:2bd0986b</value>
+									</key>
+								</keys>
+							</dataSpecification>
 						</embeddedDataSpecification>
 					</embeddedDataSpecifications>
 					<observed>

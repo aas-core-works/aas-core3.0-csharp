@@ -13,6 +13,15 @@
         },
         "embeddedDataSpecifications": [
           {
+            "dataSpecification": {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "urn:something14:18179b7a"
+                }
+              ],
+              "type": "ExternalReference"
+            },
             "dataSpecificationContent": {
               "modelType": "DataSpecificationIec61360",
               "preferredName": [

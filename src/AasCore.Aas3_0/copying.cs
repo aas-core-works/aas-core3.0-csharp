@@ -2458,9 +2458,7 @@ namespace AasCore.Aas3_0
             {
                 return new Aas.EmbeddedDataSpecification(
                     Deep(that.DataSpecificationContent),
-                    (that.DataSpecification != null)
-                        ? Deep(that.DataSpecification)
-                        : null
+                    Deep(that.DataSpecification)
                 );
             }
 

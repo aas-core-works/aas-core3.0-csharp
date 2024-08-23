@@ -16,6 +16,15 @@
           "displayName": [],
           "embeddedDataSpecifications": [
             {
+              "dataSpecification": {
+                "keys": [
+                  {
+                    "type": "Submodel",
+                    "value": "urn:another-company15:2bd0986b"
+                  }
+                ],
+                "type": "ModelReference"
+              },
               "dataSpecificationContent": {
                 "modelType": "DataSpecificationIec61360",
                 "preferredName": [
@@ -65,7 +74,7 @@
               "type": "ModelReference"
             }
           ],
-          "value": "file:/path/to/somewhere"
+          "value": "something_158159bf"
         }
       ]
     }

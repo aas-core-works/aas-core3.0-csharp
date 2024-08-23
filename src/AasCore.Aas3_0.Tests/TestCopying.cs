@@ -1781,11 +1781,9 @@ namespace AasCore.Aas3_0.Tests
                     Transform(
                         that.DataSpecificationContent,
                         casted.DataSpecificationContent)
-                    && (that.DataSpecification != null && casted.DataSpecification != null)
-                        ? Transform(
-                                that.DataSpecification,
-                                casted.DataSpecification)
-                        : that.DataSpecification == null && casted.DataSpecification == null);
+                    && Transform(
+                        that.DataSpecification,
+                        casted.DataSpecification));
             }
 
             public override bool TransformLevelType(
