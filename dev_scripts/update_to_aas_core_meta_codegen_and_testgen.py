@@ -285,13 +285,13 @@ def _replace_test_data(
 
     print(f"Removing the test data from: {test_data_dir}")
 
-    for pth in [
-        test_data_dir / name
-        for name in ("Descend", "DescendOnce", "Json", "Xml", "XOrDefault")
-    ]:
-        if pth.exists():
-            print(f"Removing {pth} ...")
-            shutil.rmtree(pth)
+    for pth in sorted(
+            sub_pth
+            for sub_pth in test_data_dir.iterdir()
+            if sub_pth.is_dir()
+    ):
+        print(f"Removing {pth} ...")
+        shutil.rmtree(pth)
 
     print(f"Copying the test data from: {aas_core_testgen_repo} ...")
     for pth in [aas_core_testgen_repo / "test_data" / name for name in ("Json", "Xml")]:
@@ -590,11 +590,11 @@ def main() -> int:
         aas_core_codegen_revision=aas_core_codegen_revision,
     )
 
+    _replace_test_data(our_repo=our_repo, aas_core_testgen_repo=aas_core_testgen_repo)
+
     exit_code = _generate_test_code(our_repo=our_repo)
     if exit_code is not None:
         return exit_code
-
-    _replace_test_data(our_repo=our_repo, aas_core_testgen_repo=aas_core_testgen_repo)
 
     _reformat_code(our_repo=our_repo)
 
