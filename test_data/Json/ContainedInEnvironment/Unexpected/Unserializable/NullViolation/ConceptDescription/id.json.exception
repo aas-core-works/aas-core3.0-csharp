@@ -1,1 +1,1 @@
-Required property "id" is missing at: conceptDescriptions[0]
+Unexpected null for a required property at: conceptDescriptions[0].id

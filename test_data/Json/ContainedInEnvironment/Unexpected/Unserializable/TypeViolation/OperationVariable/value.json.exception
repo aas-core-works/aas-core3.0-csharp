@@ -1,1 +1,1 @@
-Expected Nodes.JsonObject, but got {node.GetType()} at: submodels[0].submodelElements[0].inputVariables[0].value
+Expected Nodes.JsonObject, but got System.Text.Json.Nodes.JsonValueTrimmable`1[System.Text.Json.JsonElement] at: submodels[0].submodelElements[0].inputVariables[0].value

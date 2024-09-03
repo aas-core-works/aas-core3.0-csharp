@@ -1,1 +1,1 @@
-Required property "id" is missing at: submodels[0]
+Unexpected null for a required property at: submodels[0].id

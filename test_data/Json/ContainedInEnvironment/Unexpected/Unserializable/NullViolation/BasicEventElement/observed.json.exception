@@ -1,1 +1,1 @@
-Required property "observed" is missing at: submodels[0].submodelElements[0]
+Unexpected null for a required property at: submodels[0].submodelElements[0].observed

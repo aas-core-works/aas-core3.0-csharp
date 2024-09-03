@@ -1,1 +1,1 @@
-Required property "max" is missing at: assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent.levelType
+Unexpected null for a required property at: assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent.levelType.max

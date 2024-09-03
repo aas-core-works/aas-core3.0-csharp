@@ -1,1 +1,1 @@
-Required property "timeStamp" is missing at: 
+Unexpected null for a required property at: timeStamp
