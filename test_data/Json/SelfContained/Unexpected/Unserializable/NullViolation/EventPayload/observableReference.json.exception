@@ -1,1 +1,1 @@
-Required property "observableReference" is missing at: 
+Unexpected null for a required property at: observableReference

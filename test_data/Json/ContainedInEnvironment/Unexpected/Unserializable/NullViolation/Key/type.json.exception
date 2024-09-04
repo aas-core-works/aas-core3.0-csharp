@@ -1,1 +1,1 @@
-Required property "type" is missing at: assetAdministrationShells[0].derivedFrom.keys[0]
+Unexpected null for a required property at: assetAdministrationShells[0].derivedFrom.keys[0].type

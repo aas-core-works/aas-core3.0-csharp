@@ -1,1 +1,1 @@
-Required property "assetKind" is missing at: assetAdministrationShells[0].assetInformation
+Unexpected null for a required property at: assetAdministrationShells[0].assetInformation.assetKind

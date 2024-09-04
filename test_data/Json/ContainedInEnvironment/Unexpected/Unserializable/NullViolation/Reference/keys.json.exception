@@ -1,1 +1,1 @@
-Required property "keys" is missing at: assetAdministrationShells[0].derivedFrom
+Unexpected null for a required property at: assetAdministrationShells[0].derivedFrom.keys

@@ -1,1 +1,1 @@
-Required property "path" is missing at: assetAdministrationShells[0].assetInformation.defaultThumbnail
+Unexpected null for a required property at: assetAdministrationShells[0].assetInformation.defaultThumbnail.path

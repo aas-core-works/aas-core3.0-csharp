@@ -1,1 +1,1 @@
-Required property "text" is missing at: assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent.shortName[0]
+Unexpected null for a required property at: assetAdministrationShells[0].embeddedDataSpecifications[0].dataSpecificationContent.shortName[0].text

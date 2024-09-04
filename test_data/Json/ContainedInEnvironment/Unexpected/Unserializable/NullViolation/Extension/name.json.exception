@@ -1,1 +1,1 @@
-Required property "name" is missing at: assetAdministrationShells[0].extensions[0]
+Unexpected null for a required property at: assetAdministrationShells[0].extensions[0].name

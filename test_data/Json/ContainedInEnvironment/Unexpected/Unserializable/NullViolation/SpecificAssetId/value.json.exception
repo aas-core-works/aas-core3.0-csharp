@@ -1,1 +1,1 @@
-Required property "value" is missing at: assetAdministrationShells[0].assetInformation.specificAssetIds[0]
+Unexpected null for a required property at: assetAdministrationShells[0].assetInformation.specificAssetIds[0].value

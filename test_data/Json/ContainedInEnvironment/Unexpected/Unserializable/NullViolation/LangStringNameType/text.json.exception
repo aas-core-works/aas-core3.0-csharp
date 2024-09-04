@@ -1,1 +1,1 @@
-Required property "text" is missing at: assetAdministrationShells[0].displayName[0]
+Unexpected null for a required property at: assetAdministrationShells[0].displayName[0].text
