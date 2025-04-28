@@ -9120,19 +9120,19 @@ namespace AasCore.Aas3_0
                 Aas.IEmbeddedDataSpecification that
             )
             {
-                foreach (var error in Verification.Verify(that.DataSpecificationContent))
-                {
-                    error.PrependSegment(
-                        new Reporting.NameSegment(
-                            "dataSpecificationContent"));
-                    yield return error;
-                }
-
                 foreach (var error in Verification.Verify(that.DataSpecification))
                 {
                     error.PrependSegment(
                         new Reporting.NameSegment(
                             "dataSpecification"));
+                    yield return error;
+                }
+
+                foreach (var error in Verification.Verify(that.DataSpecificationContent))
+                {
+                    error.PrependSegment(
+                        new Reporting.NameSegment(
+                            "dataSpecificationContent"));
                     yield return error;
                 }
             }
@@ -9566,6 +9566,22 @@ namespace AasCore.Aas3_0
         /// <summary>
         /// Verify the constraints of <paramref name="that" />.
         /// </summary>
+        public static IEnumerable<Reporting.Error> VerifyXmlSerializableString(
+            string that)
+        {
+            if (!Verification.MatchesXmlSerializableString(that))
+            {
+                yield return new Reporting.Error(
+                    "Invariant violated:\n" +
+                    "Constraint AASd-130: An attribute with data type 'string' " +
+                    "shall consist of these characters only: " +
+                    "^[\\x09\\x0A\\x0D\\x20-\\uD7FF\\uE000-\\uFFFD\\U00010000-\\U0010FFFF]*$.");
+            }
+        }
+
+        /// <summary>
+        /// Verify the constraints of <paramref name="that" />.
+        /// </summary>
         public static IEnumerable<Reporting.Error> VerifyNonEmptyXmlSerializableString(
             string that)
         {
@@ -9978,8 +9994,14 @@ namespace AasCore.Aas3_0
         public static IEnumerable<Reporting.Error> VerifyValueDataType(
             string that)
         {
-            // There is no verification specified.
-            yield break;
+            if (!Verification.MatchesXmlSerializableString(that))
+            {
+                yield return new Reporting.Error(
+                    "Invariant violated:\n" +
+                    "Constraint AASd-130: An attribute with data type 'string' " +
+                    "shall consist of these characters only: " +
+                    "^[\\x09\\x0A\\x0D\\x20-\\uD7FF\\uE000-\\uFFFD\\U00010000-\\U0010FFFF]*$.");
+            }
         }
 
         /// <summary>

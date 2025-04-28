@@ -1,2 +1,4 @@
 submodels[0].qualifiers[0]: Invariant violated:
-Constraint AASd-020: The value shall be consistent to the data type as defined in value type.
+Constraint AASd-020: The value shall be consistent to the data type as defined in value type.;
+submodels[0].qualifiers[0].value: Invariant violated:
+Constraint AASd-130: An attribute with data type 'string' shall consist of these characters only: ^[\x09\x0A\x0D\x20-\uD7FF\uE000-\uFFFD\U00010000-\U0010FFFF]*$.

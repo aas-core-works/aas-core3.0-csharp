@@ -4,6 +4,7 @@
 			<id>something_142922d6</id>
 			<embeddedDataSpecifications>
 				<embeddedDataSpecification>
+					<dataSpecification>Unexpected string value</dataSpecification>
 					<dataSpecificationContent>
 						<dataSpecificationIec61360>
 							<preferredName>
@@ -19,7 +20,6 @@
 							<value>something_13759f45</value>
 						</dataSpecificationIec61360>
 					</dataSpecificationContent>
-					<dataSpecification>Unexpected string value</dataSpecification>
 				</embeddedDataSpecification>
 			</embeddedDataSpecifications>
 			<assetInformation>
