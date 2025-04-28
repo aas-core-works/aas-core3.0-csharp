@@ -7895,20 +7895,20 @@ class _Transformer(
             self,
             that: aas_types.EmbeddedDataSpecification
     ) -> Iterator[Error]:
-        for error in self.transform(that.data_specification_content):
-            error.path._prepend(
-                PropertySegment(
-                    that,
-                    'data_specification_content'
-                )
-            )
-            yield error
-
         for error in self.transform(that.data_specification):
             error.path._prepend(
                 PropertySegment(
                     that,
                     'data_specification'
+                )
+            )
+            yield error
+
+        for error in self.transform(that.data_specification_content):
+            error.path._prepend(
+                PropertySegment(
+                    that,
+                    'data_specification_content'
                 )
             )
             yield error
@@ -8301,6 +8301,18 @@ def verify(
     yield from _TRANSFORMER.transform(that)
 
 
+def verify_xml_serializable_string(
+        that: str
+) -> Iterator[Error]:
+    """Verify the constraints of :paramref:`that`."""
+    if not matches_xml_serializable_string(that):
+        yield Error(
+            "Constraint AASd-130: An attribute with data type 'string' " +
+            'shall consist of these characters only: ' +
+            '^[\\x09\\x0A\\x0D\\x20-\\uD7FF\\uE000-\\uFFFD\\U00010000-\\U0010FFFF]*$.'
+        )
+
+
 def verify_non_empty_xml_serializable_string(
         that: str
 ) -> Iterator[Error]:
@@ -8608,18 +8620,16 @@ def verify_qualifier_type(
         )
 
 
-# noinspection PyUnusedLocal
 def verify_value_data_type(
         that: str
 ) -> Iterator[Error]:
     """Verify the constraints of :paramref:`that`."""
-    # There is no verification specified.
-    return
-
-    # Empty generator according to:
-    # https://stackoverflow.com/a/13243870/1600678
-    # noinspection PyUnreachableCode
-    yield
+    if not matches_xml_serializable_string(that):
+        yield Error(
+            "Constraint AASd-130: An attribute with data type 'string' " +
+            'shall consist of these characters only: ' +
+            '^[\\x09\\x0A\\x0D\\x20-\\uD7FF\\uE000-\\uFFFD\\U00010000-\\U0010FFFF]*$.'
+        )
 
 
 def verify_id_short_type(

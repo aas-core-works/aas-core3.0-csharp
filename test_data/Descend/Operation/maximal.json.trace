@@ -7,11 +7,11 @@ Reference
 Key
 Qualifier
 EmbeddedDataSpecification
+Reference
+Key
 DataSpecificationIec61360
 LangStringPreferredNameTypeIec61360
 LangStringPreferredNameTypeIec61360
-Reference
-Key
 OperationVariable
 AasCore.Aas3_0.Entity with ID-short something_c8b0a9a0
 OperationVariable

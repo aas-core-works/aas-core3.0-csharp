@@ -1,1 +1,1 @@
-The property Nom of an instance of class LevelType could not be de-serialized: Content cannot be converted to the type Boolean. Line 23, position 11. at: assetAdministrationShells/*[0]/embeddedDataSpecifications/*[0]/dataSpecificationContent/dataSpecificationIec61360/levelType/nom
+The property Nom of an instance of class LevelType could not be de-serialized: Content cannot be converted to the type Boolean. Line 32, position 11. at: assetAdministrationShells/*[0]/embeddedDataSpecifications/*[0]/dataSpecificationContent/dataSpecificationIec61360/levelType/nom
