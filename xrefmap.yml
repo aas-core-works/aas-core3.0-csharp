@@ -3149,12 +3149,12 @@ references:
   commentId: T:AasCore.Aas3_0.EmbeddedDataSpecification
   fullName: AasCore.Aas3_0.EmbeddedDataSpecification
   nameWithType: EmbeddedDataSpecification
-- uid: AasCore.Aas3_0.EmbeddedDataSpecification.#ctor(AasCore.Aas3_0.IDataSpecificationContent,AasCore.Aas3_0.IReference)
-  name: EmbeddedDataSpecification(IDataSpecificationContent, IReference)
-  href: api/AasCore.Aas3_0.EmbeddedDataSpecification.html#AasCore_Aas3_0_EmbeddedDataSpecification__ctor_AasCore_Aas3_0_IDataSpecificationContent_AasCore_Aas3_0_IReference_
-  commentId: M:AasCore.Aas3_0.EmbeddedDataSpecification.#ctor(AasCore.Aas3_0.IDataSpecificationContent,AasCore.Aas3_0.IReference)
-  fullName: AasCore.Aas3_0.EmbeddedDataSpecification.EmbeddedDataSpecification(AasCore.Aas3_0.IDataSpecificationContent, AasCore.Aas3_0.IReference)
-  nameWithType: EmbeddedDataSpecification.EmbeddedDataSpecification(IDataSpecificationContent, IReference)
+- uid: AasCore.Aas3_0.EmbeddedDataSpecification.#ctor(AasCore.Aas3_0.IReference,AasCore.Aas3_0.IDataSpecificationContent)
+  name: EmbeddedDataSpecification(IReference, IDataSpecificationContent)
+  href: api/AasCore.Aas3_0.EmbeddedDataSpecification.html#AasCore_Aas3_0_EmbeddedDataSpecification__ctor_AasCore_Aas3_0_IReference_AasCore_Aas3_0_IDataSpecificationContent_
+  commentId: M:AasCore.Aas3_0.EmbeddedDataSpecification.#ctor(AasCore.Aas3_0.IReference,AasCore.Aas3_0.IDataSpecificationContent)
+  fullName: AasCore.Aas3_0.EmbeddedDataSpecification.EmbeddedDataSpecification(AasCore.Aas3_0.IReference, AasCore.Aas3_0.IDataSpecificationContent)
+  nameWithType: EmbeddedDataSpecification.EmbeddedDataSpecification(IReference, IDataSpecificationContent)
 - uid: AasCore.Aas3_0.EmbeddedDataSpecification.#ctor*
   name: EmbeddedDataSpecification
   href: api/AasCore.Aas3_0.EmbeddedDataSpecification.html#AasCore_Aas3_0_EmbeddedDataSpecification__ctor_
@@ -25945,6 +25945,19 @@ references:
   isSpec: "True"
   fullName: AasCore.Aas3_0.Verification.VerifyVersionType
   nameWithType: Verification.VerifyVersionType
+- uid: AasCore.Aas3_0.Verification.VerifyXmlSerializableString(System.String)
+  name: VerifyXmlSerializableString(String)
+  href: api/AasCore.Aas3_0.Verification.html#AasCore_Aas3_0_Verification_VerifyXmlSerializableString_System_String_
+  commentId: M:AasCore.Aas3_0.Verification.VerifyXmlSerializableString(System.String)
+  fullName: AasCore.Aas3_0.Verification.VerifyXmlSerializableString(System.String)
+  nameWithType: Verification.VerifyXmlSerializableString(String)
+- uid: AasCore.Aas3_0.Verification.VerifyXmlSerializableString*
+  name: VerifyXmlSerializableString
+  href: api/AasCore.Aas3_0.Verification.html#AasCore_Aas3_0_Verification_VerifyXmlSerializableString_
+  commentId: Overload:AasCore.Aas3_0.Verification.VerifyXmlSerializableString
+  isSpec: "True"
+  fullName: AasCore.Aas3_0.Verification.VerifyXmlSerializableString
+  nameWithType: Verification.VerifyXmlSerializableString
 - uid: AasCore.Aas3_0.Visitation
   name: Visitation
   href: api/AasCore.Aas3_0.Visitation.html
