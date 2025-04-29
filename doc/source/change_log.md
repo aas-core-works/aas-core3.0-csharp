@@ -1,5 +1,15 @@
 # Change Log
 
+## 1.0.4 (2025-04-29)
+
+We propagate the changes and fixes for V3.0.2; please refer to:
+* https://github.com/aas-core-works/aas-core-meta/pull/335
+* https://github.com/aas-core-works/aas-core-meta/pull/341
+* https://github.com/aas-core-works/aas-core-meta/pull/343
+* https://github.com/aas-core-works/aas-core-meta/pull/353
+* https://github.com/aas-core-works/aas-core-meta/pull/365
+* https://github.com/aas-core-works/aas-core-meta/pull/368 
+
 ## 1.0.3 (2024-04-16)
 
 The `dataSpecification` field in `EmbeddedDataSpecification` is made
