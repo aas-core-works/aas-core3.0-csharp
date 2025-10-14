@@ -8892,7 +8892,7 @@ namespace AasCore.Aas3_0
                             that.Keys.Count - 1
                         ).All(
                             i => !(that.Keys[i].Type == KeyTypes.SubmodelElementList)
-                                || Verification.MatchesXsPositiveInteger(that.Keys[i + 1].Value))
+                                || Verification.MatchesXsNonNegativeInteger(that.Keys[i + 1].Value))
                     )))
                 {
                     yield return new Reporting.Error(
