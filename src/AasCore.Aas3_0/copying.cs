@@ -578,8 +578,8 @@ namespace AasCore.Aas3_0
         internal class DeepCopier : Visitation.AbstractTransformer<Aas.IClass>
         {
             public override Aas.IClass TransformExtension(
-               Aas.IExtension that
-           )
+                Aas.IExtension that
+            )
             {
                 List<IReference>? theSupplementalSemanticIds = null;
                 if (that.SupplementalSemanticIds != null)
