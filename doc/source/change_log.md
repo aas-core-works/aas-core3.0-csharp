@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.0.5 (2025-10-20)
+
+This is a patch release that propagates a fix for references index constraint
+where indices in references were erroneously assumed to be positive integers.
+
 ## 1.0.4 (2025-04-29)
 
 We propagate the changes and fixes for V3.0.2; please refer to:
