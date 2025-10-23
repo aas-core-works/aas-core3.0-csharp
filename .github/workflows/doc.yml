@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - mristin/Fix-docfx-not-rendering-API
+  workflow_dispatch:
 
 jobs:
   Generate-doc:
