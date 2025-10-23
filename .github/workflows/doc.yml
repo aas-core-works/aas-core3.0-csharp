@@ -4,14 +4,12 @@ on:
   push:
     branches:
       - main
-      - mristin/Fix-docfx-not-rendering-API
+  # We need to manually run the workflow for debugging purposes. 
+  workflow_dispatch: 
 
 jobs:
   Generate-doc:
-    # We need to use windows-2019 due to the bug in MSBuild in VS Studio 17.3.3
-    # which is shipped with GitHub's windows-latest image.
-    # See: https://github.com/dotnet/docfx/issues/8097
-    runs-on: windows-2019
+    runs-on: windows-2022
     steps:
       - uses: actions/checkout@master
 
