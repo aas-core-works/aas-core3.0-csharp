@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
+  # We need to manually run the workflow for debugging purposes. 
+  workflow_dispatch: 
 
 jobs:
   Generate-doc:
