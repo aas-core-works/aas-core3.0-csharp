@@ -19,12 +19,12 @@ from typing import Optional, List, Callable, AnyStr, Sequence
 
 # noinspection RegExpSimplifiable
 AAS_CORE_META_DEPENDENCY_RE = re.compile(
-    r"aas-core-meta@git\+https://github.com/aas-core-works/aas-core-meta@([a-fA-F0-9]+)#egg=aas-core-meta"
+    r"aas-core-meta@git\+https://github.com/aas-core-works/aas-core-meta@([a-fA-F0-9]+)"
 )
 
 # noinspection RegExpSimplifiable
 AAS_CORE_CODEGEN_DEPENDENCY_RE = re.compile(
-    r"aas-core-codegen@git\+https://github.com/aas-core-works/aas-core-codegen@([a-fA-F0-9]+)#egg=aas-core-codegen"
+    r"aas-core-codegen@git\+https://github.com/aas-core-works/aas-core-codegen@([a-fA-F0-9]+)"
 )
 
 
@@ -56,28 +56,28 @@ def _make_sure_no_changed_files(
     return None
 
 
-def _update_setup_py(
+def _update_pyproject_toml(
     our_repo: pathlib.Path, aas_core_meta_revision: str, aas_core_codegen_revision: str
 ) -> None:
-    """Update the aas-core-meta in setup.py."""
-    setup_py = our_repo / "dev_scripts" / "setup.py"
-    text = setup_py.read_text(encoding="utf-8")
+    """Update the aas-core-meta in pyproject.toml."""
+    pyproject_toml = our_repo / "dev_scripts" / "pyproject.toml"
+    text = pyproject_toml.read_text(encoding="utf-8")
 
     aas_core_meta_dependency = (
         f"aas-core-meta@git+https://github.com/aas-core-works/aas-core-meta"
-        f"@{aas_core_meta_revision}#egg=aas-core-meta"
+        f"@{aas_core_meta_revision}"
     )
 
     text = re.sub(AAS_CORE_META_DEPENDENCY_RE, aas_core_meta_dependency, text)
 
     aas_core_codegen_dependency = (
         f"aas-core-codegen@git+https://github.com/aas-core-works/aas-core-codegen"
-        f"@{aas_core_codegen_revision}#egg=aas-core-codegen"
+        f"@{aas_core_codegen_revision}"
     )
 
     text = re.sub(AAS_CORE_CODEGEN_DEPENDENCY_RE, aas_core_codegen_dependency, text)
 
-    setup_py.write_text(text, encoding="utf-8")
+    pyproject_toml.write_text(text, encoding="utf-8")
 
 
 def _uninstall_and_install_aas_core_meta(
@@ -91,7 +91,7 @@ def _uninstall_and_install_aas_core_meta(
 
     aas_core_meta_dependency = (
         f"aas-core-meta@git+https://github.com/aas-core-works/aas-core-meta"
-        f"@{aas_core_meta_revision}#egg=aas-core-meta"
+        f"@{aas_core_meta_revision}"
     )
 
     subprocess.check_call(
@@ -111,7 +111,7 @@ def _uninstall_and_install_aas_core_codegen(
 
     aas_core_codegen_dependency = (
         f"aas-core-codegen@git+https://github.com/aas-core-works/aas-core-codegen"
-        f"@{aas_core_codegen_revision}#egg=aas-core-codegen"
+        f"@{aas_core_codegen_revision}"
     )
 
     subprocess.check_call(
@@ -566,7 +566,7 @@ def main() -> int:
         if exit_code is not None:
             return exit_code
 
-    _update_setup_py(
+    _update_pyproject_toml(
         our_repo=our_repo,
         aas_core_meta_revision=aas_core_meta_revision,
         aas_core_codegen_revision=aas_core_codegen_revision,
