@@ -19,7 +19,6 @@ classifiers = [
 ]
 requires-python = ">=3.9"
 dependencies = [
-    "aas-core-meta@git+https://github.com/aas-core-works/aas-core-meta@899add1",
     "aas-core-codegen@git+https://github.com/aas-core-works/aas-core-codegen@4c01ed64",
 ]
 
