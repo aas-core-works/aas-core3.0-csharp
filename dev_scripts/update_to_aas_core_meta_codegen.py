@@ -1,5 +1,5 @@
 """
-Update everything in this project to the latest aas-core-meta, -codegen and -testgen.
+Update everything in this project to the latest aas-core-meta, -codegen.
 
 Git is expected to be installed.
 """
@@ -14,8 +14,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
-import time
-from typing import Optional, List, Callable, AnyStr, Sequence
+from typing import Optional
 
 # noinspection RegExpSimplifiable
 AAS_CORE_META_DEPENDENCY_RE = re.compile(
@@ -120,168 +119,55 @@ def _uninstall_and_install_aas_core_codegen(
     )
 
 
-def _run_in_parallel(
-    calls: Sequence[Callable[[], subprocess.Popen[AnyStr]]],
-    on_status_update: Callable[[int], None],
-) -> Optional[int]:
-    """
-    Run the given scripts in parallel.
-
-    Return an error code, if any.
-    """
-    procs = []  # type: List[subprocess.Popen[AnyStr]]
-
-    try:
-        for call in calls:
-            proc = call()
-            procs.append(proc)
-
-        failure = False
-        remaining_procs = sum(1 for proc in procs if proc.returncode is None)
-
-        next_print = time.time() + 15
-        while remaining_procs > 0:
-            if time.time() > next_print:
-                on_status_update(remaining_procs)
-                next_print = time.time() + 15
-
-            time.sleep(1)
-
-            for proc in procs:
-                proc.poll()
-
-                if proc.returncode is not None:
-                    if proc.returncode != 0:
-                        failure = True
-
-            if failure:
-                print(
-                    "One or more processes failed. Terminating all the processes...",
-                    file=sys.stderr,
-                )
-                for proc in procs:
-                    proc.terminate()
-
-                print("Terminated all the processes.", file=sys.stderr)
-                return 1
-
-            for proc in procs:
-                proc.poll()
-
-            remaining_procs = sum(1 for proc in procs if proc.returncode is None)
-
-        return None
-    finally:
-        for proc in procs:
-            if proc.returncode is None:
-                proc.terminate()
-
-
-def _generate_test_code(our_repo: pathlib.Path) -> Optional[int]:
-    """Run the internal code generation."""
-    test_codegen_dir = our_repo / "dev_scripts/test_codegen"
-    scripts = sorted(
-        pth
-        for pth in test_codegen_dir.glob("generate_*.py")
-        if pth.name != "generate_all.py"
-    )
-
-    # pylint: disable=consider-using-with
-    calls = [
-        lambda a_pth=pth, cwd=our_repo: subprocess.Popen(  # type: ignore
-            [sys.executable, str(a_pth)],
-            cwd=str(cwd),
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-            encoding="utf-8",
-        )
-        for pth in scripts
-    ]  # type: Sequence[Callable[[], subprocess.Popen[str]]]
-    # pylint: enable=consider-using-with
-
-    scripts_joined = ",\n".join(str(script) for script in scripts)
-    print(f"Starting to run test codegen scripts:\n{scripts_joined}")
-    start = time.perf_counter()
-
-    exit_code = _run_in_parallel(
-        calls=calls,
-        on_status_update=(
-            lambda remaining: print(
-                f"There are {remaining} codegen script(s) still running..."
-            )
-        ),
-    )
-    if exit_code is not None:
-        return exit_code
-
-    duration = time.perf_counter() - start
-    print(f"Generating the code took: {duration:.2f} seconds.")
-
-    return None
-
-
-def _regenerate_code(
-    our_repo: pathlib.Path,
-    meta_repo: pathlib.Path,
-) -> Optional[int]:
-    """
-    Call codegen script.
-
-    Return an error code, if any.
-    """
-    codegen_dir = our_repo / "dev_scripts/codegen"
-
-    meta_model_path = meta_repo / "aas_core_meta/v3.py"
-
-    target_dir = our_repo
-
-    print(f"Starting to run codegen script")
-    start = time.perf_counter()
-
-    proc = subprocess.run(
-        [
-            sys.executable, "codegen.py",
-            "--meta_model", str(meta_model_path),
-            "--target", str(target_dir),
-        ],
-        cwd=str(codegen_dir),
-    )
-
-    if proc.returncode != 0:
-        return proc.returncode
-
-    duration = time.perf_counter() - start
-    print(f"Generating the code took: {duration:.2f} seconds.")
-
-    return None
-
-
-def _replace_test_data(
-    our_repo: pathlib.Path, aas_core_testgen_repo: pathlib.Path
+def _copy_code_from_aas_core_codegen(
+    aas_core_codegen_repo: pathlib.Path, our_repo: pathlib.Path
 ) -> None:
-    """
-    Remove the test data and copy it from the testgen repository.
+    """Copy the generated code from aas-core-codegen's test data."""
+    source_dir = (
+        aas_core_codegen_repo
+        / "test_data/csharp/test_main/aas_core_meta.v3/expected_output"
+    )
 
-    Return an error code, if any.
-    """
-    test_data_dir = our_repo / "test_data"
+    target_dir = our_repo / "src/AasCore.Aas3_0"
 
-    print(f"Removing the test data from: {test_data_dir}")
+    print(
+        f"Copying the code: from {source_dir} to {target_dir.relative_to(our_repo)} ..."
+    )
 
-    for pth in sorted(
-            sub_pth
-            for sub_pth in test_data_dir.iterdir()
-            if sub_pth.is_dir()
-    ):
-        print(f"Removing {pth} ...")
-        shutil.rmtree(pth)
+    for pth in source_dir.glob("*.cs"):
+        tgt_pth = target_dir / pth.name
+        shutil.copy(pth, tgt_pth)
 
-    print(f"Copying the test data from: {aas_core_testgen_repo} ...")
-    for pth in [aas_core_testgen_repo / "test_data" / name for name in ("Json", "Xml")]:
-        target_pth = test_data_dir / pth.name
-        assert not target_pth.exists()
-        assert pth.exists(), f"Expected the test data directory to exist: {pth=}"
-        shutil.copytree(pth, target_pth)
+
+def _copy_python_sdk_from_aas_core_codegen(
+    aas_core_codegen_repo: pathlib.Path,
+    our_repo: pathlib.Path,
+    aas_core_codegen_revision: str,
+) -> None:
+    """Copy the generated Python SDK from aas-core-codegen's test data."""
+    source_dir = (
+        aas_core_codegen_repo
+        / "test_data/python/test_main/aas_core_meta.v3/expected_output"
+    )
+
+    target_dir = our_repo / "dev_scripts/aas_core3"
+
+    for pth in source_dir.glob("*.py"):
+        tgt_pth = target_dir / pth.name
+        shutil.copy(pth, tgt_pth)
+
+    init_py = target_dir / "__init__.py"
+
+    text = f'''\
+"""
+Provide Python SDK as copied from aas-core-codegen test data.
+
+This copy is necessary so that we can decouple from ``aas-core*-python`` repository.
+
+The revision of aas-core-codegen was: {aas_core_codegen_revision}
+"""
+'''
+    init_py.write_text(text, encoding="utf-8")
 
 
 def _reformat_code(our_repo: pathlib.Path) -> None:
@@ -351,6 +237,23 @@ with:
     subprocess.check_call(["git", "push", "-u"], cwd=our_repo)
 
 
+def _get_testgen_revision(our_repo: pathlib.Path) -> str | None:
+    testgen_rev_path = our_repo / "src/AasCore.Aas3_0.Tests/testgen_rev.txt"
+
+    testgen_rev: str | None = None
+
+    try:
+        with testgen_rev_path.open("r") as testgen_rev_file:
+            testgen_rev = testgen_rev_file.read().strip()
+    except OSError as os_error:
+        print(f"Cannot read testgen revision: {os_error}.")
+
+    if testgen_rev is None:
+        print(f"Cannot read testgen revision.")
+
+    return testgen_rev
+
+
 def main() -> int:
     """Execute the main routine."""
     this_path = pathlib.Path(os.path.realpath(__file__))
@@ -378,16 +281,6 @@ def main() -> int:
         default="main",
     )
     parser.add_argument(
-        "--aas_core_testgen_repo",
-        help="path to the aas-core-codegen repository",
-        default=str(our_repo.parent / "aas-core3.0-testgen"),
-    )
-    parser.add_argument(
-        "--expected_aas_core_testgen_branch",
-        help="Git branch expected in the aas-core-meta repository",
-        default="main",
-    )
-    parser.add_argument(
         "--expected_our_branch",
         help="Git branch expected in this repository",
         default="main",
@@ -400,9 +293,6 @@ def main() -> int:
 
     aas_core_codegen_repo = pathlib.Path(args.aas_core_codegen_repo)
     expected_aas_core_codegen_branch = str(args.expected_aas_core_codegen_branch)
-
-    aas_core_testgen_repo = pathlib.Path(args.aas_core_testgen_repo)
-    expected_aas_core_testgen_branch = str(args.expected_aas_core_testgen_branch)
 
     expected_our_branch = str(args.expected_our_branch)
 
@@ -482,44 +372,6 @@ def main() -> int:
 
     # endregion
 
-    # region aas-core3.0-testgen repo
-
-    if not aas_core_testgen_repo.exists():
-        print(
-            f"--aas_core_testgen_repo does not exist: {aas_core_testgen_repo}",
-            file=sys.stderr,
-        )
-        return 1
-
-    if not aas_core_testgen_repo.is_dir():
-        print(
-            f"--aas_core_testgen_repo is not a directory: {aas_core_testgen_repo}",
-            file=sys.stderr,
-        )
-        return 1
-
-    aas_core_testgen_branch = subprocess.check_output(
-        ["git", "rev-parse", "--abbrev-ref", "HEAD"],
-        cwd=str(aas_core_testgen_repo),
-        encoding="utf-8",
-    ).strip()
-    if aas_core_testgen_branch != expected_aas_core_testgen_branch:
-        print(
-            f"--expected_aas_core_testgen_branch is {expected_aas_core_testgen_branch}, "
-            f"but got {aas_core_testgen_branch} "
-            f"in --aas_core_testgen_repo: {aas_core_testgen_repo}",
-            file=sys.stderr,
-        )
-        return 1
-
-    aas_core_testgen_revision = subprocess.check_output(
-        ["git", "rev-parse", "--short", "HEAD"],
-        cwd=str(aas_core_testgen_repo),
-        encoding="utf-8",
-    ).strip()
-
-    # endregion
-
     # region Our repo
 
     our_branch = subprocess.check_output(
@@ -541,7 +393,6 @@ def main() -> int:
         (our_repo, expected_our_branch),
         (aas_core_meta_repo, expected_aas_core_meta_branch),
         (aas_core_codegen_repo, expected_aas_core_codegen_branch),
-        (aas_core_testgen_repo, expected_aas_core_testgen_branch),
     ]:
         exit_code = _make_sure_no_changed_files(
             repo_dir=repo_dir, expected_branch=expected_branch
@@ -563,15 +414,19 @@ def main() -> int:
         our_repo=our_repo, aas_core_codegen_revision=aas_core_codegen_revision
     )
 
-    exit_code = _regenerate_code(our_repo=our_repo, meta_repo=aas_core_meta_repo)
-    if exit_code is not None:
-        return exit_code
+    _copy_code_from_aas_core_codegen(
+        aas_core_codegen_repo=aas_core_codegen_repo, our_repo=our_repo
+    )
 
-    _replace_test_data(our_repo=our_repo, aas_core_testgen_repo=aas_core_testgen_repo)
+    _copy_python_sdk_from_aas_core_codegen(
+        aas_core_codegen_repo=aas_core_codegen_repo,
+        our_repo=our_repo,
+        aas_core_codegen_revision=aas_core_codegen_revision,
+    )
 
-    exit_code = _generate_test_code(our_repo=our_repo)
-    if exit_code is not None:
-        return exit_code
+    aas_core_testgen_revision = _get_testgen_revision(our_repo=our_repo)
+    if aas_core_testgen_revision is None:
+        return 1
 
     _reformat_code(our_repo=our_repo)
 

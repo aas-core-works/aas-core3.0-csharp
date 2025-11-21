@@ -25,6 +25,3 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 exclude = ["tests", "continuous_integration", "dev_scripts"]
-
-[tool.setuptools]
-py-modules = ["test_codegen"]
