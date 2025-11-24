@@ -4,6 +4,7 @@ import pathlib
 import os
 import argparse
 import sys
+from typing import Dict, Union
 
 import requests
 
@@ -24,7 +25,7 @@ def _latest_commit_sha_for_path(
     Uses: GET /repos/{owner}/{repo}/commits?path=...&sha=...&per_page=1
     """
     url = f"{GITHUB_API}/repos/{owner}/{repo}/commits"
-    params = {"path": path, "sha": ref, "per_page": 1}
+    params: Dict[str, Union[str, int]] = {"path": path, "sha": ref, "per_page": 1}
     resp = requests.get(url, params=params, timeout=timeout)
     try:
         resp.raise_for_status()
@@ -43,6 +44,7 @@ def _latest_commit_sha_for_path(
     sha = commits[0].get("sha")
     if not sha or not isinstance(sha, str):
         raise RuntimeError("API did not return a valid commit SHA.")
+    assert isinstance(sha, str)
     return sha
 
 
