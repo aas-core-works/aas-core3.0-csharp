@@ -57,7 +57,7 @@ def _regenerate_code(our_repo: pathlib.Path) -> Optional[int]:
 
     target_dir = our_repo
 
-    print(f"Starting to run codegen script")
+    print("Starting to run codegen script")
     start = time.perf_counter()
 
     proc = subprocess.run(
@@ -70,6 +70,7 @@ def _regenerate_code(our_repo: pathlib.Path) -> Optional[int]:
             str(target_dir),
         ],
         cwd=str(codegen_dir),
+        check=True,
     )
 
     if proc.returncode != 0:
@@ -175,7 +176,7 @@ def _get_codegen_revision(our_repo: pathlib.Path) -> str | None:
         print(f"Cannot read codegen revision: {os_error}.")
 
     if codegen_sha is None:
-        print(f"Cannot read codegen revision.")
+        print("Cannot read codegen revision.")
 
     return codegen_sha
 
@@ -207,7 +208,7 @@ def _get_meta_model_revision(our_repo: pathlib.Path) -> str | None:
         print(f"Cannot read meta model revision: {os_error}.")
 
     if meta_model_sha is None:
-        print(f"Cannot read meta model revision.")
+        print("Cannot read meta model revision.")
 
     return meta_model_sha
 
@@ -224,7 +225,7 @@ def _get_testgen_revision(our_repo: pathlib.Path) -> str | None:
         print(f"Cannot read testgen revision: {os_error}.")
 
     if testgen_rev is None:
-        print(f"Cannot read testgen revision.")
+        print("Cannot read testgen revision.")
 
     return testgen_rev
 
