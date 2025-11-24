@@ -23,11 +23,7 @@ However, this needs to be decided on a case-by-case basis.
 
 [aas-core-codegen]: https://github.com/aas-core-works/aas-core-codegen
 
-### Test Code Generation
-
-The code of the unit tests has been automatically generated using the Python scripts in the `testgen/` directory.
-
-To re-generate the test code, first create a virtual environment at the root of the repository:
+To re-generate the code, first create a virtual environment at the root of the repository:
 
 ```
 python -m venv venv
@@ -47,13 +43,13 @@ source venv/bin/activate
 Then install the dependencies:
 
 ```
-pip3 install -r testgen/requirements.txt
+pip3 install -e dev_scripts --group dev_scripts/pyproject.toml:dev
 ```
 
 Now you can run the generation scripts:
 
 ```
-python testgen/generate_all.py
+python testgen/uptdate_to_aas_core_meta_codegen.py
 ```
 
 ### Test Data
