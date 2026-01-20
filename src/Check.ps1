@@ -28,7 +28,7 @@ function Main
         --inputs "AasCore.*/*.cs" `
         --max-line-length 200 `
         --max-lines-in-file 100000 `
-        --ignore-lines-matching '^ +var [a-zA-Z0-9_]+ = ".+";'
+        --ignore-lines-matching '^ +var [a-zA-Z0-9_]+ = \$?".+";'
 
     Write-Host "${nl}Check.ps1: Inspecting the code with opinionated-usings...${nl}"
     dotnet opinionated-usings --inputs "AasCore.*/*.cs"
