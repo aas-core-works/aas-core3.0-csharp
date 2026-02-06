@@ -1,4 +1,4 @@
-# Downloaded from: https://raw.githubusercontent.com/aas-core-works/aas-core-meta/f1d97f60b34d2dc97a8004ccfb3fc28487b91c7a/aas_core_meta/v3.py
+# Downloaded from: https://raw.githubusercontent.com/aas-core-works/aas-core-meta/11b116c5231d24dade11330ef127307f99a0e671/aas_core_meta/v3.py
 """
 Provide an implementation of the Asset Administration Shell (AAS) V3.0.
 
@@ -226,50 +226,57 @@ def matches_MIME_type(text: str) -> bool:
     return match(media_type, text) is not None
 
 
-# noinspection SpellCheckingInspection
 @verification
-def matches_RFC_8089_path(text: str) -> bool:
+def matches_RFC_2396(text: str) -> bool:
     """
-    Check that :paramref:`text` is a path conforming to the pattern of RFC 8089.
+    Check that :paramref:`text` matches to the URI pattern defined in RFC 2396
 
     The definition has been taken from:
-    https://datatracker.ietf.org/doc/html/rfc8089
+    https://datatracker.ietf.org/doc/html/rfc2396
+
+    Note that RFX 2396 alone is not enough for specifying ``xs:anyURI`` for
+    XSD version 1.0, as that specifies URI together with the amendment of
+    RFC 2732.
 
     :param text: Text to be checked
     :returns: True if the :paramref:`text` conforms to the pattern
-
     """
-    h16 = "[0-9A-Fa-f]{1,4}"
-    dec_octet = "([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])"
-    ipv4address = f"{dec_octet}\\.{dec_octet}\\.{dec_octet}\\.{dec_octet}"
-    ls32 = f"({h16}:{h16}|{ipv4address})"
-    ipv6address = (
-        f"(({h16}:){{6}}{ls32}|::({h16}:){{5}}{ls32}|({h16})?::({h16}:){{4}}"
-        f"{ls32}|(({h16}:)?{h16})?::({h16}:){{3}}{ls32}|(({h16}:){{,2}}{h16})?::"
-        f"({h16}:){{2}}{ls32}|(({h16}:){{,3}}{h16})?::{h16}:{ls32}|(({h16}:){{,4}}"
-        f"{h16})?::{ls32}|(({h16}:){{,5}}{h16})?::{h16}|(({h16}:){{,6}}{h16})?"
-        "::)"
-    )
-    unreserved = "[a-zA-Z0-9\\-._~]"
-    sub_delims = "[!$&'()*+,;=]"
-    ipvfuture = f"[vV][0-9A-Fa-f]+\\.({unreserved}|{sub_delims}|:)+"
-    ip_literal = f"\\[({ipv6address}|{ipvfuture})\\]"
-    pct_encoded = "%[0-9A-Fa-f][0-9A-Fa-f]"
-    reg_name = f"({unreserved}|{pct_encoded}|{sub_delims})*"
-    host = f"({ip_literal}|{ipv4address}|{reg_name})"
-    file_auth = f"(localhost|{host})"
-    pchar = f"({unreserved}|{pct_encoded}|{sub_delims}|[:@])"
-    segment_nz = f"({pchar})+"
-    segment = f"({pchar})*"
-    path_absolute = f"/({segment_nz}(/{segment})*)?"
-    auth_path = f"({file_auth})?{path_absolute}"
-    local_path = f"{path_absolute}"
-    file_hier_part = f"(//{auth_path}|{local_path})"
-    file_scheme = "file"
-    file_uri = f"{file_scheme}:{file_hier_part}"
-
-    pattern = f"^{file_uri}$"
-    return match(pattern, text) is not None
+    alphanum = "[a-zA-Z0-9]"
+    mark = "[\\-_.!~*'()]"
+    unreserved = f"({alphanum}|{mark})"
+    hex = "([0-9]|[aA]|[bB]|[cC]|[dD]|[eE]|[fF]|[aA]|[bB]|[cC]|[dD]|[eE]|[fF])"
+    escaped = f"%{hex}{hex}"
+    pchar = f"({unreserved}|{escaped}|[:@&=+$,])"
+    param = f"({pchar})*"
+    segment = f"({pchar})*(;{param})*"
+    path_segments = f"{segment}(/{segment})*"
+    abs_path = f"/{path_segments}"
+    scheme = "[a-zA-Z][a-zA-Z0-9+\\-.]*"
+    userinfo = f"({unreserved}|{escaped}|[;:&=+$,])*"
+    domainlabel = f"({alphanum}|{alphanum}({alphanum}|-)*{alphanum})"
+    toplabel = f"([a-zA-Z]|[a-zA-Z]({alphanum}|-)*{alphanum})"
+    hostname = f"({domainlabel}\\.)*{toplabel}(\\.)?"
+    ipv4address = "[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+"
+    host = f"({hostname}|{ipv4address})"
+    port = "[0-9]*"
+    hostport = f"{host}(:{port})?"
+    server = f"(({userinfo}@)?{hostport})?"
+    reg_name = f"({unreserved}|{escaped}|[$,;:@&=+])+"
+    authority = f"({server}|{reg_name})"
+    net_path = f"//{authority}({abs_path})?"
+    reserved = "[;/?:@&=+$,]"
+    uric = f"({reserved}|{unreserved}|{escaped})"
+    query = f"({uric})*"
+    hier_part = f"({net_path}|{abs_path})(\\?{query})?"
+    uric_no_slash = f"({unreserved}|{escaped}|[;?:@&=+$,])"
+    opaque_part = f"{uric_no_slash}({uric})*"
+    absoluteuri = f"{scheme}:({hier_part}|{opaque_part})"
+    fragment = f"({uric})*"
+    rel_segment = f"({unreserved}|{escaped}|[;@&=+$,])+"
+    rel_path = f"{rel_segment}({abs_path})?"
+    relativeuri = f"({net_path}|{abs_path}|{rel_path})(\\?{query})?"
+    uri_reference = f"^({absoluteuri}|{relativeuri})?(\\#{fragment})?$"
+    return match(uri_reference, text) is not None
 
 
 # noinspection SpellCheckingInspection
@@ -318,7 +325,7 @@ def lang_strings_have_unique_languages(
     Check that the :paramref:`lang_strings` do not have overlapping
     :attr:`Abstract_lang_string.language`'s
     """
-    # NOTE (mristin, 2022-04-7):
+    # NOTE (mristin):
     # This implementation will not be transpiled, but is given here as reference.
     language_set = set()
     for lang_string in lang_strings:
@@ -338,7 +345,7 @@ def qualifier_types_are_unique(qualifiers: List["Qualifier"]) -> bool:
     :param qualifiers: to be checked
     :return: True if all :attr:`Qualifier.type`'s are unique
     """
-    # NOTE (mristin, 2022-04-1):
+    # NOTE (mristin):
     # This implementation is given here only as reference. It needs to be adapted
     # for each implementation separately.
     observed_types = set()
@@ -600,7 +607,7 @@ def matches_xs_double(text: str) -> bool:
     :param text: Text to be checked
     :returns: True if the :paramref:`text` conforms to the pattern
     """
-    # NOTE (mristin, 2022-04-6):
+    # NOTE (mristin):
     # See: https://www.w3.org/TR/xmlschema-2/#nt-doubleRep
     double_rep = r"((\+|-)?([0-9]+(\.[0-9]*)?|\.[0-9]+)([Ee](\+|-)?[0-9]+)?|-?INF|NaN)"
 
@@ -618,7 +625,7 @@ def matches_xs_duration(text: str) -> bool:
     :param text: Text to be checked
     :returns: True if the :paramref:`text` conforms to the pattern
     """
-    # NOTE (mristin, 2022-04-6):
+    # NOTE (mristin):
     # See https://www.w3.org/TR/xmlschema-2/#nt-durationRep
 
     # fmt: off
@@ -674,7 +681,7 @@ def matches_xs_g_day(text: str) -> bool:
     :param text: Text to be checked
     :returns: True if the :paramref:`text` conforms to the pattern
     """
-    # NOTE (mristin, 2022-04-6):
+    # NOTE (mristin):
     # See https://www.w3.org/TR/xmlschema-2/#nt-gDayRep
     g_day_lexical_rep = (
         r"---(0[1-9]|[12][0-9]|3[01])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
@@ -694,7 +701,7 @@ def matches_xs_g_month(text: str) -> bool:
     :param text: Text to be checked
     :returns: True if the :paramref:`text` conforms to the pattern
     """
-    # NOTE (mristin, 2022-04-6):
+    # NOTE (mristin):
     # See https://www.w3.org/TR/xmlschema-2/#nt-gMonthRep
     g_month_lexical_rep = (
         r"--(0[1-9]|1[0-2])(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
@@ -714,7 +721,7 @@ def matches_xs_g_month_day(text: str) -> bool:
     :param text: Text to be checked
     :returns: True if the :paramref:`text` conforms to the pattern
     """
-    # NOTE (mristin, 2022-04-6):
+    # NOTE (mristin):
     # See https://www.w3.org/TR/xmlschema-2/#nt-gMonthDayRep
     g_month_day_rep = (
         r"--(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])"
@@ -735,7 +742,7 @@ def matches_xs_g_year(text: str) -> bool:
     :param text: Text to be checked
     :returns: True if the :paramref:`text` conforms to the pattern
     """
-    # NOTE (mristin, 2022-04-6):
+    # NOTE (mristin):
     # See https://www.w3.org/TR/xmlschema-2/#nt-gYearRep
     g_year_rep = (
         r"-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
@@ -755,7 +762,7 @@ def matches_xs_g_year_month(text: str) -> bool:
     :param text: Text to be checked
     :returns: True if the :paramref:`text` conforms to the pattern
     """
-    # NOTE (mristin, 2022-04-6):
+    # NOTE (mristin):
     # See https://www.w3.org/TR/xmlschema-2/#nt-gYearMonthRep
 
     g_year_month_rep = (
@@ -777,7 +784,7 @@ def matches_xs_hex_binary(text: str) -> bool:
     :param text: Text to be checked
     :returns: True if the :paramref:`text` conforms to the pattern
     """
-    # NOTE (mristin, 2022-04-6):
+    # NOTE (mristin):
     # See https://www.w3.org/TR/xmlschema-2/#nt-hexBinary
     hex_binary = r"([0-9a-fA-F]{2})*"
 
@@ -795,7 +802,7 @@ def matches_xs_time(text: str) -> bool:
     :param text: Text to be checked
     :returns: True if the :paramref:`text` conforms to the pattern
     """
-    # NOTE (mristin, 2022-04-6):
+    # NOTE (mristin):
     # See https://www.w3.org/TR/xmlschema-2/#nt-timeRep
     time_rep = (
         r"(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?|(24:00:00(\.0+)?))"
@@ -1042,7 +1049,7 @@ def value_consistent_with_XSD_type(value: str, value_type: "Data_type_def_XSD") 
     :param value_type: pre-defined value type
     :return: True if the :paramref:`value` conforms
     """
-    # NOTE (mristin, 2022-04-1):
+    # NOTE (mristin):
     # We specify the pattern-matching functions above, and they should be handy to check
     # for most obvious pattern mismatches.
     #
@@ -1050,6 +1057,8 @@ def value_consistent_with_XSD_type(value: str, value_type: "Data_type_def_XSD") 
     # consider a ``xs:dateTime``. You need to check not only that the value
     # follows the pattern, but also that the day-of-month and leap seconds are taken
     # into account.
+
+    raise NotImplementedError()
 
 
 @verification
@@ -1085,7 +1094,7 @@ def ID_shorts_are_unique(referables: List["Referable"]) -> bool:
     Check that the :attr:`Referable.ID_short`'s among the :paramref:`referables` are
     unique.
     """
-    # NOTE (mristin, 2022-04-7):
+    # NOTE (mristin):
     # This implementation will not be transpiled, but is given here as reference.
     id_short_set = set()
     for referable in referables:
@@ -1110,7 +1119,7 @@ def ID_shorts_of_variables_are_unique(
     :paramref:`input_variables`, :paramref:`output_variables`
     and :paramref:`inoutput_variables` are unique.
     """
-    # NOTE (s-heppner, 2023-01-25):
+    # NOTE (s-heppner):
     # This implementation will not be transpiled, but is given here as reference.
     id_short_set = set()
     if input_variables is not None:
@@ -1141,7 +1150,7 @@ def ID_shorts_of_variables_are_unique(
 @implementation_specific
 def extension_names_are_unique(extensions: List["Extension"]) -> bool:
     """Check that the extension names are unique."""
-    # NOTE (mristin, 2022-04-7):
+    # NOTE (mristin):
     # This implementation will not be transpiled, but is given here as reference.
     name_set = set()
     for extension in extensions:
@@ -1158,7 +1167,7 @@ def submodel_elements_have_identical_semantic_IDs(
     elements: List["Submodel_element"],
 ) -> bool:
     """Check that all semantic IDs are identical, if specified."""
-    # NOTE (mristin, 2022-04-7):
+    # NOTE (mristin):
     # This implementation will not be transpiled, but is given here as a reference.
     semantic_ID = None
     for element in elements:
@@ -1190,7 +1199,7 @@ def properties_or_ranges_have_value_type(
     elements: List["Submodel_element"], value_type: "Data_type_def_XSD"
 ) -> bool:
     """Check that all the :paramref:`elements` have the :paramref:`value_type`."""
-    # NOTE (mristin, 2022-04-7):
+    # NOTE (mristin):
     # This implementation will not be transpiled, but is given here as reference.
     for element in elements:
         if isinstance(element, (Property, Range)):
@@ -1204,7 +1213,7 @@ def properties_or_ranges_have_value_type(
 @implementation_specific
 def reference_key_values_equal(that: "Reference", other: "Reference") -> bool:
     """Check that the two references are equal by comparing their key values."""
-    # NOTE (mristin, 2022-04-7):
+    # NOTE (mristin):
     # This implementation will not be transpiled, but is given here as reference.
     if len(that.keys) != len(other.keys):
         return False
@@ -1234,6 +1243,7 @@ class XML_serializable_string(str, DBC):
         An attribute with data type "string" shall consist of these characters only:
         ``^[\x09\x0A\x0D\x20-\uD7FF\uE000-\uFFFD\u00010000-\u0010FFFF]*$``.
     """
+
     pass
 
 
@@ -1389,6 +1399,10 @@ class Content_type(Non_empty_XML_serializable_string, DBC):
     """
 
 
+@invariant(
+    lambda self: matches_RFC_2396(self),
+    "String with max 2048 and min 1 characters conformant to a URI as per RFC 2396.",
+)
 class Path_type(Identifier, DBC):
     """
     Identifier
@@ -1536,7 +1550,7 @@ class Extension(Has_semantics):
     @implementation_specific
     @non_mutating
     def value_type_or_default(self) -> "Data_type_def_XSD":
-        # NOTE (mristin, 2022-04-7):
+        # NOTE (mristin):
         # This implementation will not be transpiled, but is given here as reference.
         return (
             self.value_type if self.value_type is not None else Data_type_def_XSD.String
@@ -1786,7 +1800,7 @@ class Has_kind(DBC):
     @implementation_specific
     @non_mutating
     def kind_or_default(self) -> "Modelling_kind":
-        # NOTE (mristin, 2022-04-7):
+        # NOTE (mristin):
         # This implementation will not be transpiled, but is given here as reference.
         return self.kind if self.kind is not None else Modelling_kind.Instance
 
@@ -2013,7 +2027,7 @@ class Qualifier(Has_semantics):
     @implementation_specific
     @non_mutating
     def kind_or_default(self) -> "Qualifier_kind":
-        # NOTE (mristin, 2022-05-24):
+        # NOTE (mristin):
         # This implementation will not be transpiled, but is given here as reference.
         return self.kind if self.kind is not None else Qualifier_kind.Concept_qualifier
 
@@ -2770,7 +2784,7 @@ class Submodel_element_list(Submodel_element):
     @implementation_specific
     @non_mutating
     def order_relevant_or_default(self) -> bool:
-        # NOTE (mristin, 2022-04-7):
+        # NOTE (mristin):
         # This implementation will not be transpiled, but is given here as reference.
         return self.order_relevant if self.order_relevant is not None else True
 
@@ -2974,7 +2988,7 @@ class Data_element(Submodel_element):
     @non_mutating
     @ensure(lambda result: result in Valid_categories_for_data_element)
     def category_or_default(self) -> str:
-        # NOTE (mristin, 2022-04-7):
+        # NOTE (mristin):
         # This implementation will not be transpiled, but is given here as reference.
         return self.category if self.category is not None else "VARIABLE"
 
@@ -3924,7 +3938,7 @@ class Basic_event_element(Event_element):
         self.inoutput_variables
     ),
     "Constraint AASd-134: For an Operation the ID-short of all values of "
-    "input, output and in/output variables."
+    "input, output and in/output variables shall be unique."
 )
 # fmt: on
 class Operation(Submodel_element):
@@ -4051,7 +4065,7 @@ class Capability(Submodel_element):
         )
 
 
-# NOTE (mristin, 2022-08-19):
+# NOTE (mristin):
 # We make the following verification functions implementation-specific since the casts
 # are very clumsy to formalize and transpile in a readable way across languages.
 # For example, since Python does not have a null-coalescing operator, formalizing
@@ -4072,7 +4086,7 @@ def data_specification_IEC_61360s_for_property_or_value_have_appropriate_data_ty
     Check that the :attr:`Data_specification_IEC_61360.data_type` is defined
     appropriately for all data specifications whose content is given as IEC 61360.
     """
-    # NOTE (mristin, 2022-04-7):
+    # NOTE (mristin):
     # This implementation will not be transpiled, but is given here as reference.
     return all(
         not (
@@ -4101,7 +4115,7 @@ def data_specification_IEC_61360s_for_reference_have_appropriate_data_type(
     Check that the :attr:`Data_specification_IEC_61360.data_type` is defined
     appropriately for all data specifications whose content is given as IEC 61360.
     """
-    # NOTE (mristin, 2022-04-7):
+    # NOTE (mristin):
     # This implementation will not be transpiled, but is given here as reference.
     return all(
         not (
@@ -4130,7 +4144,7 @@ def data_specification_IEC_61360s_for_document_have_appropriate_data_type(
     Check that the :attr:`Data_specification_IEC_61360.data_type` is defined
     appropriately for all data specifications whose content is given as IEC 61360.
     """
-    # NOTE (mristin, 2022-04-7):
+    # NOTE (mristin):
     # This implementation will not be transpiled, but is given here as reference.
     return all(
         not (
@@ -4159,7 +4173,7 @@ def data_specification_IEC_61360s_have_data_type(
     Check that the :attr:`Data_specification_IEC_61360.data_type` is defined for all
     data specifications whose content is given as IEC 61360.
     """
-    # NOTE (mristin, 2022-04-7):
+    # NOTE (mristin):
     # This implementation will not be transpiled, but is given here as reference.
     return all(
         not (
@@ -4182,7 +4196,7 @@ def data_specification_IEC_61360s_have_value(
     Check that the :attr:`Data_specification_IEC_61360.value` is defined
     for all data specifications whose content is given as IEC 61360.
     """
-    # NOTE (mristin, 2022-04-7):
+    # NOTE (mristin):
     # This implementation will not be transpiled, but is given here as reference.
     return all(
         not (
@@ -4205,7 +4219,7 @@ def data_specification_IEC_61360s_have_definition_at_least_in_english(
     Check that the :attr:`Data_specification_IEC_61360.definition` is defined
     for all data specifications whose content is given as IEC 61360 at least in English.
     """
-    # NOTE (mristin, 2022-04-7):
+    # NOTE (mristin):
     # This implementation will not be transpiled, but is given here as reference.
 
     for data_specification in embedded_data_specifications:
@@ -4462,7 +4476,7 @@ class Reference_types(Enum):
     "with type Submodel element list is an integer number denoting the position in "
     "the array of the submodel element list."
 )
-# NOTE (mristin, 2022-07-10):
+# NOTE (mristin):
 # We can write AASd-127 in this simpler form assuming that AASd-126 ensures that
 # only the last key can be a fragment reference.
 @invariant(
@@ -5714,4 +5728,4 @@ class Data_specification_IEC_61360(Data_specification_content):
         self.value = value
         self.level_type = level_type
 
-# Downloaded from: https://raw.githubusercontent.com/aas-core-works/aas-core-meta/f1d97f60b34d2dc97a8004ccfb3fc28487b91c7a/aas_core_meta/v3.py
+# Downloaded from: https://raw.githubusercontent.com/aas-core-works/aas-core-meta/11b116c5231d24dade11330ef127307f99a0e671/aas_core_meta/v3.py

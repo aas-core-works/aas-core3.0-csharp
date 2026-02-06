@@ -198,43 +198,62 @@ namespace AasCore.Aas3_0
         [CodeAnalysis.SuppressMessage("ReSharper", "InconsistentNaming")]
         [CodeAnalysis.SuppressMessageAttribute("ReSharper", "IdentifierTypo")]
         [CodeAnalysis.SuppressMessage("ReSharper", "StringLiteralTypo")]
-        private static Regex _constructMatchesRfc8089Path()
+        private static Regex _constructMatchesRfc2396()
         {
-            var h16 = "[0-9A-Fa-f]{1,4}";
-            var decOctet = "([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])";
-            var ipv4address = $"{decOctet}\\.{decOctet}\\.{decOctet}\\.{decOctet}";
-            var ls32 = $"({h16}:{h16}|{ipv4address})";
-            var ipv6address = $"(({h16}:){{6}}{ls32}|::({h16}:){{5}}{ls32}|({h16})?::({h16}:){{4}}{ls32}|(({h16}:)?{h16})?::({h16}:){{3}}{ls32}|(({h16}:){{0,2}}{h16})?::({h16}:){{2}}{ls32}|(({h16}:){{0,3}}{h16})?::{h16}:{ls32}|(({h16}:){{0,4}}{h16})?::{ls32}|(({h16}:){{0,5}}{h16})?::{h16}|(({h16}:){{0,6}}{h16})?::)";
-            var unreserved = "[a-zA-Z0-9\\-._~]";
-            var subDelims = "[!$&'()*+,;=]";
-            var ipvfuture = $"[vV][0-9A-Fa-f]+\\.({unreserved}|{subDelims}|:)+";
-            var ipLiteral = $"\\[({ipv6address}|{ipvfuture})\\]";
-            var pctEncoded = "%[0-9A-Fa-f][0-9A-Fa-f]";
-            var regName = $"({unreserved}|{pctEncoded}|{subDelims})*";
-            var host = $"({ipLiteral}|{ipv4address}|{regName})";
-            var fileAuth = $"(localhost|{host})";
-            var pchar = $"({unreserved}|{pctEncoded}|{subDelims}|[:@])";
-            var segmentNz = $"({pchar})+";
-            var segment = $"({pchar})*";
-            var pathAbsolute = $"/({segmentNz}(/{segment})*)?";
-            var authPath = $"({fileAuth})?{pathAbsolute}";
-            var localPath = $"{pathAbsolute}";
-            var fileHierPart = $"(//{authPath}|{localPath})";
-            var fileScheme = "file";
-            var fileUri = $"{fileScheme}:{fileHierPart}";
-            var pattern = $"^{fileUri}$";
+            var alphanum = "[a-zA-Z0-9]";
+            var mark = "[-_.!~*'()]";
+            var unreserved = $"({alphanum}|{mark})";
+            var hex = "([0-9]|[aA]|[bB]|[cC]|[dD]|[eE]|[fF]|[aA]|[bB]|[cC]|[dD]|[eE]|[fF])";
+            var escaped = $"%{hex}{hex}";
+            var pchar = $"({unreserved}|{escaped}|[:@&=+$,])";
+            var param = $"({pchar})*";
+            var segment = $"({pchar})*(;{param})*";
+            var pathSegments = $"{segment}(/{segment})*";
+            var absPath = $"/{pathSegments}";
+            var scheme = "[a-zA-Z][a-zA-Z0-9+\\-.]*";
+            var userinfo = $"({unreserved}|{escaped}|[;:&=+$,])*";
+            var domainlabel = $"({alphanum}|{alphanum}({alphanum}|-)*{alphanum})";
+            var toplabel = $"([a-zA-Z]|[a-zA-Z]({alphanum}|-)*{alphanum})";
+            var hostname = $"({domainlabel}\\.)*{toplabel}(\\.)?";
+            var ipv4address = "[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+";
+            var host = $"({hostname}|{ipv4address})";
+            var port = "[0-9]*";
+            var hostport = $"{host}(:{port})?";
+            var server = $"(({userinfo}@)?{hostport})?";
+            var regName = $"({unreserved}|{escaped}|[$,;:@&=+])+";
+            var authority = $"({server}|{regName})";
+            var netPath = $"//{authority}({absPath})?";
+            var reserved = "[;/?:@&=+$,]";
+            var uric = $"({reserved}|{unreserved}|{escaped})";
+            var query = $"({uric})*";
+            var hierPart = $"({netPath}|{absPath})(\\?{query})?";
+            var uricNoSlash = $"({unreserved}|{escaped}|[;?:@&=+$,])";
+            var opaquePart = $"{uricNoSlash}({uric})*";
+            var absoluteuri = $"{scheme}:({hierPart}|{opaquePart})";
+            var fragment = $"({uric})*";
+            var relSegment = $"({unreserved}|{escaped}|[;@&=+$,])+";
+            var relPath = $"{relSegment}({absPath})?";
+            var relativeuri = $"({netPath}|{absPath}|{relPath})(\\?{query})?";
+            var uriReference = $"^({absoluteuri}|{relativeuri})?(#{fragment})?$";
 
-            return new Regex(pattern);
+            return new Regex(uriReference);
         }
 
-        private static readonly Regex RegexMatchesRfc8089Path = _constructMatchesRfc8089Path();
+        private static readonly Regex RegexMatchesRfc2396 = _constructMatchesRfc2396();
 
         /// <summary>
-        /// Check that <paramref name="text" /> is a path conforming to the pattern of RFC 8089.
+        /// Check that <paramref name="text" /> matches to the URI pattern defined in RFC 2396
         /// </summary>
         /// <remarks>
+        /// <para>
         /// The definition has been taken from:
-        /// https://datatracker.ietf.org/doc/html/rfc8089
+        /// https://datatracker.ietf.org/doc/html/rfc2396
+        /// </para>
+        /// <para>
+        /// Note that RFX 2396 alone is not enough for specifying <c>xs:anyURI</c> for
+        /// XSD version 1.0, as that specifies URI together with the amendment of
+        /// RFC 2732.
+        /// </para>
         /// </remarks>
         /// <param name="text">
         /// Text to be checked
@@ -242,9 +261,9 @@ namespace AasCore.Aas3_0
         /// <returns>
         /// True if the <paramref name="text" /> conforms to the pattern
         /// </returns>
-        public static bool MatchesRfc8089Path(string text)
+        public static bool MatchesRfc2396(string text)
         {
-            return RegexMatchesRfc8089Path.IsMatch(text);
+            return RegexMatchesRfc2396.IsMatch(text);
         }
 
         [CodeAnalysis.SuppressMessage("ReSharper", "InconsistentNaming")]
@@ -7929,7 +7948,8 @@ namespace AasCore.Aas3_0
                     yield return new Reporting.Error(
                         "Invariant violated:\n" +
                         "Constraint AASd-134: For an Operation the ID-short of all " +
-                        "values of input, output and in/output variables.");
+                        "values of input, output and in/output variables shall be " +
+                        "unique.");
                 }
 
                 if (!(
@@ -9955,6 +9975,14 @@ namespace AasCore.Aas3_0
                 yield return new Reporting.Error(
                     "Invariant violated:\n" +
                     "Identifier shall have a maximum length of 2000 characters.");
+            }
+
+            if (!Verification.MatchesRfc2396(that))
+            {
+                yield return new Reporting.Error(
+                    "Invariant violated:\n" +
+                    "String with max 2048 and min 1 characters conformant to " +
+                    "a URI as per RFC 2396.");
             }
         }
 
