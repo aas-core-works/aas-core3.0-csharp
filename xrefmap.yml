@@ -25036,19 +25036,19 @@ references:
   isSpec: "True"
   fullName: AasCore.Aas3_0.Verification.MatchesRevisionType
   nameWithType: Verification.MatchesRevisionType
-- uid: AasCore.Aas3_0.Verification.MatchesRfc8089Path(System.String)
-  name: MatchesRfc8089Path(String)
-  href: api/AasCore.Aas3_0.Verification.html#AasCore_Aas3_0_Verification_MatchesRfc8089Path_System_String_
-  commentId: M:AasCore.Aas3_0.Verification.MatchesRfc8089Path(System.String)
-  fullName: AasCore.Aas3_0.Verification.MatchesRfc8089Path(System.String)
-  nameWithType: Verification.MatchesRfc8089Path(String)
-- uid: AasCore.Aas3_0.Verification.MatchesRfc8089Path*
-  name: MatchesRfc8089Path
-  href: api/AasCore.Aas3_0.Verification.html#AasCore_Aas3_0_Verification_MatchesRfc8089Path_
-  commentId: Overload:AasCore.Aas3_0.Verification.MatchesRfc8089Path
+- uid: AasCore.Aas3_0.Verification.MatchesRfc2396(System.String)
+  name: MatchesRfc2396(String)
+  href: api/AasCore.Aas3_0.Verification.html#AasCore_Aas3_0_Verification_MatchesRfc2396_System_String_
+  commentId: M:AasCore.Aas3_0.Verification.MatchesRfc2396(System.String)
+  fullName: AasCore.Aas3_0.Verification.MatchesRfc2396(System.String)
+  nameWithType: Verification.MatchesRfc2396(String)
+- uid: AasCore.Aas3_0.Verification.MatchesRfc2396*
+  name: MatchesRfc2396
+  href: api/AasCore.Aas3_0.Verification.html#AasCore_Aas3_0_Verification_MatchesRfc2396_
+  commentId: Overload:AasCore.Aas3_0.Verification.MatchesRfc2396
   isSpec: "True"
-  fullName: AasCore.Aas3_0.Verification.MatchesRfc8089Path
-  nameWithType: Verification.MatchesRfc8089Path
+  fullName: AasCore.Aas3_0.Verification.MatchesRfc2396
+  nameWithType: Verification.MatchesRfc2396
 - uid: AasCore.Aas3_0.Verification.MatchesVersionType(System.String)
   name: MatchesVersionType(String)
   href: api/AasCore.Aas3_0.Verification.html#AasCore_Aas3_0_Verification_MatchesVersionType_System_String_
