@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.0.6 (2025-10-20)
+
+We propagate the changes and fixes; please refer to:
+* https://github.com/aas-core-works/aas-core-meta/pull/382
+* https://github.com/aas-core-works/aas-core-meta/pull/385
+* https://github.com/aas-core-works/aas-core-meta/pull/388
+
 ## 1.0.5 (2025-10-20)
 
 This is a patch release that propagates a fix for references index constraint
